@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://ictw.top/sitemap.xml
+Sitemap: https://agou-ops.github.io/myBlog/sitemap.xml
