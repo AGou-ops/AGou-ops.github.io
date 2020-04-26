@@ -1,4 +1,4 @@
-baseURL = "http://ictw.top/"
+baseURL = "https://agou-ops.github.io/myBlog/"
 title = "AGou's blog"
 enableRobotsTXT = true
 enableEmoji = true
