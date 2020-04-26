@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>http://ictw.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 16 Apr 2020 14:01:47 +0800</lastBuildDate><atom:link href="http://ictw.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>http://ictw.top/post/hello-world/</link><pubDate>Thu, 16 Apr 2020 14:11:22 +0800</pubDate><guid>http://ictw.top/post/hello-world/</guid><description>&lt;p>&lt;strong>Markdown&lt;/strong> is created by &lt;a href="http://daringfireball.net/">Daring Fireball&lt;/a>, the original guideline is &lt;a href="http://daringfireball.net/projects/markdown/syntax">here&lt;/a>. Its syntax, however, varies between different parsers or editors.&lt;/p>
+&lt;p>Please note that HTML fragments in markdown source will be recognized but not parsed or rendered. Also, there may be small reformatting on the original markdown source code after saving.&lt;/p>
+&lt;h2 id="paragraph-and-line-breaks段落与换行">Paragraph and line breaks(段落与换行)&lt;/h2>
+&lt;p>A paragraph is simply one or more consecutive lines of text. In markdown source code, paragraphs are separated by more than one blank lines. In Typora, you only need to press &lt;code>Return&lt;/code> to create a new paragraph.&lt;/p>
+&lt;p>Press &lt;code>Shift&lt;/code> + &lt;code>Return&lt;/code> to create a single line break. However, most markdown parser will ignore single line break, to make other markdown parsers recognize your line break, you can leave two whitespace at the end of the line, or insert &lt;code>&amp;lt;br/&amp;gt;&lt;/code>.&lt;/p>
+&lt;h2 id="headers标题">Headers(标题)&lt;/h2>
+&lt;p>Headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6. For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="gh"># This is an H1
+&lt;/span>&lt;span class="gh">&lt;/span>
+&lt;span class="gu">## This is an H2
+&lt;/span>&lt;span class="gu">&lt;/span>
+&lt;span class="gu">###### This is an H6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>In typora, input ‘#’s followed by title content, and press &lt;code>Return&lt;/code> key will create a header.&lt;/p>
+&lt;h2 id="blockquotes引言">Blockquotes(引言)&lt;/h2>
+&lt;p>Markdown uses email-style &amp;gt; characters for block quoting. They are presented as:&lt;/p>
+&lt;blockquote>
+&lt;p>This is a blockquote with two paragraphs. This is first paragraph.&lt;/p>
+&lt;p>This is second pragraph.Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/p>
+&lt;p>This is another blockquote with one paragraph. There is three empty line to seperate two blockquote.&lt;/p>
+&lt;p>这是一段中文测试。&lt;/p>
+&lt;/blockquote>
+&lt;p>In typora, just input ‘&amp;gt;’ followed by quote contents a block quote is generated. Typora will insert proper ‘&amp;gt;’ or line break for you. Block quote inside anther block quote is allowed by adding additional levels of ‘&amp;gt;’.&lt;/p>
+&lt;h2 id="lists有序无序列表">Lists(有序无序列表)&lt;/h2>
+&lt;p>Input &lt;code>* list item 1&lt;/code> will create an un-ordered list, the &lt;code>*&lt;/code> symbol can be replace with &lt;code>+&lt;/code> or &lt;code>-&lt;/code>.&lt;/p>
+&lt;p>Input &lt;code>1. list item 1&lt;/code> will create an ordered list, their markdown source code is like:&lt;/p>
+&lt;ul>
+&lt;li>Red&lt;/li>
+&lt;li>Green&lt;/li>
+&lt;li>Blue&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Red&lt;/li>
+&lt;li>Green&lt;/li>
+&lt;li>Blue&lt;/li>
+&lt;/ol>
+&lt;h2 id="task-list任务列表">Task List(任务列表)&lt;/h2>
+&lt;p>Task lists are lists with items marked as either &lt;code>[ ]&lt;/code> or &lt;code>[x]&lt;/code> (incomplete or complete). For example:&lt;/p>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> a task list item&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> list syntax required&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> normal &lt;strong>formatting&lt;/strong>, @mentions, #1234 refs&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> incomplete&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> completed&lt;/li>
+&lt;/ul>
+&lt;p>You can change the complete/incomplete state by click the checkbox before the item.&lt;/p>
+&lt;h2 id="syntax-highlighting代码高亮">Syntax Highlighting(代码高亮)&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="kd">function&lt;/span> &lt;span class="nx">helloWorld&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">alert&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">HelloWorld&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kd">static&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">[]&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="math-blocks数学块">Math Blocks(数学块)&lt;/h2>
+&lt;p>You can render &lt;em>LaTeX&lt;/em> mathematical expressions using &lt;strong>MathJax&lt;/strong>.&lt;/p>
+&lt;p>Input &lt;code>$$&lt;/code>, then press &amp;lsquo;Return&amp;rsquo; key will trigger an input field which accept &lt;em>Tex/LaTex&lt;/em> source. Following is an example:
+$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \&lt;br>
+\frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \&lt;br>
+\frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \&lt;br>
+\end{vmatrix}
+$$&lt;/p>
+&lt;p>In markdown source file, math block is &lt;em>LaTeX&lt;/em> expression wrapped by ‘$$’ mark:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \\
+\frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \\
+\frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \\
+\end{vmatrix}
+$$
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="tables表格">Tables(表格)&lt;/h2>
+&lt;p>Input &lt;code>| First Header | Second Header |&lt;/code> and press &lt;code>return&lt;/code> key will create a table with two column.&lt;/p>
+&lt;p>After table is created, focus on that table will pop up a toolbar for table, where you can resize, align, or delete table. You can also use context menu to copy and add/delete column/row.&lt;/p>
+&lt;p>Following descriptions can be skipped, as markdown source code for tables are generated by typora automatically.&lt;/p>
+&lt;p>In markdown source code, they look like:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">| Name | Markdown | HTML tag |
+| ----------------- | ------------------- | -------------------- |
+| &lt;span class="ge">*Emphasis*&lt;/span> | &lt;span class="sb">`*Emphasis*`&lt;/span> | &lt;span class="sb">`&amp;lt;em&amp;gt;&amp;lt;/em&amp;gt;`&lt;/span> |
+| &lt;span class="gs">**Strong**&lt;/span> | &lt;span class="sb">`**Strong**`&lt;/span> | &lt;span class="sb">`&amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt;`&lt;/span> |
+| &lt;span class="sb">`code`&lt;/span> | ``code`` | &lt;span class="sb">`&amp;lt;code&amp;gt;&amp;lt;/code&amp;gt;`&lt;/span> |
+| &lt;span class="gd">~~Strikethrough~~&lt;/span> | &lt;span class="sb">`~~Strikethrough~~`&lt;/span> | &lt;span class="sb">`&amp;lt;del&amp;gt;&amp;lt;/del`&lt;/span> |
+| &amp;lt;u&amp;gt;Underline&amp;lt;/u&amp;gt; | &lt;span class="sb">`&amp;lt;u&amp;gt;underline&amp;lt;/u&amp;gt;`&lt;/span> | &lt;span class="sb">`&amp;lt;u&amp;gt;&amp;lt;/u&amp;gt;`&lt;/span> |
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Markdown&lt;/th>
+&lt;th>HTML tag&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>Emphasis&lt;/em>&lt;/td>
+&lt;td>&lt;code>*Emphasis*&lt;/code>&lt;/td>
+&lt;td>&lt;code>&amp;lt;em&amp;gt;&amp;lt;/em&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Strong&lt;/strong>&lt;/td>
+&lt;td>&lt;code>**Strong**&lt;/code>&lt;/td>
+&lt;td>&lt;code> &amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;td>&lt;code>`code`&lt;/code>&lt;/td>
+&lt;td>&lt;code>&amp;lt;code&amp;gt;&amp;lt;/code&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;del>Strikethrough&lt;/del>&lt;/td>
+&lt;td>&lt;code>~~Strikethrough~~&lt;/code>&lt;/td>
+&lt;td>&lt;code>&amp;lt;del&amp;gt;&amp;lt;/del&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;!-- raw HTML omitted -->Underline&lt;!-- raw HTML omitted -->&lt;/td>
+&lt;td>&lt;code>&amp;lt;u&amp;gt;underline&amp;lt;/u&amp;gt;&lt;/code>&lt;/td>
+&lt;td>&lt;code>&amp;lt;u&amp;gt;&amp;lt;/u&amp;gt;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="footnotes注释">&lt;strong>Footnotes(注释)&lt;/strong>&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">You can create footnotes like this[^footnote].
+[^footnote]: Here is the &lt;span class="ge">*text*&lt;/span> of the &lt;span class="gs">**footnote**&lt;/span>.
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>will produce:&lt;/p>
+&lt;p>You can create footnotes like this&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
+&lt;p>Mouse on the ‘footnote’ superscript to see content of the footnote.&lt;/p>
+&lt;h2 id="horizontal-rules水平线">Horizontal Rules(水平线)&lt;/h2>
+&lt;p>Input &lt;code>***&lt;/code> or &lt;code>---&lt;/code> on a blank line and press &lt;code>return&lt;/code> will draw a horizontal line.&lt;/p>
+&lt;hr>
+&lt;h2 id="links超链接">Links(超链接)&lt;/h2>
+&lt;p>Markdown supports two style of links: inline and reference.&lt;/p>
+&lt;p>In both styles, the link text is delimited by [square brackets].&lt;/p>
+&lt;p>To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the URL where you want the link to point, along with an optional title for the link, surrounded in quotes. For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">This is [&lt;span class="nt">an example&lt;/span>](&lt;span class="na">http://example.com/ &amp;#34;Title&amp;#34;&lt;/span>) inline link.
+[&lt;span class="nt">This link&lt;/span>](&lt;span class="na">http://example.net/&lt;/span>) has no title attribute.
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>will produce:&lt;/p>
+&lt;p>This is &lt;a href="http://example.com/%22Title%22">an example&lt;/a> inline link. (&lt;code>&amp;lt;p&amp;gt;This is &amp;lt;a href=&amp;quot;http://example.com/&amp;quot; title=&amp;quot;Title&amp;quot;&amp;gt;&lt;/code>)&lt;/p>
+&lt;p>&lt;a href="http://example.net/">This link&lt;/a> has no title attribute. (&lt;code>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://example.net/&amp;quot;&amp;gt;This link&amp;lt;/a&amp;gt; has no&lt;/code>)&lt;/p>
+&lt;h3 id="internal-links页内链接">Internal Links(页内链接)&lt;/h3>
+&lt;p>&lt;strong>You can set the href to headers&lt;/strong>, which will create a bookmark that allow you to jump to that section after clicking. For example:&lt;/p>
+&lt;p>Command(on Windows: Ctrl) + Click &lt;a href="#block-elements">This link&lt;/a> will jump to header &lt;code>Block Elements&lt;/code>. To see how to write that, please move cursor or click that link with &lt;code>⌘&lt;/code> key pressed to expand the element into markdown source.&lt;/p>
+&lt;h3 id="reference-links参考链接">Reference Links(参考链接)&lt;/h3>
+&lt;p>Reference-style links use a second set of square brackets, inside which you place a label of your choosing to identify the link:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">This is [an example][id] reference-style link.
+Then, anywhere in the document, you define your link label like this, on a line by itself:
+[id]: http://example.com/ &amp;#34;Optional Title Here&amp;#34;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>In typora, they will be rendered like:&lt;/p>
+&lt;p>This is &lt;a href="http://example.com/" title="Optional Title Here">an example&lt;/a> reference-style link.&lt;/p>
+&lt;p>The implicit link name shortcut allows you to omit the name of the link, in which case the link text itself is used as the name. Just use an empty set of square brackets — e.g., to link the word “Google” to the google.com web site, you could simply write:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">[Google][]
+And then define the link:
+[Google]: http://google.com/
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>In typora click link will expand it for editing, command+click will open the hyperlink in web browser.&lt;/p>
+&lt;h2 id="urls">URLs&lt;/h2>
+&lt;p>Typora allows you to insert urls as links, wrapped by &lt;code>&amp;lt;&lt;/code>brackets&lt;code>&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>&lt;code>&amp;lt;i@typora.io&amp;gt;&lt;/code> becomes &lt;a href="mailto:i@typora.io">i@typora.io&lt;/a>.&lt;/p>
+&lt;p>Typora will aslo auto link standard URLs. e.g: &lt;a href="http://www.google.com">www.google.com&lt;/a>.&lt;/p>
+&lt;h2 id="images图片">Images(图片)&lt;/h2>
+&lt;p>Image looks similar with links, but it requires an additional &lt;code>!&lt;/code> char before the start of link. Image syntax looks like this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">![&lt;span class="nt">Alt text&lt;/span>](&lt;span class="na">/path/to/img.jpg&lt;/span>)
+![&lt;span class="nt">Alt text&lt;/span>](&lt;span class="na">/path/to/img.jpg &amp;#34;Optional title&amp;#34;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You are able to use drag &amp;amp; drop to insert image from image file or we browser. And modify the markdown source code by clicking on the image. Relative path will be used if image is in same directory or sub-directory with current editing document when drag &amp;amp; drop.&lt;/p>
+&lt;p>For more tips on images, please read &lt;a href="http://support.typora.io//Images/">http://support.typora.io//Images/&lt;/a>&lt;/p>
+&lt;h2 id="emphasis突出强调">Emphasis(突出强调)&lt;/h2>
+&lt;p>Markdown treats asterisks (&lt;code>*&lt;/code>) and underscores (&lt;code>_&lt;/code>) as indicators of emphasis. Text wrapped with one &lt;code>*&lt;/code> or &lt;code>_&lt;/code> will be wrapped with an HTML &lt;code>&amp;lt;em&amp;gt;&lt;/code> tag. E.g:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">*single asterisks*
+&lt;span class="ge">_single underscores_&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>output:&lt;/p>
+&lt;p>&lt;em>single asterisks&lt;/em>&lt;/p>
+&lt;p>&lt;em>single underscores&lt;/em>&lt;/p>
+&lt;p>GFM will ignores underscores in words, which is commonly used in code and names, like this:&lt;/p>
+&lt;blockquote>
+&lt;p>wow_great_stuff&lt;/p>
+&lt;p>do_this_and_do_that_and_another_thing.&lt;/p>
+&lt;/blockquote>
+&lt;p>To produce a literal asterisk or underscore at a position where it would otherwise be used as an emphasis delimiter, you can backslash escape it:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">\*this text is surrounded by literal asterisks\*
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Typora recommends to use &lt;code>*&lt;/code> symbol.&lt;/p>
+&lt;h2 id="strong加粗">Strong(加粗)&lt;/h2>
+&lt;p>double *’s or _’s will be wrapped with an HTML &lt;code>&amp;lt;strong&amp;gt;&lt;/code> tag, e.g:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">**double asterisks**
+&lt;span class="gs">__double underscores__&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>output:&lt;/p>
+&lt;p>&lt;strong>double asterisks&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>double underscores&lt;/strong>&lt;/p>
+&lt;p>Typora recommends to use &lt;code>**&lt;/code> symbol.&lt;/p>
+&lt;h2 id="code代码块">Code(代码块)&lt;/h2>
+&lt;p>To indicate a span of code, wrap it with backtick quotes (`). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">Use the &lt;span class="sb">`printf()`&lt;/span> function.
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>will produce:&lt;/p>
+&lt;p>Use the &lt;code>printf()&lt;/code> function.&lt;/p>
+&lt;h2 id="highlight-shortcode高亮代码块">highlight shortcode(高亮代码块)&lt;/h2>
+&lt;p>example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; highlight go &amp;#34;linenos=table,hl_lines=8 15-17,linenostart=199&amp;#34; &amp;gt;}}
+// ... code
+{{&amp;lt; /highlight &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>result:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">199
+&lt;/span>&lt;span class="lnt">200
+&lt;/span>&lt;span class="lnt">201
+&lt;/span>&lt;span class="lnt">202
+&lt;/span>&lt;span class="lnt">203
+&lt;/span>&lt;span class="lnt">204
+&lt;/span>&lt;span class="lnt">205
+&lt;/span>&lt;span class="hl">&lt;span class="lnt">206
+&lt;/span>&lt;/span>&lt;span class="lnt">207
+&lt;/span>&lt;span class="lnt">208
+&lt;/span>&lt;span class="lnt">209
+&lt;/span>&lt;span class="lnt">210
+&lt;/span>&lt;span class="lnt">211
+&lt;/span>&lt;span class="lnt">212
+&lt;/span>&lt;span class="hl">&lt;span class="lnt">213
+&lt;/span>&lt;/span>&lt;span class="hl">&lt;span class="lnt">214
+&lt;/span>&lt;/span>&lt;span class="hl">&lt;span class="lnt">215
+&lt;/span>&lt;/span>&lt;span class="lnt">216
+&lt;/span>&lt;span class="lnt">217
+&lt;/span>&lt;span class="lnt">218
+&lt;/span>&lt;span class="lnt">219
+&lt;/span>&lt;span class="lnt">220
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="c1">// GetTitleFunc returns a func that can be used to transform a string to
+&lt;/span>&lt;span class="c1">// title case.
+&lt;/span>&lt;span class="c1">//
+&lt;/span>&lt;span class="c1">// The supported styles are
+&lt;/span>&lt;span class="c1">//
+&lt;/span>&lt;span class="c1">// - &amp;#34;Go&amp;#34; (strings.Title)
+&lt;/span>&lt;span class="c1">// - &amp;#34;AP&amp;#34; (see https://www.apstylebook.com/)
+&lt;/span>&lt;span class="hl">&lt;span class="c1">// - &amp;#34;Chicago&amp;#34; (see http://www.chicagomanualofstyle.org/home.html)
+&lt;/span>&lt;/span>&lt;span class="c1">//
+&lt;/span>&lt;span class="c1">// If an unknown or empty style is provided, AP style is what you get.
+&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kd">func&lt;/span> &lt;span class="nf">GetTitleFunc&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">style&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">s&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">switch&lt;/span> &lt;span class="nx">strings&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ToLower&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">style&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;go&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">strings&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Title&lt;/span>
+&lt;span class="hl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;chicago&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;span class="hl"> &lt;span class="nx">tc&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">transform&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewTitleConverter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">transform&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ChicagoStyle&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;span class="hl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">tc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Title&lt;/span>
+&lt;/span> &lt;span class="k">default&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="nx">tc&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">transform&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewTitleConverter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">transform&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">APStyle&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">tc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Title&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="strikethrough删除线">Strikethrough(删除线)&lt;/h2>
+&lt;p>GFM adds syntax to create strikethrough text, which is missing from standard Markdown.&lt;/p>
+&lt;p>&lt;code>~~Mistaken text.~~&lt;/code> becomes &lt;del>Mistaken text.&lt;/del>&lt;/p>
+&lt;h2 id="underline下划线">Underline(下划线)&lt;/h2>
+&lt;p>Underline is powered by raw HTML.&lt;/p>
+&lt;p>&lt;code>&amp;lt;u&amp;gt;Underline&amp;lt;/u&amp;gt;&lt;/code> becomes &lt;!-- raw HTML omitted -->Underline&lt;!-- raw HTML omitted -->.&lt;/p>
+&lt;h2 id="emoji-happy表情">Emoji :happy:(表情)&lt;/h2>
+&lt;p>Input emoji with syntax &lt;code>😄&lt;/code>.&lt;/p>
+&lt;p>User can trigger auto-complete suggestions for emoji by pressing &lt;code>ESC&lt;/code> key, or trigger it automatically after enable it on preference panel. Also, input UTF8 emoji char directly from &lt;code>Edit&lt;/code> -&amp;gt; &lt;code>Emoji &amp;amp; Symbols&lt;/code> from menu bar is also supported.&lt;/p>
+&lt;h2 id="inline-math">Inline Math&lt;/h2>
+&lt;p>To use this feature, first, please enable it in &lt;code>Preference&lt;/code> Panel -&amp;gt; &lt;code>Markdown&lt;/code> Tab. Then use &lt;code>$&lt;/code> to wrap TeX command, for example: &lt;code>$\lim_{x \to \infty} \exp(-x) = 0$&lt;/code> will be rendered as LaTeX command.&lt;/p>
+&lt;p>To trigger inline preview for inline math: input “$”, then press &lt;code>ESC&lt;/code> key, then input TeX command, a preview tooltip will be visible like below:&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>Here is the &lt;em>text&lt;/em> of the &lt;strong>footnote&lt;/strong>. &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>关于</title><link>http://ictw.top/aboutme/</link><pubDate>Thu, 16 Apr 2020 14:01:47 +0800</pubDate><guid>http://ictw.top/aboutme/</guid><description>&lt;p>这个人一点也不神秘,只是有点懒罢了.&lt;/p></description></item><item><title>Shortcodes Preview</title><link>http://ictw.top/post/shortcodes-preview/</link><pubDate>Sun, 04 Mar 2018 16:01:23 +0800</pubDate><guid>http://ictw.top/post/shortcodes-preview/</guid><description>&lt;h2 id="what-a-shortcode-is">What a Shortcode is&lt;/h2>
+&lt;p>Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;code>&amp;lt;iframes&amp;gt;&lt;/code>) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&amp;rsquo;s syntax.&lt;/p>
+&lt;p>Hugo created &lt;strong>shortcodes&lt;/strong> to circumvent these limitations.&lt;/p>
+&lt;p>A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.&lt;/p>
+&lt;p>In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.&lt;/p>
+&lt;p>More details: &lt;a href="https://gohugo.io/content-management/shortcodes/">https://gohugo.io/content-management/shortcodes/&lt;/a>&lt;/p>
+&lt;h2 id="blockquotes">blockquotes&lt;/h2>
+&lt;p>Normal quote:
+&lt;blockquote>
+&lt;p>This is a simple quote.&lt;/p>
+&lt;footer>
+&lt;strong>&lt;/strong>
+&lt;/footer>
+&lt;/blockquote>
+&lt;/p>
+&lt;p>Quote with author:
+&lt;blockquote>
+&lt;p>This is a quote with only an Author named Author2.&lt;/p>
+&lt;footer>
+&lt;strong>Author2&lt;/strong>
+&lt;/footer>
+&lt;/blockquote>
+&lt;/p>
+&lt;p>Quote with author and source:
+&lt;blockquote>
+&lt;p>This is a quote from Author3 and source &amp;ldquo;source.&amp;rdquo;&lt;/p>
+&lt;footer>
+&lt;strong>Author3&lt;/strong>
+&lt;cite>Source&lt;/cite>
+&lt;/footer>
+&lt;/blockquote>
+&lt;/p>
+&lt;p>Quote with author and link:
+&lt;blockquote>
+&lt;p>This is a quote from Author4 and links to &lt;a href="https://www.google.com">https://www.google.com&lt;/a>.&lt;/p>
+&lt;footer>
+&lt;strong>Author4&lt;/strong>
+&lt;cite>
+&lt;a href="https://www.google.com" title="https://www.google.com">google.com&lt;/a>
+&lt;/cite>
+&lt;/footer>
+&lt;/blockquote>
+&lt;/p>
+&lt;p>Quote with author, link and title:
+&lt;blockquote>
+&lt;p>This is a quote from Author5 and links to &lt;a href="https://www.google.com">https://www.google.com&lt;/a> with title &amp;ldquo;Google.&amp;rdquo;&lt;/p>
+&lt;footer>
+&lt;strong>Author5&lt;/strong>
+&lt;cite>
+&lt;a href="https://www.google.com" title="https://www.google.com">Google&lt;/a>
+&lt;/cite>
+&lt;/footer>
+&lt;/blockquote>
+&lt;/p>
+&lt;p>Quote with author and a link longer than 32 characters, string is first cut at 32 characters then everything after the last forward slash is removed
+&lt;blockquote>
+&lt;p>This is a quote from Author5 and links to &lt;a href="https://twitter.com/CryptoGangsta/status/716427930126196737">https://twitter.com/CryptoGangsta/status/716427930126196737&lt;/a> which is longer than 32 characters.
+&lt;!-- raw HTML omitted -->And this is a new line in the quote with the HTML br tag.&lt;/p>
+&lt;footer>
+&lt;strong>Author6&lt;/strong>
+&lt;cite>
+&lt;a href="https://twitter.com/CryptoGangsta/status/716427930126196737" title="https://twitter.com/CryptoGangsta/status/716427930126196737">twitter.com/CryptoGangsta/...&lt;/a>
+&lt;/cite>
+&lt;/footer>
+&lt;/blockquote>
+&lt;/p>
+&lt;p>Test from the Octopress blockquote page at: &lt;a href="http://octopress.org/docs/plugins/blockquote/">http://octopress.org/docs/plugins/blockquote/&lt;/a>
+&lt;blockquote>
+&lt;p>Over the past 24 hours I&amp;rsquo;ve been reflecting on my life &amp;amp; I&amp;rsquo;ve realized only one thing. I need a medieval battle axe.&lt;/p>
+&lt;footer>
+&lt;strong>@allanbranch&lt;/strong>
+&lt;cite>
+&lt;a href="https://twitter.com/allanbranch/status/90766146063712256" title="https://twitter.com/allanbranch/status/90766146063712256">twitter.com/allanbranch/status/...&lt;/a>
+&lt;/cite>
+&lt;/footer>
+&lt;/blockquote>
+&lt;/p>
+&lt;h2 id="music">music&lt;/h2>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="gist1">gist(+1)&lt;/h2>
+&lt;p>We can embed the gist in our content via username and gist ID pulled from the URL:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; gist AGou-ops 5e0b2df2f0d23c65742a633ed0225cf6 &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Display:&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/AGou-ops/5e0b2df2f0d23c65742a633ed0225cf6.js">&lt;/script>
+&lt;h2 id="expand">expand&lt;/h2>
+&lt;p>The Expand shortcode displays an expandable/collapsible section of text on your page. Here is an example&lt;/p>
+&lt;details>
+&lt;summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+Is this learn theme rocks ?
+&lt;/summary>
+Yes !.
+&lt;/details>
+&lt;h3 id="usage">Usage&lt;/h3>
+&lt;p>this shortcode takes exactly one optional parameter to define the text that appears next to the expand/collapse icon. (default is “Click to expand”)&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; expand &amp;#34;Is this learn theme rocks ?&amp;#34; &amp;gt;}}
+Yes !.
+{{&amp;lt; /expand &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="youtube">youtube&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/w7Ft2ymGmfc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h2 id="vimeo">vimeo&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://player.vimeo.com/video/146022717" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen>&lt;/iframe>
+&lt;/div>
+&lt;h2 id="youku">youku&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+&lt;iframe src="https://player.youku.com/embed/XMzQ0ODUxMjM2NA?autoplay=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouKu Video">
+&lt;/iframe>
+&lt;/div></description></item><item><title>Image Preview</title><link>http://ictw.top/post/image-preview/</link><pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate><guid>http://ictw.top/post/image-preview/</guid><description>&lt;p>Thanks for &lt;a href="https://github.com/liwenyip/hugo-easy-gallery">liwenyip/hugo-easy-gallery&lt;/a> &amp;amp; &lt;a href="https://github.com/xianmin/hugo-theme-jane/pull/48">Zebradil · Pull Request #48&lt;/a> .&lt;/p>
+&lt;p>Now, we could use &lt;code>{{&amp;lt; gallery &amp;gt;}}&lt;/code> shortcode in hugo-theme-jane.&lt;/p>
+&lt;h2 id="normal-image">Normal Image&lt;/h2>
+&lt;p>This is an image in &lt;code>static/image&lt;/code> folder.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">![&lt;span class="nt">This is an image in `static/image` folder.&lt;/span>](&lt;span class="na">/image/test.png&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="http://ictw.top/image/test.png" alt="This is an image in static/image folder.">&lt;/p>
+&lt;h2 id="-figure--shortcode">&lt;code>{{&amp;lt; figure &amp;gt;}}&lt;/code> shortcode&lt;/h2>
+&lt;h3 id="figure-image-with-title">figure image with title&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; figure src=&amp;#34;/image/test.png&amp;#34; title=&amp;#34;figure image with title&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="figure-image-with-caption">figure image with caption&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; figure src=&amp;#34;/image/example.jpg&amp;#34; caption=&amp;#34;figure image with caption figure image with caption figure image with caption figure image with caption figure image with caption&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="more--figure--shortcode-usage">more &lt;code>{{&amp;lt; figure &amp;gt;}}&lt;/code> shortcode usage&lt;/h3>
+&lt;p>Specifying your image files:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>{{&amp;lt; figure src=&amp;quot;thumb.jpg&amp;quot; link=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code> will use &lt;code>thumb.jpg&lt;/code> for thumbnail and &lt;code>image.jpg&lt;/code> for lightbox&lt;/li>
+&lt;li>&lt;code>{{&amp;lt; figure src=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code> or &lt;code>{{&amp;lt; figure link=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code> will use &lt;code>image.jpg&lt;/code> for both thumbnail and lightbox&lt;/li>
+&lt;li>&lt;code>{{&amp;lt; figure link=&amp;quot;image.jpg&amp;quot; thumb=&amp;quot;-small&amp;quot; &amp;gt;}}&lt;/code> will use &lt;code>image-small.jpg&lt;/code> for thumbnail and &lt;code>image.jpg&lt;/code> for lightbox&lt;/li>
+&lt;/ul>
+&lt;p>Optional parameters:&lt;/p>
+&lt;ul>
+&lt;li>All the &lt;a href="https://gohugo.io/extras/shortcodes">features/parameters&lt;/a> of Hugo&amp;rsquo;s built-in &lt;code>figure&lt;/code> shortcode work as normal, i.e. src, link, title, caption, class, attr (attribution), attrlink, alt&lt;/li>
+&lt;li>&lt;code>size&lt;/code> (e.g. &lt;code>size=&amp;quot;1024x768&amp;quot;&lt;/code>) pre-defines the image size for PhotoSwipe. Use this option if you don&amp;rsquo;t want to pre-load the linked image to determine its size.&lt;/li>
+&lt;li>&lt;code>class&lt;/code> allows you to set any custom classes you want on the &lt;code>&amp;lt;figure&amp;gt;&lt;/code> tag.&lt;/li>
+&lt;/ul>
+&lt;p>Optional parameters for standalone &lt;code>{{&amp;lt; figure &amp;gt;}}&lt;/code> shortcodes only (i.e. don&amp;rsquo;t use on &lt;code>{{&amp;lt; figure &amp;gt;}}&lt;/code> inside &lt;code>{{&amp;lt; gallery &amp;gt;}}&lt;/code> - strange things may happen if you do):&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>caption-position&lt;/code> and &lt;code>caption-effect&lt;/code> work the same as for the &lt;code>{{&amp;lt; gallery &amp;gt;}}&lt;/code> shortcode (see below).&lt;/li>
+&lt;li>&lt;code>width&lt;/code> defines the &lt;a href="https://www.w3schools.com/cssref/pr_dim_max-width.asp">&lt;code>max-width&lt;/code>&lt;/a> of the image displayed on the page. If using a thumbnail for a standalone figure, set this equal to your thumbnail&amp;rsquo;s native width to make the captions behave properly (or feel free to come up with a better solution and submit a pull request :-)). Also use this option if you don&amp;rsquo;t have a thumbnail and you don&amp;rsquo;t want the hi-res image to take up the entire width of the screen/container.&lt;/li>
+&lt;li>&lt;code>class=&amp;quot;no-photoswipe&amp;quot;&lt;/code> prevents a &lt;code>&amp;lt;figure&amp;gt;&lt;/code> from being loaded into PhotoSwipe. If you click on the figure you&amp;rsquo;ll instead a good ol&amp;rsquo; fashioned hyperlink to a bigger image (or - if you haven&amp;rsquo;t specified a bigger image - the same one).&lt;/li>
+&lt;/ul>
+&lt;h2 id="-gallery--shortcode">&lt;code>{{&amp;lt; gallery &amp;gt;}}&lt;/code> shortcode&lt;/h2>
+&lt;h3 id="simple-gallery">simple gallery&lt;/h3>
+&lt;p>To specify a directory of image files:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; gallery dir=&amp;#34;/img/your-directory-of-images/&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>The images are automatically captioned with the file name.&lt;/li>
+&lt;li>&lt;code>[image].jpg&lt;/code> is used for the hi-res image, and &lt;code>[image]-thumb.jpg&lt;/code> is used for the thumbnails.&lt;/li>
+&lt;li>If &lt;code>[image]-thumb.jpg&lt;/code> doesn&amp;rsquo;t exist, then &lt;code>[image].jpg&lt;/code> will be used for both hi-res and thumbnail images.&lt;/li>
+&lt;li>The default thumbnail suffix is &lt;code>-thumb&lt;/code>, but you can specify a different one e.g. &lt;code>thumb=&amp;quot;-small&amp;quot;&lt;/code> or &lt;code>thumb=&amp;quot;_150x150&amp;quot;&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="to-specify-individual-image-files">To specify individual image files&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; gallery &amp;gt;}}
+{{&amp;lt; figure src=&amp;#34;image1.jpg&amp;#34; &amp;gt;}}
+{{&amp;lt; figure src=&amp;#34;image2.jpg&amp;#34; &amp;gt;}}
+{{&amp;lt; figure src=&amp;#34;image3.jpg&amp;#34; &amp;gt;}}
+{{&amp;lt; /gallery &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Optional parameters:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>caption-position&lt;/code> - determines the captions&amp;rsquo; position over the image. Options:
+&lt;ul>
+&lt;li>&lt;code>bottom&lt;/code> (default)&lt;/li>
+&lt;li>&lt;code>center&lt;/code>&lt;/li>
+&lt;li>&lt;code>none&lt;/code> hides captions on the page (they will only show in PhotoSwipe)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>caption-effect&lt;/code> - determines if/how captions appear upon hover. Options:
+&lt;ul>
+&lt;li>&lt;code>slide&lt;/code> (default)&lt;/li>
+&lt;li>&lt;code>fade&lt;/code>&lt;/li>
+&lt;li>&lt;code>none&lt;/code> (captions always visible)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>hover-effect&lt;/code> - determines if/how images change upon hover. Options:
+&lt;ul>
+&lt;li>&lt;code>zoom&lt;/code> (default)&lt;/li>
+&lt;li>&lt;code>grow&lt;/code>&lt;/li>
+&lt;li>&lt;code>shrink&lt;/code>&lt;/li>
+&lt;li>&lt;code>slideup&lt;/code>&lt;/li>
+&lt;li>&lt;code>slidedown&lt;/code>&lt;/li>
+&lt;li>&lt;code>none&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>hover-transition&lt;/code> - determines if/how images change upon hover. Options:
+&lt;ul>
+&lt;li>not set - smooth transition (default)&lt;/li>
+&lt;li>&lt;code>none&lt;/code> - hard transition&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
