@@ -20,6 +20,7 @@ PygmentsUseClasses = true # Use CSS classes to format highlighted code
 PygmentsCodefencesGuessSyntax = true
 PygmentsOptions = "linenos=table"
 
+
 # Enable author pages
 [taxonomies]
   author = "author"
@@ -32,7 +33,7 @@ defaultContentLanguage = "en"           # Default language to use
   languageCode = "en"
 
 [author]                  # essential                     # 必需
-  name = "AGou"
+  name = "AGou-ops"
 
 [sitemap]                 # essential                     # 必需
   changefreq = "weekly"
@@ -60,9 +61,9 @@ defaultContentLanguage = "en"           # Default language to use
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
-  name = "external-link"
+  name = "myStudyNote"
   weight = 50
-  url = "https://gohugo.io"
+  url = "https://agou-ops.github.io/myStudyNote/"
 
 
 [params]
@@ -81,7 +82,7 @@ defaultContentLanguage = "en"           # Default language to use
   archive-paginate = 15
   # paginate style, default use numbered pagination links
   # if true, use original "Previous" and "Next" links.
-  # paginateOriginalStyle = true
+  paginateOriginalStyle = true
 
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
   dateFormatToUse = "2006-01-02"
@@ -160,8 +161,8 @@ defaultContentLanguage = "en"           # Default language to use
     placeholder = ''
 
   [params.search.google]    # google custom search, see https://cse.google.com
-    enable = false
-    id = "002186711602136249422:q1gkomof_em"
+    enable = true
+    id = "014008465090960597240:ar8pzzlyhgc"
     title = "Search"
 
   [params.reward]                                         # 文章打赏
@@ -187,13 +188,13 @@ defaultContentLanguage = "en"           # Default language to use
     showCommitMessage = true
 
   [params.social]                                         # 社交链接
-    a-email = "mailto:your@email.com"
+    a-email = "mailto:agou-ops@foxmail.com"
     # b-stack-overflow = "http://localhost:1313"
-    c-twitter = "http://localhost:1313"
+    c-twitter = "https://twitter.com/AgouOps"
     # d-facebook = "http://localhost:1313"
-    e-linkedin = "http://localhost:1313"
+    # e-linkedin = "http://localhost:1313"
     # f-google = "http://localhost:1313"
-    g-github = "http://localhost:1313"
+    g-github = "https://github.com/AGou-ops"
     # h-weibo = "http://localhost:1313"
     # i-zhihu = "http://localhost:1313"
     # j-douban = "http://localhost:1313"
@@ -203,29 +204,6 @@ defaultContentLanguage = "en"           # Default language to use
     # n-gitlab = "http://localhost:1313"
     # o-goodreads = "http://localhost:1313"
     # p-coding = "http://localhost:1313"
-    q-bilibili = "http://localhost:1313"
+    # q-bilibili = "http://localhost:1313"
     # r-codeforces = "http://localhost:1313"
     # s-mastodon = "http://localhost:1313"
-
-# jsonfeed support
-# more information: https://github.com/xianmin/hugo-theme-jane/issues/23
-# to have json output it's necessary to uncomment this block of code and create a index.jsonfeed.json template, using hugo template specs
-# [outputs]
-#   home = ["html", "jsonfeed","rss"]
-#   page = ["html"]
-#
-# [outputFormats]
-# [outputFormats.jsonfeed]
-#   mediaType = "application/json"
-#   baseName = "feed"
-#   isPlainText = true
-
-
-# multilingual support example
-# [langusges]
-# [languages.en]
-#   title = "Jane - A simple theme for Hugo"
-#   weight = 1
-# [languages.zh-cn]
-#   title = "Jane —— 一个简洁的 Hugo 主题"
-#   weight = 2

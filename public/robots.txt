@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://agou-ops.github.io/myBlog/sitemap.xml

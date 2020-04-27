@@ -1,0 +1,13 @@
+---
+baseurl: "/"
+DefaultContentLanguage: "zh-cn"
+hasCJKLanguage: true
+languageCode: "zh-cn"
+title: "AGou's Blog"
+theme: "jane"
+metaDataFormat: "yaml"
+algolia:
+  index: "blog"
+  key: "34688b3d7a380b54a0a7d6da278b63a1"
+  appID: "USNPT8OERQ"
+---
