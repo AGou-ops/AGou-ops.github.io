@@ -1,0 +1,97 @@
+[
+    {
+        "title": "关于",
+        "uri": "aboutme",
+        "content": "",
+        "objectID": "aboutme",
+        "date": "2020-04-16T06:01:47.000Z",
+        "lastmod": "2020-04-16T06:01:47.000Z",
+        "draft": false,
+        "keywords": [],
+        "description": "关于博主",
+        "tags": [],
+        "categories": [],
+        "author": "AGou-ops",
+        "menu": "main",
+        "weight": 41,
+        "comment": false,
+        "toc": false,
+        "autoCollapseToc": false,
+        "contentCopyright": false,
+        "reward": false,
+        "mathjax": false
+    },
+    {
+        "title": "Hello World",
+        "uri": "post/Hello-World",
+        "content": "Markdown created Daring Fireball  original guideline here  Its syntax  however  varies different parsers editors  Please note HTML fragments markdown source will recognized not parsed rendered  Also  may small reformatting original markdown source code saving  Paragraph line breaks        paragraph simply one consecutive lines text  markdown source code  paragraphs separated one blank lines  Typora  need press Return create new paragraph  Press Shift   Return create single line break  However  markdown parser will ignore single line break  markdown parsers recognize line break  leave two whitespace end line  insert     Headers     Headers use 1 6 hash characters start line  corresponding header levels 1 6  example  H1 H2 H6 typora  input    s followed title content  press Return key will create header  Blockquotes     Markdown uses email style   characters block quoting  presented as    blockquote two paragraphs  first paragraph      second pragraph Vestibulum enim wisi  viverra nec  fringilla in  laoreet vitae  risus      blockquote one paragraph  three empty line seperate two blockquote                  typora  just input     followed quote contents block quote generated  Typora will insert proper     line break you  Block quote inside anther block quote allowed adding additional levels      Lists         Input   list item 1 will create un ordered list    symbol replace      Input 1  list item 1 will create ordered list  markdown source code like  Red Green Blue Red Green Blue Task List       Task lists lists items marked either      x   incomplete complete   example      task list item     list syntax required     normal formatting   mentions   1234 refs     incomplete  x  completed change complete incomplete state click checkbox item  Syntax Highlighting       function helloWorld      alert  Hello  World      public class HelloWorld   public static void main String   args    System out println  Hello  World         Math Blocks      render LaTeX mathematical expressions using MathJax  Input     press  Return  key will trigger input field accept Tex LaTex source  Following example      mathbf V 1  times  mathbf V 2    begin vmatrix   mathbf i     mathbf j     mathbf k      frac  partial X   partial u     frac  partial Y   partial u    0     frac  partial X   partial v     frac  partial Y   partial v    0     end vmatrix     markdown source file  math block LaTeX expression wrapped      mark      mathbf V 1  times  mathbf V 2    begin vmatrix   mathbf i     mathbf j     mathbf k      frac  partial X   partial u     frac  partial Y   partial u    0     frac  partial X   partial v     frac  partial Y   partial v    0     end vmatrix     Tables     Input   First Header   Second Header   press return key will create table two column  table created  focus table will pop toolbar table  resize  align  delete table  use context menu copy add delete column row  Following descriptions skipped  markdown source code tables generated typora automatically  markdown source code  look like    Name   Markdown   HTML tag                                                                        Emphasis   Emphasis          Strong   Strong          code    code         Strikethrough   Strikethrough   Underline   underline         Name   Markdown   HTML tag                                                                        Emphasis   Emphasis          Strong   Strong       code     code         Strikethrough   Strikethrough   Underline   underline       Footnotes     create footnotes this    text footnote  will produce  create footnotes this    text footnote  Mouse  footnote  superscript content footnote  Horizontal Rules      Input       blank line press return will draw horizontal line  Links      Markdown supports two style links  inline reference  styles  link text delimited  square brackets   create inline link  use set regular parentheses immediately link text s closing square bracket  Inside parentheses  put URL want link point  along optional title link  surrounded quotes  example  example inline link  link no title attribute  will produce  example inline link   This   link no title attribute   This link no  Internal Links       set href headers  will create bookmark allow jump section clicking  example  Command on Windows  Ctrl    Click link will jump header Block Elements  write that  please move cursor click link   key pressed expand element markdown source  Reference Links       Reference style links use second set square brackets  inside place label choosing identify link  example reference style link  Then  anywhere document  define link label this  line itself   id   http   example com   Optional Title Here  typora  will rendered like  example reference style link   id   http   example com   Optional Title Here  implicit link name shortcut allows omit name link  case link text itself used name  Just use empty set square brackets   e g   link word  Google  google com web site  simply write  Google define link   Google   http   google com  typora click link will expand editing  command click will open hyperlink web browser  URLs T",
+        "objectID": "post/Hello-World",
+        "date": "2020-04-16T06:11:22.000Z",
+        "lastmod": "2020-04-16T06:11:22.000Z",
+        "draft": false,
+        "description": "",
+        "tags": [],
+        "categories": [],
+        "keywords": [],
+        "author": "Typora",
+        "weight": 1,
+        "comment": true,
+        "toc": true,
+        "autoCollapseToc": true,
+        "contentCopyright": false,
+        "reward": true,
+        "mathjax": false
+    },
+    {
+        "title": "Image Preview",
+        "uri": "post/image-preview",
+        "content": "Thanks liwenyip hugo easy gallery   Zebradil   Pull Request  48   Now  use      shortcode hugo theme jane  Normal Image image static image folder       shortcode figure image title      figure image caption           shortcode usage Specifying image files       will use thumb jpg thumbnail image jpg lightbox           will use image jpg thumbnail lightbox      will use image small jpg thumbnail image jpg lightbox Optional parameters  features parameters Hugo s built in figure shortcode work normal  i e  src  link  title  caption  class  attr  attribution   attrlink  alt size  e g  size  1024x768   pre defines image size PhotoSwipe  Use option don t want pre load linked image determine its size  class allows set custom classes want    tag  Optional parameters standalone      shortcodes  i e  don t use      inside        strange things may happen do   caption position caption effect work      shortcode  see below   width defines max width image displayed page  using thumbnail standalone figure  set equal thumbnail s native width captions behave properly  or feel free better solution submit pull request       use option don t thumbnail don t want hi res image entire width screen container  class  no photoswipe  prevents    loaded PhotoSwipe  click figure you ll instead good ol  fashioned hyperlink bigger image  or   haven t specified bigger image   one        shortcode simple gallery specify directory image files       images automatically captioned file name   image  jpg used hi res image   image  thumb jpg used thumbnails   image  thumb jpg doesn t exist   image  jpg will used hi res thumbnail images  default thumbnail suffix  thumb  specify different one e g  thumb   small  thumb  _150x150   specify individual image files                          Optional parameters  caption position   determines captions  position image  Options  bottom  default  center none hides captions page  they will show PhotoSwipe  caption effect   determines if how captions appear upon hover  Options  slide  default  fade none  captions always visible  hover effect   determines if how images change upon hover  Options  zoom  default  grow shrink slideup slidedown none hover transition   determines if how images change upon hover  Options  not set   smooth transition  default  none   hard transition",
+        "objectID": "post/image-preview",
+        "date": "2018-03-03T08:01:23.000Z",
+        "lastmod": "2018-03-04T08:01:23.000Z",
+        "draft": false,
+        "tags": [
+            "preview",
+            "image",
+            "shortcodes",
+            "tag-7"
+        ],
+        "categories": [
+            "docs",
+            "shortcodes",
+            "index"
+        ],
+        "menu": {
+            "main": {
+                "parent": "docs",
+                "weight": 3
+            }
+        }
+    },
+    {
+        "title": "Shortcodes Preview",
+        "uri": "post/shortcodes-preview",
+        "content": "Shortcode Hugo loves Markdown its simple content format  times when Markdown falls short  Often  content authors forced add raw HTML  e g   video     Markdown content  think contradicts beautiful simplicity Markdown s syntax  Hugo created shortcodes circumvent limitations  shortcode simple snippet inside content file Hugo will render using predefined template  Note shortcodes will not work template files  need type drop in functionality shortcodes provide template  likely want partial template instead  addition cleaner Markdown  shortcodes updated time reflect new classes  techniques  standards  point site generation  Hugo shortcodes will easily merge changes  avoid possibly complicated search replace operation  details  https   gohugo io content management shortcodes  blockquotes Normal quote       simple quote       Quote author       quote Author named Author2       Quote author source       quote Author3 source  source        Quote author link       quote Author4 links https   www google com       Quote author  link title       quote Author5 links https   www google com title  Google        Quote author link longer 32 characters  string first cut 32 characters everything last forward slash removed      quote Author5 links https   twitter com CryptoGangsta status 716427930126196737 longer 32 characters  new line quote HTML br tag       Test Octopress blockquote page at  http   octopress org docs plugins blockquote       past 24 hours I ve reflecting life   I ve realized one thing  need medieval battle axe       music     music  http   39 99 144 153 remote php webdav Don 20Diablo 20  20On 20My 20Mind 20 Radio 20Edit  mp3      gist  1  embed gist content via username gist ID pulled URL       Display       expand Expand shortcode displays expandable collapsible section text page  example      Yes         Usage shortcode takes exactly one optional parameter define text appears next expand collapse icon   default  Click expand        Yes         youtube      vimeo      youku",
+        "objectID": "post/shortcodes-preview",
+        "date": "2018-03-04T08:01:23.000Z",
+        "lastmod": "2018-03-05T08:01:23.000Z",
+        "draft": false,
+        "tags": [
+            "preview",
+            "shortcodes",
+            "tag-6"
+        ],
+        "categories": [
+            "docs",
+            "shortcodes",
+            "index"
+        ],
+        "author": "AGou",
+        "menu": {
+            "main": {
+                "parent": "docs",
+                "weight": 2
+            }
+        }
+    }
+]
