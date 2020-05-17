@@ -161,7 +161,7 @@ defaultContentLanguage = "en"           # Default language to use
     placeholder = ''
 
   [params.search.google]    # google custom search, see https://cse.google.com
-    enable = true
+    enable = false
     id = "014008465090960597240:ar8pzzlyhgc"
     title = "Search"
 
