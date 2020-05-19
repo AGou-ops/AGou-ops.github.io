@@ -61,9 +61,13 @@ defaultContentLanguage = "en"           # Default language to use
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
-  name = "myStudyNote"
+  name = "myDocs"
   weight = 50
-  url = "https://agou-ops.github.io/myStudyNote/"
+  url = "https://agou-ops.top/beforeWork"
+[[menu.main]]
+  name = "myStudyNote"
+  weight = 60
+  url = "https://agou-ops.top/myStudyNote/"
 
 
 [params]
