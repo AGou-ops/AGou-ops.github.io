@@ -1,4 +1,368 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 16 Apr 2020 14:01:47 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://agou-ops.top/post/hello-world/</link><pubDate>Thu, 16 Apr 2020 14:11:22 +0800</pubDate><guid>https://agou-ops.top/post/hello-world/</guid><description>&lt;p>&lt;strong>Markdown&lt;/strong> is created by &lt;a href="http://daringfireball.net/">Daring Fireball&lt;/a>, the original guideline is &lt;a href="http://daringfireball.net/projects/markdown/syntax">here&lt;/a>. Its syntax, however, varies between different parsers or editors.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 16 Apr 2020 14:01:47 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Thu, 16 Apr 2020 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>这个人一点也不神秘,只是有点懒罢了.&lt;/p></description></item><item><title>WireGuard VPN for Ubuntu</title><link>https://agou-ops.top/post/wireguard-vpn-for-ubuntu/</link><pubDate>Tue, 19 May 2020 12:14:24 +0800</pubDate><guid>https://agou-ops.top/post/wireguard-vpn-for-ubuntu/</guid><description>&lt;h2 id="wireguard-简介">WireGuard 简介&lt;/h2>
+&lt;p>​ WireGuard是具有最新加密技术的现代VPN（虚拟专用网）技术。与IPsec和OpenVPN等其他类似解决方案相比，WireGuard更快，更易于配置且性能更高。它是一个跨平台，几乎可以在任何地方运行，包括Linux，Windows，Android和macOS。 Wireguard是对等VPN。它不使用客户端-服务器模型。根据其配置，对等方可以充当传统的服务器或客户端。 WireGuard通过在充当隧道的每个对等设备上创建网络接口来工作。对等体通过交换和验证公共密钥（类似于SSH模型）来相互认证。公钥与隧道中允许的IP地址列表进行映射。 VPN流量封装在UDP中。在本教程中，我们将在充当VPN服务器的Ubuntu 18.04计算机上设置WireGuard。我们还将向您展示如何将WireGuard配置为客户端。客户端的流量将通过Ubuntu 18.04服务器进行路由。此设置可用于防御中间人攻击，匿名浏览网络，绕过受地域限制的内容，或允许您的同事在远程工作时安全地连接到公司网络。&lt;/p>
+&lt;h2 id="wg安装">WG安装&lt;/h2>
+&lt;ol>
+&lt;li>更新软件包列表，并安装管理系统存储库所需的工具：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo apt update
+sudo apt install software-properties-common
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>添加 WireGuard 仓库：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo add-apt-repository ppa:wireguard/wireguard
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>出现提示时，按Enter键继续。 add-apt-repository也将自动更新软件包列表。&lt;/p>
+&lt;ol start="3">
+&lt;li>安装WireGuard软件包：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo apt install wireguard
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>WireGuard作为内核模块运行，该模块被编译为&lt;code>DKMS&lt;/code>模块。成功完成后，您将看到以下输出：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">wireguard:
+Running module version sanity check.
+- Original module
+- No original module exists within this kernel
+- Installation
+- Installing to /lib/modules/4.15.0-88-generic/updates/dkms/
+depmod...
+DKMS: install completed.
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>更新内核时，需要将针对新内核编译WireGuard模块。&lt;/p>
+&lt;h2 id="配置wg">配置WG&lt;/h2>
+&lt;p>WireGuard 程序包附带了两个名为&lt;code>wg&lt;/code>和&lt;code>wg-quick&lt;/code>的命令行工具，可用于配置和管理WireGuard接口。&lt;/p>
+&lt;p>运行以下命令以生成公钥和私钥：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wg genkey &lt;span class="p">|&lt;/span> sudo tee /etc/wireguard/privatekey &lt;span class="p">|&lt;/span> wg pubkey &lt;span class="p">|&lt;/span> sudo tee /etc/wireguard/publickey
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>ℹ️ 公私钥放置于&lt;code>/etc/wireguard&lt;/code>目录,其中私钥绝对不能与任何人共享&lt;/p>
+&lt;p>生成密钥后，我们需要配置路由VPN的隧道设备&lt;/p>
+&lt;p>可以使用ip和wg从命令行设置设备，也可以使用文本编辑器创建配置文件。&lt;/p>
+&lt;p>创建一个名为&lt;code>wg0.conf&lt;/code>(文件名可以随意)的新文件，并添加以下内容：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">cat &amp;gt;&amp;gt; /etc/wireguard/wg0.conf &lt;span class="s">&amp;lt;&amp;lt; EOF
+&lt;/span>&lt;span class="s">[Interface]
+&lt;/span>&lt;span class="s">Address = 192.168.159.0/24 # 填写网络地址段
+&lt;/span>&lt;span class="s">SaveConfig = true # 关闭时，接口的当前状态将保存到配置文件中
+&lt;/span>&lt;span class="s">ListenPort = 51820 # 监听端口
+&lt;/span>&lt;span class="s">PrivateKey = QNKQCtPo2E5saDnXORaIORhZH6NtcvIJPHqF9EdEL1o= # 私钥文件,即/etc/wireguard/privatekey
+&lt;/span>&lt;span class="s">PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE # 在启动之前执行的命令或脚本,使用iptables启用伪装,允许流量离开服务器，从而使VPN客户端可以访问Internet。
+&lt;/span>&lt;span class="s">PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o ens33 -j MASQUERADE # 在启动之后执行的命令或脚本,接口关闭后，iptables规则将被删除
+&lt;/span>&lt;span class="s">EOF&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>修改&lt;code>privatekey&lt;/code>和&lt;code>wg0.conf&lt;/code>的权限, 保证其安全性：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo chmod &lt;span class="m">600&lt;/span> /etc/wireguard/&lt;span class="o">{&lt;/span>privatekey,wg0.conf&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>完成后，使用配置文件中指定的属性启动&lt;code>wg0&lt;/code>接口：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo wg-quick up wg0
+* 输出内容如下所示:
+&lt;span class="o">[&lt;/span>&lt;span class="c1">#] ip link add wg0 type wireguard&lt;/span>
+&lt;span class="o">[&lt;/span>&lt;span class="c1">#] wg setconf wg0 /dev/fd/63&lt;/span>
+&lt;span class="o">[&lt;/span>&lt;span class="c1">#] ip -4 address add 192.168.159.0/24 dev wg0&lt;/span>
+&lt;span class="o">[&lt;/span>&lt;span class="c1">#] ip link set mtu 1420 up dev wg0&lt;/span>
+&lt;span class="o">[&lt;/span>&lt;span class="c1">#] iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行&lt;code>wg show wg0&lt;/code>检查接口状态和配置：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo wg show wg0
+* 输出内容如下所示:
+interface: wg0
+public key: &lt;span class="nv">uD6Xex2eP5CEUVcVP3EZB5csh2JReWXthoVZMzURwCQ&lt;/span>&lt;span class="o">=&lt;/span>
+private key: &lt;span class="o">(&lt;/span>hidden&lt;span class="o">)&lt;/span>
+listening port: &lt;span class="m">51820&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>也可以运行&lt;code>ip a show wg0&lt;/code>来验证接口状态：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ ip a show wg0
+* 输出内容如下所示:
+4: wg0: &amp;lt;POINTOPOINT,NOARP,UP,LOWER_UP&amp;gt; mtu &lt;span class="m">1420&lt;/span> qdisc noqueue state UNKNOWN group default qlen &lt;span class="m">1000&lt;/span>
+link/none
+inet 192.168.159.0/24 scope global wg0
+valid_lft forever preferred_lft forever
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>设置wireguard 开机自启:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo systemctl &lt;span class="nb">enable&lt;/span> wg-quick@wg0
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="服务器网络和防火墙配置">服务器网络和防火墙配置&lt;/h2>
+&lt;p>为了使&lt;code>NAT&lt;/code>正常工作，我们需要启用IP转发，打开&lt;code>/etc/sysctl.conf&lt;/code>文件，并添加或取消注释以下行：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">...
+net.ipv4.ip_forward&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
+...
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>修改完成之后, 执行&lt;code>sudo sysctl -p&lt;/code>使配置永久生效&lt;/p>
+&lt;p>如果你使用&lt;code>UFW&lt;/code>来管理防火墙，则需要在端口51820上打开UDP通信：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo ufw allow 51820/udp
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>至此,WG SERVER 已完成配置&lt;/p>
+&lt;h2 id="客户端配置">客户端配置&lt;/h2>
+&lt;h3 id="linux--macos">Linux &amp;amp; macOS&lt;/h3>
+&lt;p>去往官方下载站点(&lt;a href="https://wireguard.com/install/),">https://wireguard.com/install/),&lt;/a> 查看如何安装WireGuard&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>macOS App Store: &lt;a href="https://apps.apple.com/us/app/wireguard/id1441195209?ls=1">https://apps.apple.com/us/app/wireguard/id1441195209?ls=1&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;h4 id="ubuntu--1904-modulehttpslaunchpadnetwireguardarchiveubuntuwireguard--v1020200413--toolshttpslaunchpadnetwireguardarchiveubuntuwireguard--v1020200319">Ubuntu ≤ 19.04 [&lt;a href="https://launchpad.net/~wireguard/+archive/ubuntu/wireguard">module&lt;/a> – v1.0.20200413 &amp;amp; &lt;a href="https://launchpad.net/~wireguard/+archive/ubuntu/wireguard">tools&lt;/a> – v1.0.20200319]&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ sudo add-apt-repository ppa:wireguard/wireguard
+$ sudo apt-get update
+$ sudo apt-get install wireguard
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>设置Linux和macOS客户端过程基本相同, 首先生成公钥与私钥&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wg genkey &lt;span class="p">|&lt;/span> sudo tee /etc/wireguard/privatekey &lt;span class="p">|&lt;/span> wg pubkey &lt;span class="p">|&lt;/span> sudo tee /etc/wireguard/publickey
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>创建&lt;code>/etc/wireguard/wg0.conf&lt;/code>并添加以下内容:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>Interface&lt;span class="o">]&lt;/span>
+&lt;span class="nv">PrivateKey&lt;/span> &lt;span class="o">=&lt;/span> CLIENT_PRIVATE_KEY &lt;span class="c1"># /etc/wireguard/privatekey&lt;/span>
+&lt;span class="nv">Address&lt;/span> &lt;span class="o">=&lt;/span> 192.168.43.0/24
+&lt;span class="o">[&lt;/span>Peer&lt;span class="o">]&lt;/span>
+&lt;span class="nv">PublicKey&lt;/span> &lt;span class="o">=&lt;/span> SERVER_PUBLIC_KEY &lt;span class="c1"># /etc/wireguard/publickey&lt;/span>
+&lt;span class="nv">Endpoint&lt;/span> &lt;span class="o">=&lt;/span> SERVER_IP_ADDRESS:51820 &lt;span class="c1"># 对方wireguard server的ip和端口&lt;/span>
+&lt;span class="nv">AllowedIPs&lt;/span> &lt;span class="o">=&lt;/span> 0.0.0.0/0
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="windows">Windows&lt;/h3>
+&lt;p>直接下载客户端工具: &lt;a href="https://download.wireguard.com/windows-client/wireguard-amd64-0.1.0.msi">https://download.wireguard.com/windows-client/wireguard-amd64-0.1.0.msi&lt;/a>&lt;/p>
+&lt;p>安装好软件之后, 点击左下角的&lt;code>Add Tunnel&lt;/code>, 创建一个新的隧道&lt;code>Create new tunnel&lt;/code>&lt;/p>
+&lt;p>&lt;code>name&lt;/code>随便起喽, 内容如下:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>Interface&lt;span class="o">]&lt;/span>
+&lt;span class="nv">PrivateKey&lt;/span> &lt;span class="o">=&lt;/span> MOeXEby5OG1xQBCP9AJEJEsxmxYDG1FHHzlcOgi/ClI&lt;span class="o">=&lt;/span>
+&lt;span class="nv">Address&lt;/span> &lt;span class="o">=&lt;/span> 192.168.43.0/24
+&lt;span class="o">[&lt;/span>Peer&lt;span class="o">]&lt;/span>
+&lt;span class="nv">PublicKey&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">uD6Xex2eP5CEUVcVP3EZB5csh2JReWXthoVZMzURwCQ&lt;/span>&lt;span class="o">=&lt;/span> &lt;span class="c1"># 服务器端公钥&lt;/span>
+&lt;span class="nv">Endpoint&lt;/span> &lt;span class="o">=&lt;/span> 192.168.159.132:51820 &lt;span class="c1"># 服务器ip以及端口&lt;/span>
+&lt;span class="nv">AllowedIPs&lt;/span> &lt;span class="o">=&lt;/span> 0.0.0.0/0
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://s1.ax1x.com/2020/04/20/JQBW4K.png" alt="wg">&lt;/p>
+&lt;h2 id="将客户端对等方添加到服务器">将客户端对等方添加到服务器&lt;/h2>
+&lt;p>最后一步是将客户端公钥和IP地址添加到服务器：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># sudo wg set wg0 peer CLIENT_PUBLIC_KEY allowed-ips 10.0.0.2&lt;/span>
+sudo wg &lt;span class="nb">set&lt;/span> wg0 peer T5ZTibLaWh9/3EzA1ZfCdiojM0HfXvh99mfVlqHpaU0&lt;span class="o">=&lt;/span> allowed-ips 192.168.43.0/24
+sudo wg &lt;span class="nb">set&lt;/span> wg0 peer UqF/BDwShHFulAUN4yx0latMIiIW0Cbb+IuNHEYEBj0&lt;span class="o">=&lt;/span> allowed-ips 192.168.43.0/24
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>确保使用在客户端计算机上生成的公用密钥·（&lt;code>sudo cat /etc/wireguard/publickey&lt;/code>）·更改&lt;code>CLIENT_PUBLIC_KEY&lt;/code>并调整客户端IP地址（如果不同的话），Windows用户可以从WireGuard软件当中复制公钥&lt;/p>
+&lt;h3 id="linux-和-macos-客户端">Linux 和 macos 客户端&lt;/h3>
+&lt;p>在Linux客户端上，运行以下命令以打开界面：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo wg-quick up wg0
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>现在，应该已连接到Ubuntu服务器，并且来自客户端计算机的流量应通过该服务器进行路由，可以使用以下方法检查连接：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo wg
+* 输出内容如下所示：
+interface: wg0
+public key: sZThYo/0oECwzUsIKTa6LYXLhk+Jb/nqK4kCCP2pyFg&lt;span class="o">=&lt;/span>
+private key: &lt;span class="o">(&lt;/span>hidden&lt;span class="o">)&lt;/span>
+listening port: &lt;span class="m">48052&lt;/span>
+fwmark: 0xca6c
+peer: r3imyh3MCYggaZACmkx+CxlD6uAmICI8pe/PGq8+qCg&lt;span class="o">=&lt;/span>
+endpoint: XXX.XXX.XXX.XXX:51820
+allowed ips: 0.0.0.0/0
+latest handshake: &lt;span class="m">1&lt;/span> minute, &lt;span class="m">22&lt;/span> seconds ago
+transfer: 58.43 KiB received, 70.82 KiB sent
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>停止和关闭隧道：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo wg-quick down wg0
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="windows-客户端">Windows 客户端&lt;/h3>
+&lt;p>点击软件上的&lt;code>Activate&lt;/code> 即可&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/04/20/JQBuAP.png" alt="wg-2">&lt;/p>
+&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;ul>
+&lt;li>wireguard Quick Start : &lt;a href="https://www.wireguard.com/quickstart/">https://www.wireguard.com/quickstart/&lt;/a>&lt;/li>
+&lt;li>wireguard Install : &lt;a href="https://www.wireguard.com/install/">https://www.wireguard.com/install/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Hello World</title><link>https://agou-ops.top/post/hello-world/</link><pubDate>Thu, 16 Apr 2020 14:11:22 +0800</pubDate><guid>https://agou-ops.top/post/hello-world/</guid><description>&lt;p>&lt;strong>Markdown&lt;/strong> is created by &lt;a href="http://daringfireball.net/">Daring Fireball&lt;/a>, the original guideline is &lt;a href="http://daringfireball.net/projects/markdown/syntax">here&lt;/a>. Its syntax, however, varies between different parsers or editors.&lt;/p>
 &lt;p>Please note that HTML fragments in markdown source will be recognized but not parsed or rendered. Also, there may be small reformatting on the original markdown source code after saving.&lt;/p>
 &lt;h2 id="paragraph-and-line-breaks段落与换行">Paragraph and line breaks(段落与换行)&lt;/h2>
 &lt;p>A paragraph is simply one or more consecutive lines of text. In markdown source code, paragraphs are separated by more than one blank lines. In Typora, you only need to press &lt;code>Return&lt;/code> to create a new paragraph.&lt;/p>
@@ -411,7 +775,7 @@ And then define the link:
 &lt;p>Here is the &lt;em>text&lt;/em> of the &lt;strong>footnote&lt;/strong>. &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Thu, 16 Apr 2020 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>这个人一点也不神秘,只是有点懒罢了.&lt;/p></description></item><item><title>Shortcodes Preview</title><link>https://agou-ops.top/post/shortcodes-preview/</link><pubDate>Sun, 04 Mar 2018 16:01:23 +0800</pubDate><guid>https://agou-ops.top/post/shortcodes-preview/</guid><description>&lt;h2 id="what-a-shortcode-is">What a Shortcode is&lt;/h2>
+&lt;/section></description></item><item><title>Shortcodes Preview</title><link>https://agou-ops.top/post/shortcodes-preview/</link><pubDate>Sun, 04 Mar 2018 16:01:23 +0800</pubDate><guid>https://agou-ops.top/post/shortcodes-preview/</guid><description>&lt;h2 id="what-a-shortcode-is">What a Shortcode is&lt;/h2>
 &lt;p>Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;code>&amp;lt;iframes&amp;gt;&lt;/code>) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&amp;rsquo;s syntax.&lt;/p>
 &lt;p>Hugo created &lt;strong>shortcodes&lt;/strong> to circumvent these limitations.&lt;/p>
 &lt;p>A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.&lt;/p>
