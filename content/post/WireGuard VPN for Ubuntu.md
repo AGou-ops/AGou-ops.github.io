@@ -5,7 +5,7 @@ lastmod: 2020-05-19T12:14:24+08:00
 draft: false
 description: ""
 tags: ['VPN','WireGuard','Ubuntu']
-categories: ['VPN','WireGuard','Ubuntu']
+categories: ['VPN','Ubuntu']
 keywords: []
 
 author: "AGou-ops"
@@ -28,7 +28,6 @@ mathjax: false
 ## WireGuard 简介
 
 ​		WireGuard是具有最新加密技术的现代VPN（虚拟专用网）技术。与IPsec和OpenVPN等其他类似解决方案相比，WireGuard更快，更易于配置且性能更高。它是一个跨平台，几乎可以在任何地方运行，包括Linux，Windows，Android和macOS。 Wireguard是对等VPN。它不使用客户端-服务器模型。根据其配置，对等方可以充当传统的服务器或客户端。 WireGuard通过在充当隧道的每个对等设备上创建网络接口来工作。对等体通过交换和验证公共密钥（类似于SSH模型）来相互认证。公钥与隧道中允许的IP地址列表进行映射。 VPN流量封装在UDP中。在本教程中，我们将在充当VPN服务器的Ubuntu 18.04计算机上设置WireGuard。我们还将向您展示如何将WireGuard配置为客户端。客户端的流量将通过Ubuntu 18.04服务器进行路由。此设置可用于防御中间人攻击，匿名浏览网络，绕过受地域限制的内容，或允许您的同事在远程工作时安全地连接到公司网络。
-
 <!--more-->
 
 ## WG安装
@@ -277,6 +276,11 @@ sudo wg-quick down wg0
 点击软件上的`Activate` 即可
 
 ![wg-2](https://s1.ax1x.com/2020/04/20/JQBuAP.png)
+
+## 一键安装 wireguard
+
+* https://github.com/angristan/wireguard-install
+* https://github.com/l-n-s/wireguard-install
 
 ## 参考链接
 
