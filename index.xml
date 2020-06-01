@@ -1,4 +1,237 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 16 Apr 2020 14:01:47 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Thu, 16 Apr 2020 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>这个人一点也不神秘,只是有点懒罢了.&lt;/p></description></item><item><title>Scrcpy Android投屏神器</title><link>https://agou-ops.top/post/scrcpy-android%E6%8A%95%E5%B1%8F%E7%A5%9E%E5%99%A8/</link><pubDate>Thu, 28 May 2020 20:22:13 +0800</pubDate><guid>https://agou-ops.top/post/scrcpy-android%E6%8A%95%E5%B1%8F%E7%A5%9E%E5%99%A8/</guid><description>&lt;h2 id="scrcpy-简介">Scrcpy 简介&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 16 Apr 2020 14:01:47 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Thu, 16 Apr 2020 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>这个人一点也不神秘,只是有点懒罢了.&lt;/p></description></item><item><title>Linux生成随机数</title><link>https://agou-ops.top/post/linux%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</link><pubDate>Mon, 01 Jun 2020 10:01:51 +0800</pubDate><guid>https://agou-ops.top/post/linux%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid><description>&lt;p>[TOC]&lt;/p>
+&lt;h2 id="通过-openssl-生成">通过 openssl 生成&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> openssl rand -base64 &lt;span class="m">3&lt;/span>
+xsSp
+&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> openssl rand -base64 &lt;span class="m">8&lt;/span>
+&lt;span class="nv">8SlHCsBAiYw&lt;/span>&lt;span class="o">=&lt;/span>
+&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> openssl rand -base64 &lt;span class="m">10&lt;/span>
+&lt;span class="nv">nUzBw8ngKGGqWw&lt;/span>&lt;span class="o">==&lt;/span>
+&lt;span class="sb">`&lt;/span>openssl rand -base64 32&lt;span class="p">|&lt;/span>tr A-Z a-z&lt;span class="p">|&lt;/span>cut -c 1-10&lt;span class="sb">`&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="使用-date-命令生成">使用 date 命令生成&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> date +%s
+&lt;span class="m">1539071518&lt;/span>
+&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> date +%N
+&lt;span class="m">801398716&lt;/span>
+&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> date +%s%N
+&lt;span class="m">1539071555311467855&lt;/span>
+&lt;span class="sb">`&lt;/span>date +%s &lt;span class="p">|&lt;/span>sha256sum &lt;span class="p">|&lt;/span>base64 &lt;span class="p">|&lt;/span>head -c &lt;span class="m">10&lt;/span> &lt;span class="p">;&lt;/span>&lt;span class="nb">echo&lt;/span>&lt;span class="sb">`&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="使用-md5sum-生成随机数">使用 md5sum 生成随机数&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">date &lt;span class="p">|&lt;/span> md5sum
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="使用-dd-命令生成随机数">使用 dd 命令生成随机数&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">dd &lt;span class="k">if&lt;/span>&lt;span class="o">=&lt;/span>/dev/urandom &lt;span class="nv">bs&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span> &lt;span class="nv">count&lt;/span>&lt;span class="o">=&lt;/span>15&lt;span class="p">|&lt;/span>base64 -w &lt;span class="m">0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="通过devrandom设备产生uuid">通过/dev/random设备产生uuid&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> cat /proc/sys/kernel/random/uuid
+a3dfb0f2-f893-4e57-9d67-184a88d4cb5d
+&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> cat /proc/sys/kernel/random/uuid &lt;span class="p">|&lt;/span>cut -c 1-8
+b80c60d8
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="使用系统环境变量-random">使用系统环境变量 RANDOM&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="nv">$RANDOM&lt;/span>
+&lt;span class="m">14535&lt;/span>
+&lt;span class="c1">##说明：linux系统下的环境变量$RANDOM的取值范围是：0–32767 。&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol>
+&lt;li>产生0-25范围内的数，用这个环境变量对26取余即可。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="k">$((&lt;/span>&lt;span class="nv">$RANDOM&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="m">26&lt;/span>&lt;span class="k">))&lt;/span>
+&lt;span class="m">6&lt;/span>
+&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="k">$((&lt;/span>RANDOM%26&lt;span class="k">))&lt;/span>
+&lt;span class="m">11&lt;/span>
+&lt;span class="c1">##说明：第二个表达式RANDOM前面无$符号好像也可以。&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>产生6位数的整数，用这个环境变量加上100000即可。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="k">$((&lt;/span>&lt;span class="nv">$RANDOM&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="m">100000&lt;/span>&lt;span class="k">))&lt;/span>
+&lt;span class="m">117482&lt;/span>
+&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="k">$((&lt;/span>RANDOM+100000&lt;span class="k">))&lt;/span>
+&lt;span class="m">126058&lt;/span>
+&lt;span class="c1">##说明：第二个表达式RANDOM前面无$符号好像也可以。&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>产生加密的随机数码，将随机数管道给命令md5sum命令即可。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="nv">$RANDOM&lt;/span> &lt;span class="p">|&lt;/span>md5sum
+6ee8cd13547eb044ad13ba014573af6f -
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="4">
+&lt;li>需要固定位数的随机数码，将随机数管道给命令md5sum命令再管道给cut命令即可。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@myhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="nv">$RANDOM&lt;/span> &lt;span class="p">|&lt;/span>md5sum&lt;span class="p">|&lt;/span>cut -c 1-8
+de3cfe23
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="使用第三方工具">使用第三方工具&lt;/h2>
+&lt;ol>
+&lt;li>expect 非交互式程序控制下用&lt;code>mkpasswd&lt;/code>命令：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum install -y expect
+mkpasswd -l 7 &lt;span class="c1"># 生成七位密码包含大小写加特殊字符&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>使用&lt;code>pwgen&lt;/code>生成随机可读的密码：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum install pwgen
+&lt;span class="c1"># 生成长度8，含有数字，含有大小写字母的密码4个，列打印&lt;/span>
+pwgen -ncC &lt;span class="m">8&lt;/span> &lt;span class="m">4&lt;/span>
+&lt;span class="c1"># 生成长度8，含有数字，含有小写字母，不包含歧义的密码4个，列打印&lt;/span>
+pwgen -nABC &lt;span class="m">8&lt;/span> &lt;span class="m">4&lt;/span>
+&lt;span class="c1"># 生成长度16，含有数字，含有大小写字母，含有特殊字符的密码8个，行打印&lt;/span>
+pwgen -ncy1 &lt;span class="m">16&lt;/span> &lt;span class="m">8&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>参数说明：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-c or –capitalize&lt;/code>密码中至少包含一个大写字母&lt;/li>
+&lt;li>&lt;code>-A or –no-capitalize&lt;/code>密码中不包含大写字母&lt;/li>
+&lt;li>&lt;code>-n or –numerals&lt;/code>密码中至少包含一个数字&lt;/li>
+&lt;li>&lt;code>-0 or –no-numerals&lt;/code>密码中不包含数字&lt;/li>
+&lt;li>&lt;code>-y or –symbols&lt;/code>密码中至少包含一个特殊符号&lt;/li>
+&lt;li>&lt;code>-s or –secure&lt;/code>生成完全随机密码&lt;/li>
+&lt;li>&lt;code>-B or –ambiguous&lt;/code>密码中不包含歧义字符（例如1,l,O,0）&lt;/li>
+&lt;li>&lt;code>-H or –sha1=path/to/file[#seed]&lt;/code>使用SHA1 hash给定的文件作为一个随机种子&lt;/li>
+&lt;li>&lt;code>-C&lt;/code>在列中打印生成的密码&lt;/li>
+&lt;li>&lt;code>-1&lt;/code>不要在列中打印生成的密码，即一行一个密码&lt;/li>
+&lt;li>&lt;code>-v or –no-vowels&lt;/code>不要使用任何元音，以避免偶然的脏话&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>其他第三方工具：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">randpw、spw、gpg、xkcdpass
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.csdn.net/yuki5233/article/details/82997001">https://blog.csdn.net/yuki5233/article/details/82997001&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Scrcpy Android投屏神器</title><link>https://agou-ops.top/post/scrcpy-android%E6%8A%95%E5%B1%8F%E7%A5%9E%E5%99%A8/</link><pubDate>Thu, 28 May 2020 20:22:13 +0800</pubDate><guid>https://agou-ops.top/post/scrcpy-android%E6%8A%95%E5%B1%8F%E7%A5%9E%E5%99%A8/</guid><description>&lt;h2 id="scrcpy-简介">Scrcpy 简介&lt;/h2>
 &lt;p>应用程序可显示和控制通过USB（或通过TCP / IP）连接的Android设备。它不需要任何根访问权限。它适用于GNU / Linux，Windows和macOS。&lt;/p>
 &lt;p>github地址：&lt;a href="https://github.com/Genymobile/scrcpy">https://github.com/Genymobile/scrcpy&lt;/a>&lt;/p>
 &lt;h2 id="配置环境">配置环境&lt;/h2>
