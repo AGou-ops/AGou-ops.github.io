@@ -1,9 +1,9 @@
 ---
 title: "Shortcodes Preview"
-date: 2018-03-04T16:01:23+08:00
-lastmod: 2018-03-05T16:01:23+08:00
+date: 2019-03-04T16:01:23+08:00
+lastmod: 2019-03-05T16:01:23+08:00
 draft: false
-tags: ["preview", "shortcodes", "tag-6"]
+tags: ["preview", "shortcodes"]
 categories: ["docs", "shortcodes", "index"]
 author: "AGou"
 menu:
