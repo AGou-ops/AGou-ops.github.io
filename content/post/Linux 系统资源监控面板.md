@@ -295,7 +295,7 @@ Zendesk
 
 官方开源仓库：[https://github.com/aristocratos/bashtos](https://github.com/aristocratos/bashtos)
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop.png "截图")
+![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop.png "截图")
 
 主菜单：
 ![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop-1.png "主菜单")
