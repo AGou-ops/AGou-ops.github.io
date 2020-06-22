@@ -5,7 +5,7 @@ lastmod: 2020-06-12T19:40:55+08:00
 draft: false
 description: ""
 tags: ['Linux','监控']
-categories: ['Linux']
+categories: ['Linux','Tools']
 keywords: []
 
 author: "AGou-ops"

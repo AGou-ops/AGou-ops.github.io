@@ -3,8 +3,8 @@ title: "Image Preview"
 date: 2019-03-03T16:01:23+08:00
 lastmod: 2019-03-04T16:01:23+08:00
 draft: false
-tags: ["preview", "image", "shortcodes"]
-categories: ["docs", "shortcodes", "index"]
+tags: []
+categories: []
 
 menu:
   main:

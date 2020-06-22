@@ -3,9 +3,9 @@ title: "Shortcodes Preview"
 date: 2019-03-04T16:01:23+08:00
 lastmod: 2019-03-05T16:01:23+08:00
 draft: false
-tags: ["preview", "shortcodes"]
-categories: ["docs", "shortcodes", "index"]
-author: "AGou"
+tags: []
+categories: []
+author: "AGou-ops"
 menu:
   main:
     parent: "docs"

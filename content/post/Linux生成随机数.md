@@ -1,5 +1,5 @@
 ---
-title: "Linux生成随机数"
+title: "Linux 生成随机数"
 date: 2020-06-01T10:01:51+08:00
 lastmod: 2020-06-01T10:01:51+08:00
 draft: false
