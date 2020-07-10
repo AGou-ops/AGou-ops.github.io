@@ -1,12 +1,400 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 16 Apr 2019 14:01:47 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Tue, 16 Apr 2019 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>岂能尽如人意，但求无愧于心.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 16 Apr 2019 14:01:47 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Tue, 16 Apr 2019 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>&lt;strong>岂能尽如人意，但求无愧于心.&lt;/strong>&lt;/p>
 &lt;hr>
 &lt;ul>
-&lt;li>本站地址：&lt;a href="https://agou-ops.top">https://agou-ops.top&lt;/a>&lt;/li>
+&lt;li>本站地址：&lt;a href="https://agou-ops.top">https://x.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>备用地址：&lt;a href="https://agou-ops.github.io">https://agou-ops.github.io&lt;/a>&lt;/li>
 &lt;li>my Docs：&lt;a href="https://agou-ops.top/beforeWork">https://agou-ops.top/beforeWork&lt;/a>&lt;/li>
 &lt;li>Docs 备用站点：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote:&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>【日记】果然大学生都是廉价劳动力吗？可恶！</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E6%9E%9C%E7%84%B6%E5%A4%A7%E5%AD%A6%E7%94%9F%E9%83%BD%E6%98%AF%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%90%97%E5%8F%AF%E6%81%B6/</link><pubDate>Sun, 28 Jun 2020 22:14:03 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E6%9E%9C%E7%84%B6%E5%A4%A7%E5%AD%A6%E7%94%9F%E9%83%BD%E6%98%AF%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%90%97%E5%8F%AF%E6%81%B6/</guid><description>&lt;p>​ &lt;code>2020年06月28日&lt;/code>，端午“三天小短假”已经过去了，按常理说应当放假，哪怕一天也好，但我们没有放假，一行五人还是像往常一样出外业，经理呢也完全没有任何表示，当然我也不奢望有何表示，毕竟这个东西看个人，对我来说也就无所谓了。 可今天是周日，又让我们出外业了，早上七点就把我们叫起来（其实八点半才上班），等了一个多小时才出发。&lt;/p>
+&lt;/ul></description></item><item><title>Linux 系统封装</title><link>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</link><pubDate>Fri, 10 Jul 2020 21:16:31 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</guid><description>&lt;h2 id="mondo-rescue">Mondo Rescue&lt;/h2>
+&lt;p>Mondo Rescue（简称 Mondo）：是一款开源免费的故障恢复和备份工具，可以说是 Linux 操作系统下的 Ghost ，你可以轻松地创建系统（Linux 或 Windows）克隆或备份的 ISO 镜像，可以将这些镜像存放在 CD、DVD、磁带、USB 设备、硬盘和 NFS 上。&lt;/p>
+&lt;p>官方站点:http://www.mondorescue.org/&lt;/p>
+&lt;h3 id="安装-mondo">安装 mondo&lt;/h3>
+&lt;p>从&lt;a href="http://mondo.mirror.pclark.com/ftp/pub/mondorescue/">官方指定的仓库&lt;/a>下载&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wget http://mondo.mirror.pclark.com/ftp/pub/mondorescue/centos/7/x86_64/mondorescue.repo -O /etc/yum.repos.d/mondorescue.repo
+yum install -y mondo
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>或者直接安装&lt;code>rpm&lt;/code>包:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum install -y http://mondo.mirror.pclark.com/ftp/pub/mondorescue/centos/7/x86_64/mondo-3.3.0-1.centos7.x86_64.rpm
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>使用该方法安装可能会缺少依赖包文件,在这里手动解决依赖关系即可(太多了,说着玩的,还是推荐用在线仓库安装吧&amp;hellip;):&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum install -y http://ftp.mondorescue.org/centos/7/x86_64/afio-2.5-1.centos7.x86_64.rpm
+yum install -y http://ftp.mondorescue.org/centos/7/x86_64/mindi-3.3.0-1.centos7.x86_64.rpm
+yum install -y http://ftp.mondorescue.org/centos/7/x86_64/buffer-1.19-8.centos7.x86_64.rpm
+...
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="制作光盘镜像">制作光盘镜像&lt;/h3>
+&lt;p>安装完毕后，在终端下输入&lt;code>mondoarchive&lt;/code>，即可进入图形安装界面。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">mondoarchive
+See /var/log/mondoarchive.log &lt;span class="k">for&lt;/span> details of backup run.
+Checking sanity of your Linux distribution
+.......
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>随后,按照引导一步步设置即可.&lt;/p>
+&lt;h2 id="remastersys">Remastersys&lt;/h2>
+&lt;p>Remastersys 可以将你安装的 Ubuntu、Debian 及其衍生版打包成一个可以用来安装的 Live CD/DVD 的 ISO 镜像文件，可打包一个包含个人数据的 ISO 镜像文件作为操作系统备份，也可以打包一个不包含个人数据的 ISO 镜像文件发布给其他人安装。&lt;/p>
+&lt;h3 id="remastersys-包下载">&lt;strong>Remastersys 包下载&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ mkdir tools
+$ cd tools/
+$ wget ftp://ftp.gwdg.de/pub/linux/easyvdr/mirror/remastersys/ubuntu/remastersys/remastersys_3.0.4-2_all.deb
+$ wget ftp://ftp.gwdg.de/pub/linux/easyvdr/mirror/remastersys/ubuntu/remastersys-gui/remastersys-gui_3.0.4-1_amd64.deb
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="安装-remastersys-依赖">&lt;strong>安装 Remastersys 依赖&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ sudo apt-get install syslinux-utils isolinux squashfs-tools casper libdebian-installer4 ubiquity-frontend-debconf user-setup discover xresprobe systemd
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="安装-remastersys-gui-依赖">&lt;strong>安装 Remastersys-gui 依赖&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ sudo apt-get install libvte-common libvte9 plymouth-x11
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="开始安装-remastersys">&lt;strong>开始安装 Remastersys&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ cd tools/
+$ sudo dpkg -i remastersys_3.0.4-2_all.deb
+$ sudo dpkg -i remastersys-gui_3.0.4-1_amd64.deb
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Remastersys 备份操作系统&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>命令行模式：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">$&lt;/span> &lt;span class="n">sudo&lt;/span> &lt;span class="n">remastersys&lt;/span> &lt;span class="n">backup&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>图形化模式：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">$&lt;/span> &lt;span class="n">sudo&lt;/span> &lt;span class="n">remastersys&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">gui&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Apache HTTPD使用Let's Encrypt</title><link>https://agou-ops.top/post/apache-httpd%E4%BD%BF%E7%94%A8lets-encrypt/</link><pubDate>Fri, 10 Jul 2020 21:15:22 +0800</pubDate><guid>https://agou-ops.top/post/apache-httpd%E4%BD%BF%E7%94%A8lets-encrypt/</guid><description>&lt;h2 id="apache-httpd使用lets-encrypt实现安全连接https">&lt;code>Apache HTTPD&lt;/code>使用&lt;code>Let's Encrypt&lt;/code>实现安全连接(https)&lt;/h2>
+&lt;p>安装&lt;code>cerbot&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum update -y
+yum install -y cerbot
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>生成高安全性的&lt;code>DH&lt;/code>秘钥到&lt;code>/etc/ssl/certs/&lt;/code>目录当中去:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem &lt;span class="m">2048&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行以下命令创建目录, 并使它可写为Apache服务器:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo mkdir -p /var/lib/letsencrypt/.well-known
+sudo chgrp www-data /var/lib/letsencrypt
+sudo chmod g+s /var/lib/letsencrypt
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>为了避免复制代码和配置更易于维护, 创建以下两个配置代码片段:&lt;/p>
+&lt;ul>
+&lt;li>编辑&lt;code>/etc/apache2/conf-available/letsencrypt.conf&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">Alias /.well-known/acme-challenge/ &lt;span class="s2">&amp;#34;/var/lib/letsencrypt/.well-known/acme-challenge/&amp;#34;&lt;/span>
+&amp;lt;Directory &lt;span class="s2">&amp;#34;/var/lib/letsencrypt/&amp;#34;&lt;/span>&amp;gt;
+AllowOverride None
+Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+Require method GET POST OPTIONS
+&amp;lt;/Directory&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>编辑&lt;code>/etc/apache2/conf-available/ssl-params.conf&lt;/code>:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
+SSLCipherSuite ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
+SSLHonorCipherOrder off
+SSLSessionTickets off
+SSLUseStapling On
+SSLStaplingCache &lt;span class="s2">&amp;#34;shmcb:logs/ssl_stapling(32768)&amp;#34;&lt;/span>
+SSLOpenSSLConfCmd DHParameters &lt;span class="s2">&amp;#34;/etc/ssl/certs/dhparam.pem&amp;#34;&lt;/span>
+Header always &lt;span class="nb">set&lt;/span> Strict-Transport-Security &lt;span class="s2">&amp;#34;max-age=63072000&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>进行启用配置文件之前, 确保&lt;code>mod_ssl &lt;/code>和&lt;code>mod_headers&lt;/code>已经被启用:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo a2enmod ssl
+sudo a2enmod headers
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后, 启用&lt;code>SSL&lt;/code>配置文件, 运行以下命令即可:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo a2enconf letsencrypt
+sudo a2enconf ssl-params
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>启用&lt;code>HTTP/2&lt;/code>模块:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo a2enmod http2
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>重启&lt;code>httpd&lt;/code>让配置生效:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">systemctl restart httpd
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>现在，我们可以使用&lt;code>webroot&lt;/code>插件运行&lt;code>Certbot&lt;/code>工具并获取SSL证书文件：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo certbot certonly --agree-tos --email agou-ops@foxmail.com --webroot -w /var/lib/letsencrypt/ -d agou-ops.top -d www.agou-ops.top
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果输出以下信息, 则表已经成功申请到&lt;code>SSL&lt;/code>证书文件:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">IMPORTANT NOTES:
+- Congratulations! Your certificate and chain have been saved at:
+/etc/letsencrypt/live/agou-ops.top/fullchain.pem
+Your key file has been saved at:
+/etc/letsencrypt/live/agou-ops.top/privkey.pem
+Your cert will expire on 2020-10-06. To obtain a new or tweaked
+version of this certificate in the future, simply run certbot
+again. To non-interactively renew *all* of your certificates, run
+&lt;span class="s2">&amp;#34;certbot renew&amp;#34;&lt;/span>
+- Your account credentials have been saved in your Certbot
+configuration directory at /etc/letsencrypt. You should make a
+secure backup of this folder now. This configuration directory will
+also contain certificates and private keys obtained by Certbot so
+making regular backups of this folder is ideal.
+- If you like Certbot, please consider supporting our work by:
+Donating to ISRG / Let&lt;span class="err">&amp;#39;&lt;/span>s Encrypt: https://letsencrypt.org/donate
+Donating to EFF: https://eff.org/donate-le
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="配置虚拟主机">配置虚拟主机&lt;/h2>
+&lt;p>创建一个虚拟主机&lt;code>conf.d/agou-ops-top.conf&lt;/code>(仅为示例):&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&amp;lt;VirtualHost *:80&amp;gt;
+ServerName mail.agou-ops.top
+Redirect permanent / https://mail.agou-ops.top/
+&amp;lt;/VirtualHost&amp;gt;
+&amp;lt;VirtualHost *:443&amp;gt;
+ServerName mail.agou-ops.top
+Protocols h2 http:/1.1
+&amp;lt;If &lt;span class="s2">&amp;#34;%{HTTP_HOST} == &amp;#39;www.mail.agou-ops.top&amp;#39;&amp;#34;&lt;/span>&amp;gt;
+Redirect permanent / https://mail.agou-ops.top/
+&amp;lt;/If&amp;gt;
+DocumentRoot /var/www/mail.agou-ops.top/public_html
+ErrorLog &lt;span class="si">${&lt;/span>&lt;span class="nv">APACHE_LOG_DIR&lt;/span>&lt;span class="si">}&lt;/span>/mail.agou-ops.top-error.log
+CustomLog &lt;span class="si">${&lt;/span>&lt;span class="nv">APACHE_LOG_DIR&lt;/span>&lt;span class="si">}&lt;/span>/mail.agou-ops.top-access.log combined
+SSLEngine On
+SSLCertificateFile /etc/letsencrypt/live/mail.agou-ops.top/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/mail.agou-ops.top/privkey.pem
+&lt;span class="c1"># Other Apache Configuration&lt;/span>
+&amp;lt;/VirtualHost&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>重载&lt;code>httpd&lt;/code>使虚拟主机配置生效:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">systemctl reload httpd
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>现在, 就可以通过&lt;code>https&lt;/code>访问你的站点了: &lt;a href="https://agou-ops.top">https://agou-ops.top&lt;/a>&lt;/p>
+&lt;h2 id="自动更新lets-encrypt证书">自动更新Let’s Encrypt证书&lt;/h2>
+&lt;p>&lt;code>Let’s Encrypt&lt;/code>的证书有效期为90天, 自动更新证书到期前,certbot包创建一个计划, 一天两次, 并自动更新任何证书到期前30天.&lt;/p>
+&lt;p>解决方法, 添加定时任务, &lt;code>/etc/cron.d/cerbot&lt;/code>, 内容如下所示:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="m">0&lt;/span> */12 * * * root &lt;span class="nb">test&lt;/span> -x /usr/bin/certbot -a &lt;span class="se">\!&lt;/span> -d /run/systemd/system &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> perl -e &lt;span class="s1">&amp;#39;sleep int(rand(3600))&amp;#39;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> certbot -q renew --renew-hook &lt;span class="s2">&amp;#34;systemctl reload apache2&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>测试更新, 使用&lt;code>certbot&lt;/code>的干跑模式进行测试:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo certbot renew --dry-run
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;ul>
+&lt;li>SSL lab: &lt;a href="https://www.ssllabs.com/">https://www.ssllabs.com/&lt;/a>&lt;/li>
+&lt;li>Let&amp;rsquo;s Encrypt: &lt;a href="https://letsencrypt.org/">https://letsencrypt.org/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted --></description></item><item><title>【日记】果然大学生都是廉价劳动力吗？可恶！</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E6%9E%9C%E7%84%B6%E5%A4%A7%E5%AD%A6%E7%94%9F%E9%83%BD%E6%98%AF%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%90%97%E5%8F%AF%E6%81%B6/</link><pubDate>Sun, 28 Jun 2020 22:14:03 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E6%9E%9C%E7%84%B6%E5%A4%A7%E5%AD%A6%E7%94%9F%E9%83%BD%E6%98%AF%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%90%97%E5%8F%AF%E6%81%B6/</guid><description>&lt;p>​ &lt;code>2020年06月28日&lt;/code>，端午“三天小短假”已经过去了，按常理说应当放假，哪怕一天也好，但我们没有放假，一行五人还是像往常一样出外业，经理呢也完全没有任何表示，当然我也不奢望有何表示，毕竟这个东西看个人，对我来说也就无所谓了。 可今天是周日，又让我们出外业了，早上七点就把我们叫起来（其实八点半才上班），等了一个多小时才出发。&lt;/p>
 &lt;p>欸，这时候可能就有小伙伴要问了，为什么周日也要上班呢？没有休息的的时间么，这里引用经理的一些话，大概意思是：&lt;/p>
 &lt;blockquote>
 &lt;p>项目比较“紧张”，休息的话视情况而言，比如说项目有可能进度快，不到周末就会休息，有时候呢项目“紧张”，也就不休息了。&lt;/p>

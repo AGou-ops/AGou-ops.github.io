@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on AGou's blog</title><link>https://agou-ops.top/tags/linux/</link><description>Recent content in Linux on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 22 Jun 2020 08:45:13 +0800</lastBuildDate><atom:link href="https://agou-ops.top/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 日志分割工具-split和logrotate</title><link>https://agou-ops.top/post/linux-%E6%97%A5%E5%BF%97%E5%88%86%E5%89%B2%E5%B7%A5%E5%85%B7/</link><pubDate>Mon, 22 Jun 2020 08:45:13 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E6%97%A5%E5%BF%97%E5%88%86%E5%89%B2%E5%B7%A5%E5%85%B7/</guid><description>&lt;p>本文主要介绍Linux系统下的日志分割工具，&lt;code>Split&lt;/code> 和 &lt;code>Logrotate&lt;/code>。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on AGou's blog</title><link>https://agou-ops.top/tags/linux/</link><description>Recent content in Linux on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 21:16:31 +0800</lastBuildDate><atom:link href="https://agou-ops.top/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 系统封装</title><link>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</link><pubDate>Fri, 10 Jul 2020 21:16:31 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</guid><description>&lt;h2 id="mondo-rescue">Mondo Rescue&lt;/h2>
+&lt;p>Mondo Rescue（简称 Mondo）：是一款开源免费的故障恢复和备份工具，可以说是 Linux 操作系统下的 Ghost ，你可以轻松地创建系统（Linux 或 Windows）克隆或备份的 ISO 镜像，可以将这些镜像存放在 CD、DVD、磁带、USB 设备、硬盘和 NFS 上。&lt;/p>
+&lt;p>官方站点:http://www.mondorescue.org/&lt;/p></description></item><item><title>Apache HTTPD使用Let's Encrypt</title><link>https://agou-ops.top/post/apache-httpd%E4%BD%BF%E7%94%A8lets-encrypt/</link><pubDate>Fri, 10 Jul 2020 21:15:22 +0800</pubDate><guid>https://agou-ops.top/post/apache-httpd%E4%BD%BF%E7%94%A8lets-encrypt/</guid><description>&lt;h2 id="apache-httpd使用lets-encrypt实现安全连接https">&lt;code>Apache HTTPD&lt;/code>使用&lt;code>Let's Encrypt&lt;/code>实现安全连接(https)&lt;/h2>
+&lt;p>安装&lt;code>cerbot&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum update -y
+yum install -y cerbot
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>生成高安全性的&lt;code>DH&lt;/code>秘钥到&lt;code>/etc/ssl/certs/&lt;/code>目录当中去:&lt;/p></description></item><item><title>Linux 日志分割工具-split和logrotate</title><link>https://agou-ops.top/post/linux-%E6%97%A5%E5%BF%97%E5%88%86%E5%89%B2%E5%B7%A5%E5%85%B7/</link><pubDate>Mon, 22 Jun 2020 08:45:13 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E6%97%A5%E5%BF%97%E5%88%86%E5%89%B2%E5%B7%A5%E5%85%B7/</guid><description>&lt;p>本文主要介绍Linux系统下的日志分割工具，&lt;code>Split&lt;/code> 和 &lt;code>Logrotate&lt;/code>。&lt;/p>
 &lt;h2 id="split">Split&lt;/h2>
 &lt;p>Linux 系统自带简单日志文件分割工具。&lt;/p></description></item><item><title>Linux 系统资源监控面板</title><link>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/</link><pubDate>Fri, 12 Jun 2020 19:40:55 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/</guid><description>&lt;p>&lt;code>WTF&lt;/code>和&lt;code>bashtop&lt;/code>是我个人目前在用的系统资源管理面板，界面非常的美观，极具极客风范，在这里我分别做简单介绍。&lt;/p>
 &lt;h2 id="wtf">WTF&lt;/h2>
