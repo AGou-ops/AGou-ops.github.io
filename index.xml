@@ -6,7 +6,424 @@
 &lt;li>my Docs：&lt;a href="https://agou-ops.top/beforeWork">https://agou-ops.top/beforeWork&lt;/a>&lt;/li>
 &lt;li>Docs 备用站点：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote:&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Linux 系统封装</title><link>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</link><pubDate>Fri, 10 Jul 2020 21:16:31 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</guid><description>&lt;h2 id="mondo-rescue">Mondo Rescue&lt;/h2>
+&lt;/ul></description></item><item><title>Linux 实时查看网卡流量</title><link>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 11 Jul 2020 22:12:17 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><description>&lt;h2 id="nload工具">nload工具&lt;/h2>
+&lt;p>nload用于实时查看网卡流量，默认系统都没有安装，首先安装方式如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ yum install -y epel-release
+$ yum install -y nload
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>使用也非常简单，如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">
+$ nload
+Device eth0 &lt;span class="o">[&lt;/span>192.168.0.110&lt;span class="o">]&lt;/span> &lt;span class="o">(&lt;/span>4/5&lt;span class="o">)&lt;/span>:
+&lt;span class="o">===================================================================================&lt;/span>
+Incoming:
+Curr: 5.21 kBit/s &lt;span class="c1"># Incoming：进来的流量&lt;/span>
+Avg: 4.09 kBit/s &lt;span class="c1"># Outgoing：出去的流量&lt;/span>
+Min: 1.59 kBit/s &lt;span class="c1"># Curr：当前的流量值&lt;/span>
+Max: 12.51 kBit/s &lt;span class="c1"># Avg：平均值的流量值&lt;/span>
+Ttl: 4.16 GByte &lt;span class="c1"># Min：最小的流量值&lt;/span>
+Outgoing: &lt;span class="c1"># Max：最大的流量值&lt;/span>
+Curr: 16.48 kBit/s &lt;span class="c1"># Ttl：总的流量值&lt;/span>
+Avg: 14.38 kBit/s
+Min: 6.73 kBit/s
+Max: 28.39 kBit/s
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="iftop工具">iftop工具&lt;/h2>
+&lt;p>默认系统没有安装，需要安装，如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 需要epel环境&lt;/span>
+$ yum install -y epel-release
+$ yum install -y iftop
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装完成之后，输入iftop便可看到如下界面&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Others/iftop.png" alt="null">&lt;/p>
+&lt;p>其中，相关参数解释如下：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>界面上面显示的是类似刻度尺的刻度范围，为显示流量图形的长条作标尺用的。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>中间的&amp;lt;= =&amp;gt;这两个左右箭头，表示的是流量的方向。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>TX：发送流量&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>RX：接收流量5.TOTAL：总流量6.Cumm：运行iftop到目前时间的总流量&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>peak：流量峰值&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>rates：分别表示过去 2s 10s 40s 的平均流量&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="sar命令">sar命令&lt;/h2>
+&lt;p>sar命令包含在&lt;code>sysstat&lt;/code>工具包中，提供系统的众多统计数据。其在不同的系统上命令有些差异，某些系统提供的sar支持基于网络接口的数据统计，也可以查看设备上每秒收发包的个数和流量。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># DEV显示网络接口信息&lt;/span>
+&lt;span class="c1"># 命令后面1 2 意思是：每一秒钟取1次值，取2次&lt;/span>
+$ sar -n DEV &lt;span class="m">1&lt;/span> &lt;span class="m">2&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>另外，-n参数很有用，他有6个不同的开关：&lt;code>DEV | EDEV | NFS | NFSD | SOCK | ALL&lt;/code> ，其代表的含义如下：&lt;/p>
+&lt;ul>
+&lt;li>DEV显示网络接口信息。&lt;/li>
+&lt;li>EDEV显示关于网络错误的统计数据。&lt;/li>
+&lt;li>NFS统计活动的NFS客户端的信息。&lt;/li>
+&lt;li>NFSD统计NFS服务器的信息&lt;/li>
+&lt;li>SOCK显示套接字信息&lt;/li>
+&lt;li>ALL显示所有5个开关&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sar -n DEV &lt;span class="m">1&lt;/span> &lt;span class="m">2&lt;/span>
+Linux 3.10.0-514.26.2.el7.x86_64 &lt;span class="o">(&lt;/span>localhost&lt;span class="o">)&lt;/span> 08/31/2019 _x86_64_ &lt;span class="o">(&lt;/span>&lt;span class="m">1&lt;/span> CPU&lt;span class="o">)&lt;/span>
+09:52:28 AM IFACE rxpck/s txpck/s rxkB/s txkB/s rxcmp/s txcmp/s rxmcst/s
+09:52:29 AM eth0 2.02 1.01 0.13 0.16 0.00 0.00 0.00
+09:52:29 AM lo 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+09:52:29 AM IFACE rxpck/s txpck/s rxkB/s txkB/s rxcmp/s txcmp/s rxmcst/s
+09:52:30 AM eth0 1.02 1.02 0.07 0.23 0.00 0.00 0.00
+09:52:30 AM lo 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Average: IFACE rxpck/s txpck/s rxkB/s txkB/s rxcmp/s txcmp/s rxmcst/s
+Average: eth0 1.52 1.02 0.10 0.19 0.00 0.00 0.00
+Average: lo 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>参数说明：&lt;/p>
+&lt;ul>
+&lt;li>IFACE：LAN接口&lt;/li>
+&lt;li>rxpck/s：每秒钟接收的数据包&lt;/li>
+&lt;li>txpck/s：每秒钟发送的数据包&lt;/li>
+&lt;li>rxbyt/s：每秒钟接收的字节数&lt;/li>
+&lt;li>txbyt/s：每秒钟发送的字节数&lt;/li>
+&lt;li>rxcmp/s：每秒钟接收的压缩数据包&lt;/li>
+&lt;li>txcmp/s：每秒钟发送的压缩数据包&lt;/li>
+&lt;li>rxmcst/s：每秒钟接收的多播数据包&lt;/li>
+&lt;li>rxerr/s：每秒钟接收的坏数据包&lt;/li>
+&lt;li>txerr/s：每秒钟发送的坏数据包&lt;/li>
+&lt;li>coll/s：每秒冲突数&lt;/li>
+&lt;li>rxdrop/s：因为缓冲充满，每秒钟丢弃的已接收数据包数&lt;/li>
+&lt;li>txdrop/s：因为缓冲充满，每秒钟丢弃的已发送数据包数&lt;/li>
+&lt;li>txcarr/s：发送数据包时，每秒载波错误数&lt;/li>
+&lt;li>rxfram/s：每秒接收数据包的帧对齐错误数&lt;/li>
+&lt;li>rxfifo/s：接收的数据包每秒FIFO过速的错误数&lt;/li>
+&lt;li>txfifo/s：发送的数据包每秒FIFO过速的错误数&lt;/li>
+&lt;/ul>
+&lt;p>这种方式简单，直观，推荐使用。&lt;/p>
+&lt;h2 id="cat-procnetdev">cat /proc/net/dev&lt;/h2>
+&lt;p>Linux 内核提供了一种通过 /proc 文件系统，在运行时访问内核内部数据结构、改变内核设置的机制。proc文件系统是一个伪文件系统，它只存在内存当中，而不占用外存空间。它以文件系统的方式为访问系统内核数据的操作提供接口。用户和应用程序可以通过proc得到系统的信息，并可以改变内核的某些参数。由于系统的信息，如进程，是动态改变的，所以用户或应用程序读取proc文件时，proc文件系统是动态从系统内核读出所需信息并提交的。/proc文件系统中包含了很多目录，其中/proc/net/dev 保存了网络适配器及统计信息。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@agou ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> cat /proc/net/dev
+Inter-&lt;span class="p">|&lt;/span> Receive &lt;span class="p">|&lt;/span> Transmit
+face &lt;span class="p">|&lt;/span>bytes packets errs drop fifo frame compressed multicast&lt;span class="p">|&lt;/span>bytes packets errs drop fifo colls carrier compressed
+ens32: &lt;span class="m">11196722&lt;/span> &lt;span class="m">21042&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">4605085&lt;/span> &lt;span class="m">14465&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span>
+lo: &lt;span class="m">1934784&lt;/span> &lt;span class="m">7162&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">1934784&lt;/span> &lt;span class="m">7162&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="m">0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback"> 说明：
+最左边的表示接口的名字，Receive表示收包，Transmit表示发送包；
+bytes表示收发的字节数；
+packets表示收发正确的包量；
+errs表示收发错误的包量；
+drop表示收发丢弃的包量；
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其实，我们平时经常用的很多查看网卡实时流量的命令，都是通过读取该目录下的实时流量，并通过简单计算得到的。&lt;/p>
+&lt;h2 id="实时监控脚本1">实时监控脚本1&lt;/h2>
+&lt;p>ifconfig可以查看的是从连上网开始的流量总和，cat /proc/net/dev记录的值也是总流量，那么可以计算一下，实时流量=当前流量-上一秒的流量。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@localhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> cat network.sh
+&lt;span class="c1"># 传入网卡参数&lt;/span>
+&lt;span class="nv">ethn&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$1&lt;/span>
+&lt;span class="k">while&lt;/span> &lt;span class="nb">true&lt;/span>
+&lt;span class="k">do&lt;/span>
+&lt;span class="nv">RX_pre&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /proc/net/dev &lt;span class="p">|&lt;/span> grep &lt;span class="nv">$ethn&lt;/span> &lt;span class="p">|&lt;/span> sed &lt;span class="s1">&amp;#39;s/:/ /g&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $2}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="nv">TX_pre&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /proc/net/dev &lt;span class="p">|&lt;/span> grep &lt;span class="nv">$ethn&lt;/span> &lt;span class="p">|&lt;/span> sed &lt;span class="s1">&amp;#39;s/:/ /g&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $10}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+sleep &lt;span class="m">1&lt;/span>
+&lt;span class="nv">RX_next&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /proc/net/dev &lt;span class="p">|&lt;/span> grep &lt;span class="nv">$ethn&lt;/span> &lt;span class="p">|&lt;/span> sed &lt;span class="s1">&amp;#39;s/:/ /g&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $2}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="nv">TX_next&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /proc/net/dev &lt;span class="p">|&lt;/span> grep &lt;span class="nv">$ethn&lt;/span> &lt;span class="p">|&lt;/span> sed &lt;span class="s1">&amp;#39;s/:/ /g&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $10}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+clear
+&lt;span class="c1"># echo -e激活转义符&lt;/span>
+&lt;span class="c1"># 输出时间的标题&lt;/span>
+&lt;span class="nb">echo&lt;/span> -e &lt;span class="s2">&amp;#34;t RX `date +%k:%M:%S` TX&amp;#34;&lt;/span>
+&lt;span class="nv">RX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$((&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">RX_next&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">RX_pre&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="k">))&lt;/span>
+&lt;span class="nv">TX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$((&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">TX_next&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">TX_pre&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="k">))&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$RX&lt;/span> -lt &lt;span class="m">1024&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span>
+&lt;span class="nv">RX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">RX&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">B/s&amp;#34;&lt;/span>
+&lt;span class="k">elif&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$RX&lt;/span> -gt &lt;span class="m">1048576&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span>
+&lt;span class="nv">RX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$RX&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $1/1048576 &amp;#34;MB/s&amp;#34;}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="k">else&lt;/span>
+&lt;span class="nv">RX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$RX&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $1/1024 &amp;#34;KB/s&amp;#34;}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$TX&lt;/span> -lt &lt;span class="m">1024&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span>
+&lt;span class="nv">TX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">TX&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">B/s&amp;#34;&lt;/span>
+&lt;span class="k">elif&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$TX&lt;/span> -gt &lt;span class="m">1048576&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span>
+&lt;span class="nv">TX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$TX&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $1/1048576 &amp;#34;MB/s&amp;#34;}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="k">else&lt;/span>
+&lt;span class="nv">TX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$TX&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $1/1024 &amp;#34;KB/s&amp;#34;}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;span class="c1"># 输出流量&lt;/span>
+&lt;span class="nb">echo&lt;/span> -e &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$ethn&lt;/span>&lt;span class="s2"> t &lt;/span>&lt;span class="nv">$RX&lt;/span>&lt;span class="s2"> &lt;/span>&lt;span class="nv">$TX&lt;/span>&lt;span class="s2"> &amp;#34;&lt;/span>
+&lt;span class="k">done&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行结果如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@localhost ~&lt;span class="o">]&lt;/span>&lt;span class="se">\#&lt;/span> ./network.sh eth0
+RX 20:23:38 TX
+eth0 66B/s 0B/s
+RX 20:23:39 TX
+eth0 132B/s 0B/s
+RX 20:23:40 TX
+eth0 186B/s 194B/s
+RX 20:23:41 TX
+eth0 240B/s 194B/s
+RX 20:23:42 TX
+eth0 132B/s 0B/s
+RX 20:23:43 TX
+eth0 240B/s 194B/s
+RX 20:23:44 TX
+eth0 396B/s 4.19727KB/s
+RX 20:23:45 TX
+eth0 276B/s 178B/s
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="实时监控脚本2">实时监控脚本2&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ cat network_flow.sh
+&lt;span class="c1"># 监控实时网卡流量&lt;/span>
+&lt;span class="c1"># $1 接收所传第一个参数 即要监控的网卡&lt;/span>
+&lt;span class="nv">NIC&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$1&lt;/span>
+&lt;span class="c1"># echo -e &amp;#34;traffic in --- traffic out&amp;#34;&lt;/span>
+&lt;span class="k">while&lt;/span> true&lt;span class="p">;&lt;/span>&lt;span class="k">do&lt;/span>
+&lt;span class="c1"># $0 命令输出结果 ~ 匹配模式&lt;/span>
+&lt;span class="nv">OLD_IN&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>awk &lt;span class="s1">&amp;#39;$0~&amp;#34;&amp;#39;&lt;/span>&lt;span class="nv">$NIC&lt;/span>&lt;span class="s1">&amp;#39;&amp;#34;{print $2}&amp;#39;&lt;/span> /proc/net/dev&lt;span class="sb">`&lt;/span>
+&lt;span class="nv">OLD_OUT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>awk &lt;span class="s1">&amp;#39;$0~&amp;#34;&amp;#39;&lt;/span>&lt;span class="nv">$NIC&lt;/span>&lt;span class="s1">&amp;#39;&amp;#34;{print $10}&amp;#39;&lt;/span> /proc/net/dev&lt;span class="sb">`&lt;/span>
+sleep &lt;span class="m">1&lt;/span>
+&lt;span class="nv">NEW_IN&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>awk &lt;span class="s1">&amp;#39;$0~&amp;#34;&amp;#39;&lt;/span>&lt;span class="nv">$NIC&lt;/span>&lt;span class="s1">&amp;#39;&amp;#34;{print $2}&amp;#39;&lt;/span> /proc/net/dev&lt;span class="sb">`&lt;/span>
+&lt;span class="nv">NEW_OUT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>awk &lt;span class="s1">&amp;#39;$0~&amp;#34;&amp;#39;&lt;/span>&lt;span class="nv">$NIC&lt;/span>&lt;span class="s1">&amp;#39;&amp;#34;{print $10}&amp;#39;&lt;/span> /proc/net/dev&lt;span class="sb">`&lt;/span>
+clear
+&lt;span class="c1"># printf不换行 %s占位符&lt;/span>
+&lt;span class="nv">IN&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">printf&lt;/span> &lt;span class="s2">&amp;#34;%.1f%s&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="k">$((&lt;/span>&lt;span class="nv">$NEW_IN&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">$OLD_IN&lt;/span>&lt;span class="k">))&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;B/s&amp;#34;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="nv">OUT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">printf&lt;/span> &lt;span class="s2">&amp;#34;%.1f%s&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="k">$((&lt;/span>&lt;span class="nv">$NEW_OUT&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">$OLD_OUT&lt;/span>&lt;span class="k">))&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;B/s&amp;#34;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34; traffic in `date +%k:%M:%S` traffic out &amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$NIC&lt;/span>&lt;span class="s2"> &lt;/span>&lt;span class="nv">$IN&lt;/span>&lt;span class="s2"> &lt;/span>&lt;span class="nv">$OUT&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="k">done&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行结果如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ ./network_flow.sh eth0
+traffic in 11:15:02 traffic out
+eth0 732.0B/s 948.0B/s
+traffic in 11:15:03 traffic out
+eth0 132.0B/s 0.0B/s
+traffic in 11:15:04 traffic out
+eth0 132.0B/s 0.0B/s
+traffic in 11:15:05 traffic out
+eth0 132.0B/s 0.0B/s
+traffic in 11:15:06 traffic out
+eth0 186.0B/s 242.0B/s
+traffic in 11:15:07 traffic out
+eth0 132.0B/s 0.0B/s
+traffic in 11:15:08 traffic out
+eth0 132.0B/s 0.0B/s
+traffic in 11:15:09 traffic out
+eth0 132.0B/s 0.0B/s
+traffic in 11:15:10 traffic out
+eth0 240.0B/s 242.0B/s
+traffic in 11:15:11 traffic out
+eth0 132.0B/s 0.0B/s
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>该文章内容收集于网络。&lt;/p>
+&lt;/blockquote></description></item><item><title>Linux 系统封装</title><link>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</link><pubDate>Fri, 10 Jul 2020 21:16:31 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</guid><description>&lt;h2 id="mondo-rescue">Mondo Rescue&lt;/h2>
 &lt;p>Mondo Rescue（简称 Mondo）：是一款开源免费的故障恢复和备份工具，可以说是 Linux 操作系统下的 Ghost ，你可以轻松地创建系统（Linux 或 Windows）克隆或备份的 ISO 镜像，可以将这些镜像存放在 CD、DVD、磁带、USB 设备、硬盘和 NFS 上。&lt;/p>
 &lt;p>官方站点:http://www.mondorescue.org/&lt;/p>
 &lt;h3 id="安装-mondo">安装 mondo&lt;/h3>

@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on AGou's blog</title><link>https://agou-ops.top/post/</link><description>Recent content in Posts on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 21:16:31 +0800</lastBuildDate><atom:link href="https://agou-ops.top/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 系统封装</title><link>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</link><pubDate>Fri, 10 Jul 2020 21:16:31 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</guid><description>&lt;h2 id="mondo-rescue">Mondo Rescue&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on AGou's blog</title><link>https://agou-ops.top/post/</link><description>Recent content in Posts on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 11 Jul 2020 22:12:17 +0800</lastBuildDate><atom:link href="https://agou-ops.top/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 实时查看网卡流量</title><link>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 11 Jul 2020 22:12:17 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><description>&lt;h2 id="nload工具">nload工具&lt;/h2>
+&lt;p>nload用于实时查看网卡流量，默认系统都没有安装，首先安装方式如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ yum install -y epel-release
+$ yum install -y nload
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Linux 系统封装</title><link>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</link><pubDate>Fri, 10 Jul 2020 21:16:31 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</guid><description>&lt;h2 id="mondo-rescue">Mondo Rescue&lt;/h2>
 &lt;p>Mondo Rescue（简称 Mondo）：是一款开源免费的故障恢复和备份工具，可以说是 Linux 操作系统下的 Ghost ，你可以轻松地创建系统（Linux 或 Windows）克隆或备份的 ISO 镜像，可以将这些镜像存放在 CD、DVD、磁带、USB 设备、硬盘和 NFS 上。&lt;/p>
 &lt;p>官方站点:http://www.mondorescue.org/&lt;/p></description></item><item><title>Apache HTTPD使用Let's Encrypt</title><link>https://agou-ops.top/post/apache-httpd%E4%BD%BF%E7%94%A8lets-encrypt/</link><pubDate>Fri, 10 Jul 2020 21:15:22 +0800</pubDate><guid>https://agou-ops.top/post/apache-httpd%E4%BD%BF%E7%94%A8lets-encrypt/</guid><description>&lt;h2 id="apache-httpd使用lets-encrypt实现安全连接https">&lt;code>Apache HTTPD&lt;/code>使用&lt;code>Let's Encrypt&lt;/code>实现安全连接(https)&lt;/h2>
 &lt;p>安装&lt;code>cerbot&lt;/code>:&lt;/p>
