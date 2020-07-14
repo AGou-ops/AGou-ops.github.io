@@ -6,7 +6,74 @@
 &lt;li>my Docs：&lt;a href="https://agou-ops.top/beforeWork">https://agou-ops.top/beforeWork&lt;/a>&lt;/li>
 &lt;li>Docs 备用站点：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote:&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>ECS-Linux 故障处理</title><link>https://agou-ops.top/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</link><pubDate>Tue, 14 Jul 2020 09:41:39 +0800</pubDate><guid>https://agou-ops.top/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</guid><description>&lt;p>&lt;strong>篇幅有限，转至 &lt;a href="https://agou-ops.top/linux_sys_fix">https://agou-ops.top/linux_sys_fix&lt;/a> 进行查看。&lt;/strong>&lt;/p></description></item><item><title>Linux 实时查看网卡流量</title><link>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 11 Jul 2020 22:12:17 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><description>&lt;h2 id="nload工具">nload工具&lt;/h2>
+&lt;/ul></description></item><item><title>Web 压测工具</title><link>https://agou-ops.top/post/web-benchmark/</link><pubDate>Tue, 14 Jul 2020 10:23:47 +0800</pubDate><guid>https://agou-ops.top/post/web-benchmark/</guid><description>&lt;h2 id="web-benchmark-tools">web benchmark tools&lt;/h2>
+&lt;h3 id="apache-bench">Apache Bench&lt;/h3>
+&lt;blockquote>
+&lt;p>ApacheBench 是一个用来衡量http服务器性能的单线程命令行工具。原本针对Apache http服务器，但是也适用于其他http服务器。&lt;/p>
+&lt;/blockquote>
+&lt;p>如果你的操作系统没有&lt;code>ab&lt;/code>工具， 那么只需安装&lt;code>httpd-tools&lt;/code>(CentOS)或者&lt;code>apache-utils&lt;/code>(Ubuntu)即可。&lt;/p>
+&lt;p>常用参数说明：&lt;/p>
+&lt;ul>
+&lt;li>-n：执行的请求次数&lt;/li>
+&lt;li>-c：并发数量&lt;/li>
+&lt;li>-s：响应的超时时间&lt;/li>
+&lt;li>-p：post请求的数据文件路径，需要设置-T参数&lt;/li>
+&lt;li>-T：Content-Type&lt;/li>
+&lt;li>-C：设置cookie，格式为&amp;quot;name=zhou&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;p>常用组合：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">ab -n &lt;span class="m">10000&lt;/span> -c &lt;span class="m">1000&lt;/span> http://localhost/index.html
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="wrk">wrk&lt;/h3>
+&lt;blockquote>
+&lt;p>wrk HTTP是一个现代的基准测试工具能产生显著的负载运行时在一个多核CPU。它结合了多线程设计可伸缩的系统如epoll和kqueue事件通知。&lt;/p>
+&lt;/blockquote>
+&lt;p>官方github仓库： &lt;a href="https://github.com/wg/wrk">https://github.com/wg/wrk&lt;/a>&lt;/p>
+&lt;p>编译安装：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wget https://github.com/wg/wrk/archive/4.1.0.tar.gz
+tar xf 4.1.0.tar.gz
+&lt;span class="nb">cd&lt;/span> 4.1.0/deps
+tar xf LuaJIT-2.1.0-beta3.tar.gz -C /usr/local
+tar xf openssl-1.1.0g.tar.gz -C /usr/local
+&lt;span class="nb">cd&lt;/span> ..
+make &lt;span class="nv">WITH_LUAJIT&lt;/span>&lt;span class="o">=&lt;/span>/usr/local/LuaJIT-2.1.0-beta3 &lt;span class="nv">WITH_OPENSSL&lt;/span>&lt;span class="o">=&lt;/span>/usr/local/openssl-1.1.0g
+make install
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>常用参数说明：&lt;/p>
+&lt;ul>
+&lt;li>-t：线程数&lt;/li>
+&lt;li>-c：http总请求数量&lt;/li>
+&lt;li>-d：测试时长，e.g. 2s, 2m, 2h&lt;/li>
+&lt;/ul>
+&lt;p>简单使用：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wrk -t12 -c400 -d30s http://127.0.0.1:8080/index.html
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="待续">待续。。。&lt;/h3></description></item><item><title>ECS-Linux 故障处理</title><link>https://agou-ops.top/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</link><pubDate>Tue, 14 Jul 2020 09:41:39 +0800</pubDate><guid>https://agou-ops.top/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</guid><description>&lt;p>&lt;strong>篇幅有限，转至 &lt;a href="https://agou-ops.top/linux_sys_fix">https://agou-ops.top/linux_sys_fix&lt;/a> 进行查看。&lt;/strong>&lt;/p></description></item><item><title>Linux 实时查看网卡流量</title><link>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 11 Jul 2020 22:12:17 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><description>&lt;h2 id="nload工具">nload工具&lt;/h2>
 &lt;p>nload用于实时查看网卡流量，默认系统都没有安装，首先安装方式如下：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
