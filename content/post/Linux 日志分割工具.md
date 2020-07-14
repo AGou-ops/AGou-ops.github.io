@@ -5,7 +5,7 @@ lastmod: 2020-06-22T08:45:13+08:00
 draft: false
 description: ""
 tags: ['Linux','日志分割','工具']
-categories: ['linux','Tools']
+categories: ['Linux','Tools']
 keywords: []
 
 author: "AGou-ops"
