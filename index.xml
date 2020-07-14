@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 16 Apr 2019 14:01:47 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Tue, 16 Apr 2019 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>&lt;strong>岂能尽如人意，但求无愧于心.&lt;/strong>&lt;/p>
 &lt;hr>
 &lt;ul>
-&lt;li>本站地址：&lt;a href="https://agou-ops.top">https://x.agou-ops.top&lt;/a>&lt;/li>
+&lt;li>本站地址：&lt;a href="https://agou-ops.top">https://agou-ops.top&lt;/a>&lt;/li>
 &lt;li>备用地址：&lt;a href="https://agou-ops.github.io">https://agou-ops.github.io&lt;/a>&lt;/li>
 &lt;li>my Docs：&lt;a href="https://agou-ops.top/beforeWork">https://agou-ops.top/beforeWork&lt;/a>&lt;/li>
 &lt;li>Docs 备用站点：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote:&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Linux 实时查看网卡流量</title><link>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 11 Jul 2020 22:12:17 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><description>&lt;h2 id="nload工具">nload工具&lt;/h2>
+&lt;/ul></description></item><item><title>ECS-Linux 故障处理</title><link>https://agou-ops.top/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</link><pubDate>Tue, 14 Jul 2020 09:41:39 +0800</pubDate><guid>https://agou-ops.top/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</guid><description>&lt;p>&lt;strong>篇幅有限，转至 &lt;a href="https://agou-ops.top/linux_sys_fix">https://agou-ops.top/linux_sys_fix&lt;/a> 进行查看。&lt;/strong>&lt;/p></description></item><item><title>Linux 实时查看网卡流量</title><link>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 11 Jul 2020 22:12:17 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><description>&lt;h2 id="nload工具">nload工具&lt;/h2>
 &lt;p>nload用于实时查看网卡流量，默认系统都没有安装，首先安装方式如下：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
