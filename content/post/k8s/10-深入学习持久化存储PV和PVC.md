@@ -41,7 +41,7 @@ mathjax: false
 - PVC即PersistentVolumeClaim持久化存储申明，作为PV资源的使用方，可以指定请求存储容量大小和访问模式
 - StorageClass，存储类型支持创建PV，通过在PVC中指定StorageClass可动态创建PV，且支持指定不同的存储
 
-![PV/PVC概念介绍](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8PV%E5%92%8CPVC/1%20-%201620.jpg)
+![PV/PVC概念介绍](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8PV%E5%92%8CPVC/1%20-%201620.jpg)
 
 PV支持设置字段介绍：
 
@@ -53,13 +53,13 @@ PV支持设置字段介绍：
 - Mount Options  挂载模式，支持管理员定义不同的挂载选项
 - AccessMode  访问模式，指定node的挂载方式，支持ReadWriteOnce读写挂载一次，ReadOnlyMany多个节点挂载只读模式，ReadWriteMany多个节点挂载读写模式，不同的volume驱动类型支持的模式有所不同，如下
 
-![PV支持的不同AccessMode](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8PV%E5%92%8CPVC/2%20-%201620.jpg)
+![PV支持的不同AccessMode](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8PV%E5%92%8CPVC/2%20-%201620.jpg)
 
 ## 1.2 定义PV存储
 
 接下来我们开始学习PV的使用，使用阶段分为：1. 预先创建好PV，2. 用户通过PVC调用PV，3. Pod中应用PVC，创建流程参考下图：
 
-![PV和PVC使用过程](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8PV%E5%92%8CPVC/3%20-%201620.jpg)
+![PV和PVC使用过程](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8PV%E5%92%8CPVC/3%20-%201620.jpg)
 
 \1. 定义一个PV，指定大小为10G，读写模式为单个node读写，回收模式为Retain，后端驱动plugin为NFS
 
@@ -198,7 +198,7 @@ Events:        <none>
 
 \4. 再次查看PV的状态，此时状态为Bond，和default命名空间下的PVC pvc-nfs-storage关联,此时PVC已经定义好
 
-![PV和PVC绑定状态详情](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8PV%E5%92%8CPVC/4%20-%201620.jpg)
+![PV和PVC绑定状态详情](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8PV%E5%92%8CPVC/4%20-%201620.jpg)
 
 ## 1.4 Pod引用PVC
 

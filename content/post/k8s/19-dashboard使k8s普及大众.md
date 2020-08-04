@@ -90,11 +90,11 @@ deployment.apps/dashboard-metrics-scraper created
 
 2、校验资源的安装情况，kubernetes-dashbaord的资源都安装在kubernetes-dashboard命名空间下,包含有Deployments，Services，Secrets，ConfigMap等
 
-![kubernetes-dashboard安装校验](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/1%20-%20qfgj5u3014.gif)
+![kubernetes-dashboard安装校验](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/1%20-%20qfgj5u3014.gif)
 
 3、kubernetes-dashbaord安装完毕后，kubernetes-dashboard默认service的类型为ClusterIP，为了从外部访问控制面板，开放为NodePort类型
 
-![修改kubernetes-dashboard service类型](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/2%20-%20hdifejzdkg.gif)
+![修改kubernetes-dashboard service类型](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/2%20-%20hdifejzdkg.gif)
 4、此时通过https协议访问30433端口即可打开dashboard的控制台，为了保护数据安全性，集群默认开启了RBAC认证授权，需要授予权限的用户才可以访问到kubernetes集群，因此需要授权用户访问集群，集群中已定有了cluster-admin的角色和相关的Role，ClusterRole和ClusterRoleBinding角色，定义ServiceAccount将其关联即可，如下:
 
 ```js
@@ -135,7 +135,7 @@ kubernetes-dashboard   1         114m
 
 6、此时通过kubernetes-dashboard-csrf服务会自动创建一个和用户名关联的Secrets，通过token字段来登陆，token通过base64加密，解密后即可登录，如下演示登录的过程
 
-![kubernetes-dashboard获取token登录](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/3%20-%20gkqlkgm9gd.gif)
+![kubernetes-dashboard获取token登录](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/3%20-%20gkqlkgm9gd.gif)
 
 自此，kubernetes-dashboard安装完毕，通过RBAC认证授权特定用户访问集群权限，接下来一起探索dashboard带来的魔力吧。
 
@@ -154,27 +154,27 @@ kubernetes-dashboard图形工具能提供以下功能：
 
 1、查看集群整体概览资源，可以看到整体集群，应用负载，Pod资源的资源使用情况
 
-![资源概览](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/4%20-%20rulsbe0plr.gif)
+![资源概览](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/4%20-%20rulsbe0plr.gif)
 
 2、Cluster集群资源管理，包含还有Nodes，Namespace，StorageClass等，提供在线编辑yaml方式
 
-![集群资源](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/5%20-%20hrg1tbf83c.gif)
+![集群资源](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/5%20-%20hrg1tbf83c.gif)
 
 3、查看应用工作负载Workloads，包含各种不同的工作负载如Deployments，StatefulSets，Jobs等
 
-![工作负载](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/6%20-%20ep74ttkzsq.gif)
+![工作负载](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/6%20-%20ep74ttkzsq.gif)
 
 4、部署Deployments工作负载，支持从YAML文件输入，YAML文件加载和图形界面部署应用
 
-![部署工作负载](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/7%20-%206hzcg7s761.gif)
+![部署工作负载](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/7%20-%206hzcg7s761.gif)
 
 5、工作负载管理，扩展工作负载副本数目，滚动更新等
 
-![扩展副本+滚动更新](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/8%20-%20a2mvzinf2o.gif)
+![扩展副本+滚动更新](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/8%20-%20a2mvzinf2o.gif)
 
 6、远程登录容器和查看容器日志
 
-![登录容器和查看日志](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/9%20-%20wg24e0cujb.gif)
+![登录容器和查看日志](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81%E4%B8%80)dashboard%E4%BD%BFk8s%E6%99%AE%E5%8F%8A%E5%A4%A7%E4%BC%97/9%20-%20wg24e0cujb.gif)
 
 # 写在最后
 

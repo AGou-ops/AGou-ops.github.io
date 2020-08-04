@@ -40,7 +40,7 @@ kubernetes是一个开源的容器引擎管理平台，实现容器化应用的�
 - master负责管理集群，master包含kube-apiserver，kube-controller-manager，kube-scheduler，etcd组件
 - node节点运行容器应用，由Container Runtime，kubelet和kube-proxy组成，其中Container Runtime可能是Docker，rke，containerd，node节点可由物理机或者虚拟机组成。
 
-![img](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/1%20-%201620.jpg)kubernetes集群概念
+![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/1%20-%201620.jpg)kubernetes集群概念
 
 1、查看master组件角色
 
@@ -145,7 +145,7 @@ kubernetes是容器编排引擎，其负责容器的调度，管理和容器的�
 - pod中包含一个容器或者多个容器
 - pod不会单独使用，需要有工作负载来控制，如Deployments，StatefulSets，DaemonSets，CronJobs等
 
-![img](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2%20-%201620.jpg)container与pod
+![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2%20-%201620.jpg)container与pod
 
 - Container，容器是一种轻量化的虚拟化技术，通过将应用封装在镜像中，实现便捷部署，应用分发。
 - Pod，kubernetes中最小的调度单位，封装容器，包含一个pause容器和应用容器，容器之间共享相同的命名空间，网络，存储，共享进程。
@@ -155,7 +155,7 @@ kubernetes是容器编排引擎，其负责容器的调度，管理和容器的�
 
 kubernetes中pod是实际运行的载体，pod依附于node中，node可能会出现故障，kubernetes的控制器如replicasets会在其他node上重新拉起一个pod，新的pod会分配一个新的IP；再者，应用部署时会包含多个副本replicas，如同个应用deployments部署了3个pod副本，pod相当于后端的Real Server，如何实现这三个应用访问呢？对于这种情况，我们一般会在Real Server前面加一个负载均衡Load Balancer，service就是pod的负载均衡调度器，service将动态的pod抽象为一个服务，应用程序直接访问service即可，service会自动将请求转发到后端的pod。负责service转发规则有两种机制：iptables和ipvs，iptables通过设置DNAT等规则实现负载均衡，ipvs通过ipvsadm设置转发规。
 
-![img](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/3%20-%201620.jpg)service概念
+![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/3%20-%201620.jpg)service概念
 
 根据服务不同的访问方式，service分为如下几种类型：ClusterIP，NodePort，LoadBalancer和_ExternalName，可通过type设置。
 
@@ -166,7 +166,7 @@ kubernetes中pod是实际运行的载体，pod依附于node中，node可能会�
 
 pod是动态变化的，ip地址可能会变化（如node故障），副本数可能会变化，如应用扩展scale up，应用锁容scale down等，service如何识别到pod的动态变化呢？答案是labels，通过labels自动会过滤出某个应用的Endpoints，当pod变化时会自动更新Endpoints，不同的应用会有由不同的label组成。labels相关可以参考下https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-![img](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/4%20-%201620.jpg)service与labels
+![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/4%20-%201620.jpg)service与labels
 
 # 2. 创建应用
 
@@ -588,7 +588,7 @@ DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp to:10.244.2.4:
 
 当应用程序的负载比较高无法满足应用请求时，一般我们会通过扩展RS的数量来实现，在kubernetes中，扩展RS实际上通过扩展副本数replicas来实现，扩展RS非常便利，快速实现弹性伸缩。kubernets能提供两种方式的伸缩能力：1. 手动伸缩能力scale up和scale down，2. 动态的弹性伸缩horizontalpodautoscalers,基于CPU的利用率实现自动的弹性伸缩，需要依赖与监控组件如metrics server，当前未实现，后续再做深入探讨，本文以手动的scale的方式扩展应用的副本数。
 
-![img](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/5%20-%20xhtrt4wou1.gif)Deployments副本扩展
+![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/5%20-%20xhtrt4wou1.gif)Deployments副本扩展
 
 1、手动扩展副本数
 
@@ -667,7 +667,7 @@ web1
 
 在kubernetes中更新应用程序时可以将应用程序打包到镜像中，然后更新应用程序的镜像以实现升级。默认Deployments的升级策略为RollingUpdate，其每次会更新应用中的25%的pod，新建新的pod逐个替换，防止应用程序在升级过程中不可用。同时，如果应用程序升级过程中失败，还可以通过回滚的方式将应用程序回滚到之前的状态，回滚时通过replicasets的方式实现。
 
-![img](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/6%20-%20p2mx04luj3.gif)滚动更新
+![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/6%20-%20p2mx04luj3.gif)滚动更新
 
 1、更换nginx的镜像，将应用升级至最新版本,打开另外一个窗口使用kubectl get pods -w观察升级过程
 
@@ -817,7 +817,7 @@ Accept-Ranges: bytes
 
 # 6. 故障迁移
 
-![img](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/7%20-%201620.jpg)故障迁移
+![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%B8%89)kubernetes%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/7%20-%201620.jpg)故障迁移
 
 集群中的node节点物理服务器可能会因为各种原因导致机器不可用，如硬件故障，软件故障，网络故障等原因，当发生故障时容器可能会出现不可用，进而影响业务的使用。kubernetes内置已提供了应用的容错能力，通过工作负载Workload如Deployments，StatefulSets来控制，当node节点异常时会自动将其上的pod迁移至其他node节点上，保障应用的高可用。
 

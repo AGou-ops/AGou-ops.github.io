@@ -53,7 +53,7 @@ Prometheus是一个开源的监控系统+告警系统工具集，最早由SoudCl
 
 ## 1.2 prometheus架构
 
-![prometheus架构](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/1%20-%201620.jpg)
+![prometheus架构](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/1%20-%201620.jpg)
 
 **prometheus架构：**
 
@@ -338,19 +338,19 @@ status:
 
 1、查询prometheus监控指标，prometheus包含有丰富的指标，可以选择不同的监控指标
 
-![prometheus监控指标](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/2%20-%20gpjzsyix9o.gif)
+![prometheus监控指标](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/2%20-%20gpjzsyix9o.gif)
 
 选择container_cpu_usage_seconds_total查询容器的cpu使用率为例，执行Excute执行查询，可以获取到所有容器的cpu使用数据，切换至Graph可以绘制简单的图像，图像显示相对简单，指标通过grafana显示会更绚烂，一般较少使用prometheus的绘图功能
 
-![prometheus指标+绘图](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/3%20-%20qczw5x71i5.gif)
+![prometheus指标+绘图](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/3%20-%20qczw5x71i5.gif)
 
 2、服务发现，用于动态发现prometheus服务相关的组件，并定期向服务组件拉取数据
 
-![](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/4%20-%20jk3ow87to5.gif)
+![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/4%20-%20jk3ow87to5.gif)
 
 3、内置告警规则，默认内置定义有alert告警规则，用户实现监控告警切换到alerts为告警的内容，可以看到告警的指标。
 
-![prometheus告警规则](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/5%20-%20bvk0olwc3a.gif)
+![prometheus告警规则](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/5%20-%20bvk0olwc3a.gif)
 
 prometheus提供了丰富的监控指标metric，并通过9090的http端口提供了外部访问监控指标和简单绘图的功能，相比grafana而言，图形界面的功能相对简单，主要用于查询prometheus数据，借助于PromQL语言查询监控指标数据。
 
@@ -369,31 +369,31 @@ grafana   NodePort   10.105.229.156   <none>        3000:30923/TCP   114m
 
 外部通过30923端口访问grafana，初始默认登陆的用户名和密码均为admin，首次登陆grafana会提示修改用户密码，密码符合复杂性要求，如下为登陆后的grafana的展板显示
 
-![grafana展板](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/6%20-%201620.jpg)
+![grafana展板](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/6%20-%201620.jpg)
 
 1、kubernetes集群监控，包含有整个集群CPU资源使用+分配，内存资源使用+分配，CPU配额，网络资源等，可以全局看到集群资源的使用情况
 
-![prometheus集群监控](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/7%20-%20h74ibrvm5k.gif)
+![prometheus集群监控](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/7%20-%20h74ibrvm5k.gif)
 
 2、Node节点监控，可以看到kubernetes集群中特定某个节点的资源情况啊：CPU使用率，CPU负载，内存使用率，磁盘IO，磁盘空间，网络带宽，网络传输等指标
 
-![prometheus节点监控](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/8%20-%201ok8k7wwql.gif)
+![prometheus节点监控](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/8%20-%201ok8k7wwql.gif)
 
 3、Pod监控，可以查看到命名空间下pod的资源情况：容器CPU使用率，内存使用，磁盘IO，磁盘空间等
 
-![prometheus容器监控](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/9%20-%2042qjmncbxv.gif)
+![prometheus容器监控](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/9%20-%2042qjmncbxv.gif)
 
 4、kubernetes工作负载监控，可以和查看到Deployment，StatefulSets，DaemonSets
 
-![prometheus负载监控](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/10%20-%205dpm46c98a.gif)
+![prometheus负载监控](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/10%20-%205dpm46c98a.gif)
 
 5、网络监控，可以看到集群Cluster级别网络监控、工作负载Workload级别网络监控和Pod级别网络监控，包括网络的发送数据，接受数据，出带宽和入带宽指标。
 
-![grafana网络监控](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/11%20-%208jmhdztw08.gif)
+![grafana网络监控](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/11%20-%208jmhdztw08.gif)
 
 6、grafana默认还提供了其他很多的监控指标，比如apiserver，kubelet，pv等
 
-![grafana更多监控指标](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/12%20-%20zvb0xawqty.gif)
+![grafana更多监控指标](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%8C%E5%8D%81)prometheus%E6%8F%90%E4%BE%9B%E5%AE%8C%E5%A4%87%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/12%20-%20zvb0xawqty.gif)
 
 # 写在最后
 

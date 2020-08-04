@@ -39,7 +39,7 @@ Windows下可以通过批处理脚本完成批处理任务，脚本运行完毕�
 - 任务运行期间节点异常时会自动重新创建Pod
 - 支持并发创建Pod任务数和指定任务数
 
-![jobs](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/1%20-%201620.jpg)
+![jobs](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/1%20-%201620.jpg)
 
 Jobs任务运行方式有如下三种：
 
@@ -96,7 +96,7 @@ job-demo-ssrk7                         1/1     Running   0          97s
 
 4、查看jobs日志日志数据，可以看到当前jobs创建的任务是持续在终端中打印数字，且每次打印暂停1s钟
 
-![jobs任务输出](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/2%20-%201620.jpg)
+![jobs任务输出](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/2%20-%201620.jpg)
 
 5、再次查看jobs的任务，可以看到任务已经completions，运行时长为103s,对应的pod状态处于completed状态
 
@@ -106,7 +106,7 @@ NAME       COMPLETIONS   DURATION   AGE
 job-demo   1/1           103s       5m12s
 ```
 
-![jobs之pod状态](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/3%20-%201620.jpg)
+![jobs之pod状态](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/3%20-%201620.jpg)
 
 ## 1.3 Jobs运行多个任务
 
@@ -133,11 +133,11 @@ spec:
 
 2、运行jobs任务，并用kubectl get jobs --watch查看jobs创建过程，可以看到pod任务是依次运行，直至达到completions所定义的数量
 
-![jobs创建并发任务](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/4%20-%201620.jpg)
+![jobs创建并发任务](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/4%20-%201620.jpg)
 
 3、Jobs任务都已运行完毕，查看Jobs列表可以看到任务都处于Completed状态，查看pod日志可以看到Pi圆周率计算的结果
 
-![jobs批量运行并发任务](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/5%20-%201620.jpg)
+![jobs批量运行并发任务](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/5%20-%201620.jpg)
 
 ## 1.4 Jobs运行并发任务
 
@@ -173,7 +173,7 @@ spec:
 
 2、运行Jobs任务并查看,Jobs控制器同时创建了3个并发任务
 
-![Jobs并发运行任务](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/6%20-%201620.jpg)
+![Jobs并发运行任务](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/6%20-%201620.jpg)
 
 3、通过上面的演示可知，通过parallelism指定并发数量，Jobs控制器会创建出多个Pod副本并运行直至任务completed，同时parallelism可以配合completions一起使用，通过并发创建特定数量的任务，如下以单次运行3个并发任务实现9个任务的Jobs任务
 
@@ -206,7 +206,7 @@ spec:
 
 4、运行Jobs任务并观察创建过程,在describe jobs的详情events日志中可以看到一共创建了9个任务，每3个任务创建时间一样，即并发创建的任务
 
-![并发运行多任务](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/7%20-%201620.jpg)
+![并发运行多任务](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/7%20-%201620.jpg)
 
 **总结**：通过前面的例子解析可得知，Jobs能在kubernetes中实现类似Windows下批处理或Linux下shell任务的功能，通过运行特定任务数+并发数控制创建Pod任务。需要注意一点的是，Jobs控制器和Deployments副本控制器不一样，其不支持修改Jobs的yaml文件，如果有需要修改则需要提前将Jobs任务删除，然后再将修改后的yaml提交任务。
 
@@ -221,7 +221,7 @@ CronJobs用于实现类似Linux下的cronjob周期性计划任务，CronJobs控�
 - CronJobs任务名称小于52个字符
 - 应用场景如：定期备份，周期性发送邮件
 
-![Cronjob](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/8%20-%201620.jpg)
+![Cronjob](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/8%20-%201620.jpg)
 
 CronJobs可通过schedule指定任务运行的周期，其使用参数和cronjob类似，分别使用：分时日月星5个参数表示周期性，其中*表示任意时间点，/表示每隔多久，-表示范围
 
@@ -269,11 +269,11 @@ spec:
 
 2、 运行CronJobs并查看任务列表
 
-![运行cronjobs任务](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/9%20-%201620.jpg)
+![运行cronjobs任务](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/9%20-%201620.jpg)
 
 3、校验CronJobs任务运行的情况，可以看到CronJobs任务调用Jobs控制器创建Pod，Pod创建周期和schedule中定义的周期一致
 
-![校验cronjobs](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/10%20-%201620.jpg)
+![校验cronjobs](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BB%BB%E5%8A%A1Job%E5%92%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1/10%20-%201620.jpg)
 
 当然，CronJobs中通过Jobs的模版也可以定义运行任务的数量和并发数，实现计划时间范围内并发运行多个任务的需求。
 

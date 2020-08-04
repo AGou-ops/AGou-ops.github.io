@@ -62,7 +62,7 @@ The Metrics API
 
 ## 2.2 metric-server架构
 
-![monitoring_architecture.png](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/1%20-%201620.jpg)
+![monitoring_architecture.png](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/1%20-%201620.jpg)
 
 监控架构分两部分内容：核心监控(图白色部分)和自定义监控（图蓝色部分）
 
@@ -180,7 +180,7 @@ E1230 11:35:11.552067       1 manager.go:111] unable to fully collect metrics: [
 
 4、上述的报错信息提示pod中通过DNS无法解析主机名，可以通过在pod中定义hosts文件或告知metric-server优先使用IP的方式通讯，修改metric-server的deployment配置文件，修改如下并重新应用配置
 
-![修改metric-server部署配置文件](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/2%20-%201620.jpg)
+![修改metric-server部署配置文件](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/2%20-%201620.jpg)
 
 5、应用metric-server部署文件后重新生成一个pod，日志中再次查看提示另外一个报错信息
 
@@ -194,7 +194,7 @@ E1230 11:46:27.065274       1 manager.go:111] unable to fully collect metrics: [
 
 6、修改metric-server的deployments配置文件，添加--kubelet-insecure-tls参数设置
 
-![metric-server调整部署参数](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/3%20-%201620.jpg)
+![metric-server调整部署参数](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/3%20-%201620.jpg)
 
 再次重新部署后无报错，等待几分钟后就有数据上报告metric-server中了，可以通过kubectl top进行验证测试。
 
@@ -202,7 +202,7 @@ E1230 11:46:27.065274       1 manager.go:111] unable to fully collect metrics: [
 
 1、安装完metric-server后会增加一个metrics.k8s.io/v1beta1的API组，该API组通过Aggregator接入apiserver中
 
-![metric-server api接口](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/4%20-%201620.jpg)
+![metric-server api接口](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/4%20-%201620.jpg)
 
 2、使用命令行查看kubectl top node的监控信息,可以看到CPU和内存的利用率
 
@@ -383,7 +383,7 @@ kubectl get --raw /apis/metrics.k8s.io/v1beta1/namespaces/default/pods/haproxy-i
 
 > The Horizontal Pod Autoscaler automatically scales the number of pods in a replication controller, deployment, replica set or stateful set based on observed CPU utilization (or, with custom metrics support, on some other application-provided metrics). Note that Horizontal Pod Autoscaling does not apply to objects that can’t be scaled, for example, DaemonSets.
 
-![水平横向扩展](http://agou-ops-file.oss-cn-shanghai.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/5%20-%201620.jpg)
+![水平横向扩展](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B9%9D)%E4%BD%BF%E7%94%A8metric-server%E8%AE%A9HPA%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E6%84%89%E5%BF%AB%E8%BF%90%E8%A1%8C/5%20-%201620.jpg)
 
 HPA即Horizontal Pod Autoscaler,Pod水平横向动态扩展，即根据应用分配资源使用情况，动态增加或者减少Pod副本数量，以实现集群资源的扩容，其实现机制为：
 
