@@ -2,11 +2,790 @@
 &lt;hr>
 &lt;ul>
 &lt;li>本站地址：&lt;a href="https://agou-ops.top">https://agou-ops.top&lt;/a>&lt;/li>
-&lt;li>备用地址：&lt;a href="https://agou-ops.github.io">https://agou-ops.github.io&lt;/a>&lt;/li>
+&lt;li>备用地址：&lt;a href="http://x.agou-ops.top">http://x.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>my Docs：&lt;a href="https://agou-ops.top/beforeWork">https://agou-ops.top/beforeWork&lt;/a>&lt;/li>
 &lt;li>Docs 备用站点：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote:&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Web 压测工具</title><link>https://agou-ops.top/post/web-benchmark/</link><pubDate>Tue, 14 Jul 2020 10:23:47 +0800</pubDate><guid>https://agou-ops.top/post/web-benchmark/</guid><description>&lt;h2 id="web-benchmark-tools">web benchmark tools&lt;/h2>
+&lt;li>发布站点：&lt;a href="http://fabu.agou-ops.top/">http://fabu.agou-ops.top/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>搭建内网yum源</title><link>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</link><pubDate>Tue, 04 Aug 2020 10:23:39 +0800</pubDate><guid>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</guid><description>&lt;blockquote>
+&lt;p>搭建内网yum源，摆脱软件包困扰。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="选择合适稳定的公网yum仓库">选择合适稳定的公网yum仓库&lt;/h2>
+&lt;p>建议选择对运营商网络友好的yum仓库&lt;/p>
+&lt;p>国内可供选择的有:&lt;/p>
+&lt;ul>
+&lt;li>阿里云：http://mirrors.aliyun.com/ (这里我使用阿里云)&lt;/li>
+&lt;li>网易：http://mirrors.163.com/&lt;/li>
+&lt;/ul>
+&lt;p>更多国内镜像仓库参考：https://blog.csdn.net/wyqwilliam/article/details/90581159&lt;/p>
+&lt;h2 id="安装nginx并修改配置文件">安装nginx并修改配置文件&lt;/h2>
+&lt;p>为了方便起见，我这里使用yum仓库进行安装.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@centos-7 ~&lt;span class="o">]&lt;/span>&lt;span class="c1"># yum install nginx -y&lt;/span>
+&lt;span class="o">[&lt;/span>root@centos-7 ~&lt;span class="o">]&lt;/span>&lt;span class="c1"># vi /etc/nginx/conf.d/default.conf&lt;/span>
+&lt;span class="c1"># -----在server段添加以下内容&lt;/span>
+&lt;span class="c1"># 自动在index.html的索引打开&lt;/span>
+autoindex on&lt;span class="p">;&lt;/span>
+&lt;span class="c1"># 如果有文件则显示文件大小&lt;/span>
+autoindex_exact_size on&lt;span class="p">;&lt;/span>
+&lt;span class="c1"># 显示更改时间，以当前系统时间为准&lt;/span>
+autoindex_localtime on
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>具体位置在下面这个位置
+&lt;img src="https://s1.ax1x.com/2020/03/18/8wx7Ax.png" alt="内网yum源搭建-1">
+启动nginx，使用&lt;code>service nignx start &lt;/code>即可&lt;/p>
+&lt;h2 id="创建自定义indexhtml文件">创建自定义index.html文件&lt;/h2>
+&lt;p>修改默认&lt;code>index.html&lt;/code>为以下内容：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;font-weight:bolder;color:green;font-size:30px;&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>ALL of the packages in the below:&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">br&lt;/span>&lt;span class="p">/&amp;gt;&lt;/span>
+&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">a&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;http://192.168.1.128/CentOS-YUM/Aliyun&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Aliyun&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">a&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;&lt;/span>&lt;span class="nt">br&lt;/span>&lt;span class="p">/&amp;gt;&lt;/span>
+These packagers from of CentOS ISO.&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">br&lt;/span>&lt;span class="p">/&amp;gt;&lt;/span>
+&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">a&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;http://192.168.1.128/CentOS7-aliyun&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>CentOS&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">a&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;&lt;/span>&lt;span class="nt">br&lt;/span>&lt;span class="p">/&amp;gt;&lt;/span>
+These packagers from of &amp;#34;Internet service provider&amp;#34;.&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">br&lt;/span>&lt;span class="p">/&amp;gt;&lt;/span>
+&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;font-weight:bolder;color:red;font-size:18px;&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Please replace the file and fill in the following content:&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;font-weight:bolder;color:blue;font-size:15px;&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Way: /etc/yum.repos.d/CentOS-Base.repo&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在站点目录中创建&lt;code>CentOS-YUM/Aliyun&lt;/code>（本地ISO文件仓库）和&lt;code>CentOS7-aliyun&lt;/code>目录&lt;/p>
+&lt;h2 id="添加并同步阿里云yum源">添加并同步阿里云yum源&lt;/h2>
+&lt;p>添加阿里云CentOS7 yum源&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 注意备份原仓库源&lt;/span>
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>同步阿里云CentOS7 yum源到之前创建好的目录当中，使用命令&lt;code>reposync -p /usr/share/nginx/html/CentOS7-aliyun&lt;/code>
+接着，使用&lt;code>createrepo -p /usr/share/nginx/html/CentOS7-aliyun&lt;/code>来创建repodata文件&lt;/p>
+&lt;h2 id="客户端配置">客户端配置&lt;/h2>
+&lt;p>使用以下命令为客户端添加内网仓库地址&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum-config-manager --add-repo&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://192.168.1.128/CentOS7-aliyun/base/Packages&amp;#34;&lt;/span>
+yum makecache &lt;span class="c1"># 更新缓存&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="在yum仓库服务器端创建定时任务">在yum仓库服务器端创建定时任务&lt;/h2>
+&lt;p>新建shell更新脚本&lt;code>update-aliyun.sh&lt;/code>，内容如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;span class="cp">&lt;/span>/usr/bin/reposync -np /usr/share/nginx/html/CentOS7-aliyun
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>使用&lt;code>chmod +x update-aliyun.sh&lt;/code>为其添加执行权限
+添加定时任务(每5min执行一次)&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="m">5&lt;/span> * * * * root run-parts /root/update-aliyun.sh
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>其中&lt;/strong>&lt;code>run-parts&lt;/code>的意思是执行后面目录中的脚本。&lt;/p></description></item><item><title>Git Hook介绍与使用</title><link>https://agou-ops.top/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.top/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>Git 钩子和其它版本控制系统一样，Git 能在特定的重要动作发生时触发自定义脚本。&lt;/p>
+&lt;p>有两组这样的钩子：客户端的和服务器端的。 客户端钩子由诸如提交和合并这样的操作所调用，而服务器端钩子作用于诸如接收被推送的提交这样的联网操作。 你可以随心所欲地运用这些钩子。&lt;/p>
+&lt;h2 id="安装钩子">安装钩子&lt;/h2>
+&lt;p>钩子都被存储在 Git 目录下的 hooks 子目录中。 也即绝大部分项目中的 &lt;code>.git/hooks&lt;/code> 。 当你用 &lt;code>git init&lt;/code> 初始化一个新版本库时，Git 默认会在这个目录中放置一些示例脚本。 这些脚本除了本身可以被调用外，它们还透露了被触发时所传入的参数。 所有的示例都是 shell 脚本，其中一些还混杂了 Perl 代码，不过，任何正确命名的可执行脚本都可以正常使用 —— 你可以用 Ruby 或 Python，或任何你熟悉的语言编写它们。 这些示例的名字都是以 &lt;code>.sample&lt;/code> 结尾，如果你想启用它们，得先移除这个后缀。
+把一个正确命名（不带扩展名）且可执行的文件放入 &lt;code>.git&lt;/code> 目录下的 hooks 子目录中，即可激活该钩子脚本。 这样一来，它就能被 Git 调用。&lt;/p>
+&lt;p>创建一个空的仓库：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">git --bare init &lt;span class="c1"># 推荐使用&lt;/span>
+&lt;span class="c1"># git init&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其中&lt;code>--bare&lt;/code>参数表示创建一个裸仓库，裸仓库何意？与普通空仓库有有什么区别？参考：https://www.cnblogs.com/irockcode/p/8761954.html
+&lt;strong>但是需要注意的一点的是&lt;/strong>git仓库和git裸仓库的钩子所在位置不同:&lt;/p>
+&lt;ul>
+&lt;li>git普通仓库钩子在.git/hooks/中&lt;/li>
+&lt;li>git裸仓库钩子在hooks/中&lt;/li>
+&lt;/ul>
+&lt;p>裸仓库初始化完成后，在&lt;code>hooks&lt;/code>文件夹中会发现一些以&lt;code>.sample&lt;/code>结尾的实例文件：
+&lt;img src="https://s1.ax1x.com/2020/03/17/8aldFU.png" alt="githook1">&lt;/p>
+&lt;h2 id="客户端钩子简单示例">客户端钩子简单示例&lt;/h2>
+&lt;p>使用&lt;code>commit-msg&lt;/code>钩子实现commit信息字符数限制（实际可能没什么卵用,仅作为学习参考）&lt;/p>
+&lt;ol>
+&lt;li>编辑&lt;code>.git/hooks/commit-msg&lt;/code>文件如下：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">➜ git-hook-test git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> ✗ cat .git/hooks/commit-msg 20:55:37
+&lt;span class="c1">#!/bin/sh&lt;/span>
+&lt;span class="nv">MSG&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>awk &lt;span class="s1">&amp;#39;{printf(&amp;#34;%s&amp;#34;,$0)}&amp;#39;&lt;/span> &lt;span class="nv">$1&lt;/span>&lt;span class="sb">`&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> &lt;span class="si">${#&lt;/span>&lt;span class="nv">MSG&lt;/span>&lt;span class="si">}&lt;/span> -lt &lt;span class="m">5&lt;/span> &lt;span class="o">]&lt;/span>
+&lt;span class="k">then&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;-------------------------------------------------------------------&amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;commit message 只有&lt;/span>&lt;span class="si">${#&lt;/span>&lt;span class="nv">MSG&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">字符，不符合要求&amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;message的长度不能小于5, 本次提交失败，请完善commit message，再提交&amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;-------------------------------------------------------------------&amp;#34;&lt;/span>
+&lt;span class="nb">exit&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>为&lt;code>commit-msg&lt;/code>文件添加执行权限：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">chmod u+x .git/hooks/commit-msg
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>生成一次提交信息：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">➜ git-hook-test git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> ✗ git add . 21:00:48
+➜ git-hook-test git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> ✗ git commit -m &lt;span class="s2">&amp;#34;test&amp;#34;&lt;/span>
+-------------------------------------------------------------------
+commit message 只有4字符
+message的长度不能小于5, 本次提交失败，请完善commit message，再提交
+-------------------------------------------------------------------
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>不满足最低5字符要求，提交失败。&lt;/p>
+&lt;h2 id="服务端钩子简单示例">服务端钩子简单示例&lt;/h2>
+&lt;p>使用&lt;code>post-receive&lt;/code>将代码自动部署到服务器&lt;/p>
+&lt;p>流程大致如下：在服务器端创建一个 Git 仓库(repository)，然后将本地的文件使用&lt;code>git push&lt;/code>上传到这个仓库后，将上传到Git 仓库的文件，自动复制到服务器里网站目录文件夹下。&lt;/p>
+&lt;ol>
+&lt;li>在服务器端初始化一个空的Git仓库&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">git init --bare myblog.git
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>在&lt;code>hooks&lt;/code>目录中创建&lt;code>post-receive&lt;/code>文件，并给予执行权限&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nb">cd&lt;/span> hooks/
+touch post-receive&lt;span class="p">;&lt;/span>chmod u+x post-receive
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>编辑&lt;code>post-receive&lt;/code>文件内容如下：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@localhost hooks&lt;span class="o">]&lt;/span>&lt;span class="c1"># cat post-receive&lt;/span>
+&lt;span class="c1">#!/bin/bash -l&lt;/span>
+&lt;span class="nv">GIT_REPO&lt;/span>&lt;span class="o">=&lt;/span>/root/myblog.git
+&lt;span class="nv">TMP_GIT_CLONE&lt;/span>&lt;span class="o">=&lt;/span>/tmp/myblog
+&lt;span class="nv">PUBLIC_WWW&lt;/span>&lt;span class="o">=&lt;/span>/var/www/html
+rm -rf &lt;span class="si">${&lt;/span>&lt;span class="nv">TMP_GIT_CLONE&lt;/span>&lt;span class="si">}&lt;/span>
+git clone &lt;span class="nv">$GIT_REPO&lt;/span> &lt;span class="nv">$TMP_GIT_CLONE&lt;/span>
+&lt;span class="nb">cd&lt;/span> &lt;span class="nv">$TMP_GIT_CLONE&lt;/span>
+rm -rf &lt;span class="si">${&lt;/span>&lt;span class="nv">PUBLIC_WWW&lt;/span>&lt;span class="si">}&lt;/span>/*
+cp -rf &lt;span class="si">${&lt;/span>&lt;span class="nv">TMP_GIT_CLONE&lt;/span>&lt;span class="si">}&lt;/span>/* &lt;span class="si">${&lt;/span>&lt;span class="nv">PUBLIC_WWW&lt;/span>&lt;span class="si">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="4">
+&lt;li>本地添加远程Git仓库并进行测试&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">➜ &lt;span class="nb">test&lt;/span> git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> ✗ git remote add deploy ssh://root@172.16.224.128:/root/myblog.git 21:20:35
+➜ &lt;span class="nb">test&lt;/span> git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> ✗ git add . 21:20:52
+➜ &lt;span class="nb">test&lt;/span> git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> ✗ git commit -m &lt;span class="s2">&amp;#34;auto deploy test&amp;#34;&lt;/span> 21:21:01
+&lt;span class="o">[&lt;/span>master &lt;span class="o">(&lt;/span>root-commit&lt;span class="o">)&lt;/span> 26fde86&lt;span class="o">]&lt;/span> auto deploy &lt;span class="nb">test&lt;/span>
+&lt;span class="m">2&lt;/span> files changed, &lt;span class="m">1&lt;/span> insertion&lt;span class="o">(&lt;/span>+&lt;span class="o">)&lt;/span>
+create mode &lt;span class="m">100644&lt;/span> index.html
+create mode &lt;span class="m">100644&lt;/span> testfile
+➜ &lt;span class="nb">test&lt;/span> git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> git push --set-upstream deploy master 21:28:19
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在git服务器端查看&lt;code>post-receive&lt;/code>是否成功运行&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">[&lt;/span>root@localhost ~&lt;span class="o">]&lt;/span>&lt;span class="c1"># cd /var/www/html/&lt;/span>
+&lt;span class="o">[&lt;/span>root@localhost html&lt;span class="o">]&lt;/span>&lt;span class="c1"># ls&lt;/span>
+index.html testfile
+&lt;span class="o">[&lt;/span>root@localhost html&lt;span class="o">]&lt;/span>&lt;span class="c1"># cat index.html&lt;/span>
+auto deploy
+auto deploy
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="5">
+&lt;li>将代码推送指定分支：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="cp">#!/bin/bash -l
+&lt;/span>&lt;span class="cp">&lt;/span>&lt;span class="k">while&lt;/span> &lt;span class="nb">read&lt;/span> oldrev newrev ref
+&lt;span class="k">do&lt;/span>
+&lt;span class="nv">branch&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$ref&lt;/span> &lt;span class="p">|&lt;/span> cut -d/ -f3&lt;span class="sb">`&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> &lt;span class="s2">&amp;#34;master&amp;#34;&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$branch&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">[&lt;/span> &lt;span class="s2">&amp;#34;production&amp;#34;&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$branch&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;span class="nv">GIT_REPO&lt;/span>&lt;span class="o">=&lt;/span>/root/myblog.git
+&lt;span class="nv">TMP_GIT_CLONE&lt;/span>&lt;span class="o">=&lt;/span>/tmp/myblog
+&lt;span class="nv">PUBLIC_WWW&lt;/span>&lt;span class="o">=&lt;/span>/var/www/html
+rm -rf &lt;span class="si">${&lt;/span>&lt;span class="nv">TMP_GIT_CLONE&lt;/span>&lt;span class="si">}&lt;/span>
+git clone &lt;span class="nv">$GIT_REPO&lt;/span> &lt;span class="nv">$TMP_GIT_CLONE&lt;/span>
+&lt;span class="nb">cd&lt;/span> &lt;span class="nv">$TMP_GIT_CLONE&lt;/span>
+&lt;span class="nb">unset&lt;/span> GIT_DIR
+git checkout &lt;span class="nv">$branch&lt;/span>
+rm -rf &lt;span class="si">${&lt;/span>&lt;span class="nv">PUBLIC_WWW&lt;/span>&lt;span class="si">}&lt;/span>/*
+cp -rf &lt;span class="si">${&lt;/span>&lt;span class="nv">TMP_GIT_CLONE&lt;/span>&lt;span class="si">}&lt;/span>/* &lt;span class="si">${&lt;/span>&lt;span class="nv">PUBLIC_WWW&lt;/span>&lt;span class="si">}&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;span class="k">done&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>更多钩子参考：https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90&lt;/p>
+&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.ituring.com.cn/article/206985">git钩子-图灵社区&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://devslash.net/easy-git-hooks-with-python/">git hooks with python&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.jianshu.com/p/ccd135180783">commit-msg实用示例&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Hexo博客使用gulp压缩静态资源 1</title><link>https://agou-ops.top/post/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90-1/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.top/post/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90-1/</guid><description>&lt;p>gulp 将开发流程中让人痛苦或耗时的任务自动化，从而减少你所浪费的时间、创造更大价值。&lt;/p>
+&lt;p>官方站点：https://www.gulpjs.com.cn/&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h3 id="1全局安装gulp">1、全局安装gulp&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">npm install gulp -g
+# 查看版本
+gulp -v
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="2安装gulp插件">2、安装gulp插件&lt;/h3>
+&lt;p>在站点根目录下安装&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">npm install gulp --save
+npm install gulp-minify-css --save
+npm install gulp-uglify --save
+npm install gulp-htmlmin --save
+npm install gulp-htmlclean --save
+npm install gulp-imagemin --save
+# 解决【Gulp打包问题】 GulpUglifyError: unable to minify JavaScript
+# 解决 gulp-uglify 压缩JavaScript 不兼容 es5 语法的问题
+npm install babel-core@6.26.3 --save
+npm install gulp-babel@7.0.1 --save
+npm install babel-preset-es2015@6.24.1 --save
+# gulp-babel 取消严格模式方法(&amp;#34;use strict&amp;#34;)
+npm install babel-plugin-transform-remove-strict-mode --save
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>问题：如果安装&lt;code>gulp-imagemin&lt;/code>错误请执行以下语句
+&lt;code>sudo npm i gulp-imagemin --unsafe-perms&lt;/code>&lt;/p>
+&lt;h3 id="3创建gulpfilejs文件">3、创建&lt;code>gulpfile.js&lt;/code>文件&lt;/h3>
+&lt;p>在 Hexo 站点下新建&lt;code>gulpfile.js&lt;/code>文件，文件内容如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;span class="lnt">79
+&lt;/span>&lt;span class="lnt">80
+&lt;/span>&lt;span class="lnt">81
+&lt;/span>&lt;span class="lnt">82
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">var gulp = require(&amp;#39;gulp&amp;#39;);
+var minifycss = require(&amp;#39;gulp-minify-css&amp;#39;);
+var uglify = require(&amp;#39;gulp-uglify&amp;#39;);
+var htmlmin = require(&amp;#39;gulp-htmlmin&amp;#39;);
+var htmlclean = require(&amp;#39;gulp-htmlclean&amp;#39;);
+var imagemin = require(&amp;#39;gulp-imagemin&amp;#39;);
+var babel = require(&amp;#39;gulp-babel&amp;#39;);
+// 压缩css文件
+gulp.task(&amp;#39;minify-css&amp;#39;, function (done) {
+return gulp.src(&amp;#39;./public/**/*.css&amp;#39;)
+.pipe(minifycss())
+.pipe(gulp.dest(&amp;#39;./public&amp;#39;));
+done();
+});
+// 压缩html文件
+gulp.task(&amp;#39;minify-html&amp;#39;, function (done) {
+return gulp.src(&amp;#39;./public/**/*.html&amp;#39;)
+.pipe(htmlclean())
+.pipe(htmlmin({
+removeComments: true,
+minifyJS: true,
+minifyCSS: true,
+minifyURLs: true,
+}))
+.pipe(gulp.dest(&amp;#39;./public&amp;#39;));
+done();
+});
+// 压缩js文件
+gulp.task(&amp;#39;minify-js&amp;#39;, function (done) {
+return gulp.src([&amp;#39;./public/**/*.js&amp;#39;, &amp;#39;!./public/**/*.min.js&amp;#39;])
+.pipe(babel({
+//将ES6代码转译为可执行的JS代码
+presets: [&amp;#39;es2015&amp;#39;] // es5检查机制
+}))
+.pipe(uglify())
+.pipe(gulp.dest(&amp;#39;./public&amp;#39;));
+done();
+});
+// 压缩 public/images 目录内图片(Version&amp;lt;3)
+// gulp.task(&amp;#39;minify-images&amp;#39;, function () {
+// gulp.src(&amp;#39;./public/images/**/*.*&amp;#39;)
+// .pipe(imagemin({
+// optimizationLevel: 5, //类型：Number 默认：3 取值范围：0-7（优化等级）
+// progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+// interlaced: false, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+// multipass: false, //类型：Boolean 默认：false 多次优化svg直到完全优化
+// }))
+// .pipe(gulp.dest(&amp;#39;./public/images&amp;#39;));
+// });
+// 压缩 public/images 目录内图片(Version&amp;gt;3)
+gulp.task(&amp;#39;minify-images&amp;#39;, function (done) {
+gulp.src(&amp;#39;./public/images/**/*.*&amp;#39;)
+.pipe(imagemin([
+imagemin.gifsicle({interlaced: true}),
+imagemin.jpegtran({progressive: true}),
+imagemin.optipng({optimizationLevel: 5}),
+imagemin.svgo({
+plugins: [
+{removeViewBox: true},
+{cleanupIDs: false}
+]
+})
+]))
+.pipe(gulp.dest(&amp;#39;./public/images&amp;#39;));
+done();
+});
+//4.0以前的写法
+//gulp.task(&amp;#39;default&amp;#39;, [
+// &amp;#39;minify-html&amp;#39;, &amp;#39;minify-css&amp;#39;, &amp;#39;minify-js&amp;#39;, &amp;#39;minify-images&amp;#39;
+//]);
+//4.0以后的写法
+// 执行 gulp 命令时执行的任务
+gulp.task(&amp;#39;default&amp;#39;, gulp.series(gulp.parallel(&amp;#39;minify-html&amp;#39;, &amp;#39;minify-css&amp;#39;, &amp;#39;minify-js&amp;#39;, &amp;#39;minify-images&amp;#39;)), function () {
+console.log(&amp;#34;----------gulp Finished----------&amp;#34;);
+// Do something after a, b, and c are finished.
+});
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="4创建babelrc文件">4、创建&lt;code>.babelrc&lt;/code>文件&lt;/h3>
+&lt;p>在 Hexo 站点下新建&lt;code>.babelrc&lt;/code>文件，文件内容如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{
+&amp;#39;presets&amp;#39;: [&amp;#39;es2015&amp;#39;],
+&amp;#34;plugins&amp;#34;: [&amp;#34;transform-remove-strict-mode&amp;#34;]
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="5启用静态资源压缩">5、启用静态资源压缩&lt;/h3>
+&lt;p>推荐姿势：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">hexo cl &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; gulp &amp;amp;&amp;amp; hexo d
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>可在&lt;code>package.json&lt;/code> 中的 &lt;code>&amp;quot;scripts&amp;quot;&lt;/code> 项增加一个 &lt;code>&amp;quot;publish&amp;quot;&lt;/code> 命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{
+//...
+&amp;#34;scripts&amp;#34;: {
+//...
+&amp;#34;publish&amp;#34;: &amp;#34;hexo cl &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; gulp &amp;amp;&amp;amp; hexo d&amp;#34;,
+//...
+}
+//...
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>使用GitHub Actions将文件push到OSS</title><link>https://agou-ops.top/post/%E4%BD%BF%E7%94%A8github-actions%E5%B0%86%E6%96%87%E4%BB%B6push%E5%88%B0oss/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.top/post/%E4%BD%BF%E7%94%A8github-actions%E5%B0%86%E6%96%87%E4%BB%B6push%E5%88%B0oss/</guid><description>&lt;p>阿里云对象存储服务（Object Storage Service，简称OSS）为您提供基于网络的数据存取服务。使用OSS，您可以通过网络随时存储和调用包括文本、图片、音频和视频等在内的各种非结构化数据文件。&lt;/p>
+&lt;p>官方帮助文档：https://help.aliyun.com/document_detail/31883.html&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;ol>
+&lt;li>首先打开所要使用&lt;code>Github Actions&lt;/code>的仓库，点击&lt;code>Actions&lt;/code>，并创建一个新的&lt;code>workflow&lt;/code>
+&lt;img src="https://s2.ax1x.com/2020/03/08/3zlpwD.png" alt="3zlpwD.png">
+此时，github将会自动在仓库中创建一个名为&lt;code>.github/workflows&lt;/code>的文件夹。
+&lt;img src="https://s2.ax1x.com/2020/03/08/3zlN0U.png" alt="3zlN0U.png">&lt;/li>
+&lt;li>编辑配置文件&lt;code>oss.yml&lt;/code>,输入以下内容&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="k">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>MainWorkflow&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">[&lt;/span>push&lt;span class="p">]&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">build&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>ubuntu-latest&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="k">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>actions/checkout@v1&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="k">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>actions/setup-node@v1&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">node-version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;12.x&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="k">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>Build&lt;span class="w"> &lt;/span>Blog&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="sd">|
+&lt;/span>&lt;span class="sd"> npm install&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>npm&lt;span class="w"> &lt;/span>install&lt;span class="w"> &lt;/span>-g&lt;span class="w"> &lt;/span>hexo-cli&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>hexo&lt;span class="w"> &lt;/span>generate&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="k">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>manyuanrong/setup-ossutil@v1&lt;span class="m">.0&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># endpoint 可以去oss控制台上查看&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">endpoint&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;oss-cn-hangzhou.aliyuncs.com&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 使用我们之前配置在secrets里面的accesskeys来配置ossutil&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">access-key-id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>${{&lt;span class="w"> &lt;/span>secrets.ACCESS_KEY_ID&lt;span class="w"> &lt;/span>}}&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">access-key-secret&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>${{&lt;span class="w"> &lt;/span>secrets.ACCESS_KEY_SECRET&lt;span class="w"> &lt;/span>}}&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="k">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>Deply&lt;span class="w"> &lt;/span>To&lt;span class="w"> &lt;/span>OSS&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>ossutil&lt;span class="w"> &lt;/span>cp&lt;span class="w"> &lt;/span>public&lt;span class="w"> &lt;/span>oss&lt;span class="p">:&lt;/span>//agou-ops/&lt;span class="w"> &lt;/span>-rf&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其中，&lt;code>secrets.ACCESS_KEY_ID&lt;/code>和&lt;code>secrets.ACCESS_KEY_SECRET&lt;/code>属于github的专用秘钥，比较隐私的变量可以放置在此处，具体位置在Settings&amp;gt;Secrets
+&lt;img src="https://s2.ax1x.com/2020/03/08/3zlx9s.png" alt="3zlx9s.png">
+3. 提交&lt;code>commit&lt;/code>，github会自动进行部署，点击&lt;code>Actions&lt;/code>可以查看部署的详细状态&lt;/p>
+&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;a href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">Github Actions入门教程&lt;/a>,阮一峰
+&lt;a href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">GitHub Pages 官方文档&lt;/a>
+&lt;a href="https://lukeboyle.com/blog-posts/2019/08/github-actions-for-web-apps/">Github Actions for web apps&lt;/a>, Luke Boyle
+&lt;a href="https://medium.com/@adam.zolyak/my-first-week-with-github-actions-5d92de4c4851">My First Week With GitHub Actions&lt;/a>, Adam Zolyak&lt;/p>
+&lt;/blockquote></description></item><item><title>编写shell帮助信息通用小技巧</title><link>https://agou-ops.top/post/%E7%BC%96%E5%86%99shell%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</link><pubDate>Tue, 14 Jul 2020 11:00:31 +0800</pubDate><guid>https://agou-ops.top/post/%E7%BC%96%E5%86%99shell%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</guid><description>&lt;p>废话少说， 直接上脚本：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;span class="cp">&lt;/span>&lt;span class="c1">###&lt;/span>
+&lt;span class="c1">### Some shell version or description here.&lt;/span>
+&lt;span class="c1">###&lt;/span>
+&lt;span class="c1">### Usage:&lt;/span>
+&lt;span class="c1">### test &amp;lt;input&amp;gt; &amp;lt;output&amp;gt;&lt;/span>
+&lt;span class="c1">###&lt;/span>
+&lt;span class="c1">### Options:&lt;/span>
+&lt;span class="c1">### &amp;lt;input&amp;gt; Input file to read.&lt;/span>
+&lt;span class="c1">### &amp;lt;output&amp;gt; Output file to write. Use &amp;#39;-&amp;#39; for stdout.&lt;/span>
+&lt;span class="c1">### -h | --help Show this message.&lt;/span>
+help&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+sed -rn &lt;span class="s1">&amp;#39;s/^### ?//;T;p&amp;#39;&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$0&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="c1"># 如果用户输入“-h”或者无参数，执行help函数&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$#&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="m">0&lt;/span> &lt;span class="o">]]&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$1&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;-h&amp;#34;&lt;/span> &lt;span class="o">]]&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$1&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;--help&amp;#34;&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;span class="nb">help&lt;/span>
+&lt;span class="nb">exit&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>效果：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">╭─agou-ops@ideapad-15ISK ~/tmp
+╰─$ bash test.sh --help
+Some shell version or description here.
+Usage:
+&lt;span class="nb">test&lt;/span> &amp;lt;input&amp;gt; &amp;lt;output&amp;gt;
+Options:
+&amp;lt;input&amp;gt; Input file to read.
+&amp;lt;output&amp;gt; Output file to write. Use &lt;span class="s1">&amp;#39;-&amp;#39;&lt;/span> &lt;span class="k">for&lt;/span> stdout.
+-h &lt;span class="p">|&lt;/span> --help Show this message.
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Web 压测工具</title><link>https://agou-ops.top/post/web-benchmark/</link><pubDate>Tue, 14 Jul 2020 10:23:47 +0800</pubDate><guid>https://agou-ops.top/post/web-benchmark/</guid><description>&lt;h2 id="web-benchmark-tools">web benchmark tools&lt;/h2>
 &lt;h3 id="apache-bench">Apache Bench&lt;/h3>
 &lt;blockquote>
 &lt;p>ApacheBench 是一个用来衡量http服务器性能的单线程命令行工具。原本针对Apache http服务器，但是也适用于其他http服务器。&lt;/p>
@@ -3899,246 +4678,4 @@ And then define the link:
 &lt;p>Here is the &lt;em>text&lt;/em> of the &lt;strong>footnote&lt;/strong>. &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Shortcodes Preview</title><link>https://agou-ops.top/post/shortcodes-preview/</link><pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate><guid>https://agou-ops.top/post/shortcodes-preview/</guid><description>&lt;h2 id="what-a-shortcode-is">What a Shortcode is&lt;/h2>
-&lt;p>Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;code>&amp;lt;iframes&amp;gt;&lt;/code>) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&amp;rsquo;s syntax.&lt;/p>
-&lt;p>Hugo created &lt;strong>shortcodes&lt;/strong> to circumvent these limitations.&lt;/p>
-&lt;p>A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.&lt;/p>
-&lt;p>In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.&lt;/p>
-&lt;p>More details: &lt;a href="https://gohugo.io/content-management/shortcodes/">https://gohugo.io/content-management/shortcodes/&lt;/a>&lt;/p>
-&lt;h2 id="blockquotes">blockquotes&lt;/h2>
-&lt;p>Normal quote:
-&lt;blockquote>
-&lt;p>This is a simple quote.&lt;/p>
-&lt;footer>
-&lt;strong>&lt;/strong>
-&lt;/footer>
-&lt;/blockquote>
-&lt;/p>
-&lt;p>Quote with author:
-&lt;blockquote>
-&lt;p>This is a quote with only an Author named Author2.&lt;/p>
-&lt;footer>
-&lt;strong>Author2&lt;/strong>
-&lt;/footer>
-&lt;/blockquote>
-&lt;/p>
-&lt;p>Quote with author and source:
-&lt;blockquote>
-&lt;p>This is a quote from Author3 and source &amp;ldquo;source.&amp;rdquo;&lt;/p>
-&lt;footer>
-&lt;strong>Author3&lt;/strong>
-&lt;cite>Source&lt;/cite>
-&lt;/footer>
-&lt;/blockquote>
-&lt;/p>
-&lt;p>Quote with author and link:
-&lt;blockquote>
-&lt;p>This is a quote from Author4 and links to &lt;a href="https://www.google.com">https://www.google.com&lt;/a>.&lt;/p>
-&lt;footer>
-&lt;strong>Author4&lt;/strong>
-&lt;cite>
-&lt;a href="https://www.google.com" title="https://www.google.com">google.com&lt;/a>
-&lt;/cite>
-&lt;/footer>
-&lt;/blockquote>
-&lt;/p>
-&lt;p>Quote with author, link and title:
-&lt;blockquote>
-&lt;p>This is a quote from Author5 and links to &lt;a href="https://www.google.com">https://www.google.com&lt;/a> with title &amp;ldquo;Google.&amp;rdquo;&lt;/p>
-&lt;footer>
-&lt;strong>Author5&lt;/strong>
-&lt;cite>
-&lt;a href="https://www.google.com" title="https://www.google.com">Google&lt;/a>
-&lt;/cite>
-&lt;/footer>
-&lt;/blockquote>
-&lt;/p>
-&lt;p>Quote with author and a link longer than 32 characters, string is first cut at 32 characters then everything after the last forward slash is removed
-&lt;blockquote>
-&lt;p>This is a quote from Author5 and links to &lt;a href="https://twitter.com/CryptoGangsta/status/716427930126196737">https://twitter.com/CryptoGangsta/status/716427930126196737&lt;/a> which is longer than 32 characters.
-&lt;!-- raw HTML omitted -->And this is a new line in the quote with the HTML br tag.&lt;/p>
-&lt;footer>
-&lt;strong>Author6&lt;/strong>
-&lt;cite>
-&lt;a href="https://twitter.com/CryptoGangsta/status/716427930126196737" title="https://twitter.com/CryptoGangsta/status/716427930126196737">twitter.com/CryptoGangsta/...&lt;/a>
-&lt;/cite>
-&lt;/footer>
-&lt;/blockquote>
-&lt;/p>
-&lt;p>Test from the Octopress blockquote page at: &lt;a href="http://octopress.org/docs/plugins/blockquote/">http://octopress.org/docs/plugins/blockquote/&lt;/a>
-&lt;blockquote>
-&lt;p>Over the past 24 hours I&amp;rsquo;ve been reflecting on my life &amp;amp; I&amp;rsquo;ve realized only one thing. I need a medieval battle axe.&lt;/p>
-&lt;footer>
-&lt;strong>@allanbranch&lt;/strong>
-&lt;cite>
-&lt;a href="https://twitter.com/allanbranch/status/90766146063712256" title="https://twitter.com/allanbranch/status/90766146063712256">twitter.com/allanbranch/status/...&lt;/a>
-&lt;/cite>
-&lt;/footer>
-&lt;/blockquote>
-&lt;/p>
-&lt;h2 id="music">music&lt;/h2>
-&lt;!-- raw HTML omitted -->
-&lt;h2 id="gist1">gist(+1)&lt;/h2>
-&lt;p>We can embed the gist in our content via username and gist ID pulled from the URL:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; gist AGou-ops 5e0b2df2f0d23c65742a633ed0225cf6 &amp;gt;}}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Display:&lt;/p>
-&lt;script type="application/javascript" src="https://gist.github.com/AGou-ops/5e0b2df2f0d23c65742a633ed0225cf6.js">&lt;/script>
-&lt;h2 id="expand">expand&lt;/h2>
-&lt;p>The Expand shortcode displays an expandable/collapsible section of text on your page. Here is an example&lt;/p>
-&lt;details>
-&lt;summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-Is this learn theme rocks ?
-&lt;/summary>
-Yes !.
-&lt;/details>
-&lt;h3 id="usage">Usage&lt;/h3>
-&lt;p>this shortcode takes exactly one optional parameter to define the text that appears next to the expand/collapse icon. (default is “Click to expand”)&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; expand &amp;#34;Is this learn theme rocks ?&amp;#34; &amp;gt;}}
-Yes !.
-{{&amp;lt; /expand &amp;gt;}}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="youtube">youtube&lt;/h2>
-&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe src="https://www.youtube.com/embed/w7Ft2ymGmfc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
-&lt;/div>
-&lt;h2 id="vimeo">vimeo&lt;/h2>
-&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe src="https://player.vimeo.com/video/146022717" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen>&lt;/iframe>
-&lt;/div>
-&lt;h2 id="youku">youku&lt;/h2>
-&lt;div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-&lt;iframe src="https://player.youku.com/embed/XMzQ0ODUxMjM2NA?autoplay=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouKu Video">
-&lt;/iframe>
-&lt;/div></description></item><item><title>Image Preview</title><link>https://agou-ops.top/post/image-preview/</link><pubDate>Sun, 03 Mar 2019 16:01:23 +0800</pubDate><guid>https://agou-ops.top/post/image-preview/</guid><description>&lt;p>Thanks for &lt;a href="https://github.com/liwenyip/hugo-easy-gallery">liwenyip/hugo-easy-gallery&lt;/a> &amp;amp; &lt;a href="https://github.com/xianmin/hugo-theme-jane/pull/48">Zebradil · Pull Request #48&lt;/a> .&lt;/p>
-&lt;p>Now, we could use &lt;code>{{&amp;lt; gallery &amp;gt;}}&lt;/code> shortcode in hugo-theme-jane.&lt;/p>
-&lt;h2 id="normal-image">Normal Image&lt;/h2>
-&lt;p>This is an image in &lt;code>static/image&lt;/code> folder.&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">![&lt;span class="nt">This is an image in `static/image` folder.&lt;/span>](&lt;span class="na">https://agou-images.oss-cn-qingdao.aliyuncs.com/violet-evergarden/Screenshot_2020-03-29-21-40-19.png&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/violet-evergarden/Screenshot_2020-03-29-21-40-19.png" alt="This is an image in static/image folder.">&lt;/p>
-&lt;h2 id="-figure--shortcode">&lt;code>{{&amp;lt; figure &amp;gt;}}&lt;/code> shortcode&lt;/h2>
-&lt;h3 id="figure-image-with-title">figure image with title&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; figure src=&amp;#34;/image/test.png&amp;#34; title=&amp;#34;figure image with title&amp;#34; &amp;gt;}}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="figure-image-with-caption">figure image with caption&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; figure src=&amp;#34;/image/example.jpg&amp;#34; caption=&amp;#34;figure image with caption figure image with caption figure image with caption figure image with caption figure image with caption&amp;#34; &amp;gt;}}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="more--figure--shortcode-usage">more &lt;code>{{&amp;lt; figure &amp;gt;}}&lt;/code> shortcode usage&lt;/h3>
-&lt;p>Specifying your image files:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>{{&amp;lt; figure src=&amp;quot;thumb.jpg&amp;quot; link=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code> will use &lt;code>thumb.jpg&lt;/code> for thumbnail and &lt;code>image.jpg&lt;/code> for lightbox&lt;/li>
-&lt;li>&lt;code>{{&amp;lt; figure src=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code> or &lt;code>{{&amp;lt; figure link=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code> will use &lt;code>image.jpg&lt;/code> for both thumbnail and lightbox&lt;/li>
-&lt;li>&lt;code>{{&amp;lt; figure link=&amp;quot;image.jpg&amp;quot; thumb=&amp;quot;-small&amp;quot; &amp;gt;}}&lt;/code> will use &lt;code>image-small.jpg&lt;/code> for thumbnail and &lt;code>image.jpg&lt;/code> for lightbox&lt;/li>
-&lt;/ul>
-&lt;p>Optional parameters:&lt;/p>
-&lt;ul>
-&lt;li>All the &lt;a href="https://gohugo.io/extras/shortcodes">features/parameters&lt;/a> of Hugo&amp;rsquo;s built-in &lt;code>figure&lt;/code> shortcode work as normal, i.e. src, link, title, caption, class, attr (attribution), attrlink, alt&lt;/li>
-&lt;li>&lt;code>size&lt;/code> (e.g. &lt;code>size=&amp;quot;1024x768&amp;quot;&lt;/code>) pre-defines the image size for PhotoSwipe. Use this option if you don&amp;rsquo;t want to pre-load the linked image to determine its size.&lt;/li>
-&lt;li>&lt;code>class&lt;/code> allows you to set any custom classes you want on the &lt;code>&amp;lt;figure&amp;gt;&lt;/code> tag.&lt;/li>
-&lt;/ul>
-&lt;p>Optional parameters for standalone &lt;code>{{&amp;lt; figure &amp;gt;}}&lt;/code> shortcodes only (i.e. don&amp;rsquo;t use on &lt;code>{{&amp;lt; figure &amp;gt;}}&lt;/code> inside &lt;code>{{&amp;lt; gallery &amp;gt;}}&lt;/code> - strange things may happen if you do):&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>caption-position&lt;/code> and &lt;code>caption-effect&lt;/code> work the same as for the &lt;code>{{&amp;lt; gallery &amp;gt;}}&lt;/code> shortcode (see below).&lt;/li>
-&lt;li>&lt;code>width&lt;/code> defines the &lt;a href="https://www.w3schools.com/cssref/pr_dim_max-width.asp">&lt;code>max-width&lt;/code>&lt;/a> of the image displayed on the page. If using a thumbnail for a standalone figure, set this equal to your thumbnail&amp;rsquo;s native width to make the captions behave properly (or feel free to come up with a better solution and submit a pull request :-)). Also use this option if you don&amp;rsquo;t have a thumbnail and you don&amp;rsquo;t want the hi-res image to take up the entire width of the screen/container.&lt;/li>
-&lt;li>&lt;code>class=&amp;quot;no-photoswipe&amp;quot;&lt;/code> prevents a &lt;code>&amp;lt;figure&amp;gt;&lt;/code> from being loaded into PhotoSwipe. If you click on the figure you&amp;rsquo;ll instead a good ol&amp;rsquo; fashioned hyperlink to a bigger image (or - if you haven&amp;rsquo;t specified a bigger image - the same one).&lt;/li>
-&lt;/ul>
-&lt;h2 id="-gallery--shortcode">&lt;code>{{&amp;lt; gallery &amp;gt;}}&lt;/code> shortcode&lt;/h2>
-&lt;h3 id="simple-gallery">simple gallery&lt;/h3>
-&lt;p>To specify a directory of image files:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; gallery dir=&amp;#34;/img/your-directory-of-images/&amp;#34; &amp;gt;}}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>The images are automatically captioned with the file name.&lt;/li>
-&lt;li>&lt;code>[image].jpg&lt;/code> is used for the hi-res image, and &lt;code>[image]-thumb.jpg&lt;/code> is used for the thumbnails.&lt;/li>
-&lt;li>If &lt;code>[image]-thumb.jpg&lt;/code> doesn&amp;rsquo;t exist, then &lt;code>[image].jpg&lt;/code> will be used for both hi-res and thumbnail images.&lt;/li>
-&lt;li>The default thumbnail suffix is &lt;code>-thumb&lt;/code>, but you can specify a different one e.g. &lt;code>thumb=&amp;quot;-small&amp;quot;&lt;/code> or &lt;code>thumb=&amp;quot;_150x150&amp;quot;&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;h3 id="to-specify-individual-image-files">To specify individual image files&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; gallery &amp;gt;}}
-{{&amp;lt; figure src=&amp;#34;image1.jpg&amp;#34; &amp;gt;}}
-{{&amp;lt; figure src=&amp;#34;image2.jpg&amp;#34; &amp;gt;}}
-{{&amp;lt; figure src=&amp;#34;image3.jpg&amp;#34; &amp;gt;}}
-{{&amp;lt; /gallery &amp;gt;}}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>Optional parameters:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>caption-position&lt;/code> - determines the captions&amp;rsquo; position over the image. Options:
-&lt;ul>
-&lt;li>&lt;code>bottom&lt;/code> (default)&lt;/li>
-&lt;li>&lt;code>center&lt;/code>&lt;/li>
-&lt;li>&lt;code>none&lt;/code> hides captions on the page (they will only show in PhotoSwipe)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>caption-effect&lt;/code> - determines if/how captions appear upon hover. Options:
-&lt;ul>
-&lt;li>&lt;code>slide&lt;/code> (default)&lt;/li>
-&lt;li>&lt;code>fade&lt;/code>&lt;/li>
-&lt;li>&lt;code>none&lt;/code> (captions always visible)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>hover-effect&lt;/code> - determines if/how images change upon hover. Options:
-&lt;ul>
-&lt;li>&lt;code>zoom&lt;/code> (default)&lt;/li>
-&lt;li>&lt;code>grow&lt;/code>&lt;/li>
-&lt;li>&lt;code>shrink&lt;/code>&lt;/li>
-&lt;li>&lt;code>slideup&lt;/code>&lt;/li>
-&lt;li>&lt;code>slidedown&lt;/code>&lt;/li>
-&lt;li>&lt;code>none&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>hover-transition&lt;/code> - determines if/how images change upon hover. Options:
-&lt;ul>
-&lt;li>not set - smooth transition (default)&lt;/li>
-&lt;li>&lt;code>none&lt;/code> - hard transition&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/section></description></item></channel></rss>
