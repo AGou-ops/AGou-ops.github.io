@@ -7,6 +7,48 @@
 &lt;li>Docs 备用站点：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote:&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
 &lt;li>发布站点：&lt;a href="http://fabu.agou-ops.top/">http://fabu.agou-ops.top/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>【日记】闲鱼垃圾佬的一天</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</link><pubDate>Mon, 14 Sep 2020 20:36:21 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</guid><description>&lt;h2 id="购置背景">购置背景&lt;/h2>
+&lt;p>　　长达两个多月的菏泽实习结束了，感觉如释重负，终于摆脱了实习带来的困扰和限制，心情也不由地变好了起来。在返校的火车上，闲着没事刷了刷闲鱼，看了看自己这段时间以来卖出的虚拟商品（代搭建博客/代下载GitHub资源等），大概赚了&lt;code>1k&lt;/code>块钱左右吧，呃&amp;hellip;还是蛮不错的。&lt;/p>
+&lt;p>&lt;img src="http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/Screenshot%20from%202020-09-14%2021-04-11.png" alt="">&lt;/p>
+&lt;p>　　然后不经意之间就看到我上上学期买到的&lt;code>蜗牛星际B款双千&lt;/code>（矿难无情人有情），想起来机子还在宿舍桌子上，大半年没动过了，估计已经吃灰了。正当我犹豫是挂闲鱼转手再卖出去时（能小赚一笔），我看到了二手的笔记本拆机屏幕，萌发起重振蜗牛星际的想法，又想了想实习也赚了点小钱，&lt;strong>搞！&lt;/strong>。询问了一圈之后，最终买下了这款型号为&lt;code>友达(AUO)-B101EW05 V1(AUO51D4)&lt;/code>的拆机屏，大小是&lt;code>10.1寸&lt;/code>，最高分辨率为&lt;code>1280*800&lt;/code>，参数如下图所示：&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/2ce6e2ceee2668b8034a05108ebfc531.jpg" alt="参数图">&lt;/p>
+&lt;blockquote>
+&lt;h4 id="有人会问为啥非要买一个二手拆机屏呢其实根本没人问这一切都是博主自己幻想出来的">有人会问为啥非要买一个二手拆机屏呢？（&lt;del>其实根本没人问，这一切都是博主自己幻想出来的&lt;/del>）&lt;/h4>
+&lt;p>&lt;strong>理由如下：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>手上没有现成的显示屏，之前全是借隔壁宿舍的显示屏来用的;&lt;/li>
+&lt;li>笔记本显示屏驱动部件嵌在主板上，无法直接使用;&lt;/li>
+&lt;li>可以作为笔记本拓展屏，一箭双雕;&lt;/li>
+&lt;li>最后一点也是最最重要的一点，&lt;strong>穷穷穷&lt;/strong>，没钱买拓展屏，只能自己买破烂凑一个。&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h2 id="其他硬件设备购置">其他硬件设备购置&lt;/h2>
+&lt;h3 id="驱动板">驱动板&lt;/h3>
+&lt;p>　　光有显示屏还不行，还需要驱动板才能正常使用，不得不说闲鱼和淘宝是万能的，什么东西都能够买到，在苦苦寻找和对比了一番之后，最终找到了一个淘宝卖家（店铺链接：https：//m.tb.cn/h.VBYebL1?sm=6c9ebe ），销量和口碑都还不错，把显示屏型号发给卖家后，卖家制作完当天晚上就发货了，真是迅速啊，点个赞👍。&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/Screenshot%20from%202020-09-14%2021-07-31.png" alt="">&lt;/p>
+&lt;h3 id="msata">mSATA&lt;/h3>
+&lt;p>　　蜗牛星际原装自带的&lt;code>mSATA&lt;/code>是&lt;code>16g&lt;/code>的，只够装个&lt;code>pve&lt;/code>、&lt;code>VMware ESXi&lt;/code>、&lt;code>iKuai&lt;/code>、&lt;code>openwrt&lt;/code>、&lt;code>群晖&lt;/code>啥的，根本不够用的，然后嘞，自己又想安装个&lt;code>Windows Server 2008 R2&lt;/code>挂一些软件，所以就下狠心来又买了一条&lt;code>128g&lt;/code>的渣士顿&lt;code>mSATA&lt;/code>固态硬盘，也是闲鱼买的，大概&lt;code>100软妹币&lt;/code>，&lt;code>MLC&lt;/code>颗粒的，还是蛮值的。&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/Screenshot%20from%202020-09-14%2021-07-03.png" alt="">&lt;/p>
+&lt;p>&lt;code>CrystalDiskMark&lt;/code>跑分如下图所示：&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/%E9%87%91%E5%A3%AB%E9%A1%BFmSATA-128g2020-09-13.png" alt="">&lt;/p>
+&lt;p>　　这样一来，拆蜗牛星际多出来的那块&lt;code>mSATA 16g&lt;/code>岂不是吃灰了？&lt;strong>不，垃圾佬不会就此止步，不会。&lt;/strong>&lt;/p>
+&lt;p>所以就有了下面这个设备😆。&lt;/p>
+&lt;h3 id="usb30-to-msata-box">USB3.0 TO mSATA Box&lt;/h3>
+&lt;p>　　这小东西功能很简单，就是把&lt;code>mSATA&lt;/code>接口转为&lt;code>USB&lt;/code>接口，以便直接插在电脑上直接使用。实体图如下所示：&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>还是蛮好看的，不错，不错。&lt;/p>
+&lt;h3 id="hdmi-线--亚克力壳">HDMI 线 &amp;amp; 亚克力壳&lt;/h3>
+&lt;p>　　主要设备买完之后，突然发现还缺一条&lt;code>HDMI&lt;/code>线，回宿舍找了找没找到原来那根，于是&lt;code>10块钱&lt;/code>在闲鱼又买了条绿联&lt;code>0.75m&lt;/code>的&lt;code>HDMI&lt;/code>线，黄色扁线型的。&lt;/p>
+&lt;p>亚克力壳子是买驱动板时加价&lt;code>10块&lt;/code>买的，用来保护驱动板各元件和增加观赏性用的。&lt;/p>
+&lt;h2 id="成果展示-附全家福">成果展示-附全家福&lt;/h2>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/IMG_20200914_143028.jpg" alt="">&lt;/p>
+&lt;p>桌面图：&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/1600085743650.jpg" alt="">&lt;/p>
+&lt;h2 id="未来用途">未来用途&lt;/h2>
+&lt;p>　　以后有空的话会专门写一篇文章来介绍蜗牛星际的用途，敬请期待吧！&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ul>
+&lt;li>【装机日常】废旧笔记本不要扔，拆下屏幕，裹上驱动板，做成副屏，隔壁小孩都馋哭啦！： &lt;a href="https%EF%BC%9A//www.youtube.com/watch?v=V1wC3KKF2TM">https：//www.youtube.com/watch?v=V1wC3KKF2TM&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>搭建内网yum源</title><link>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</link><pubDate>Tue, 04 Aug 2020 10:23:39 +0800</pubDate><guid>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</guid><description>&lt;blockquote>
 &lt;p>搭建内网yum源，摆脱软件包困扰。&lt;/p>
 &lt;/blockquote>
@@ -4265,417 +4307,4 @@ transfer: 58.43 KiB received, 70.82 KiB sent
 &lt;ul>
 &lt;li>wireguard Quick Start : &lt;a href="https://www.wireguard.com/quickstart/">https://www.wireguard.com/quickstart/&lt;/a>&lt;/li>
 &lt;li>wireguard Install : &lt;a href="https://www.wireguard.com/install/">https://www.wireguard.com/install/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Hello World</title><link>https://agou-ops.top/post/hello-world/</link><pubDate>Thu, 16 Apr 2020 14:11:22 +0800</pubDate><guid>https://agou-ops.top/post/hello-world/</guid><description>&lt;p>&lt;strong>Markdown&lt;/strong> is created by &lt;a href="http://daringfireball.net/">Daring Fireball&lt;/a>, the original guideline is &lt;a href="http://daringfireball.net/projects/markdown/syntax">here&lt;/a>. Its syntax, however, varies between different parsers or editors.&lt;/p>
-&lt;p>Please note that HTML fragments in markdown source will be recognized but not parsed or rendered. Also, there may be small reformatting on the original markdown source code after saving.&lt;/p>
-&lt;h2 id="paragraph-and-line-breaks段落与换行">Paragraph and line breaks(段落与换行)&lt;/h2>
-&lt;p>A paragraph is simply one or more consecutive lines of text. In markdown source code, paragraphs are separated by more than one blank lines. In Typora, you only need to press &lt;code>Return&lt;/code> to create a new paragraph.&lt;/p>
-&lt;p>Press &lt;code>Shift&lt;/code> + &lt;code>Return&lt;/code> to create a single line break. However, most markdown parser will ignore single line break, to make other markdown parsers recognize your line break, you can leave two whitespace at the end of the line, or insert &lt;code>&amp;lt;br/&amp;gt;&lt;/code>.&lt;/p>
-&lt;h2 id="headers标题">Headers(标题)&lt;/h2>
-&lt;p>Headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6. For example:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="gh"># This is an H1
-&lt;/span>&lt;span class="gh">&lt;/span>
-&lt;span class="gu">## This is an H2
-&lt;/span>&lt;span class="gu">&lt;/span>
-&lt;span class="gu">###### This is an H6
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>In typora, input ‘#’s followed by title content, and press &lt;code>Return&lt;/code> key will create a header.&lt;/p>
-&lt;h2 id="blockquotes引言">Blockquotes(引言)&lt;/h2>
-&lt;p>Markdown uses email-style &amp;gt; characters for block quoting. They are presented as:&lt;/p>
-&lt;blockquote>
-&lt;p>This is a blockquote with two paragraphs. This is first paragraph.&lt;/p>
-&lt;p>This is second pragraph.Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/p>
-&lt;p>This is another blockquote with one paragraph. There is three empty line to seperate two blockquote.&lt;/p>
-&lt;p>这是一段中文测试。&lt;/p>
-&lt;/blockquote>
-&lt;p>In typora, just input ‘&amp;gt;’ followed by quote contents a block quote is generated. Typora will insert proper ‘&amp;gt;’ or line break for you. Block quote inside anther block quote is allowed by adding additional levels of ‘&amp;gt;’.&lt;/p>
-&lt;h2 id="lists有序无序列表">Lists(有序无序列表)&lt;/h2>
-&lt;p>Input &lt;code>* list item 1&lt;/code> will create an un-ordered list, the &lt;code>*&lt;/code> symbol can be replace with &lt;code>+&lt;/code> or &lt;code>-&lt;/code>.&lt;/p>
-&lt;p>Input &lt;code>1. list item 1&lt;/code> will create an ordered list, their markdown source code is like:&lt;/p>
-&lt;ul>
-&lt;li>Red&lt;/li>
-&lt;li>Green&lt;/li>
-&lt;li>Blue&lt;/li>
-&lt;/ul>
-&lt;ol>
-&lt;li>Red&lt;/li>
-&lt;li>Green&lt;/li>
-&lt;li>Blue&lt;/li>
-&lt;/ol>
-&lt;h2 id="task-list任务列表">Task List(任务列表)&lt;/h2>
-&lt;p>Task lists are lists with items marked as either &lt;code>[ ]&lt;/code> or &lt;code>[x]&lt;/code> (incomplete or complete). For example:&lt;/p>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> a task list item&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> list syntax required&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> normal &lt;strong>formatting&lt;/strong>, @mentions, #1234 refs&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> incomplete&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> completed&lt;/li>
-&lt;/ul>
-&lt;p>You can change the complete/incomplete state by click the checkbox before the item.&lt;/p>
-&lt;h2 id="syntax-highlighting代码高亮">Syntax Highlighting(代码高亮)&lt;/h2>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="kd">function&lt;/span> &lt;span class="nx">helloWorld&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;span class="nx">alert&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">HelloWorld&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="kd">static&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">[]&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="math-blocks数学块">Math Blocks(数学块)&lt;/h2>
-&lt;p>You can render &lt;em>LaTeX&lt;/em> mathematical expressions using &lt;strong>MathJax&lt;/strong>.&lt;/p>
-&lt;p>Input &lt;code>$$&lt;/code>, then press &amp;lsquo;Return&amp;rsquo; key will trigger an input field which accept &lt;em>Tex/LaTex&lt;/em> source. Following is an example:
-$$
-\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
-\mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \&lt;br>
-\frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \&lt;br>
-\frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \&lt;br>
-\end{vmatrix}
-$$&lt;/p>
-&lt;p>In markdown source file, math block is &lt;em>LaTeX&lt;/em> expression wrapped by ‘$$’ mark:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">$$
-\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
-\mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \\
-\frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \\
-\frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \\
-\end{vmatrix}
-$$
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="tables表格">Tables(表格)&lt;/h2>
-&lt;p>Input &lt;code>| First Header | Second Header |&lt;/code> and press &lt;code>return&lt;/code> key will create a table with two column.&lt;/p>
-&lt;p>After table is created, focus on that table will pop up a toolbar for table, where you can resize, align, or delete table. You can also use context menu to copy and add/delete column/row.&lt;/p>
-&lt;p>Following descriptions can be skipped, as markdown source code for tables are generated by typora automatically.&lt;/p>
-&lt;p>In markdown source code, they look like:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">| Name | Markdown | HTML tag |
-| ----------------- | ------------------- | -------------------- |
-| &lt;span class="ge">*Emphasis*&lt;/span> | &lt;span class="sb">`*Emphasis*`&lt;/span> | &lt;span class="sb">`&amp;lt;em&amp;gt;&amp;lt;/em&amp;gt;`&lt;/span> |
-| &lt;span class="gs">**Strong**&lt;/span> | &lt;span class="sb">`**Strong**`&lt;/span> | &lt;span class="sb">`&amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt;`&lt;/span> |
-| &lt;span class="sb">`code`&lt;/span> | ``code`` | &lt;span class="sb">`&amp;lt;code&amp;gt;&amp;lt;/code&amp;gt;`&lt;/span> |
-| &lt;span class="gd">~~Strikethrough~~&lt;/span> | &lt;span class="sb">`~~Strikethrough~~`&lt;/span> | &lt;span class="sb">`&amp;lt;del&amp;gt;&amp;lt;/del`&lt;/span> |
-| &amp;lt;u&amp;gt;Underline&amp;lt;/u&amp;gt; | &lt;span class="sb">`&amp;lt;u&amp;gt;underline&amp;lt;/u&amp;gt;`&lt;/span> | &lt;span class="sb">`&amp;lt;u&amp;gt;&amp;lt;/u&amp;gt;`&lt;/span> |
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Name&lt;/th>
-&lt;th>Markdown&lt;/th>
-&lt;th>HTML tag&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;em>Emphasis&lt;/em>&lt;/td>
-&lt;td>&lt;code>*Emphasis*&lt;/code>&lt;/td>
-&lt;td>&lt;code>&amp;lt;em&amp;gt;&amp;lt;/em&amp;gt;&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;strong>Strong&lt;/strong>&lt;/td>
-&lt;td>&lt;code>**Strong**&lt;/code>&lt;/td>
-&lt;td>&lt;code> &amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt;&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>code&lt;/code>&lt;/td>
-&lt;td>&lt;code>`code`&lt;/code>&lt;/td>
-&lt;td>&lt;code>&amp;lt;code&amp;gt;&amp;lt;/code&amp;gt;&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;del>Strikethrough&lt;/del>&lt;/td>
-&lt;td>&lt;code>~~Strikethrough~~&lt;/code>&lt;/td>
-&lt;td>&lt;code>&amp;lt;del&amp;gt;&amp;lt;/del&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;!-- raw HTML omitted -->Underline&lt;!-- raw HTML omitted -->&lt;/td>
-&lt;td>&lt;code>&amp;lt;u&amp;gt;underline&amp;lt;/u&amp;gt;&lt;/code>&lt;/td>
-&lt;td>&lt;code>&amp;lt;u&amp;gt;&amp;lt;/u&amp;gt;&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="footnotes注释">&lt;strong>Footnotes(注释)&lt;/strong>&lt;/h2>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">You can create footnotes like this[^footnote].
-[^footnote]: Here is the &lt;span class="ge">*text*&lt;/span> of the &lt;span class="gs">**footnote**&lt;/span>.
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>will produce:&lt;/p>
-&lt;p>You can create footnotes like this&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
-&lt;p>Mouse on the ‘footnote’ superscript to see content of the footnote.&lt;/p>
-&lt;h2 id="horizontal-rules水平线">Horizontal Rules(水平线)&lt;/h2>
-&lt;p>Input &lt;code>***&lt;/code> or &lt;code>---&lt;/code> on a blank line and press &lt;code>return&lt;/code> will draw a horizontal line.&lt;/p>
-&lt;hr>
-&lt;h2 id="links超链接">Links(超链接)&lt;/h2>
-&lt;p>Markdown supports two style of links: inline and reference.&lt;/p>
-&lt;p>In both styles, the link text is delimited by [square brackets].&lt;/p>
-&lt;p>To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the URL where you want the link to point, along with an optional title for the link, surrounded in quotes. For example:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">This is [&lt;span class="nt">an example&lt;/span>](&lt;span class="na">http://example.com/ &amp;#34;Title&amp;#34;&lt;/span>) inline link.
-[&lt;span class="nt">This link&lt;/span>](&lt;span class="na">http://example.net/&lt;/span>) has no title attribute.
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>will produce:&lt;/p>
-&lt;p>This is &lt;a href="http://example.com/%22Title%22">an example&lt;/a> inline link. (&lt;code>&amp;lt;p&amp;gt;This is &amp;lt;a href=&amp;quot;http://example.com/&amp;quot; title=&amp;quot;Title&amp;quot;&amp;gt;&lt;/code>)&lt;/p>
-&lt;p>&lt;a href="http://example.net/">This link&lt;/a> has no title attribute. (&lt;code>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://example.net/&amp;quot;&amp;gt;This link&amp;lt;/a&amp;gt; has no&lt;/code>)&lt;/p>
-&lt;h3 id="internal-links页内链接">Internal Links(页内链接)&lt;/h3>
-&lt;p>&lt;strong>You can set the href to headers&lt;/strong>, which will create a bookmark that allow you to jump to that section after clicking. For example:&lt;/p>
-&lt;p>Command(on Windows: Ctrl) + Click &lt;a href="#block-elements">This link&lt;/a> will jump to header &lt;code>Block Elements&lt;/code>. To see how to write that, please move cursor or click that link with &lt;code>⌘&lt;/code> key pressed to expand the element into markdown source.&lt;/p>
-&lt;h3 id="reference-links参考链接">Reference Links(参考链接)&lt;/h3>
-&lt;p>Reference-style links use a second set of square brackets, inside which you place a label of your choosing to identify the link:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">This is [an example][id] reference-style link.
-Then, anywhere in the document, you define your link label like this, on a line by itself:
-[id]: http://example.com/ &amp;#34;Optional Title Here&amp;#34;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>In typora, they will be rendered like:&lt;/p>
-&lt;p>This is &lt;a href="http://example.com/" title="Optional Title Here">an example&lt;/a> reference-style link.&lt;/p>
-&lt;p>The implicit link name shortcut allows you to omit the name of the link, in which case the link text itself is used as the name. Just use an empty set of square brackets — e.g., to link the word “Google” to the google.com web site, you could simply write:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">[Google][]
-And then define the link:
-[Google]: http://google.com/
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>In typora click link will expand it for editing, command+click will open the hyperlink in web browser.&lt;/p>
-&lt;h2 id="urls">URLs&lt;/h2>
-&lt;p>Typora allows you to insert urls as links, wrapped by &lt;code>&amp;lt;&lt;/code>brackets&lt;code>&amp;gt;&lt;/code>.&lt;/p>
-&lt;p>&lt;code>&amp;lt;i@typora.io&amp;gt;&lt;/code> becomes &lt;a href="mailto:i@typora.io">i@typora.io&lt;/a>.&lt;/p>
-&lt;p>Typora will aslo auto link standard URLs. e.g: &lt;a href="http://www.google.com">www.google.com&lt;/a>.&lt;/p>
-&lt;h2 id="images图片">Images(图片)&lt;/h2>
-&lt;p>Image looks similar with links, but it requires an additional &lt;code>!&lt;/code> char before the start of link. Image syntax looks like this:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">![&lt;span class="nt">Alt text&lt;/span>](&lt;span class="na">/path/to/img.jpg&lt;/span>)
-![&lt;span class="nt">Alt text&lt;/span>](&lt;span class="na">/path/to/img.jpg &amp;#34;Optional title&amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>You are able to use drag &amp;amp; drop to insert image from image file or we browser. And modify the markdown source code by clicking on the image. Relative path will be used if image is in same directory or sub-directory with current editing document when drag &amp;amp; drop.&lt;/p>
-&lt;p>For more tips on images, please read &lt;a href="http://support.typora.io//Images/">http://support.typora.io//Images/&lt;/a>&lt;/p>
-&lt;h2 id="emphasis突出强调">Emphasis(突出强调)&lt;/h2>
-&lt;p>Markdown treats asterisks (&lt;code>*&lt;/code>) and underscores (&lt;code>_&lt;/code>) as indicators of emphasis. Text wrapped with one &lt;code>*&lt;/code> or &lt;code>_&lt;/code> will be wrapped with an HTML &lt;code>&amp;lt;em&amp;gt;&lt;/code> tag. E.g:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">*single asterisks*
-&lt;span class="ge">_single underscores_&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>output:&lt;/p>
-&lt;p>&lt;em>single asterisks&lt;/em>&lt;/p>
-&lt;p>&lt;em>single underscores&lt;/em>&lt;/p>
-&lt;p>GFM will ignores underscores in words, which is commonly used in code and names, like this:&lt;/p>
-&lt;blockquote>
-&lt;p>wow_great_stuff&lt;/p>
-&lt;p>do_this_and_do_that_and_another_thing.&lt;/p>
-&lt;/blockquote>
-&lt;p>To produce a literal asterisk or underscore at a position where it would otherwise be used as an emphasis delimiter, you can backslash escape it:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">\*this text is surrounded by literal asterisks\*
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Typora recommends to use &lt;code>*&lt;/code> symbol.&lt;/p>
-&lt;h2 id="strong加粗">Strong(加粗)&lt;/h2>
-&lt;p>double *’s or _’s will be wrapped with an HTML &lt;code>&amp;lt;strong&amp;gt;&lt;/code> tag, e.g:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">**double asterisks**
-&lt;span class="gs">__double underscores__&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>output:&lt;/p>
-&lt;p>&lt;strong>double asterisks&lt;/strong>&lt;/p>
-&lt;p>&lt;strong>double underscores&lt;/strong>&lt;/p>
-&lt;p>Typora recommends to use &lt;code>**&lt;/code> symbol.&lt;/p>
-&lt;h2 id="code代码块">Code(代码块)&lt;/h2>
-&lt;p>To indicate a span of code, wrap it with backtick quotes (`). Unlike a pre-formatted code block, a code span indicates code within a normal paragraph. For example:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">Use the &lt;span class="sb">`printf()`&lt;/span> function.
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>will produce:&lt;/p>
-&lt;p>Use the &lt;code>printf()&lt;/code> function.&lt;/p>
-&lt;h2 id="highlight-shortcode高亮代码块">highlight shortcode(高亮代码块)&lt;/h2>
-&lt;p>example:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">{{&amp;lt; highlight go &amp;#34;linenos=table,hl_lines=8 15-17,linenostart=199&amp;#34; &amp;gt;}}
-// ... code
-{{&amp;lt; /highlight &amp;gt;}}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>result:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">199
-&lt;/span>&lt;span class="lnt">200
-&lt;/span>&lt;span class="lnt">201
-&lt;/span>&lt;span class="lnt">202
-&lt;/span>&lt;span class="lnt">203
-&lt;/span>&lt;span class="lnt">204
-&lt;/span>&lt;span class="lnt">205
-&lt;/span>&lt;span class="hl">&lt;span class="lnt">206
-&lt;/span>&lt;/span>&lt;span class="lnt">207
-&lt;/span>&lt;span class="lnt">208
-&lt;/span>&lt;span class="lnt">209
-&lt;/span>&lt;span class="lnt">210
-&lt;/span>&lt;span class="lnt">211
-&lt;/span>&lt;span class="lnt">212
-&lt;/span>&lt;span class="hl">&lt;span class="lnt">213
-&lt;/span>&lt;/span>&lt;span class="hl">&lt;span class="lnt">214
-&lt;/span>&lt;/span>&lt;span class="hl">&lt;span class="lnt">215
-&lt;/span>&lt;/span>&lt;span class="lnt">216
-&lt;/span>&lt;span class="lnt">217
-&lt;/span>&lt;span class="lnt">218
-&lt;/span>&lt;span class="lnt">219
-&lt;/span>&lt;span class="lnt">220
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="c1">// GetTitleFunc returns a func that can be used to transform a string to
-&lt;/span>&lt;span class="c1">// title case.
-&lt;/span>&lt;span class="c1">//
-&lt;/span>&lt;span class="c1">// The supported styles are
-&lt;/span>&lt;span class="c1">//
-&lt;/span>&lt;span class="c1">// - &amp;#34;Go&amp;#34; (strings.Title)
-&lt;/span>&lt;span class="c1">// - &amp;#34;AP&amp;#34; (see https://www.apstylebook.com/)
-&lt;/span>&lt;span class="hl">&lt;span class="c1">// - &amp;#34;Chicago&amp;#34; (see http://www.chicagomanualofstyle.org/home.html)
-&lt;/span>&lt;/span>&lt;span class="c1">//
-&lt;/span>&lt;span class="c1">// If an unknown or empty style is provided, AP style is what you get.
-&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kd">func&lt;/span> &lt;span class="nf">GetTitleFunc&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">style&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">s&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;span class="k">switch&lt;/span> &lt;span class="nx">strings&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ToLower&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">style&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;go&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="nx">strings&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Title&lt;/span>
-&lt;span class="hl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;chicago&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;span class="hl"> &lt;span class="nx">tc&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">transform&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewTitleConverter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">transform&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ChicagoStyle&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;span class="hl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">tc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Title&lt;/span>
-&lt;/span> &lt;span class="k">default&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;span class="nx">tc&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">transform&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewTitleConverter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">transform&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">APStyle&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="nx">tc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Title&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-&lt;h2 id="strikethrough删除线">Strikethrough(删除线)&lt;/h2>
-&lt;p>GFM adds syntax to create strikethrough text, which is missing from standard Markdown.&lt;/p>
-&lt;p>&lt;code>~~Mistaken text.~~&lt;/code> becomes &lt;del>Mistaken text.&lt;/del>&lt;/p>
-&lt;h2 id="underline下划线">Underline(下划线)&lt;/h2>
-&lt;p>Underline is powered by raw HTML.&lt;/p>
-&lt;p>&lt;code>&amp;lt;u&amp;gt;Underline&amp;lt;/u&amp;gt;&lt;/code> becomes &lt;!-- raw HTML omitted -->Underline&lt;!-- raw HTML omitted -->.&lt;/p>
-&lt;h2 id="emoji-happy表情">Emoji :happy:(表情)&lt;/h2>
-&lt;p>Input emoji with syntax &lt;code>😄&lt;/code>.&lt;/p>
-&lt;p>User can trigger auto-complete suggestions for emoji by pressing &lt;code>ESC&lt;/code> key, or trigger it automatically after enable it on preference panel. Also, input UTF8 emoji char directly from &lt;code>Edit&lt;/code> -&amp;gt; &lt;code>Emoji &amp;amp; Symbols&lt;/code> from menu bar is also supported.&lt;/p>
-&lt;h2 id="inline-math">Inline Math&lt;/h2>
-&lt;p>To use this feature, first, please enable it in &lt;code>Preference&lt;/code> Panel -&amp;gt; &lt;code>Markdown&lt;/code> Tab. Then use &lt;code>$&lt;/code> to wrap TeX command, for example: &lt;code>$\lim_{x \to \infty} \exp(-x) = 0$&lt;/code> will be rendered as LaTeX command.&lt;/p>
-&lt;p>To trigger inline preview for inline math: input “$”, then press &lt;code>ESC&lt;/code> key, then input TeX command, a preview tooltip will be visible like below:&lt;/p>
-&lt;p>&lt;!-- raw HTML omitted -->&lt;/p>
-&lt;section class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
-&lt;p>Here is the &lt;em>text&lt;/em> of the &lt;strong>footnote&lt;/strong>. &lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/section></description></item></channel></rss>
+&lt;/ul></description></item></channel></rss>
