@@ -76,8 +76,8 @@ menu:
 
 ##### 年度最喜欢的声优(及所配音角色)：
 
-- [石川由依]([https://zh.moegirl.org.cn/%E7%9F%B3%E5%B7%9D%E7%94%B1%E4%BE%9D](https://zh.moegirl.org.cn/石川由依))：薇尔莉特·伊芙加登、高砂智惠；
-- [子安武人]([https://zh.moegirl.org.cn/%E5%AD%90%E5%AE%89%E6%AD%A6%E4%BA%BA](https://zh.moegirl.org.cn/子安武人))：克劳迪亚·霍金斯；
+- [石川由依](https://zh.moegirl.org.cn/石川由依)：薇尔莉特·伊芙加登、高砂智惠；
+- [子安武人](https://zh.moegirl.org.cn/子安武人)：克劳迪亚·霍金斯；
 
 ##### 年度最喜欢的OP/ED/OST
 
