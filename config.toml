@@ -61,9 +61,14 @@ defaultContentLanguage = "en"           # Default language to use
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
-  name = "myDocs"
+  name = "Anime"
   weight = 50
-  url = "https://agou-ops.top/beforeWork"
+  identifier = "Anime"
+  url = "/Anime/"
+[[menu.main]]
+  name = "myDocs"
+  weight = 55
+  url = "http://d.agou-ops.top/"
 [[menu.main]]
   name = "myStudyNote"
   weight = 60
@@ -72,7 +77,7 @@ defaultContentLanguage = "en"           # Default language to use
 
 [params]
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
-  since = "2020"            # Site creation time          # 站点建立时间
+  since = "2018"            # Site creation time          # 站点建立时间
   homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
   rssFullContent = true     # if false, Rss feed instead of the summary
   mainSections = ["post"]
