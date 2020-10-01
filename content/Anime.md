@@ -19,13 +19,17 @@ contentCopyright: '<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" 
 # contentCopyright: '<a href="YOUR_URL" rel="noopener" target="_blank">See origin</a>'
 reward: false
 mathjax: false
-menu:
-  main:
-    parent: "Anime"
-    weight: 1
+# menu:
+#   main:
+#     parent: "Anime"
+#     weight: 1
 ---
 
 ***按照观看结束时间排序，序号仅用于计数。(2020-03-28 至 ????-??-??)***
+
+> **变更日志：**
+>
+> - 2020年10月01日：初始化表格；
 
 ## 二〇二〇年
 
@@ -58,7 +62,7 @@ menu:
 |  24  | 2020/07/23 |  [《悠哉日常大王》](https://zh.moegirl.org.cn/悠哉日常大王)  | [宫内莲华](https://zh.moegirl.org.cn/宫内莲华)(喵帕斯)、[越谷夏海](https://zh.moegirl.org.cn/越谷夏海) |   [ SILVER LINK.](https://zh.moegirl.org.cn/SILVER_LINK.)    |
 |  25  | 2020/07/27 | [《怕痛的我，把防御力点满就对了》](https://zh.moegirl.org.cn/怕痛的我，把防御力点满就对了) |                            梅普露                            |   [ SILVER LINK.](https://zh.moegirl.org.cn/SILVER_LINK.)    |
 |  26  | 2020/08/06 |     [《NEW GAME!》](https://zh.moegirl.org.cn/NEW_GAME!)     | [泷本一二三](https://zh.moegirl.org.cn/泷本一二三)**、**[饭岛结音](https://zh.moegirl.org.cn/饭岛结音)(关西腔i了)、[樱宁宁](https://zh.moegirl.org.cn/樱宁宁)(宁宁鸡) |        [动画工房](https://zh.moegirl.org.cn/动画工房)        |
-|  27  | 2020/08/10 |    [《Slow Start》](https://zh.moegirl.org.cn/Slow_Start)    | [十仓荣依子](https://zh.moegirl.org.cn/十仓荣依子)、[千石冠](https://zh.moegirl.org.cn/千石冠)、[ 一之濑花名](https://zh.moegirl.org.cn/一之濑花名) 、 [百地玉手](https://zh.moegirl.org.cn/百地玉手) | [A-1 Pictures](https://zh.moegirl.org.cn/A-1_Pictures)→[CloverWorks](https://zh.moegirl.org.cn/CloverWorks)[[1\]](https://zh.moegirl.org.cn/Slow_Start#cite_note-1) [芳文社](https://zh.moegirl.org.cn/芳文社) |
+|  27  | 2020/08/10 |    [《Slow Start》](https://zh.moegirl.org.cn/Slow_Start)    | [十仓荣依子](https://zh.moegirl.org.cn/十仓荣依子)、[千石冠](https://zh.moegirl.org.cn/千石冠)、[ 一之濑花名](https://zh.moegirl.org.cn/一之濑花名) 、 [百地玉手](https://zh.moegirl.org.cn/百地玉手) | [A-1 Pictures](https://zh.moegirl.org.cn/A-1_Pictures)→[CloverWorks](https://zh.moegirl.org.cn/CloverWorks)[1] [芳文社](https://zh.moegirl.org.cn/芳文社) |
 |  28  | 2020/08/15 |   [《Comic Girls》](https://zh.moegirl.org.cn/Comic_Girls)   |    [萌田薰子](https://zh.moegirl.org.cn/萌田薰子)(小混沌)    | [Nexus](https://zh.moegirl.org.cn/Nexus) [芳文社](https://zh.moegirl.org.cn/芳文社) |
 |  29  | 2020/08/19 |    [《恋爱小行星》](https://zh.moegirl.org.cn/恋爱小行星)    |      [木之幡米拉](https://zh.moegirl.org.cn/木之幡米拉)      | [动画工房](https://zh.moegirl.org.cn/动画工房)  [芳文社](https://zh.moegirl.org.cn/芳文社) |
 |  30  | 2020/08/22 |      [《街角魔族》](https://zh.moegirl.org.cn/街角魔族)      |    [吉田优子](https://zh.moegirl.org.cn/吉田优子)(夏美子)    | [J.C.STAFF](https://zh.moegirl.org.cn/J.C.STAFF)  [芳文社](https://zh.moegirl.org.cn/芳文社) |
