@@ -12,7 +12,7 @@ author: "AGou-ops"
 
 # weight:
 # menu: "main"
-comment: true
+# comment: true
 toc: true
 autoCollapseToc: true
 contentCopyright: '<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a>'
