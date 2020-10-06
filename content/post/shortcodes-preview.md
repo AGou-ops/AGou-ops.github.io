@@ -4,7 +4,7 @@ date: 2019-03-04T16:01:23+08:00
 lastmod: 2019-03-05T16:01:23+08:00
 draft: false
 tags: []
-categories: []
+categories: ['hugo','shortcode']
 author: "AGou-ops"
 # menu:
 #   main:
