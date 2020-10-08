@@ -7,7 +7,376 @@
 &lt;li>Docs 备用站点：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote:&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
 &lt;li>发布站点：&lt;a href="http://fabu.agou-ops.top/">http://fabu.agou-ops.top/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>自定义 shortcode</title><link>https://agou-ops.top/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</link><pubDate>Tue, 06 Oct 2020 16:06:48 +0800</pubDate><guid>https://agou-ops.top/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</guid><description>&lt;h1 id="shortcode-">shortcode ???&lt;/h1>
+&lt;/ul></description></item><item><title>在k8s上使用Prometheus监控MongoDB</title><link>https://agou-ops.top/post/%E5%9C%A8k8s%E4%B8%8A%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7mongodb/</link><pubDate>Thu, 08 Oct 2020 14:04:30 +0800</pubDate><guid>https://agou-ops.top/post/%E5%9C%A8k8s%E4%B8%8A%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7mongodb/</guid><description>&lt;h2 id="预先准备">预先准备&lt;/h2>
+&lt;ul>
+&lt;li>minikube For Windows(资源充足, 有集群更好不过);&lt;/li>
+&lt;li>Helm;&lt;/li>
+&lt;li>科学上网能力.&lt;/li>
+&lt;/ul>
+&lt;h2 id="整体框架">整体框架&lt;/h2>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%2Bk8s/arch.png" alt="">&lt;/p>
+&lt;p>&lt;del>随手在线画的, 不美观, qwq.&lt;/del>&lt;/p>
+&lt;h2 id="操作步骤">操作步骤&lt;/h2>
+&lt;h3 id="启用helm-tillerhelm服务器端">启用&lt;code>helm-tiller&lt;/code>(helm服务器端)&lt;/h3>
+&lt;p>在&lt;code>minikube&lt;/code>中启用&lt;code>helm-tiller&lt;/code>插件, 很简单, 只需要一条命令即可:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ minikube addons &lt;span class="nb">enable&lt;/span> helm-tiller
+&lt;span class="c1"># 或者在启动 minikube 的时候直接启用 helm-tiller&lt;/span>
+$ minikube start --addons&lt;span class="o">=[&lt;/span>&lt;span class="s2">&amp;#34;helm-tiller&amp;#34;&lt;/span>&lt;span class="o">]&lt;/span> &amp;lt;Other_Options&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="安装prometheus-operator">安装&lt;code>Prometheus-operator&lt;/code>&lt;/h3>
+&lt;p>首先添加所需仓库:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+&lt;span class="c1"># 更新仓库内容&lt;/span>
+$ helm repo update
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装/下载&lt;code>chart&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ helm install prometheus-community/kube-prometheus-stack --version 9.4.10
+&lt;span class="c1"># 或者先下载下来更改所需内容之后再进行安装(推荐使用方法)&lt;/span>
+$ helm pull prometheus-community/kube-prometheus-stack --version 9.4.10 --untar
+&lt;span class="c1"># 安装&lt;/span>
+$ helm install prometheus kube-prometheus-stack/
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装完成之后, &lt;code>kubernetes&lt;/code>会自动接管后续工作, 如拉取镜像等:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 观察部署进度&lt;/span>
+$ kubectl get po -w
+NAME READY STATUS RESTARTS AGE
+alertmanager-prometheus-kube-prometheus-alertmanager-0 2/2 Running &lt;span class="m">0&lt;/span> 24m
+prometheus-grafana-79b677fd4b-t9kr9 2/2 Running &lt;span class="m">0&lt;/span> 25m
+prometheus-kube-prometheus-operator-69cd74c99f-wltf4 2/2 Running &lt;span class="m">0&lt;/span> 25m
+prometheus-kube-state-metrics-95d956569-mlfwv 1/1 Running &lt;span class="m">0&lt;/span> 25m
+prometheus-prometheus-kube-prometheus-prometheus-0 3/3 Running &lt;span class="m">1&lt;/span> 24m
+prometheus-prometheus-node-exporter-tvwf5 1/1 Running &lt;span class="m">0&lt;/span> 25m
+&lt;span class="c1"># 查看service&lt;/span>
+$ kubectl get svc
+NAME TYPE CLUSTER-IP EXTERNAL-IP PORT&lt;span class="o">(&lt;/span>S&lt;span class="o">)&lt;/span> AGE
+alertmanager-operated ClusterIP None &amp;lt;none&amp;gt; 9093/TCP,9094/TCP,9094/UDP 25m
+kubernetes ClusterIP 10.96.0.1 &amp;lt;none&amp;gt; 443/TCP 44h
+prometheus-grafana ClusterIP 10.108.199.68 &amp;lt;none&amp;gt; 80/TCP 26m
+prometheus-kube-prometheus-alertmanager ClusterIP 10.96.81.7 &amp;lt;none&amp;gt; 9093/TCP 26m
+prometheus-kube-prometheus-operator ClusterIP 10.109.9.111 &amp;lt;none&amp;gt; 8080/TCP,443/TCP 26m
+prometheus-kube-prometheus-prometheus ClusterIP 10.98.173.241 &amp;lt;none&amp;gt; 9090/TCP 26m
+prometheus-kube-state-metrics ClusterIP 10.109.121.40 &amp;lt;none&amp;gt; 8080/TCP 26m
+prometheus-operated ClusterIP None &amp;lt;none&amp;gt; 9090/TCP 25m
+prometheus-prometheus-node-exporter ClusterIP 10.107.29.93 &amp;lt;none&amp;gt; 9100/TCP 26m
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>以上信息无误则表明&lt;code>prometheus&lt;/code>已成功部署.&lt;/p>
+&lt;p>使用&lt;code>minikube&lt;/code>(&lt;code>kubectl&lt;/code>亦可)的转发功能, 将&lt;code>svc/prometheus-kube-prometheus-prometheus &lt;/code>的端口映射到本地:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ minikube port-forward svc/prometheus-kube-prometheus-prometheus &lt;span class="m">9090&lt;/span>
+Forwarding from 127.0.0.1:9090 -&amp;gt; &lt;span class="m">9090&lt;/span>
+Forwarding from &lt;span class="o">[&lt;/span>::1&lt;span class="o">]&lt;/span>:9090 -&amp;gt; &lt;span class="m">9090&lt;/span>
+Handling connection &lt;span class="k">for&lt;/span> &lt;span class="m">9090&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>打开浏览器访问&lt;code>http://127.0.0.1:9090/&lt;/code>查看&lt;code>prometheus UI&lt;/code>:&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%2Bk8s/prometheus%20ui.png" alt="">&lt;/p>
+&lt;p>使用以下命令查看&lt;code>prometheus&lt;/code>的&lt;code>servicemonitor&lt;/code>(其对应&lt;code>prometheus UI&lt;/code>中的&lt;code>target&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ kubectl get servicemonitor
+NAME AGE
+prometheus-kube-prometheus-alertmanager 36m
+prometheus-kube-prometheus-apiserver 36m
+prometheus-kube-prometheus-coredns 36m
+prometheus-kube-prometheus-grafana 36m
+prometheus-kube-prometheus-kube-controller-manager 36m
+prometheus-kube-prometheus-kube-etcd 36m
+prometheus-kube-prometheus-kube-proxy 36m
+prometheus-kube-prometheus-kube-scheduler 36m
+prometheus-kube-prometheus-kube-state-metrics 36m
+prometheus-kube-prometheus-kubelet 36m
+prometheus-kube-prometheus-node-exporter 36m
+prometheus-kube-prometheus-operator 36m
+prometheus-kube-prometheus-prometheus 36m
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看所有&lt;code>crd&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ kubectl get crd
+NAME CREATED AT
+alertmanagers.monitoring.coreos.com 2020-10-08T01:10:04Z
+podmonitors.monitoring.coreos.com 2020-10-08T01:10:04Z
+prometheuses.monitoring.coreos.com 2020-10-08T01:10:04Z
+prometheusrules.monitoring.coreos.com 2020-10-08T01:10:04Z
+servicemonitors.monitoring.coreos.com 2020-10-08T01:10:04Z
+thanosrulers.monitoring.coreos.com 2020-10-08T01:10:04Z
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>通过&lt;code>describe&lt;/code>子命令可以发现&lt;code>crd&lt;/code>的&lt;code>matchLabels&lt;/code>都包含&lt;code>release: prometheus&lt;/code>标签.&lt;/strong>&lt;/p>
+&lt;h3 id="部署mongodb及其服务">部署&lt;code>MongoDB&lt;/code>及其服务&lt;/h3>
+&lt;p>参考&lt;code>MongoDB-depl-svc.yaml&lt;/code>文件内容如下:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="k">apiVersion&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>apps/v1&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">kind&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>Deployment&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">metadata&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>mongodb-deployment&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">labels&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">app&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>mongodb&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">spec&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">replicas&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">selector&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">matchLabels&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">app&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>mongodb&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">metadata&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">labels&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">app&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>mongodb&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">spec&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">containers&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="k">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>mongodb&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>mongo&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">ports&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="k">containerPort&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">27017&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>---&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">apiVersion&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>v1&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">kind&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>Service&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">metadata&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>mongodb-service&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">spec&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">selector&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">app&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>mongodb&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">ports&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="k">protocol&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>TCP&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">port&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">27017&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">targetPort&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">27017&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>按需进行修改, 修改完成之后应用配置清单:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ kubectl apply -f MongoDB-depl-svc.yaml
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>等待&lt;code>MongoDB&lt;/code>部署完成&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ kubectl get deployment/mongodb-deployment -w
+NAME READY UP-TO-DATE AVAILABLE AGE
+mongodb-deployment 2/2 &lt;span class="m">2&lt;/span> &lt;span class="m">0&lt;/span> 3m13s
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="部署mongodb-exporter">部署&lt;code>MongoDB Exporter&lt;/code>&lt;/h3>
+&lt;p>添加&lt;code>helm repo&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+$ helm repo update
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>下载&lt;code>chart&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ helm pull prometheus-community/prometheus-mongodb-exporter --untar
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>修改&lt;code>value.yaml&lt;/code>文件内容:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-yaml" data-lang="yaml">...&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="c"># 使用kubectl get svc获取MongoDB的服务及端口&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">mongodb&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">uri&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;mongodb://mongodb-service:27017&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>...&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="c"># 从上面可以得知servicemonitor所匹配的标签 release: prometheus&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="k">serviceMonitor&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">additionalLabels&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">release&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>prometheus&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>...&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>应用&lt;code>chart&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ helm install mongodb-exporter prometheus-mongodb-exporter/
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>等待&lt;code>svc&lt;/code>,&lt;code>pod&lt;/code>部署完成之后, 映射&lt;code>mongodb-exporter&lt;/code>, 检查&lt;code>/metrics&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ kubectl port-forward service/mongodb-exporter-prometheus-mongodb-exporter &lt;span class="m">9216&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>打开浏览器访问&lt;code>http://localhost:9216/metrics&lt;/code>进行查看:&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%2Bk8s/mongodb%20metrics.png" alt="">&lt;/p>
+&lt;p>此时, 再打开&lt;code>prometheus UI&lt;/code>查看&lt;code>target&lt;/code>可以看到&lt;code>mongodb-exporter&lt;/code>已经处于&lt;code>UP&lt;/code>状态:&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%2Bk8s/mongodb%20target.png" alt="">&lt;/p>
+&lt;h3 id="在grafana查看">在&lt;code>Grafana&lt;/code>查看&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ kubectl port-forward deployment/prometheus-grafana &lt;span class="m">3000&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>打开浏览器访问&lt;code>http://localhost:3000&lt;/code>:&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%2Bk8s/mongodb%20grafana.png" alt="">&lt;/p>
+&lt;p>ℹ️默认账号&lt;code>admin&lt;/code>, 默认密码&lt;code>prom-operator&lt;/code> (从官方文档中即可获取)&lt;/p>
+&lt;h2 id="附录1-chart-地址">附录1: chart 地址&lt;/h2>
+&lt;p>上文中所使用的&lt;code>chart&lt;/code>仓库地址:&lt;/p>
+&lt;ul>
+&lt;li>kube-prometheus-stack: &lt;a href="https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack">https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack&lt;/a>&lt;/li>
+&lt;li>mongodb-exporter: &lt;a href="https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-mongodb-exporter">https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-mongodb-exporter&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="附录2-kubectl-get-all">附录2: kubectl get all&lt;/h2>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%2Bk8s/kubectl%20get%20all.png" alt="">&lt;/p></description></item><item><title>自定义 shortcode</title><link>https://agou-ops.top/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</link><pubDate>Tue, 06 Oct 2020 16:06:48 +0800</pubDate><guid>https://agou-ops.top/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</guid><description>&lt;h1 id="shortcode-">shortcode ???&lt;/h1>
 &lt;p>什么是&lt;code>shortcode&lt;/code>以及&lt;code>hugo内置shortcode&lt;/code>参考： &lt;a href="https://agou-ops.top/post/shortcodes-preview/">shortcodes-preview&lt;/a>&lt;/p>
 &lt;h2 id="github-shortcode">github shortcode&lt;/h2>
 &lt;p>在指定目录添加以下文件：&lt;/p>
@@ -3411,272 +3780,4 @@ pwgen -ncy1 &lt;span class="m">16&lt;/span> &lt;span class="m">8&lt;/span>
 &lt;/div>&lt;h2 id="参考链接">参考链接&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://blog.csdn.net/yuki5233/article/details/82997001">https://blog.csdn.net/yuki5233/article/details/82997001&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Scrcpy Android投屏神器</title><link>https://agou-ops.top/post/scrcpy-android%E6%8A%95%E5%B1%8F%E7%A5%9E%E5%99%A8/</link><pubDate>Thu, 28 May 2020 20:22:13 +0800</pubDate><guid>https://agou-ops.top/post/scrcpy-android%E6%8A%95%E5%B1%8F%E7%A5%9E%E5%99%A8/</guid><description>&lt;h2 id="scrcpy-简介">Scrcpy 简介&lt;/h2>
-&lt;p>应用程序可显示和控制通过USB（或通过TCP / IP）连接的Android设备。它不需要任何根访问权限。它适用于GNU / Linux，Windows和macOS。&lt;/p>
-&lt;p>github地址：&lt;a href="https://github.com/Genymobile/scrcpy">https://github.com/Genymobile/scrcpy&lt;/a>&lt;/p>
-&lt;h2 id="配置环境">配置环境&lt;/h2>
-&lt;ol>
-&lt;li>安装&lt;code>adb&lt;/code>服务，使用数据线连接自己的安卓设备，并查看自己的安卓设备：&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;span class="lnt">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo apt-get install android-tools-adb
-adb start-server
-$ lsusb
-Bus &lt;span class="m">002&lt;/span> Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus &lt;span class="m">001&lt;/span> Device 005: ID 0bda:0821 Realtek Semiconductor Corp.
-Bus &lt;span class="m">001&lt;/span> Device 004: ID 0bda:0129 Realtek Semiconductor Corp. RTS5129 Card Reader Controller
-Bus &lt;span class="m">001&lt;/span> Device 003: ID 13d3:a745 IMC Networks
-Bus &lt;span class="m">001&lt;/span> Device 054: ID &lt;span class="sb">`&lt;/span>24ae:1813&lt;span class="sb">`&lt;/span>
-...
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>找到自己的安卓设备哪一行，&lt;code>24ae&lt;/code>、&lt;code>1813&lt;/code>在下面会用到。&lt;/p>
-&lt;ol start="2">
-&lt;li>创建设备文件：&lt;/li>
-&lt;/ol>
-&lt;p>下面命令中的名称&lt;code>71-android&lt;/code>是自定义的，我的这个代表安卓7.1的意思。&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nb">echo&lt;/span> 0x12d1 &amp;gt; ~/.android/adb_usb.ini
-touch /etc/udev/rules.d/71-android.rules
-gedit /etc/udev/rules.d/71-android.rules
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>将以下内容写入刚刚创建的文件，注意，下面的&lt;code>24ae&lt;/code>、&lt;code>1813&lt;/code>要改成自己的安卓设备的id（见上）：&lt;/p>
-&lt;blockquote>
-&lt;p>SUBSYSTEM&amp;quot;usb&amp;rdquo;, ATTRS{idVendor}&amp;ldquo;24ae&amp;rdquo;, ATTRS{idProduct}==&amp;quot;1813&amp;rdquo;, MODE=&amp;quot;0666&amp;rdquo;&lt;/p>
-&lt;/blockquote>
-&lt;p>更改文件权限：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">chmod &lt;span class="m">666&lt;/span> /etc/udev/rules.d/90-android.rules
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol start="3">
-&lt;li>重启 ADB 服务：&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">service udev restart
-adb kill-server
-adb start-server
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="scrcpy-安装与使用">Scrcpy 安装与使用&lt;/h2>
-&lt;p>安装：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 使用snap安装&lt;/span>
-sudo snap install scrcpy
-&lt;span class="c1"># 或者&lt;/span>
-apt install scrcpy
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>列出设备：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">scrcpy.adb devices
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>开始投屏：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">scrcpy
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="设置无线连接android设备">设置无线连接Android设备&lt;/h2>
-&lt;p>ℹ️先使用数据线将手机和电脑连接并在手机端开启「开发者选项」及「USB 调试」&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 开启手机端口&lt;/span>
-adb tcpip &lt;span class="m">6666&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>拔出数据线，开启无线连接：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">adb connect 192.168.8.154:6666
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;code>192.168.8.154&lt;/code>为你Android设备的IP地址，可以通过路由器后台获取或者在手机上使用相关软件进行获取。&lt;/p>
-&lt;p>启动 scrcpy ：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">scrcpy
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="scrcpy-快捷键">Scrcpy 快捷键&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Action&lt;/th>
-&lt;th>Shortcut&lt;/th>
-&lt;th>Shortcut (macOS)&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Switch fullscreen mode&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>f&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>f&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Rotate display left&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>←&lt;/code> &lt;em>(left)&lt;/em>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>←&lt;/code> &lt;em>(left)&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Rotate display right&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>→&lt;/code> &lt;em>(right)&lt;/em>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>→&lt;/code> &lt;em>(right)&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Resize window to 1:1 (pixel-perfect)&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>g&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>g&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Resize window to remove black borders&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>x&lt;/code> | &lt;em>Double-click¹&lt;/em>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>x&lt;/code> | &lt;em>Double-click¹&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Click on &lt;code>HOME&lt;/code>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>h&lt;/code> | &lt;em>Middle-click&lt;/em>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>h&lt;/code> | &lt;em>Middle-click&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Click on &lt;code>BACK&lt;/code>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>b&lt;/code> | &lt;em>Right-click²&lt;/em>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>b&lt;/code> | &lt;em>Right-click²&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Click on &lt;code>APP_SWITCH&lt;/code>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>s&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>s&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Click on &lt;code>MENU&lt;/code>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>m&lt;/code>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>m&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Click on &lt;code>VOLUME_UP&lt;/code>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>↑&lt;/code> &lt;em>(up)&lt;/em>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>↑&lt;/code> &lt;em>(up)&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Click on &lt;code>VOLUME_DOWN&lt;/code>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>↓&lt;/code> &lt;em>(down)&lt;/em>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>↓&lt;/code> &lt;em>(down)&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Click on &lt;code>POWER&lt;/code>&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>p&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>p&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Power on&lt;/td>
-&lt;td>&lt;em>Right-click²&lt;/em>&lt;/td>
-&lt;td>&lt;em>Right-click²&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Turn device screen off (keep mirroring)&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>o&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>o&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Turn device screen on&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>Shift&lt;/code>+&lt;code>o&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>Shift&lt;/code>+&lt;code>o&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Rotate device screen&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>r&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>r&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Expand notification panel&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>n&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>n&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Collapse notification panel&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>Shift&lt;/code>+&lt;code>n&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>Shift&lt;/code>+&lt;code>n&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Copy device clipboard to computer&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>c&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>c&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Paste computer clipboard to device&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>v&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>v&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Copy computer clipboard to device and paste&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>Shift&lt;/code>+&lt;code>v&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>Shift&lt;/code>+&lt;code>v&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Enable/disable FPS counter (on stdout)&lt;/td>
-&lt;td>&lt;code>Ctrl&lt;/code>+&lt;code>i&lt;/code>&lt;/td>
-&lt;td>&lt;code>Cmd&lt;/code>+&lt;code>i&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>&lt;em>¹Double-click on black borders to remove them.&lt;/em>
-&lt;em>²Right-click turns the screen on if it was off, presses BACK otherwise.&lt;/em>&lt;/p>
-&lt;h2 id="参考链接">参考链接&lt;/h2>
-&lt;ul>
-&lt;li>Scrcpy Documentation: &lt;a href="https://github.com/Genymobile/scrcpy">https://github.com/Genymobile/scrcpy&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
