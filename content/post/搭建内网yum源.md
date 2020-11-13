@@ -1,5 +1,5 @@
 ---
-title: "搭建内网yum源"
+title: "搭建内网yum源(nginx、ftp)"
 date: 2020-08-04T10:23:39+08:00
 lastmod: 2020-08-04T10:23:39+08:00
 draft: false
@@ -95,3 +95,95 @@ yum makecache			# 更新缓存
 5 * * * * root run-parts  /root/update-aliyun.sh
 ```
 **其中**`run-parts`的意思是执行后面目录中的脚本。
+
+## 使用ftp搭建yum本地和远程仓库
+
+以下仅记录关键命令：
+
+```bash
+$ yum install vsftpd
+$ systemctl start vsftpd && systemctl enable vsftpd
+# 开启yum缓存功能
+$ vim /etc/yum.conf
+[main] cachedir=/var/cache/yum/$basearch/$releasever 
+keepcache=1
+# 清除缓存
+$ yum clean all
+
+# 设置基础光盘base源
+$ mkdir /var/ftp/centos7-base
+$ mount /dev/cdrom /mnt
+$ cp -arp /mnt/Packages/*.rpm /var/ftp/centos7-base
+
+# 提供第三方镜像源
+$ cd /var/ftp
+# 同步中科大的nginx源到以上目录 
+$ rsync -avzP rsync://rsync.mirrors.ustc.edu.cn/repo/nginx ./
+
+# 安装createrepo工具并创建repodata仓库
+$ yum install -y createrepo
+# 生成repodata
+$ createrepo ./
+```
+
+> 需要注意的一点是：如果仓库中新增软件，需要重新生成repodata，也可以通过触发脚本实现。
+
+客户端添加远程yum仓库：
+
+```bash
+$ yum-config-manager --add-repo="ftp://YOUR_SERVER_IP/centos7-base"
+$ yum-config-manager --add-repo="ftp://YOUR_SERVER_IP/nginx"
+# 当然你也可以手动创建配置文件指定远程仓库
+$ vim /etc/yum.repos.d/centos7-base.repo
+[centos7-base]
+name=centos 7 base 
+baseurl=ftp://YOUR_SERVER_IP/centos7-base
+enabled=1
+gpgcheck=0
+```
+
+## 附录：rpm和yum常用命令
+
+rpm常用命令：
+
+```bash
+rpm -q      # 查看指定软件包是否安装
+rpm -qa     # 查看系统中已安装的所有RPM软件包列表
+rpm -qi     # 查看指定软件的详细信息
+rpm -ql     # 查询指定软件包所安装的目录、文件列表
+rpm -qc     # 查询指定软件包的配置文件
+rpm -qd     # 查询指定软件包的帮助文档
+rpm -qf     # 查询文件或目录属于哪个RPM软件
+rpm -q --scripts    # 查询rpm包安装前和安装后执行的脚本
+
+# 查询未安装的软件包信息
+rpm -qip    # 查询未安装的rpm包详细信息
+rpm -qlp    # 查询未安装的软件包会产生哪些文件
+
+# rpm 软件包升级
+rpm -Uvh        # 如果老版本不存在，则全新安装
+rpm -fvh        # 老版本必须存在
+
+# 卸载软件包
+rpm -e 
+```
+
+yum常用命令：
+
+```bash
+# 在线查询软件包
+yum provides zip
+yum provides */ifconfig
+
+yum check-update        # 检查更新
+
+yum clean package       # 只清除软件包缓存
+
+# yum历史命令
+# 查看历史执行yum命令
+yum history
+# 查询历史执行yum命令ID详细信息
+yum history info N
+# 撤销历史执行过的yum命令
+yum history undo N
+```
