@@ -632,10 +632,12 @@ text: '',
 &lt;blockquote>
 &lt;p>&lt;strong>变更日志：&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>2020年10月01日：初始化表格；&lt;/li>
+&lt;li>2020年10月01日：初始化表格、增加序号至&lt;code>39&lt;/code>；&lt;/li>
+&lt;li>2020年11月13日：增加喜好标签，更新序号至&lt;code>51&lt;/code>；&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
-&lt;h2 id="二二年">二〇二〇年&lt;/h2>
+&lt;h1 id="二二年">二〇二〇年&lt;/h1>
+&lt;p>&lt;strong>喜好标签（由高到低）：&lt;!-- raw HTML omitted -->#日常   #萌系   #搞笑   #轻百合   #治愈 (不是致郁)    #魔法 &lt;!-- raw HTML omitted -->&lt;/strong>&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -910,7 +912,7 @@ text: '',
 &lt;td align="center">37&lt;/td>
 &lt;td align="center">2020/09/25&lt;/td>
 &lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E8%AF%B7%E9%97%AE%E6%82%A8%E4%BB%8A%E5%A4%A9%E8%A6%81%E6%9D%A5%E7%82%B9%E5%85%94%E5%AD%90%E5%90%97%EF%BC%9F">《请问您今天要来点兔子吗？》&lt;/a>&lt;/td>
-&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E6%A1%90%E9%97%B4%E7%BA%B1%E8%B7%AF">桐间纱路&lt;/a>(纱路酱)、宇治松千夜](&lt;a href="https://zh.moegirl.org.cn/">https://zh.moegirl.org.cn/&lt;/a>宇治松千夜)&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E6%A1%90%E9%97%B4%E7%BA%B1%E8%B7%AF">桐间纱路&lt;/a>(纱路酱)、&lt;a href="https://zh.moegirl.org.cn/%E5%AE%87%E6%B2%BB%E6%9D%BE%E5%8D%83%E5%A4%9C">宇治松千夜&lt;/a>&lt;/td>
 &lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/Koi">Koi&lt;/a>(原作)&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -926,6 +928,90 @@ text: '',
 &lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E9%9B%8F%E5%AD%90%E7%9A%84%E7%AC%94%E8%AE%B0">《雏子的笔记》&lt;/a>&lt;/td>
 &lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%A4%8F%E5%B7%9D%E7%8E%96%E4%BA%95%E8%8F%9C">夏川玖井菜&lt;/a>(奇怪的爱好：喜欢吃书)&lt;/td>
 &lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/Passione">Passione&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">40&lt;/td>
+&lt;td align="center">2020/10/09&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E6%91%87%E6%9B%B3%E7%99%BE%E5%90%88">《摇曳百合》&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%B2%81%E7%BA%B3%E4%BA%AC%E5%AD%90">岁纳京子&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E8%B5%A4%E5%BA%A7%E7%81%AF%E9%87%8C">赤座灯里&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%8A%A8%E7%94%BB%E5%B7%A5%E6%88%BF">动画工房&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/TYO_ANIMATIONS">TYO ANIMATIONS&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/TYO_ANIMATIONS">TYO ANIMATIONS&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">41&lt;/td>
+&lt;td align="center">2020/10/15&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E4%B8%89%E8%80%85%E4%B8%89%E5%8F%B6">《三者三叶》&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E8%A5%BF%E5%B7%9D%E5%8F%B6%E5%AD%90">西川叶子&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%8A%A8%E7%94%BB%E5%B7%A5%E6%88%BF">动画工房&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">42&lt;/td>
+&lt;td align="center">2020/10/16&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E8%8B%A5%E5%8F%B6%E5%A5%B3%E5%AD%A9">《若叶女孩》&lt;/a>（泡面番）&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%B0%8F%E6%A1%A5%E8%8B%A5%E5%8F%B6"> 小桥若叶&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/Nexus">Nexus&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">43&lt;/td>
+&lt;td align="center">2020/10/17&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E7%89%B5%E7%89%9B%E8%8A%B1%E4%B8%8E%E5%8A%A0%E6%BF%91%E5%90%8C%E5%AD%A6">《牵牛花与加濑同学》&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E5%B1%B1%E7%94%B0%E7%BB%93%E8%A1%A3&amp;amp;action=edit&amp;amp;redlink=1">山田结衣&lt;/a>&lt;a href="https://zh.moegirl.org.cn/%E5%8A%A0%E6%BF%91%E5%8F%8B%E9%A6%99">加濑友香&lt;/a>&lt;/td>
+&lt;td align="center">ZEXCS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">44&lt;/td>
+&lt;td align="center">2020/10/21&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/Anima_Yell!">《Anima Yell!》&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E7%8C%BF%E6%B8%A1%E5%AE%87%E5%B8%8C">猿渡宇希&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%8A%A8%E7%94%BB%E5%B7%A5%E6%88%BF">动画工房&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">45&lt;/td>
+&lt;td align="center">2020/10/24&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84OO%E5%B0%8F%E6%97%A5%E5%AD%90">《一个人的OO小日子》&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E4%B8%80%E9%87%8C%E6%B3%A2%E7%9F%A5">一里波知&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/C2C">C2C&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">46&lt;/td>
+&lt;td align="center">2020/10/25&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%85%AC%E4%B8%BB%E8%BF%9E%E7%BB%93Re:Dive">《公主连结Re:Dive》&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E4%BD%A9%E5%8F%AF%E8%8E%89%E5%A7%86">佩可莉姆&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E7%99%BE%E5%9C%B0%E5%B8%8C%E7%95%99%E8%80%B6">凯露&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/CygamesPictures">CygamesPictures&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">47&lt;/td>
+&lt;td align="center">2020/10/30&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E6%88%91%E5%AE%B6%E5%A5%B3%E4%BB%86%E6%9C%89%E5%A4%9F%E7%83%A6!">《我家女仆有够烦！》&lt;/a>&lt;/td>
+&lt;td align="center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E9%AB%98%E6%A2%A8%E7%B1%B3%E5%A4%8F">高梨米夏&lt;/a>&lt;/strong>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%8A%A8%E7%94%BB%E5%B7%A5%E6%88%BF">动画工房&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">48&lt;/td>
+&lt;td align="center">2020/10/30&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.wikipedia.org/wiki/%E5%89%8D%E9%80%B2%E5%90%A7%EF%BC%81%E7%99%BB%E5%B1%B1%E5%B0%91%E5%A5%B3">《前进吧，登山少女》&lt;/a>(泡面番)&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E4%BB%93%E4%B8%8A%E6%97%A5%E5%90%91">仓上日向&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E9%9B%AA%E6%9D%91%E8%91%B5">雪村葵&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/Siro(%E6%BC%AB%E7%94%BB%E5%AE%B6)">しろ&lt;/a>（原作） • &lt;a href="https://zh.moegirl.org.cn/8-bit">8-bit&lt;/a>（动画制作）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">49&lt;/td>
+&lt;td align="center">2020/11/02&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E6%98%A5%E5%8E%9F%E5%BA%84%E7%9A%84%E7%AE%A1%E7%90%86%E5%91%98%E5%B0%8F%E5%A7%90">《春原庄的管理员小姐》&lt;/a>&lt;/td>
+&lt;td align="center">春原彩花（管理员，实在是。）、&lt;a href="https://zh.moegirl.org.cn/%E9%9B%AA%E6%9C%AC%E6%9F%9A%E5%AD%90">雪本柚子&lt;/a>（学生会长）&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/SILVER_LINK.">SILVER LINK.&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">50&lt;/td>
+&lt;td align="center">2020/11/06&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%A5%B3%E9%AB%98%E4%B8%AD%E7%94%9F%E7%9A%84%E8%99%9A%E5%BA%A6%E6%97%A5%E5%B8%B8">《女高中生的虚度日常》&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E9%B9%AD%E5%AE%AB%E8%AF%97%E7%BB%87">鹭宫诗织&lt;/a>（机器人）&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/Passione">Passione&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center">51&lt;/td>
+&lt;td align="center">2020/11/07&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E5%8D%95%E8%A0%A2%E5%A5%B3%E5%AD%A9">《笨女孩》&lt;/a>（又名：单蠢女孩）&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/%E9%9A%85%E9%87%8E%E6%B2%99%E8%80%B6%E9%A6%99">隅野沙耶香&lt;/a>&lt;/td>
+&lt;td align="center">&lt;a href="https://zh.moegirl.org.cn/Diomedea">diomedéa&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -983,7 +1069,7 @@ text: '',
 &lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ul>
 &lt;li>【装机日常】废旧笔记本不要扔，拆下屏幕，裹上驱动板，做成副屏，隔壁小孩都馋哭啦！： &lt;a href="https%EF%BC%9A//www.youtube.com/watch?v=V1wC3KKF2TM">https：//www.youtube.com/watch?v=V1wC3KKF2TM&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>搭建内网yum源</title><link>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</link><pubDate>Tue, 04 Aug 2020 10:23:39 +0800</pubDate><guid>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</guid><description>&lt;blockquote>
+&lt;/ul></description></item><item><title>搭建内网yum源(nginx、ftp)</title><link>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</link><pubDate>Tue, 04 Aug 2020 10:23:39 +0800</pubDate><guid>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</guid><description>&lt;blockquote>
 &lt;p>搭建内网yum源，摆脱软件包困扰。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="选择合适稳定的公网yum仓库">选择合适稳定的公网yum仓库&lt;/h2>
@@ -1097,7 +1183,164 @@ yum makecache &lt;span class="c1"># 更新缓存&lt;/span>
 &lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="m">5&lt;/span> * * * * root run-parts /root/update-aliyun.sh
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>其中&lt;/strong>&lt;code>run-parts&lt;/code>的意思是执行后面目录中的脚本。&lt;/p></description></item><item><title>Git Hook介绍与使用</title><link>https://agou-ops.top/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.top/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>Git 钩子和其它版本控制系统一样，Git 能在特定的重要动作发生时触发自定义脚本。&lt;/p>
+&lt;/div>&lt;p>&lt;strong>其中&lt;/strong>&lt;code>run-parts&lt;/code>的意思是执行后面目录中的脚本。&lt;/p>
+&lt;h2 id="使用ftp搭建yum本地和远程仓库">使用ftp搭建yum本地和远程仓库&lt;/h2>
+&lt;p>以下仅记录关键命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ yum install vsftpd
+$ systemctl start vsftpd &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> systemctl &lt;span class="nb">enable&lt;/span> vsftpd
+&lt;span class="c1"># 开启yum缓存功能&lt;/span>
+$ vim /etc/yum.conf
+&lt;span class="o">[&lt;/span>main&lt;span class="o">]&lt;/span> &lt;span class="nv">cachedir&lt;/span>&lt;span class="o">=&lt;/span>/var/cache/yum/&lt;span class="nv">$basearch&lt;/span>/&lt;span class="nv">$releasever&lt;/span>
+&lt;span class="nv">keepcache&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
+&lt;span class="c1"># 清除缓存&lt;/span>
+$ yum clean all
+&lt;span class="c1"># 设置基础光盘base源&lt;/span>
+$ mkdir /var/ftp/centos7-base
+$ mount /dev/cdrom /mnt
+$ cp -arp /mnt/Packages/*.rpm /var/ftp/centos7-base
+&lt;span class="c1"># 提供第三方镜像源&lt;/span>
+$ &lt;span class="nb">cd&lt;/span> /var/ftp
+&lt;span class="c1"># 同步中科大的nginx源到以上目录&lt;/span>
+$ rsync -avzP rsync://rsync.mirrors.ustc.edu.cn/repo/nginx ./
+&lt;span class="c1"># 安装createrepo工具并创建repodata仓库&lt;/span>
+$ yum install -y createrepo
+&lt;span class="c1"># 生成repodata&lt;/span>
+$ createrepo ./
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>需要注意的一点是：如果仓库中新增软件，需要重新生成repodata，也可以通过触发脚本实现。&lt;/p>
+&lt;/blockquote>
+&lt;p>客户端添加远程yum仓库：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ yum-config-manager --add-repo&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;ftp://YOUR_SERVER_IP/centos7-base&amp;#34;&lt;/span>
+$ yum-config-manager --add-repo&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;ftp://YOUR_SERVER_IP/nginx&amp;#34;&lt;/span>
+&lt;span class="c1"># 当然你也可以手动创建配置文件指定远程仓库&lt;/span>
+$ vim /etc/yum.repos.d/centos7-base.repo
+&lt;span class="o">[&lt;/span>centos7-base&lt;span class="o">]&lt;/span>
+&lt;span class="nv">name&lt;/span>&lt;span class="o">=&lt;/span>centos &lt;span class="m">7&lt;/span> base
+&lt;span class="nv">baseurl&lt;/span>&lt;span class="o">=&lt;/span>ftp://YOUR_SERVER_IP/centos7-base
+&lt;span class="nv">enabled&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
+&lt;span class="nv">gpgcheck&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="附录rpm和yum常用命令">附录：rpm和yum常用命令&lt;/h2>
+&lt;p>rpm常用命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">rpm -q &lt;span class="c1"># 查看指定软件包是否安装&lt;/span>
+rpm -qa &lt;span class="c1"># 查看系统中已安装的所有RPM软件包列表&lt;/span>
+rpm -qi &lt;span class="c1"># 查看指定软件的详细信息&lt;/span>
+rpm -ql &lt;span class="c1"># 查询指定软件包所安装的目录、文件列表&lt;/span>
+rpm -qc &lt;span class="c1"># 查询指定软件包的配置文件&lt;/span>
+rpm -qd &lt;span class="c1"># 查询指定软件包的帮助文档&lt;/span>
+rpm -qf &lt;span class="c1"># 查询文件或目录属于哪个RPM软件&lt;/span>
+rpm -q --scripts &lt;span class="c1"># 查询rpm包安装前和安装后执行的脚本&lt;/span>
+&lt;span class="c1"># 查询未安装的软件包信息&lt;/span>
+rpm -qip &lt;span class="c1"># 查询未安装的rpm包详细信息&lt;/span>
+rpm -qlp &lt;span class="c1"># 查询未安装的软件包会产生哪些文件&lt;/span>
+&lt;span class="c1"># rpm 软件包升级&lt;/span>
+rpm -Uvh &lt;span class="c1"># 如果老版本不存在，则全新安装&lt;/span>
+rpm -fvh &lt;span class="c1"># 老版本必须存在&lt;/span>
+&lt;span class="c1"># 卸载软件包&lt;/span>
+rpm -e
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>yum常用命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 在线查询软件包&lt;/span>
+yum provides zip
+yum provides */ifconfig
+yum check-update &lt;span class="c1"># 检查更新&lt;/span>
+yum clean package &lt;span class="c1"># 只清除软件包缓存&lt;/span>
+&lt;span class="c1"># yum历史命令&lt;/span>
+&lt;span class="c1"># 查看历史执行yum命令&lt;/span>
+yum &lt;span class="nb">history&lt;/span>
+&lt;span class="c1"># 查询历史执行yum命令ID详细信息&lt;/span>
+yum &lt;span class="nb">history&lt;/span> info N
+&lt;span class="c1"># 撤销历史执行过的yum命令&lt;/span>
+yum &lt;span class="nb">history&lt;/span> undo N
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Git Hook介绍与使用</title><link>https://agou-ops.top/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.top/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>Git 钩子和其它版本控制系统一样，Git 能在特定的重要动作发生时触发自定义脚本。&lt;/p>
 &lt;p>有两组这样的钩子：客户端的和服务器端的。 客户端钩子由诸如提交和合并这样的操作所调用，而服务器端钩子作用于诸如接收被推送的提交这样的联网操作。 你可以随心所欲地运用这些钩子。&lt;/p>
 &lt;h2 id="安装钩子">安装钩子&lt;/h2>
 &lt;p>钩子都被存储在 Git 目录下的 hooks 子目录中。 也即绝大部分项目中的 &lt;code>.git/hooks&lt;/code> 。 当你用 &lt;code>git init&lt;/code> 初始化一个新版本库时，Git 默认会在这个目录中放置一些示例脚本。 这些脚本除了本身可以被调用外，它们还透露了被触发时所传入的参数。 所有的示例都是 shell 脚本，其中一些还混杂了 Perl 代码，不过，任何正确命名的可执行脚本都可以正常使用 —— 你可以用 Ruby 或 Python，或任何你熟悉的语言编写它们。 这些示例的名字都是以 &lt;code>.sample&lt;/code> 结尾，如果你想启用它们，得先移除这个后缀。
