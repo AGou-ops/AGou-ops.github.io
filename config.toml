@@ -69,10 +69,10 @@ defaultContentLanguage = "en"           # Default language to use
   name = "myDocs"
   weight = 55
   url = "http://d.agou-ops.top/"
-[[menu.main]]
-  name = "myStudyNote"
-  weight = 60
-  url = "https://agou-ops.top/myStudyNote/"
+# [[menu.main]]
+#   name = "myStudyNote"
+#   weight = 60
+#   url = "https://agou-ops.top/myStudyNote/"
 
 
 [params]
@@ -169,9 +169,12 @@ defaultContentLanguage = "en"           # Default language to use
     avatar = 'mm'
     placeholder = ''
 
-  [params.search.google]    # google custom search, see https://cse.google.com
-    enable = false
-    id = "014008465090960597240:ar8pzzlyhgc"
+  [params.search.algolia]
+    enable = true
+    indexName = "main-blog"
+    appID = "5M8VQRD7W9"
+    appKey = "6a2c773473e3d77a8e761f3f64825c5a"
+    # id = "014008465090960597240:ar8pzzlyhgc"
     title = "Search"
 
   [params.reward]                                         # 文章打赏

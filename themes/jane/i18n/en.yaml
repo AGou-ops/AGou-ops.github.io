@@ -1,103 +1,103 @@
 - id: archive
-  translation: 归档
+  translation: Archive
 
 - id: tags
-  translation: 标签
+  translation: Tags
 
 - id: tag
-  translation: "标签： "
+  translation: "Tag: "
 
 - id: categories
-  translation: 分类
+  translation: Categories
 
 - id: category
-  translation: "分类： "
+  translation: "Category: "
 
 - id: authors
-  translation: 文章作者
+  translation: Authors
 
 - id: author_item
-  translation: "文章作者： "
+  translation: "Author: "
 
 # posts
 - id: prev
-  translation: 上一页
+  translation: Prev
 
 - id: next
-  translation: 下一页
+  translation: Next
 
 - id: prev_post
-  translation: 上一篇
+  translation: Prev
 
 - id: next_post
-  translation: 下一篇
+  translation: Next
 
 - id: toc
-  translation: 文章目录
+  translation: Table of Contents
 
 - id: readmore
-  translation: 阅读全文
+  translation: Read more
 
 - id: reward
-  translation: 赞赏支持
+  translation: Reward
 
 - id: rewardAlipay
-  translation: 支付宝打赏
+  translation: Alipay
 
 - id: rewardWechat
-  translation: 微信打赏
+  translation: Wechat
 
 - id: seeMarkDown
-  translation: 查看本文 Markdown 版本 »
+  translation: The Markdown version »
 
 - id: loadDisqus
-  translation: 显示 Disqus 评论
+  translation: Show Disqus Comments
 
 # posts.header
 - id: wordCount
-  translation: 约 {{.Count}} 字
+  translation: "{{.Count}} words"
 
 - id: readingTime
-  translation: 预计阅读 {{.Count}} 分钟
+  translation: "{{.Count}} min read"
 
 # copyright
 - id: author
-  translation: 文章作者
+  translation: Author
 
 - id: lastMod
-  translation: 上次更新
+  translation: LastMod
 
 - id: markdown
-  translation: 原始文档
+  translation: Markdown
 
 - id: license
-  translation: 许可协议
+  translation: License
 
 # counter
 - id: counter_archives
-  translation: 共计 {{.Count}} 篇文章
+  translation: "{{.Count}} posts In Total"
 
 - id: counter_tagcloud
-  translation: 共计 {{.Count}} 个标签
+  translation: "{{.Count}} Tags In Total"
 
 - id: counter_categories
-  translation: 共计 {{.Count}} 个分类
+  translation: "{{.Count}} Categories In Total"
 
 # other
 - id: morePost
-  translation: 查看更多 >>>
+  translation: "More Post >>>"
 
-- id: read_en
-  translation: Read in English
+- id: read_ru
+  translation: Читать на русском
 
 - id: read_es
   translation: Leer en español
 
+- id: read_zh-cn
+  translation: 中文阅读
+
 - id: read_zh-tw
   translation: 中文閱讀
-
-- id: read_ru
-  translation: Читать на русском
 
 - id: read_pt
   translation: Leia em português
@@ -109,7 +109,7 @@
   translation: Lese in Deutsch
 
 - id: language
-  translation: 语言
+  translation: Language
 
 - id: comments
-  translation: 评论
+  translation: Comments
