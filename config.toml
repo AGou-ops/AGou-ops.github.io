@@ -55,11 +55,11 @@ defaultContentLanguage = "en"           # Default language to use
   weight = 30
   identifier = "tags"
   url = "/tags/"
-[[menu.main]]
-  name = "分类"
-  weight = 40
-  identifier = "categories"
-  url = "/categories/"
+# [[menu.main]]
+#   name = "分类"
+#   weight = 40
+#   identifier = "categories"
+#   url = "/categories/"
 [[menu.main]]
   name = "Anime"
   weight = 50
@@ -130,7 +130,7 @@ defaultContentLanguage = "en"           # Default language to use
   forkMeOnGithub = "https://github.com/AGou-ops"
 
   # add custom info on the footer.   # 添加备案信息
-  customFooter = "鲁ICP备19050296号-2"
+  customFooter = '<a class="theme-link" href="http://beian.miit.gov.cn/" >鲁ICP备19050296号-2</a>'
 
   [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
     enable = false
@@ -179,8 +179,8 @@ defaultContentLanguage = "en"           # Default language to use
 
   [params.reward]                                         # 文章打赏
     enable = true
-    wechat = "https://s1.ax1x.com/2020/03/12/8m9GPe.png"           # 微信二维码
-    alipay = "https://s1.ax1x.com/2020/03/12/8m9J8H.png"           # 支付宝二维码
+    wechat = "https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/wechat.png"           # 微信二维码
+    alipay = "https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/alipay.png"           # 支付宝二维码
 
   [params.counter.busuanzi]  # a Chinese visitor counter  # 不蒜子计数器
     enable = true
@@ -219,6 +219,7 @@ defaultContentLanguage = "en"           # Default language to use
     # q-bilibili = "http://localhost:1313"
     # r-codeforces = "http://localhost:1313"
     # s-mastodon = "http://localhost:1313"
+    b-youtube = "https://www.youtube.com/channel/UCkLgMBY9hnLegjLTulM1guw"
 
 [outputs]
     home = ["HTML", "RSS", "Algolia"]
