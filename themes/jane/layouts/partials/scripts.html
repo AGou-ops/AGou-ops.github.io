@@ -261,28 +261,25 @@
   </script>
 {{ end }}
 
+
+
+
+{{- if .Site.Params.search.algolia.enable -}}
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js"></script>
+<script>
+    docsearch({
+    apiKey: "{{ .Site.Params.search.algolia.appKey }}",
+    indexName: "{{ .Site.Params.search.algolia.indexName }}",
+    appId: "{{ .Site.Params.search.algolia.appID }}",
+    inputSelector: '.docsearch-input',
+    debug: false,
+    });
+</script>
+{{- end -}}
+
 <!-- custom js -->
 {{ range .Site.Params.customJS }}
   <script src="{{ "/js/" | relURL }}{{ . }}"></script>
 {{ end }}
 
 
-{{- if .Site.Params.search.algolia.enable -}}
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css"
-/>
-
-<!-- Before the closing </body> -->
-<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js"></script>
-
-<script>
-    docsearch({
-    apiKey: '{{ .Site.Params.search.algolia.appKey }}',
-    indexName: '{{ .Site.Params.search.algolia.indexName }}',
-    appId: '{{ .Site.Params.search.algolia.appID }}',
-    inputSelector: '.docsearch-input',
-    debug: false,
-    });
-</script>
-{{- end -}}
