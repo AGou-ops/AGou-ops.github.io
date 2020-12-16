@@ -173,9 +173,9 @@ defaultContentLanguage = "en"           # Default language to use
     enable = true
     indexName = "main-blog"
     appID = "5M8VQRD7W9"
-    appKey = "6a2c773473e3d77a8e761f3f64825c5a"
+    appKey = "2fcdbd0ce638664e7a28cc64939603b9"
     # id = "014008465090960597240:ar8pzzlyhgc"
-    title = "Search"
+    # title = "Search"
 
   [params.reward]                                         # 文章打赏
     enable = true
