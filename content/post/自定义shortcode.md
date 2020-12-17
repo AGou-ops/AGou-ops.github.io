@@ -29,11 +29,13 @@ mathjax: false
 
 什么是`shortcode`以及`hugo内置shortcode`参考： [shortcodes-preview](https://agou-ops.top/post/shortcodes-preview/)
 
-<!--more-->
+
 
 ## github shortcode
 
 在指定目录添加以下文件：
+
+<!--more-->
 
 ```html
 <!-- 文件位置：~/layouts/shortcodes/github.html -->

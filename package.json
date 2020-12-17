@@ -1,5 +1,8 @@
 {
   "scripts": {
     "algolia": "atomic-algolia"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.6"
   }
 }

@@ -5,13 +5,38 @@
   border-top: 1px dashed $light-gray;
 
   .reward-button {
-    margin: 15px 0;
-    padding: 3px 7px;
+    // margin: 15px 0;
+    // padding: 3px 7px;
+    // display: inline-block;
+    // color: $theme-color;
+    // border: 1px solid $theme-color;
+    // border-radius: 5px;
+    // cursor: pointer;
+    border-radius: 200px;
+    color: #666;
+    background-color: #EEE;
+    border-color: #EEE;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 40px;
+    margin: 0;
     display: inline-block;
-    color: $theme-color;
-    border: 1px solid $theme-color;
-    border-radius: 5px;
+    appearance: none;
     cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+
 
     &:hover {
       color: $white;
