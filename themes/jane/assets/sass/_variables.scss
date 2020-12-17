@@ -26,9 +26,9 @@ $gray: #cacaca !default;
 $dark-gray: #8a8a8a !default;
 // ========== Global ========== //
 // Text color of the body.
-$global-font-color: rgba(0, 0, 0, .84) !default;
+$global-font-color: #555 !default;
 // Font size attribute applied to '<html>' and '<body>'.
-$global-font-size: 18px !default;
+$global-font-size: 1em !default;
 // Global width of '<body>'.
 $global-body-width: 1080px !default;
 // Padding of container main
@@ -36,15 +36,9 @@ $global-container-padding: 0 20px !default;
 // Default line height for all type. `$global-lineheight` is 24px while `$global-font-size` is 16px.
 $global-lineheight: 1.8 !default;
 // Font family of the site.
-$global-font-family: 'Lato',
-"PingFang SC",
-"Microsoft YaHei",
-sans-serif !default;
+$global-font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif !default;
 // Serif font family of the site.
-$global-serif-font-family: Athelas,
-STHeiti,
-Microsoft Yahei,
-serif !default;
+$global-serif-font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif !default;
 // Background color of the site.
 $global-background: $white !default;
 // Headings font size of the site.
@@ -104,7 +98,7 @@ $post-toc-margin-left: $global-body-width - 15px !default;
 $post-toc-title-size: 19px !default;
 
 // Font size of the post toc content.
-$post-toc-content: 15px !default;
+$post-toc-content: 16px !default;
 
 // List style of the post toc list.
 $post-toc-list-style: square !default;

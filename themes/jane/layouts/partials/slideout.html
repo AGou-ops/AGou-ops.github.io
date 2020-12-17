@@ -78,8 +78,9 @@
         </ul>
       </li>
     {{- end }}
-
-<!--     {{ if .Site.Params.search.google.enable }}
+<!-- 
+    {{ if .Site.Params.search.google.enable }}
+      <li class="mobile-menu-item">
         <a id="openSearchMobile" class="mobile-menu-item-link menu-item-search" href="#">
           <i class="iconfont">
             {{ partial "svg/search.svg" }}
@@ -87,11 +88,11 @@
         </a>
       </li>
     {{ end }} -->
-    {{- if .Site.Params.search.algolia.enable -}}
-    
-    <input type="search" class="docsearch-input" placeholder="Search Here..." />
+        {{- if .Site.Params.search.algolia.enable -}}
+  <!-- <li style="display:inline-block;margin-right:10px;"> -->
+    <input size="15"  maxlength="15" type="search" class="docsearch-input" placeholder="Search Here..." />
 
+  <!-- </li> -->
   {{- end -}}
-
   </ul>
 </nav>
