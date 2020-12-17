@@ -16,7 +16,9 @@
 &lt;li>Helm;&lt;/li>
 &lt;li>科学上网能力.&lt;/li>
 &lt;/ul></description></item><item><title>自定义 shortcode</title><link>https://agou-ops.top/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</link><pubDate>Tue, 06 Oct 2020 16:06:48 +0800</pubDate><guid>https://agou-ops.top/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</guid><description>&lt;h1 id="shortcode-">shortcode ???&lt;/h1>
-&lt;p>什么是&lt;code>shortcode&lt;/code>以及&lt;code>hugo内置shortcode&lt;/code>参考： &lt;a href="https://agou-ops.top/post/shortcodes-preview/">shortcodes-preview&lt;/a>&lt;/p></description></item><item><title>【日记】闲鱼垃圾佬的一天</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</link><pubDate>Mon, 14 Sep 2020 20:36:21 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</guid><description>&lt;h2 id="购置背景">购置背景&lt;/h2>
+&lt;p>什么是&lt;code>shortcode&lt;/code>以及&lt;code>hugo内置shortcode&lt;/code>参考： &lt;a href="https://agou-ops.top/post/shortcodes-preview/">shortcodes-preview&lt;/a>&lt;/p>
+&lt;h2 id="github-shortcode">github shortcode&lt;/h2>
+&lt;p>在指定目录添加以下文件：&lt;/p></description></item><item><title>【日记】闲鱼垃圾佬的一天</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</link><pubDate>Mon, 14 Sep 2020 20:36:21 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</guid><description>&lt;h2 id="购置背景">购置背景&lt;/h2>
 &lt;p>　　长达两个多月的菏泽实习结束了，感觉如释重负，终于摆脱了实习带来的困扰和限制，心情也不由地变好了起来。在返校的火车上，闲着没事刷了刷闲鱼，看了看自己这段时间以来卖出的虚拟商品（代搭建博客/代下载GitHub资源等），大概赚了&lt;code>1k&lt;/code>块钱左右吧，呃&amp;hellip;还是蛮不错的。&lt;/p></description></item><item><title>搭建内网yum源(nginx、ftp)</title><link>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</link><pubDate>Tue, 04 Aug 2020 10:23:39 +0800</pubDate><guid>https://agou-ops.top/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</guid><description>&lt;blockquote>
 &lt;p>搭建内网yum源，摆脱软件包困扰。&lt;/p>
 &lt;/blockquote>
