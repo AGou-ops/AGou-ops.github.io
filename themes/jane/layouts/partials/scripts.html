@@ -63,7 +63,7 @@
   (function() {
     if (window.location.hostname === 'localhost') return;
     var hm = document.createElement("script"); hm.async = true;
-	hm.src = "//tajs.qq.com/stats?sId={{.}}";
+  hm.src = "//tajs.qq.com/stats?sId={{.}}";
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
   })();
@@ -112,7 +112,7 @@
       crossorigin="anonymous"></script>
   {{ else if .Site.Params.publicCDN.enable }}
     <script type="text/javascript" src="{{ "/js/load-photoswipe.js" | relURL }}"></script>
-	{{ .Site.Params.publicCDN.photoswipe | safeHTML }}
+  {{ .Site.Params.publicCDN.photoswipe | safeHTML }}
     {{ .Site.Params.publicCDN.photoswipeUI | safeHTML }}
   {{ else }}
     <script type="text/javascript" src="{{ "/js/load-photoswipe.js" | relURL }}"></script>
@@ -242,7 +242,7 @@
   <script id="dsq-count-scr" src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" async></script>
 {{ end }}
 
-{{ if .Site.Params.search.google.enable }}
+<!-- {{ if .Site.Params.search.google.enable }}
   <script>
     $("#openSearch, #openSearchMobile").click(function(){
       $(".modal-dialog").addClass("visible");
@@ -260,7 +260,7 @@
     });
   </script>
 {{ end }}
-
+ -->
 
 
 
@@ -272,6 +272,19 @@
     indexName: "{{ .Site.Params.search.algolia.indexName }}",
     appId: "{{ .Site.Params.search.algolia.appID }}",
     inputSelector: '.docsearch-input',
+    debug: false,
+    });
+</script>
+{{- end -}}
+
+{{- if .Site.Params.search.algolia.enable -}}
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js"></script>
+<script>
+    docsearch({
+    apiKey: "{{ .Site.Params.search.algolia.appKey }}",
+    indexName: "{{ .Site.Params.search.algolia.indexName }}",
+    appId: "{{ .Site.Params.search.algolia.appID }}",
+    inputSelector: '.docsearch',
     debug: false,
     });
 </script>
