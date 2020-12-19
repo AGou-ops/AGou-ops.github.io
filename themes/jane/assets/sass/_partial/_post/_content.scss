@@ -5,7 +5,7 @@
 .post-content {
   font-size: 1em;
   word-wrap: break-word;
-  text-align: justify;
+  // text-align: justify;
 
   @for $i from 1 through 6 {
     h#{$i} {
@@ -73,6 +73,7 @@
 
   .read-more {
     text-align: right;
+    
 
     .read-more-link {
       color: $theme-color;
