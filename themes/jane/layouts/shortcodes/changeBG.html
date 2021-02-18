@@ -1,0 +1,125 @@
+<style>
+    .content-wrapper {
+        background-image: url('{{ .Get 0 }}');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        cursor: url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.ani), url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.png), auto !important;
+    }
+    
+    .post {
+        border-radius: 10px;
+        cursor: url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.ani), url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.png), auto !important;
+    }
+    
+    .bg-white {
+        opacity: 0.92;
+    }
+    
+    #menu>li:nth-child(5)>a {
+        color: #FF69B4;
+        font-weight: bold;
+    }
+    
+    .wrapper {
+        width: 200px;
+        display: block;
+        user-select: none;
+        bottom: 0;
+        position: fixed;
+        left: -3px;
+        z-index: -2;
+    }
+    
+    @media (max-width: 767px) {
+        .hidden-mobile {
+            display: none;
+        }
+        .content-wrapper {
+            background-image: url('http://api.btstu.cn/sjbz/?lx=m_dongman');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            cursor: url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.ani), url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.png), auto !important;
+        }
+        .modal {
+            z-index: 10;
+            display: block;
+            padding-top: 100px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+        .modal-content {
+            margin: auto;
+            background-color: #fff;
+            position: relative;
+            padding: 0;
+            outline: 0;
+            max-width: 600px
+        }
+        .modal-inner {
+            padding: 20px 30px;
+        }
+        .modal-close {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: #ccc;
+            padding: 12px 16px;
+        }
+        .animate-opacity {
+            animation: opac 0.8s
+        }
+        @keyframes opac {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+    }
+</style>
+
+
+
+
+<div class="wrapper hidden-mobile">
+    <a title="黄前久美子" href="https://zh.moegirl.org.cn/index.php?title=%E9%BB%84%E5%89%8D%E4%B9%85%E7%BE%8E%E5%AD%90" target="_blank"><img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Kumiko01.png" /></a>
+</div>
+
+
+<div id="modal-1" class="modal animate-opacity">
+    <div class="modal-content">
+        <div class="modal-inner">
+            <span onclick="document.getElementById('modal-1').style.display='none'" class="modal-close">&times;</span>
+            <h4>温馨提示</h4>
+            <p>该页面在PC端访问更佳喔~</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    document.querySelector("#header > div > a").innerHTML = "Anime Lover";
+    // document.querySelector("head > meta:nth-child(7)").remove();
+
+    if (document.body.clientWidth > 767) {
+        style = "display: none;"
+        document.getElementById("modal-1").style.display = "none"; //隐藏
+    }
+</script>
