@@ -1240,8 +1240,7 @@ transition: all .5s;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;div class="bilibili">
-&lt;iframe src="//player.bilibili.com/player.html?bvid=BV1YK4y1C7CU&amp;page=1" scrolling="no"
-border="0" frameborder="no" framespacing="0" allowfullscreen="true">&lt;/iframe>
+&lt;iframe src="//player.bilibili.com/player.html?bvid=BV1YK4y1C7CU&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">&lt;/iframe>
 &lt;/div>
 &lt;h2 id="video-shortcode">video shortcode&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -1321,13 +1320,128 @@ text: '',
 },
 ],
 });
-&lt;/script></description></item><item><title>我的动漫之旅(My Anime Trip.)</title><link>https://agou-ops.top/anime/</link><pubDate>Wed, 30 Sep 2020 19:14:44 +0800</pubDate><guid>https://agou-ops.top/anime/</guid><description>&lt;p>&lt;em>&lt;strong>按照观看结束时间排序，序号仅用于计数。(2020-03-28 至 ????-??-??)&lt;/strong>&lt;/em>&lt;/p>
+&lt;/script></description></item><item><title>我的动漫之旅(My Anime Trip.)</title><link>https://agou-ops.top/anime/</link><pubDate>Wed, 30 Sep 2020 19:14:44 +0800</pubDate><guid>https://agou-ops.top/anime/</guid><description>&lt;style>
+.content-wrapper {
+background-image: url('http://www.dmoe.cc/random.php');
+background-size: 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+cursor: url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.ani), url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.png), auto !important;
+}
+.post {
+border-radius: 10px;
+cursor: url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.ani), url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.png), auto !important;
+}
+.bg-white {
+opacity: 0.92;
+}
+#menu>li:nth-child(5)>a {
+color: #FF69B4;
+font-weight: bold;
+}
+.wrapper {
+width: 200px;
+display: block;
+user-select: none;
+bottom: 0;
+position: fixed;
+left: -3px;
+z-index: -2;
+}
+@media (max-width: 767px) {
+.hidden-mobile {
+display: none;
+}
+.content-wrapper {
+background-image: url('http://api.btstu.cn/sjbz/?lx=m_dongman');
+background-size: 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+cursor: url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.ani), url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.png), auto !important;
+}
+.modal {
+z-index: 10;
+display: block;
+padding-top: 100px;
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgb(0, 0, 0);
+background-color: rgba(0, 0, 0, 0.5)
+}
+.modal-content {
+margin: auto;
+background-color: #fff;
+position: relative;
+padding: 0;
+outline: 0;
+max-width: 600px
+}
+.modal-inner {
+padding: 20px 30px;
+}
+.modal-close {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+position: absolute;
+right: 0;
+top: 0;
+background: #ccc;
+padding: 12px 16px;
+}
+.animate-opacity {
+animation: opac 0.8s
+}
+@keyframes opac {
+from {
+opacity: 0
+}
+to {
+opacity: 1
+}
+}
+}
+&lt;/style>
+&lt;div class="wrapper hidden-mobile">
+&lt;a title="黄前久美子" href="https://zh.moegirl.org.cn/index.php?title=%E9%BB%84%E5%89%8D%E4%B9%85%E7%BE%8E%E5%AD%90" target="_blank">&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Kumiko01.png" />&lt;/a>
+&lt;/div>
+&lt;div id="modal-1" class="modal animate-opacity">
+&lt;div class="modal-content">
+&lt;div class="modal-inner">
+&lt;span onclick="document.getElementById('modal-1').style.display='none'" class="modal-close">&amp;times;&lt;/span>
+&lt;h4>温馨提示&lt;/h4>
+&lt;p>该页面在PC端访问更佳喔~&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script type="text/javascript">
+document.querySelector("#header > div > a").innerHTML = "Anime Lover";
+if (document.body.clientWidth > 767) {
+style = "display: none;"
+document.getElementById("modal-1").style.display = "none";
+}
+&lt;/script>
+&lt;p>&lt;em>&lt;strong>按照观看结束时间排序，序号仅用于计数。(2020-03-28 至 ????-??-??)&lt;/strong>&lt;/em>&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>变更日志：&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>2020年10月01日：初始化表格、增加序号至&lt;code>39&lt;/code>；&lt;/li>
 &lt;li>2020年11月13日：增加喜好标签，更新序号至&lt;code>51&lt;/code>；&lt;/li>
 &lt;li>2021年01月01日：增加番剧喜好标识 💕 ，&lt;strong>2020年完结&lt;/strong>，更新序号至&lt;code>79&lt;/code>；&lt;/li>
+&lt;li>2021年02月18日：
+&lt;ul>
+&lt;li>增加流行的圆角设计，增加透明度，增加随机动漫背景；&lt;/li>
+&lt;li>更改PC端鼠标样式为&lt;code>among us&lt;/code>，左下角新增&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E9%BB%84%E5%89%8D%E4%B9%85%E7%BE%8E%E5%AD%90">黄前久美子&lt;/a>画像；&lt;/li>
+&lt;li>增加泡面番标识🍜，更新序号至&lt;code>100&lt;/code>；&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
 &lt;p>⚠️ 注：&lt;code>-&lt;/code>表示无或不祥，&lt;code>^&lt;/code>表示和上个一样。ℹ️ &lt;strong>&amp;mdash; 移动端双击屏幕查看更佳～ &amp;mdash;&lt;/strong>&lt;/p>
@@ -1349,63 +1463,63 @@ text: '',
 &lt;td style="text-align:center">2020/03/28&lt;/td>
 &lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E5%B0%8F%E6%9E%97%E5%AE%B6%E7%9A%84%E9%BE%99%E5%A5%B3%E4%BB%86">《小林家的龙女仆》&lt;/a>&lt;/strong> 💕&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%89%98%E5%B0%94(%E5%B0%8F%E6%9E%97%E5%AE%B6%E7%9A%84%E9%BE%99%E5%A5%B3%E4%BB%86)">托尔&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E5%BA%B7%E5%A8%9C%E5%8D%A1%E5%A7%86%E4%BE%9D">康娜&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E9%9C%B2%E7%A7%91%E4%BA%9A">尔科亚&lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">1&lt;/td>
 &lt;td style="text-align:center">2020/04/02&lt;/td>
 &lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD">《紫罗兰永恒花园》&lt;/a>&lt;/strong> 💕&lt;/td>
 &lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E8%96%87%E5%B0%94%E8%8E%89%E7%89%B9%C2%B7%E4%BC%8A%E8%8A%99%E5%8A%A0%E7%99%BB">薇尔莉特·伊芙加登&lt;/a>&lt;/strong>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">2&lt;/td>
 &lt;td style="text-align:center">2020/04/06&lt;/td>
 &lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E5%90%B9%E5%93%8D%EF%BC%81%E4%B8%8A%E4%BD%8E%E9%9F%B3%E5%8F%B7">《吹响！上低音号》&lt;/a>&lt;/strong> 💕&lt;/td>
 &lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E9%BB%84%E5%89%8D%E4%B9%85%E7%BE%8E%E5%AD%90">黄前久美子&lt;/a>&lt;/strong>(黄大叔)、&lt;a href="https://zh.moegirl.org.cn/%E4%B8%AD%E4%B8%96%E5%8F%A4%E9%A6%99%E7%BB%87">中世古香织&lt;/a>(小香织)&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">3&lt;/td>
 &lt;td style="text-align:center">2020/04/18&lt;/td>
 &lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E8%BD%BB%E9%9F%B3%E5%B0%91%E5%A5%B3">《轻音少女》&lt;/a>(K-ON!)&lt;/strong> 💕&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%B9%B3%E6%B3%BD%E5%94%AF">平泽唯&lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">4&lt;/td>
 &lt;td style="text-align:center">2020/04/24&lt;/td>
 &lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E6%97%A5%E5%B8%B8">《日常》&lt;/a>&lt;/strong> 💕&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%95%BF%E9%87%8E%E5%8E%9F%E7%BE%8E%E7%BB%AA">长野原美绪&lt;/a>(美绪酱)&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">5&lt;/td>
 &lt;td style="text-align:center">2020/05/02&lt;/td>
 &lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/CLANNAD">《CLANNAD》&lt;/a>&lt;/strong> 💕&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%8F%A4%E6%B2%B3%E6%B8%9A">古河渚&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E5%86%88%E5%B4%8E%E6%B1%90">冈崎汐&lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">6&lt;/td>
 &lt;td style="text-align:center">2020/05/07&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%B8%AD%E4%BA%8C%E7%97%85%E4%B9%9F%E8%A6%81%E8%B0%88%E6%81%8B%E7%88%B1">《中二病也要谈恋爱》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%B8%83%E5%AE%AB%E6%99%BA%E9%9F%B3">七宫智音&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E5%B0%8F%E9%B8%9F%E6%B8%B8%E5%85%AD%E8%8A%B1">小鸟游六花&lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">7&lt;/td>
 &lt;td style="text-align:center">2020/05/12&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%A2%83%E7%95%8C%E7%9A%84%E5%BD%BC%E6%96%B9">《境界的彼方》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%A0%97%E5%B1%B1%E6%9C%AA%E6%9D%A5">栗山未来&lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">8&lt;/td>
 &lt;td style="text-align:center">2020/05/17&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%94%98%E5%9F%8E%E5%85%89%E8%BE%89%E6%B8%B8%E4%B9%90%E5%9B%AD">《甘城光辉游乐园》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%8D%83%E6%96%97%E4%BA%94%E5%8D%81%E9%93%83">千斗五十铃&lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">9&lt;/td>
@@ -1454,7 +1568,7 @@ text: '',
 &lt;td style="text-align:center">2020/06/06&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/LoveLive!">《LoveLive!》&lt;/a>(&lt;a href="https://zh.moegirl.org.cn/%CE%9C's">μ&amp;rsquo;s&lt;/a>)&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%B8%9C%E6%9D%A1%E5%B8%8C">东条希&lt;/a>(希)、&lt;a href="https://zh.moegirl.org.cn/%E7%9F%A2%E6%B3%BD%E5%A6%AE%E5%8F%AF">矢泽妮可&lt;/a>(妮可)&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">SUNRISE&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">16&lt;/td>
@@ -1494,7 +1608,7 @@ text: '',
 &lt;tr>
 &lt;td style="text-align:center">21&lt;/td>
 &lt;td style="text-align:center">2020/06/26&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%91%87%E6%9B%B3%E9%9C%B2%E8%90%A5">《摇曳露营》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E6%91%87%E6%9B%B3%E9%9C%B2%E8%90%A5">《摇曳露营》&lt;/a>💕&lt;/strong>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%BF%97%E6%91%A9%E5%87%9B">志摩凛&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E5%90%84%E5%8A%A1%E5%8E%9F%E6%8A%9A%E5%AD%90">各务原抚子&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/C-Station">C-Station&lt;/a>&lt;/td>
 &lt;/tr>
@@ -1538,28 +1652,28 @@ text: '',
 &lt;td style="text-align:center">2020/08/10&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Slow_Start">《Slow Start》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%8D%81%E4%BB%93%E8%8D%A3%E4%BE%9D%E5%AD%90">十仓荣依子&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E5%8D%83%E7%9F%B3%E5%86%A0">千石冠&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E4%B8%80%E4%B9%8B%E6%BF%91%E8%8A%B1%E5%90%8D"> 一之濑花名&lt;/a> 、 &lt;a href="https://zh.moegirl.org.cn/%E7%99%BE%E5%9C%B0%E7%8E%89%E6%89%8B">百地玉手&lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/A-1_Pictures">A-1 Pictures&lt;/a>→&lt;a href="https://zh.moegirl.org.cn/CloverWorks">CloverWorks&lt;/a>[1] &lt;a href="https://zh.moegirl.org.cn/%E8%8A%B3%E6%96%87%E7%A4%BE">芳文社&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/A-1_Pictures">A-1 Pictures&lt;/a>→&lt;a href="https://zh.moegirl.org.cn/CloverWorks">CloverWorks&lt;/a>[1]&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">28&lt;/td>
 &lt;td style="text-align:center">2020/08/15&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Comic_Girls">《Comic Girls》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E8%90%8C%E7%94%B0%E8%96%B0%E5%AD%90">萌田薰子&lt;/a>(小混沌)&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Nexus">Nexus&lt;/a> &lt;a href="https://zh.moegirl.org.cn/%E8%8A%B3%E6%96%87%E7%A4%BE">芳文社&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Nexus">Nexus&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">29&lt;/td>
 &lt;td style="text-align:center">2020/08/19&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%81%8B%E7%88%B1%E5%B0%8F%E8%A1%8C%E6%98%9F">《恋爱小行星》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%9C%A8%E4%B9%8B%E5%B9%A1%E7%B1%B3%E6%8B%89">木之幡米拉&lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%8A%A8%E7%94%BB%E5%B7%A5%E6%88%BF">动画工房&lt;/a> &lt;a href="https://zh.moegirl.org.cn/%E8%8A%B3%E6%96%87%E7%A4%BE">芳文社&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%8A%A8%E7%94%BB%E5%B7%A5%E6%88%BF">动画工房&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">30&lt;/td>
 &lt;td style="text-align:center">2020/08/22&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E8%A1%97%E8%A7%92%E9%AD%94%E6%97%8F">《街角魔族》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%90%89%E7%94%B0%E4%BC%98%E5%AD%90">吉田优子&lt;/a>(夏美子)&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/J.C.STAFF">J.C.STAFF&lt;/a> &lt;a href="https://zh.moegirl.org.cn/%E8%8A%B3%E6%96%87%E7%A4%BE">芳文社&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/J.C.STAFF">J.C.STAFF&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">31&lt;/td>
@@ -1615,7 +1729,7 @@ text: '',
 &lt;td style="text-align:center">2020/09/25&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%AE%87%E5%B4%8E%E9%85%B1%E6%83%B3%E8%A6%81%E7%8E%A9%E8%80%8D%EF%BC%81">《宇崎酱想要玩耍！》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%AE%87%E5%B4%8E%E8%8A%B1">宇崎花 &lt;/a>&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/ENGI">ENGI&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">39&lt;/td>
@@ -1641,7 +1755,7 @@ text: '',
 &lt;tr>
 &lt;td style="text-align:center">42&lt;/td>
 &lt;td style="text-align:center">2020/10/16&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E8%8B%A5%E5%8F%B6%E5%A5%B3%E5%AD%A9">《若叶女孩》&lt;/a>（泡面番）&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E8%8B%A5%E5%8F%B6%E5%A5%B3%E5%AD%A9">《若叶女孩》&lt;/a>🍜&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%B0%8F%E6%A1%A5%E8%8B%A5%E5%8F%B6"> 小桥若叶&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Nexus">Nexus&lt;/a>&lt;/td>
 &lt;/tr>
@@ -1683,7 +1797,7 @@ text: '',
 &lt;tr>
 &lt;td style="text-align:center">48&lt;/td>
 &lt;td style="text-align:center">2020/10/30&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.wikipedia.org/wiki/%E5%89%8D%E9%80%B2%E5%90%A7%EF%BC%81%E7%99%BB%E5%B1%B1%E5%B0%91%E5%A5%B3">《前进吧，登山少女》&lt;/a>(泡面番)&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.wikipedia.org/wiki/%E5%89%8D%E9%80%B2%E5%90%A7%EF%BC%81%E7%99%BB%E5%B1%B1%E5%B0%91%E5%A5%B3">《前进吧，登山少女》&lt;/a>🍜&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BB%93%E4%B8%8A%E6%97%A5%E5%90%91">仓上日向&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E9%9B%AA%E6%9D%91%E8%91%B5">雪村葵&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Siro(%E6%BC%AB%E7%94%BB%E5%AE%B6)">しろ&lt;/a>（原作） • &lt;a href="https://zh.moegirl.org.cn/8-bit">8-bit&lt;/a>（动画制作）&lt;/td>
 &lt;/tr>
@@ -1711,7 +1825,7 @@ text: '',
 &lt;tr>
 &lt;td style="text-align:center">52&lt;/td>
 &lt;td style="text-align:center">2020/11/16&lt;/td>
-&lt;td style="text-align:center">[《Happy Sugar Life》](&lt;a href="https://zh.moegirl.org.cn/Happy">https://zh.moegirl.org.cn/Happy&lt;/a> Sugar Life)（小心这糖有毒）&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Happy_Sugar_Life">《Happy Sugar Life》&lt;/a>（小心这糖有毒）&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%A5%9E%E6%88%B7%E7%9B%90">神戶鹽&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/index.php?title=Ezo'la&amp;amp;action=edit&amp;amp;redlink=1">Ezo&amp;rsquo;la&lt;/a>&lt;/td>
 &lt;/tr>
@@ -1754,7 +1868,7 @@ text: '',
 &lt;td style="text-align:center">58&lt;/td>
 &lt;td style="text-align:center">2020/11/29&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BD%A0%E9%81%AD%E9%9A%BE%E4%BA%86%E5%90%97%EF%BC%9F">《你遭难了吗？》&lt;/a>&lt;/td>
-&lt;td style="text-align:center">ALL&lt;/td>
+&lt;td style="text-align:center">-&lt;/td>
 &lt;td style="text-align:center">Ezo&amp;rsquo;la&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -1774,7 +1888,7 @@ text: '',
 &lt;tr>
 &lt;td style="text-align:center">61&lt;/td>
 &lt;td style="text-align:center">2020/12/05&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%AE%85%E9%A5%AE">《宅饮》&lt;/a>（泡面番）&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%AE%85%E9%A5%AE">《宅饮》&lt;/a>🍜&lt;/td>
 &lt;td style="text-align:center">-&lt;/td>
 &lt;td style="text-align:center">Production IMS&lt;/td>
 &lt;/tr>
@@ -1802,14 +1916,14 @@ text: '',
 &lt;tr>
 &lt;td style="text-align:center">65&lt;/td>
 &lt;td style="text-align:center">2020/12/11&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://baike.baidu.com/item/%E6%97%A0%E5%8F%A3%E7%9A%84%E6%A3%AE%E7%94%B0%E5%B0%8F%E5%A7%90/4204997?fr=aladdin">《无口的森田小姐》&lt;/a>（泡面番）&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://baike.baidu.com/item/%E6%97%A0%E5%8F%A3%E7%9A%84%E6%A3%AE%E7%94%B0%E5%B0%8F%E5%A7%90/4204997?fr=aladdin">《无口的森田小姐》&lt;/a>🍜&lt;/td>
 &lt;td style="text-align:center">-&lt;/td>
 &lt;td style="text-align:center">竹书房&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">66&lt;/td>
 &lt;td style="text-align:center">2020/12/14&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%9D%A2%E5%8C%85%E5%B8%A6%E6%9D%A5%E5%92%8C%E5%B9%B3%EF%BC%81">《面包带来和平！》&lt;/a>（泡面番）&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%9D%A2%E5%8C%85%E5%B8%A6%E6%9D%A5%E5%92%8C%E5%B9%B3%EF%BC%81">《面包带来和平！》&lt;/a>🍜&lt;/td>
 &lt;td style="text-align:center">-&lt;/td>
 &lt;td style="text-align:center">旭Production&lt;/td>
 &lt;/tr>
@@ -1823,7 +1937,7 @@ text: '',
 &lt;tr>
 &lt;td style="text-align:center">68&lt;/td>
 &lt;td style="text-align:center">2020/12/19&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%B4%B2%E5%B4%8E%E8%A5%BF">《洲崎西》&lt;/a>（泡面番）&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%B4%B2%E5%B4%8E%E8%A5%BF">《洲崎西》&lt;/a>🍜&lt;/td>
 &lt;td style="text-align:center">-&lt;/td>
 &lt;td style="text-align:center">feel.&lt;/td>
 &lt;/tr>
@@ -1858,7 +1972,7 @@ text: '',
 &lt;tr>
 &lt;td style="text-align:center">73&lt;/td>
 &lt;td style="text-align:center">2020/12/25&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%8A%AC%E7%A5%9E%E5%90%8C%E5%AD%A6%E5%92%8C%E7%8C%AB%E5%B1%B1%E5%90%8C%E5%AD%A6">《犬神同学和猫山同学》&lt;/a>（泡面番）&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%8A%AC%E7%A5%9E%E5%90%8C%E5%AD%A6%E5%92%8C%E7%8C%AB%E5%B1%B1%E5%90%8C%E5%AD%A6">《犬神同学和猫山同学》&lt;/a>🍜&lt;/td>
 &lt;td style="text-align:center">-&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/index.php?title=SEVEN&amp;amp;action=edit&amp;amp;redlink=1"> SEVEN&lt;/a>&lt;/td>
 &lt;/tr>
@@ -1906,21 +2020,190 @@ text: '',
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="其他">其他&lt;/h3>
-&lt;h5 id="年度最喜欢的声优及所配音角色">年度最喜欢的声优(及所配音角色)：&lt;/h5>
+&lt;h3 id="年度最喜欢的声优及所配音角色">年度最喜欢的声优(及所配音角色)&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://zh.moegirl.org.cn/%E7%9F%B3%E5%B7%9D%E7%94%B1%E4%BE%9D">石川由依&lt;/a>：薇尔莉特·伊芙加登、高砂智惠、伊座并杏子；&lt;/li>
 &lt;li>&lt;a href="https://zh.moegirl.org.cn/%E9%BB%91%E6%B3%BD%E6%9C%8B%E4%B8%96">黑泽朋世&lt;/a>：黄前久美子，沙耶；&lt;/li>
 &lt;li>&lt;a href="https://zh.moegirl.org.cn/%E5%AD%90%E5%AE%89%E6%AD%A6%E4%BA%BA">子安武人&lt;/a>：克劳迪亚·霍金斯；&lt;/li>
 &lt;/ul>
-&lt;h5 id="年度最喜欢的opedost">年度最喜欢的OP/ED/OST&lt;/h5>
+&lt;h3 id="年度最喜欢的opedost">年度最喜欢的OP/ED/OST&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>だんご大家族（团子大家族）&lt;/strong>&lt;/li>
-&lt;li>明日でいいから（明天也没关系）&lt;/li>
-&lt;li>ne！ne！ne！（呐！呐！呐！）&lt;/li>
+&lt;li>&lt;strong>だんご大家族（团子大家族）&lt;/strong>；&lt;/li>
+&lt;li>明日でいいから（明天也没关系）；&lt;/li>
+&lt;li>ne！ne！ne！（呐！呐！呐！）；&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="二二一年">二〇二一年&lt;/h2></description></item><item><title>【日记】闲鱼垃圾佬的一天</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</link><pubDate>Mon, 14 Sep 2020 20:36:21 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</guid><description>&lt;h2 id="购置背景">购置背景&lt;/h2>
+&lt;h2 id="二二一年">二〇二一年&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">序号&lt;/th>
+&lt;th style="text-align:center">时间&lt;/th>
+&lt;th style="text-align:center">动漫名&lt;/th>
+&lt;th style="text-align:center">最喜欢的角色&lt;/th>
+&lt;th style="text-align:center">制片方&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">80&lt;/td>
+&lt;td style="text-align:center">2021/01/02&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E8%8D%89%E8%8E%93%E6%A3%89%E8%8A%B1%E7%B3%96">《草莓棉花糖》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BC%8A%E8%97%A4%E5%8D%83%E4%BD%B3">伊藤千佳&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%AB%A5%E6%A2%A6">童梦&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">81&lt;/td>
+&lt;td style="text-align:center">2021/01/04&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%96%AF%E7%89%B9%E6%8B%89%E7%9A%84%E9%AD%94%E6%B3%95">《斯特拉的魔法》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%9C%AC%E7%94%B0%E7%8F%A0%E8%BE%89">本田珠輝&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/SILVER_LINK.">SILVER LINK.&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">82&lt;/td>
+&lt;td style="text-align:center">2021/01/06&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%94%B5%E5%99%A8%E8%A1%97%E7%9A%84%E6%BC%AB%E7%94%BB%E5%BA%97">《电器街的漫画店》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%B0%8F%E6%97%A5">小日&lt;/a>（ひおたん）、&lt;a href="https://zh.moegirl.org.cn/%E7%9B%B8%E6%9C%BA%E5%AD%90">相机子&lt;/a>（カメ子（カメこ））&lt;/td>
+&lt;td style="text-align:center">SHIN-EI动画&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">83&lt;/td>
+&lt;td style="text-align:center">2021/01/07&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Candy_Boy">《Candy Boy》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E6%A8%B1%E4%BA%95%E5%A5%8F&amp;amp;action=edit&amp;amp;redlink=1">樱井奏&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E6%A8%B1%E4%BA%95%E9%9B%AA%E4%B9%83&amp;amp;action=edit&amp;amp;redlink=1">樱井雪乃&lt;/a>&lt;/td>
+&lt;td style="text-align:center">AIC Digital&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">84&lt;/td>
+&lt;td style="text-align:center">2021/01/08&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%AD%94%E7%89%A9%E5%A8%98%E7%9A%84%E5%8C%BB%E7%94%9F">《魔物娘的医生》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">-&lt;/td>
+&lt;td style="text-align:center">ARVO ANIMATION&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">85&lt;/td>
+&lt;td style="text-align:center">2021/01/12&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E8%BD%BB%E5%A3%B0%E5%AF%86%E8%AF%AD">《轻声密语》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%A3%8E%E9%97%B4%E6%B1%90">风间汐&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E6%9D%91%E9%9B%A8%E7%BA%AF%E5%A4%8F">村雨纯夏&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/AIC">AIC&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">86&lt;/td>
+&lt;td style="text-align:center">2021/01/13&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%9B%8F%E9%80%BB%E8%BE%91">《雏逻辑》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E8%8E%89%E6%98%82%E5%A6%AE%E4%B8%9D%C2%B7%E5%8F%B6%E5%88%A9%E6%96%AF%E7%89%B9%E6%8B%89%E6%89%98%E5%A8%83&amp;amp;action=edit&amp;amp;redlink=1">莉昂妮丝·叶利斯特拉托娃&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E4%BA%AC%E6%A1%A5%E4%B8%87%E5%8D%9A&amp;amp;action=edit&amp;amp;redlink=1">京桥万博&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%8A%A8%E7%94%BB%E5%B7%A5%E6%88%BF">动画工房&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">87&lt;/td>
+&lt;td style="text-align:center">2021/01/16&lt;/td>
+&lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E7%BB%88%E6%9C%AB%E6%97%85%E8%A1%8C">《少女终末旅行》&lt;/a>​&lt;/strong>💕&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%8D%83%E6%88%B7">千户&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E5%B0%A4%E8%8E%89(%E5%B0%91%E5%A5%B3%E7%BB%88%E6%9C%AB%E6%97%85%E8%A1%8C)">尤莉&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/WHITE_FOX">WHITE FOX&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">88&lt;/td>
+&lt;td style="text-align:center">2021/01/20&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%BB%84%E9%87%91%E6%8B%BC%E5%9B%BE">《黄金拼图》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%B0%8F%E8%B7%AF%E7%BB%AB">小路绫&lt;/a>（ayaya）、&lt;a href="https://zh.moegirl.org.cn/%E4%B9%8C%E4%B8%B8%E6%A8%B1">乌丸樱&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Studio%E4%BA%94%E7%BB%84">Studio五组&lt;/a>、AXsiZ（制作协力）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">89&lt;/td>
+&lt;td style="text-align:center">2021/01/22&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E8%B8%8F%E5%88%87%E6%97%B6%E9%97%B4">《踏切时间》&lt;/a>🍜&lt;/td>
+&lt;td style="text-align:center">-&lt;/td>
+&lt;td style="text-align:center">EKACHI EPILKA&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">90&lt;/td>
+&lt;td style="text-align:center">2021/01/27&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%B5%A6%E5%92%8C%E5%B0%8F%E8%B0%83">《浦和小调》&lt;/a>🍜&lt;/td>
+&lt;td style="text-align:center">-&lt;/td>
+&lt;td style="text-align:center">-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">91&lt;/td>
+&lt;td style="text-align:center">2021/01/28&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%82%AA%E7%A5%9E%E4%B8%8E%E5%8E%A8%E4%BA%8C%E7%97%85%E5%B0%91%E5%A5%B3">《邪神与厨二病少女》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%82%AA%E7%A5%9E%E9%85%B1">邪神酱&lt;/a>（夹心酱）、&lt;a href="https://zh.moegirl.org.cn/%E8%8A%B1%E5%9B%AD%E7%99%BE%E5%90%88%E9%93%83">花园百合铃&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/NOMAD">NOMAD&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">92&lt;/td>
+&lt;td style="text-align:center">2021/02/01&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/SHOW_BY_ROCK!!">《SHOW BY ROCK!!》&lt;/a>(第一二季)&lt;/td>
+&lt;td style="text-align:center">&lt;strong>&lt;a href="https://zh.moegirl.org.cn/%E5%B8%8C%E5%AE%89">希安&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E8%8E%AB%E4%BA%9A&amp;amp;action=edit&amp;amp;redlink=1">莫亚&lt;/a>&lt;/strong>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/BONES">BONES&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">93&lt;/td>
+&lt;td style="text-align:center">2021/02/03&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/22/7">《22/7》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%B3%B7%E5%B7%9D%E7%BE%8E%E7%BE%BD">泷川美羽&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E8%97%A4%E9%97%B4%E6%A8%B1">藤间樱&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://baike.baidu.com/item/A-1%20Pictures/1264976">A-1 Pictures&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">94&lt;/td>
+&lt;td style="text-align:center">2021/02/06&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/SHOW_BY_ROCK!!#Mashumairesh!!">《SHOW BY ROCK!! Mashumairesh!!》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%8B%90%E4%B8%B8">狐丸&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E7%9C%9F%E5%B2%9B%E5%A7%AC%E5%AD%90&amp;amp;action=edit&amp;amp;redlink=1">真岛姬子&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/BONES">BONES&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">95&lt;/td>
+&lt;td style="text-align:center">2021/02/08&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%B4%A7%E6%89%A3%E7%9A%84%E6%98%9F%E6%98%9F">《紧扣的星星》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">-&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/index.php?title=PRIMASTEA&amp;amp;action=edit&amp;amp;redlink=1">PRIMASTEA&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">96&lt;/td>
+&lt;td style="text-align:center">2021/02/11&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%B8%B8%E6%88%8F3%E4%BA%BA%E5%A8%98">《游戏3人娘》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%87%8E%E6%9D%91%E9%A6%99%E7%BA%AF">野村香纯&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Lerche">Lerche&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">97&lt;/td>
+&lt;td style="text-align:center">2021/02/14&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://mzh.moegirl.org.cn/zh-hans/%E5%85%AB%E7%99%BE%E4%B8%87%E5%A0%82">《猫神八百万》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/index.php?title=%E5%8F%A4%E5%AE%AB%E6%9F%9A%E5%AD%90&amp;amp;action=edit&amp;amp;redlink=1">古宫柚子&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://baike.baidu.com/item/AIC/10910651">AIC&lt;/a> PLUS+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">98&lt;/td>
+&lt;td style="text-align:center">2021/02/17&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%88%BF%E4%B8%9C%E9%9D%92%E6%98%A5%E6%9C%9F%EF%BC%81">《房东青春期！》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">-&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Seven_Arcs_Pictures">Seven Arcs Pictures&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">99&lt;/td>
+&lt;td style="text-align:center">2021/02/17&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E9%A3%9E%E7%BF%94%E7%9A%84%E9%AD%94%E5%A5%B3">《飞翔的魔女》&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%9C%A8%E5%B9%A1%E7%9C%9F%E7%90%B4">木幡真琴&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E4%BB%93%E6%9C%AC%E5%8D%83%E5%A4%8F">仓本千夏&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/J.C.STAFF">J.C.STAFF&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">100&lt;/td>
+&lt;td style="text-align:center">2021/02/18&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E5%B9%B8%E8%BF%90%E6%98%9F">幸运☆星&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%9F%8A%E5%8F%B8">柊司&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E6%B3%89%E6%AD%A4%E6%96%B9">泉此方&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB">京都动画&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="年度最喜欢的声优及所配音角色-1">年度最喜欢的声优(及所配音角色)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://zh.moegirl.org.cn/%E6%B0%B4%E6%BF%91%E7%A5%88">水濑祈&lt;/a>：千户、香风智乃；&lt;/li>
+&lt;/ul>
+&lt;h3 id="年度最喜欢的opedost-1">年度最喜欢的OP/ED/OST&lt;/h3>
+&lt;ul>
+&lt;li>More One Night；&lt;/li>
+&lt;li>雨だれの歌（雨滴之歌）；&lt;/li>
+&lt;li>流星ドリームラインバラード；&lt;/li>
+&lt;/ul></description></item><item><title>【日记】闲鱼垃圾佬的一天</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</link><pubDate>Mon, 14 Sep 2020 20:36:21 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</guid><description>&lt;h2 id="购置背景">购置背景&lt;/h2>
 &lt;p>　　长达两个多月的菏泽实习结束了，感觉如释重负，终于摆脱了实习带来的困扰和限制，心情也不由地变好了起来。在返校的火车上，闲着没事刷了刷闲鱼，看了看自己这段时间以来卖出的虚拟商品（代搭建博客/代下载GitHub资源等），大概赚了&lt;code>1k&lt;/code>块钱左右吧，呃&amp;hellip;还是蛮不错的。&lt;/p>
 &lt;p>&lt;img src="http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/Screenshot%20from%202020-09-14%2021-04-11.png" alt="">&lt;/p>
 &lt;p>　　然后不经意之间就看到我上上学期买到的&lt;code>蜗牛星际B款双千&lt;/code>（矿难无情人有情），想起来机子还在宿舍桌子上，大半年没动过了，估计已经吃灰了。正当我犹豫是挂闲鱼转手再卖出去时（能小赚一笔），我看到了二手的笔记本拆机屏幕，萌发起重振蜗牛星际的想法，又想了想实习也赚了点小钱，&lt;strong>搞！&lt;/strong>。询问了一圈之后，最终买下了这款型号为&lt;code>友达(AUO)-B101EW05 V1(AUO51D4)&lt;/code>的拆机屏，大小是&lt;code>10.1寸&lt;/code>，最高分辨率为&lt;code>1280*800&lt;/code>，参数如下图所示：&lt;/p>
