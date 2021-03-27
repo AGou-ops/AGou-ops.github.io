@@ -1412,20 +1412,16 @@ opacity: 1
 &lt;div class="wrapper hidden-mobile">
 &lt;a title="黄前久美子" href="https://zh.moegirl.org.cn/index.php?title=%E9%BB%84%E5%89%8D%E4%B9%85%E7%BE%8E%E5%AD%90" target="_blank">&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Kumiko01.png" />&lt;/a>
 &lt;/div>
-&lt;div id="modal-1" class="modal animate-opacity">
-&lt;div class="modal-content">
-&lt;div class="modal-inner">
-&lt;span onclick="document.getElementById('modal-1').style.display='none'" class="modal-close">&amp;times;&lt;/span>
-&lt;h4>温馨提示&lt;/h4>
-&lt;p>该页面在PC端访问更佳喔~&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/div>
+&lt;script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js">&lt;/script>
+&lt;script src="https://agou-ops.top/js/layer.js">&lt;/script>
 &lt;script type="text/javascript">
 document.querySelector("#header > div > a").innerHTML = "Anime Lover";
-if (document.body.clientWidth > 767) {
-style = "display: none;"
-document.getElementById("modal-1").style.display = "none";
+if (document.body.clientWidth &lt; 767) {
+layer.alert('推荐使用「PC、Pad」端进行访问喔~', {
+skin: 'layui-layer-molv'
+,
+closeBtn: 0
+});
 }
 &lt;/script>
 &lt;p>&lt;em>&lt;strong>按照观看结束时间排序，序号仅用于计数。(2020-03-28 至 ????-??-??)&lt;/strong>&lt;/em>&lt;/p>
