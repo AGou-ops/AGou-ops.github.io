@@ -101,7 +101,7 @@
 </div>
 
 
-<div id="modal-1" class="modal animate-opacity">
+<!-- <div id="modal-1" class="modal animate-opacity">
     <div class="modal-content">
         <div class="modal-inner">
             <span onclick="document.getElementById('modal-1').style.display='none'" class="modal-close">&times;</span>
@@ -109,17 +109,21 @@
             <p>该页面在PC端访问更佳喔~</p>
         </div>
     </div>
-</div>
+</div> -->
 
-
-
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="/js/layer.js"></script>
 
 <script type="text/javascript">
     document.querySelector("#header > div > a").innerHTML = "Anime Lover";
     // document.querySelector("head > meta:nth-child(7)").remove();
 
-    if (document.body.clientWidth > 767) {
-        style = "display: none;"
-        document.getElementById("modal-1").style.display = "none"; //隐藏
+    if (document.body.clientWidth < 767) {
+        layer.alert('推荐使用「PC、Pad」端进行访问喔~', {
+            skin: 'layui-layer-molv' //样式类名
+                ,
+            closeBtn: 0
+
+        });
     }
 </script>
