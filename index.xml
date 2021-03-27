@@ -1420,7 +1420,10 @@ if (document.body.clientWidth &lt; 767) {
 layer.alert('推荐使用「PC、Pad」端进行访问喔~', {
 skin: 'layui-layer-molv'
 ,
-closeBtn: 0
+title: ['PS：移动端请双击屏幕进行缩放', 'font-weight:bold;'],
+closeBtn: 0,
+time: 5000,
+anim: 0
 });
 }
 &lt;/script>
