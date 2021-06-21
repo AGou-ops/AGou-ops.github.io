@@ -39,7 +39,7 @@
             ready: function(e) {
                 var t = "layer",
                     i = "",
-                    n = (a ? "modules/layer/" : "css/") + "/layer.css?v=" + r.v + i;
+                    n = (a ? "modules/layer/" : "/css/") + "/layer.css?v=" + r.v + i;
                 return a ? layui.addcss(n, e, t) : o.link(n, e, t), this
             },
             alert: function(e, t, n) { var a = "function" == typeof t; return a && (n = t), r.open(i.extend({ content: e, yes: n }, a ? {} : t)) },

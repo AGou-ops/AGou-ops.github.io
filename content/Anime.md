@@ -38,6 +38,7 @@ mathjax: false
 >   - 增加流行的圆角设计，增加透明度，增加随机动漫背景；
 >   - 更改PC端鼠标样式为`among us`，左下角新增[黄前久美子](https://zh.moegirl.org.cn/index.php?title=%E9%BB%84%E5%89%8D%E4%B9%85%E7%BE%8E%E5%AD%90)画像；
 >   - 增加泡面番标识🍜，更新序号至`100`；
+> - 2021年06月21日：增加统计，更新序号至`125`；
 
 :warning: 注：`-`表示无或不祥，`^`表示和上个一样。:information_source: **--- 移动端双击屏幕查看更佳～ ---**
 
@@ -158,7 +159,7 @@ mathjax: false
 | 89 | 2021/01/22 | [《踏切时间》](https://zh.moegirl.org.cn/踏切时间)🍜 | - | EKACHI EPILKA |
 | 90 | 2021/01/27 | [《浦和小调》](https://zh.moegirl.org.cn/浦和小调)🍜 | - | - |
 | 91 | 2021/01/28 | [《邪神与厨二病少女》](https://zh.moegirl.org.cn/邪神与厨二病少女) | [邪神酱](https://zh.moegirl.org.cn/邪神酱)（夹心酱）、[花园百合铃](https://zh.moegirl.org.cn/花园百合铃) | [NOMAD](https://zh.moegirl.org.cn/NOMAD) |
-| 92 | 2021/02/01 | [《SHOW BY ROCK!!》](https://zh.moegirl.org.cn/SHOW_BY_ROCK!!)(第一二季) | **[希安](https://zh.moegirl.org.cn/希安)、[莫亚](https://zh.moegirl.org.cn/index.php?title=莫亚&action=edit&redlink=1)** | [BONES](https://zh.moegirl.org.cn/BONES) |
+| 92 | 2021/02/01 | [《SHOW BY ROCK!!》](https://zh.moegirl.org.cn/SHOW_BY_ROCK!!) | **[希安](https://zh.moegirl.org.cn/希安)、[莫亚](https://zh.moegirl.org.cn/index.php?title=莫亚&action=edit&redlink=1)** | [BONES](https://zh.moegirl.org.cn/BONES) |
 | 93 | 2021/02/03 | [《22/7》](https://zh.moegirl.org.cn/22/7) | [泷川美羽](https://zh.moegirl.org.cn/泷川美羽)、[藤间樱](https://zh.moegirl.org.cn/藤间樱) | [A-1 Pictures](https://baike.baidu.com/item/A-1%20Pictures/1264976) |
 | 94 | 2021/02/06 | [《SHOW BY ROCK!! Mashumairesh!!》](https://zh.moegirl.org.cn/SHOW_BY_ROCK!!#Mashumairesh!!) | [狐丸](https://zh.moegirl.org.cn/狐丸)、[真岛姬子](https://zh.moegirl.org.cn/index.php?title=真岛姬子&action=edit&redlink=1) | [BONES](https://zh.moegirl.org.cn/BONES) |
 | 95 | 2021/02/08 | [《紧扣的星星》](https://zh.moegirl.org.cn/紧扣的星星) | - | [PRIMASTEA](https://zh.moegirl.org.cn/index.php?title=PRIMASTEA&action=edit&redlink=1) |
@@ -167,6 +168,31 @@ mathjax: false
 | 98 | 2021/02/17 | [《房东青春期！》](https://zh.moegirl.org.cn/房东青春期！) | - | [Seven Arcs Pictures](https://zh.moegirl.org.cn/Seven_Arcs_Pictures) |
 | 99 | 2021/02/17 | [《飞翔的魔女》](https://zh.moegirl.org.cn/飞翔的魔女) | [木幡真琴](https://zh.moegirl.org.cn/木幡真琴)、[仓本千夏](https://zh.moegirl.org.cn/仓本千夏) | [J.C.STAFF](https://zh.moegirl.org.cn/J.C.STAFF) |
 | 100 | 2021/02/18 | [幸运☆星](https://zh.moegirl.org.cn/%E5%B9%B8%E8%BF%90%E6%98%9F) | [柊司](https://zh.moegirl.org.cn/柊司)、[泉此方](https://zh.moegirl.org.cn/泉此方) | [京都动画](https://zh.moegirl.org.cn/京都动画) |
+| 101 | 2021/02/20 | [《+TIC模型姐妹》](https://zh.moegirl.org.cn/+TIC模型姐妹)🍜 | - | TYO Animations Inc.、BARNUM STUDIO |
+| 102 | 2021/02/21 | [《Lapis Re:LiGHTs》](https://zh.moegirl.org.cn/Lapis Re:LiGHTs) | [缇亚拉](https://zh.moegirl.org.cn/缇亚拉)、[嘉奈特](https://zh.moegirl.org.cn/嘉奈特) | 横滨动画研究所 |
+| 103 | 2021/03/06 | [《南家三姐妹》](https://zh.moegirl.org.cn/南家三姐妹)（共四季） | ALL | [童梦](https://zh.moegirl.org.cn/童梦)(1)、[asread](https://zh.moegirl.org.cn/Asread)(2-3)、[feel.](https://zh.moegirl.org.cn/Feel.)(4) |
+| 104 | 2021/03/11 | [《悠悠式》](https://zh.moegirl.org.cn/悠悠式) | - | [KINEMA CITRUS](https://zh.moegirl.org.cn/KINEMA_CITRUS) |
+| 105+ | 2021/04/05 | [《摇曳露营△第二季》](https://zh.moegirl.org.cn/摇曳露营) | ^ | ^ |
+| 106+ | 2021/04/05 | [《悠哉日常大王 第三季》](https://zh.moegirl.org.cn/悠哉日常大王 第三季) | ^ | ^ |
+| 107 | 2021/04/05 | [《里世界郊游》](https://zh.moegirl.org.cn/里世界郊游) | [紙越空魚](https://zh.moegirl.org.cn/index.php?title=纸越空鱼&action=edit&redlink=1)、[仁科鳥子](https://zh.moegirl.org.cn/index.php?title=仁科鸟子&action=edit&redlink=1) | LIDENFILMS×FelixFilm |
+| 108 | 2021/04/12 | [《剧偶像》](https://zh.moegirl.org.cn/剧偶像) | [各务爱理](https://zh.moegirl.org.cn/index.php?title=各务爱理&action=edit&redlink=1) | Hoods Entertainment |
+| 109 | 2021/04/19 | [《立花馆恋爱三角铃》](https://zh.moegirl.org.cn/立花馆恋爱三角铃)🍜 | - | Creators in pack/STUDIO LINGS |
+| 110 | 2021/04/25 | [《幸运星》](https://zh.moegirl.org.cn/幸运星) | [柊镜](https://zh.moegirl.org.cn/柊镜)、[泉此方](https://zh.moegirl.org.cn/泉此方)、[柊司](https://zh.moegirl.org.cn/柊司) | [京都动画](https://zh.moegirl.org.cn/京都动画) |
+| 111 | 2021/05/06 | [《生存游戏社》](https://zh.moegirl.org.cn/生存游戏社) | - | [Studio Pierrot](https://zh.moegirl.org.cn/Studio_Pierrot)+ |
+| 112 | 2021/05/06 | [《网球并不可笑嘛》](https://zh.moegirl.org.cn/网球并不可笑嘛)🍜（共九季） | 看了九季名字一个没记住:joy: | [MAPPA](https://zh.moegirl.org.cn/MAPPA)（第1~3季），[millepensee](https://zh.moegirl.org.cn/index.php?title=Millepensee&action=edit&redlink=1)（第4~9季） |
+| 113 | 2021/05/13 | [《碧蓝航线》](https://zh.moegirl.org.cn/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF/%E5%8A%A8%E7%94%BB) | [标枪](https://zh.moegirl.org.cn/碧蓝航线:标枪)、[拉菲](https://zh.moegirl.org.cn/碧蓝航线:拉菲)、[企业](https://zh.moegirl.org.cn/碧蓝航线:企业) | [Bibury Animation Studios](https://zh.moegirl.org.cn/Bibury_Animation_Studios) |
+| 114 | 2021/05/14 | [《碧蓝航线 微速前进》](https://zh.moegirl.org.cn/碧蓝航线_微速前进) | ^ | ^ |
+| 115 | 2021/05/15 | [《GO!GO!575》](https://zh.moegirl.org.cn/GO!GO!575)🍜 | - | Lay-duce、C2C |
+| 116 | 2021/05/21 | [《男子高中生的日常》](https://zh.moegirl.org.cn/男子高中生的日常) | [小苹果](https://zh.moegirl.org.cn/小苹果(男子高中生的日常)) | [日升动画](https://zh.moegirl.org.cn/日升动画) |
+| 117 | 2021/05/25 | [《女子高中生》](https://zh.moegirl.org.cn/女子高中生)🍜 | - | - |
+| 118 | 2021/05/26 | [《漫研部》](https://zh.moegirl.org.cn/漫研部)🍜 | - | Seven |
+| 119 | 2021/06/04 | [《伪姬物语》](https://zh.moegirl.org.cn/伪姬物语)🍜 |  | [ 旭Production](https://zh.moegirl.org.cn/index.php?title=旭Production&action=edit&redlink=1) |
+| 120 | 2021/06/06 | [《我，不是说了能力要平均值么！》](https://zh.moegirl.org.cn/我，不是说了能力要平均值么！) | [阿黛尔·冯·阿斯卡姆/麦露](https://zh.moegirl.org.cn/麦露) | [project No.9](https://zh.moegirl.org.cn/Project_No.9) |
+| 121 | 2021/06/07 | [《雨色可可side G》](https://zh.wikipedia.org/wiki/%E9%9B%A8%E8%89%B2%E5%8F%AF%E5%8F%AF)🍜 | - | [EMT Squared](https://zh.wikipedia.org/wiki/EMT_Squared) |
+| 122 | 2021/06/15 | [《未来日记》](https://zh.moegirl.org.cn/未来日记) | [我妻由乃](https://zh.moegirl.org.cn/我妻由乃) | [Asread](https://zh.moegirl.org.cn/Asread) |
+| 123 | 2021/06/20 | [《极乐院女子高寮物语》](https://baike.baidu.com/item/%E6%9E%81%E4%B9%90%E5%9B%AD%E5%A5%B3%E5%AD%90%E9%AB%98%E5%AF%AE%E7%89%A9%E8%AF%AD/2647320) | - | CAMMOT |
+| 124 | 2021/06/21 | [《ReBIRTH》](https://zh.moegirl.org.cn/ReBIRTH)🍜 | - | - |
+| 125 | 2021/06/21 | [《工作细胞》](https://zh.moegirl.org.cn/工作细胞) | [红血球(AE3803)](https://zh.moegirl.org.cn/工作细胞:红血球(AE3803)) | [david production](https://zh.moegirl.org.cn/David_production) |
 
 ### 年度最喜欢的声优(及所配音角色)
 
@@ -178,3 +204,9 @@ mathjax: false
 - 雨だれの歌（雨滴之歌）；
 - 流星ドリームラインバラード；
 
+## -- 统计 --
+
+截止`2021年06月21日10:09:30`，番剧总数为`【125+】`，其中：
+
+- 泡面番🍜：`【19】`
+- 续集番：`【3】`
