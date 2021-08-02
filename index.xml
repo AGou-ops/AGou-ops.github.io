@@ -20,17 +20,15 @@
 &lt;/ol>
 &lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/dell/dell_1.jpg?x-oss-process=style/images" alt="pic1">&lt;/p>
 &lt;ol start="2">
-&lt;li>
-&lt;p>开机会自动进入BIOS自检，会提示一个警告信息，内容为&lt;code>警告，上次启动时未检测到内存&lt;/code>，实际意思大概就是&lt;code>内存有变动&lt;/code>，不用管这个警告，点击下一步continue即可；
-&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/dell/dell_2.jpg?x-oss-process=style/images" alt="pic2">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>如若未插跳线帽，每次开机会提示以下信息，意思很简单，就不翻译了；
-&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/dell/dell_3.jpg?x-oss-process=style/images" alt="pic3">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>电脑正常开机之后，关机完全断电，然后将JUMP蓝色跳线帽接回原来位置，合好机箱，正常开机即可。&lt;/p>
-&lt;/li>
+&lt;li>开机会自动进入BIOS自检，会提示一个警告信息，内容为&lt;code>警告，上次启动时未检测到内存&lt;/code>，实际意思大概就是&lt;code>内存有变动&lt;/code>，不用管这个警告，点击下一步continue即可；&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/dell/dell_2.jpg?x-oss-process=style/images" alt="pic2">&lt;/p>
+&lt;ol start="3">
+&lt;li>如若未插跳线帽，每次开机会提示以下信息，意思很简单，就不翻译了；&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/dell/dell_3.jpg?x-oss-process=style/images" alt="pic3">&lt;/p>
+&lt;ol start="4">
+&lt;li>电脑正常开机之后，关机完全断电，然后将JUMP蓝色跳线帽接回原来位置，合好机箱，正常开机即可。&lt;/li>
 &lt;/ol>
 &lt;h2 id="总结">总结&lt;/h2>
 &lt;p>故障处理很简单，原因可能是内存条金手指接触不良原因导致，学了一手插拔跳线帽操作，针不戳。&lt;/p></description></item><item><title>大学毕业。</title><link>https://agou-ops.top/post/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A/</link><pubDate>Mon, 28 Jun 2021 19:20:04 +0800</pubDate><guid>https://agou-ops.top/post/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A/</guid><description>&lt;blockquote>
