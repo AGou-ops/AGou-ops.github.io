@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou-ops on AGou's blog</title><link>https://agou-ops.top/author/agou-ops/</link><description>Recent content in AGou-ops on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 26 Jul 2021 19:43:31 +0800</lastBuildDate><atom:link href="https://agou-ops.top/author/agou-ops/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>岂能尽如人意，但求无愧我心。 本站地址：https://agou-ops.top 备用地址：https://x.agou-ops.top my Doc</description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.top/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.top/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou-ops on AGou's blog</title><link>https://agou-ops.top/author/agou-ops/</link><description>Recent content in AGou-ops on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 17 Aug 2021 14:08:32 +0800</lastBuildDate><atom:link href="https://agou-ops.top/author/agou-ops/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>岂能尽如人意，但求无愧我心。 本站地址：https://agou-ops.top 备用地址：https://x.agou-ops.top my Doc</description></item><item><title>手动编译vim增加X Windows Clipboard功能模块</title><link>https://agou-ops.top/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</link><pubDate>Tue, 17 Aug 2021 14:08:32 +0800</pubDate><guid>https://agou-ops.top/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</guid><description>&lt;p>默认直接通过&lt;code>apt&lt;/code>或者&lt;code>apt-get&lt;/code>安装的vim功能不全，缺少&lt;code>clipboard&lt;/code>功能，原因是debian官方为了兼容性才如此考虑，但debian官方也同样提供了以下几个包来满足GUI需求：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">vim-athena
+Vi IMproved - enhanced vi editor - with Athena GUI
+vim-gtk
+Vi IMproved - enhanced vi editor - with GTK2 GUI
+vim-gtk3
+Vi IMproved - enhanced vi editor - with GTK3 GUI
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.top/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.top/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
 &lt;ul>
 &lt;li>显示屏是否有问题，或者是不是HDMI线接触不良？&lt;/li>
 &lt;li>主板上显卡是不是接触不良？&lt;/li>
@@ -67,4 +86,4 @@ $ yum install -y nload
 yum install -y cerbot
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>生成高安全性的&lt;code>DH&lt;/code>秘钥到&lt;code>/etc/ssl/certs/&lt;/code>目录当中去:&lt;/p></description></item><item><title>【日记】果然大学生都是廉价劳动力吗？可恶！</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E6%9E%9C%E7%84%B6%E5%A4%A7%E5%AD%A6%E7%94%9F%E9%83%BD%E6%98%AF%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%90%97%E5%8F%AF%E6%81%B6/</link><pubDate>Sun, 28 Jun 2020 22:14:03 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E6%9E%9C%E7%84%B6%E5%A4%A7%E5%AD%A6%E7%94%9F%E9%83%BD%E6%98%AF%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%90%97%E5%8F%AF%E6%81%B6/</guid><description>​ 2020年06月28日，端午“三天小短假”已经过去了，按常理说应当放假，哪怕一天也好，但我们没有放假，一行五人还是像往常一样出外业，经理呢</description></item></channel></rss>
+&lt;/div>&lt;p>生成高安全性的&lt;code>DH&lt;/code>秘钥到&lt;code>/etc/ssl/certs/&lt;/code>目录当中去:&lt;/p></description></item></channel></rss>

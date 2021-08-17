@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 26 Jul 2021 19:43:31 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>&lt;strong>岂能尽如人意，但求无愧我心。&lt;/strong>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.top/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 17 Aug 2021 14:08:32 +0800</lastBuildDate><atom:link href="https://agou-ops.top/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.top/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.top/aboutme/</guid><description>&lt;p>&lt;strong>岂能尽如人意，但求无愧我心。&lt;/strong>&lt;/p>
 &lt;hr>
 &lt;ul>
 &lt;li>本站地址：&lt;a href="https://agou-ops.top">https://agou-ops.top&lt;/a>&lt;/li>
@@ -8,6 +8,242 @@
 &lt;li>Docs 备用站点2：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote：&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
 &lt;li>发布站点：&lt;a href="http://fabu.agou-ops.top/">http://fabu.agou-ops.top/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>手动编译vim增加X Windows Clipboard功能模块</title><link>https://agou-ops.top/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</link><pubDate>Tue, 17 Aug 2021 14:08:32 +0800</pubDate><guid>https://agou-ops.top/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</guid><description>&lt;p>默认直接通过&lt;code>apt&lt;/code>或者&lt;code>apt-get&lt;/code>安装的vim功能不全，缺少&lt;code>clipboard&lt;/code>功能，原因是debian官方为了兼容性才如此考虑，但debian官方也同样提供了以下几个包来满足GUI需求：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">vim-athena
+Vi IMproved - enhanced vi editor - with Athena GUI
+vim-gtk
+Vi IMproved - enhanced vi editor - with GTK2 GUI
+vim-gtk3
+Vi IMproved - enhanced vi editor - with GTK3 GUI
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/vim/debian_vim_packages.png" alt="debian_vim_packages">&lt;/p>
+&lt;p>可以直接通过&lt;code>apt install &amp;lt;Package_name&amp;gt;&lt;/code>来安装以上包来直接使用。&lt;/p>
+&lt;p>但是我感觉功能还是不够全面，因此下面我简单介绍通过编译来安装带有&lt;code>X-Window Clipboard&lt;/code>模块的vim：&lt;/p>
+&lt;h2 id="编译环境">编译环境&lt;/h2>
+&lt;p>安装编译环境：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo apt install -y build-essential &lt;span class="c1"># 安装编译包组&lt;/span>
+&lt;span class="c1"># 其他必要软件包&lt;/span>
+sudo apt install -y libxt-dev libgtk-3-dev &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> libpython3-dev &lt;span class="se">\ &lt;/span> &lt;span class="c1"># 如果要添加python3支持，需要额外安装此包&lt;/span>
+libtool libtool-bin &lt;span class="se">\ &lt;/span> &lt;span class="c1"># 编译时可能因没有libtool而报错&lt;/span>
+libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev &lt;span class="c1"># 其他额外可能用到的包&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="编译安装vim">编译安装vim&lt;/h2>
+&lt;p>拉取仓库最新源码包：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ git clone https://github.com/vim/vim.git
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>进入相关目录：&lt;code>cd vim/src&lt;/code>
+在目录下执行以下命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ ./configure &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> --enable-cscope &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> --with-features&lt;span class="o">=&lt;/span>huge &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> --with-x &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> --with-compiledby&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;AGou-ops&amp;lt;AGou-ops@foxmail.com&amp;gt;&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其他详细编译选项及说明参考：&lt;a href="https://github.com/vim/vim/blob/master/src/INSTALL">VIM INSTALL file&lt;/a>&lt;/p>
+&lt;p>编译直接使用以下命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ make -j4 &lt;span class="c1"># -j表示线程数，看个人CPU核心数而定&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>编译完成之后会在当前目录生成相关二进制文件，此时检查vim编译的各项参数：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ ./vim --version
+VIM - Vi IMproved 8.2 &lt;span class="o">(&lt;/span>&lt;span class="m">2019&lt;/span> Dec 12, compiled Aug &lt;span class="m">17&lt;/span> &lt;span class="m">2021&lt;/span> 14:03:35&lt;span class="o">)&lt;/span>
+Included patches: 1-3356
+Compiled by AGou-ops&amp;lt;AGou-ops@foxmail.com&amp;gt;
+Huge version with GTK3 GUI. Features included &lt;span class="o">(&lt;/span>+&lt;span class="o">)&lt;/span> or not &lt;span class="o">(&lt;/span>-&lt;span class="o">)&lt;/span>:
++acl +file_in_path +mouse_urxvt -tag_any_white
++arabic +find_in_path +mouse_xterm -tcl
++autocmd +float +multi_byte +termguicolors
++autochdir +folding +multi_lang +terminal
+-autoservername -footer -mzscheme +terminfo
++balloon_eval +fork&lt;span class="o">()&lt;/span> +netbeans_intg +termresponse
++balloon_eval_term -gettext +num64 +textobjects
++browse -hangul_input +packages +textprop
+++builtin_terms +iconv +path_extra +timers
++byte_offset +insert_expand -perl +title
++channel +ipv6 +persistent_undo +toolbar
++cindent +job +popupwin +user_commands
++clientserver +jumplist +postscript +vartabs
++clipboard +keymap +printer +vertsplit
++cmdline_compl +lambda +profile +virtualedit
++cmdline_hist +langmap -python +visual
++cmdline_info +libcall -python3 +visualextra
++comments +linebreak +quickfix +viminfo
++conceal +lispindent +reltime +vreplace
++cryptv +listcmds +rightleft +wildignore
++cscope +localmap -ruby +wildmenu
++cursorbind -lua +scrollbind +windows
++cursorshape +menu +signs +writebackup
++dialog_con_gui +mksession +smartindent +X11
++diff +modify_fname -sodium -xfontset
++digraphs +mouse -sound +xim
++dnd +mouseshape +spell -xpm
+-ebcdic +mouse_dec +startuptime +xsmp_interact
++emacs_tags -mouse_gpm +statusline +xterm_clipboard
++eval -mouse_jsbterm -sun_workshop -xterm_save
++ex_extra +mouse_netterm +syntax
++extra_search +mouse_sgr +tag_binary
+-farsi -mouse_sysmouse -tag_old_static
+system vimrc file: &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$VIM&lt;/span>&lt;span class="s2">/vimrc&amp;#34;&lt;/span>
+user vimrc file: &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOME&lt;/span>&lt;span class="s2">/.vimrc&amp;#34;&lt;/span>
+2nd user vimrc file: &lt;span class="s2">&amp;#34;~/.vim/vimrc&amp;#34;&lt;/span>
+user exrc file: &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOME&lt;/span>&lt;span class="s2">/.exrc&amp;#34;&lt;/span>
+system gvimrc file: &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$VIM&lt;/span>&lt;span class="s2">/gvimrc&amp;#34;&lt;/span>
+user gvimrc file: &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOME&lt;/span>&lt;span class="s2">/.gvimrc&amp;#34;&lt;/span>
+2nd user gvimrc file: &lt;span class="s2">&amp;#34;~/.vim/gvimrc&amp;#34;&lt;/span>
+defaults file: &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$VIMRUNTIME&lt;/span>&lt;span class="s2">/defaults.vim&amp;#34;&lt;/span>
+system menu file: &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$VIMRUNTIME&lt;/span>&lt;span class="s2">/menu.vim&amp;#34;&lt;/span>
+fall-back &lt;span class="k">for&lt;/span> &lt;span class="nv">$VIM&lt;/span>: &lt;span class="s2">&amp;#34;/usr/local/share/vim&amp;#34;&lt;/span>
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H -DFEAT_GUI_GTK -pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
+Linking: gcc -L/usr/local/lib -Wl,--as-needed -o vim -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lSM -lICE -lXt -lX11 -lXdmcp -lSM -lICE -lm -ltinfo -lselinux -ldl
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>嘶~有点多😂 ，我们只看我们想要的&lt;code>clipboard&lt;/code>模块：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ ./vim --version &lt;span class="p">|&lt;/span> grep clipboard
++clipboard +keymap +printer +vertsplit
++emacs_tags -mouse_gpm +statusline +xterm_clipboard
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>主要看&lt;code>+clipboard&lt;/code>和&lt;code>+xterm_clipboard&lt;/code> 前面是否有&lt;code>+&lt;/code>，默认&lt;code>apt&lt;/code>直接安装的vim显示的是&lt;code>-&lt;/code>，即表示未编译安装此模块。&lt;/p>
+&lt;p>飒，执行最后的安装步骤：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo make install
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行完该命令之后，直接在终端使用&lt;code>vim&lt;/code>命令即可体验新特性及自己编译安装好的X-Window Clipboard模块，yeah！&lt;/p>
+&lt;h2 id="最后">最后&lt;/h2>
+&lt;p>编译安装vim前，建议先卸载掉原来版本的vim再进行编译安装（&lt;code>sudo apt remove vim -y&lt;/code>），如果你没有提前卸载掉原来的vim，可以使用以下方法来用新版本vim替换旧版本vim：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo update-alternatives --install &lt;span class="s2">&amp;#34;/usr/bin/vim&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;vim&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;/usr/local/bin/vim&amp;#34;&lt;/span> &lt;span class="m">1&lt;/span>
+sudo update-alternatives --install &lt;span class="s2">&amp;#34;/usr/bin/vi&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;vi&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;/usr/local/bin/vim&amp;#34;&lt;/span> &lt;span class="m">1&lt;/span>
+sudo update-alternatives --config vim
+sudo update-alternatives --config vi
+sudo update-alternatives --config gvim
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>使用&lt;code>ls -lah /usr/bin/vim&lt;/code>来检查新vim是否生效。&lt;/p>
+&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;ul>
+&lt;li>Github gist: &lt;a href="https://gist.github.com/lirenlin/63453cda5181028b2565">https://gist.github.com/lirenlin/63453cda5181028b2565&lt;/a>&lt;/li>
+&lt;li>why-is-vim-for-debian-compiled-without-clipboard: &lt;a href="https://vi.stackexchange.com/questions/13564/why-is-vim-for-debian-compiled-without-clipboard">https://vi.stackexchange.com/questions/13564/why-is-vim-for-debian-compiled-without-clipboard&lt;/a>&lt;/li>
+&lt;li>How to Copy Text to Clipboard in Vim: &lt;a href="https://linoxide.com/copy-text-to-clipboard-in-vim/">https://linoxide.com/copy-text-to-clipboard-in-vim/&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.top/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.top/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
 &lt;ul>
 &lt;li>显示屏是否有问题，或者是不是HDMI线接触不良？&lt;/li>
@@ -4071,268 +4307,4 @@ $ sudo dpkg -i remastersys-gui_3.0.4-1_amd64.deb
 &lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">$&lt;/span> &lt;span class="n">sudo&lt;/span> &lt;span class="n">remastersys&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">gui&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Apache HTTPD使用Let's Encrypt</title><link>https://agou-ops.top/post/apache-httpd%E4%BD%BF%E7%94%A8lets-encrypt/</link><pubDate>Fri, 10 Jul 2020 21:15:22 +0800</pubDate><guid>https://agou-ops.top/post/apache-httpd%E4%BD%BF%E7%94%A8lets-encrypt/</guid><description>&lt;h2 id="apache-httpd使用lets-encrypt实现安全连接https">&lt;code>Apache HTTPD&lt;/code>使用&lt;code>Let's Encrypt&lt;/code>实现安全连接(https)&lt;/h2>
-&lt;p>安装&lt;code>cerbot&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum update -y
-yum install -y cerbot
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>生成高安全性的&lt;code>DH&lt;/code>秘钥到&lt;code>/etc/ssl/certs/&lt;/code>目录当中去:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem &lt;span class="m">2048&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>运行以下命令创建目录, 并使它可写为Apache服务器:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo mkdir -p /var/lib/letsencrypt/.well-known
-sudo chgrp www-data /var/lib/letsencrypt
-sudo chmod g+s /var/lib/letsencrypt
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>为了避免复制代码和配置更易于维护, 创建以下两个配置代码片段:&lt;/p>
-&lt;ul>
-&lt;li>编辑&lt;code>/etc/apache2/conf-available/letsencrypt.conf&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">Alias /.well-known/acme-challenge/ &lt;span class="s2">&amp;#34;/var/lib/letsencrypt/.well-known/acme-challenge/&amp;#34;&lt;/span>
-&amp;lt;Directory &lt;span class="s2">&amp;#34;/var/lib/letsencrypt/&amp;#34;&lt;/span>&amp;gt;
-AllowOverride None
-Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
-Require method GET POST OPTIONS
-&amp;lt;/Directory&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>编辑&lt;code>/etc/apache2/conf-available/ssl-params.conf&lt;/code>:&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
-SSLCipherSuite ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
-SSLHonorCipherOrder off
-SSLSessionTickets off
-SSLUseStapling On
-SSLStaplingCache &lt;span class="s2">&amp;#34;shmcb:logs/ssl_stapling(32768)&amp;#34;&lt;/span>
-SSLOpenSSLConfCmd DHParameters &lt;span class="s2">&amp;#34;/etc/ssl/certs/dhparam.pem&amp;#34;&lt;/span>
-Header always &lt;span class="nb">set&lt;/span> Strict-Transport-Security &lt;span class="s2">&amp;#34;max-age=63072000&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>进行启用配置文件之前, 确保&lt;code>mod_ssl &lt;/code>和&lt;code>mod_headers&lt;/code>已经被启用:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo a2enmod ssl
-sudo a2enmod headers
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>然后, 启用&lt;code>SSL&lt;/code>配置文件, 运行以下命令即可:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo a2enconf letsencrypt
-sudo a2enconf ssl-params
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>启用&lt;code>HTTP/2&lt;/code>模块:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo a2enmod http2
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>重启&lt;code>httpd&lt;/code>让配置生效:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">systemctl restart httpd
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>现在，我们可以使用&lt;code>webroot&lt;/code>插件运行&lt;code>Certbot&lt;/code>工具并获取SSL证书文件：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo certbot certonly --agree-tos --email agou-ops@foxmail.com --webroot -w /var/lib/letsencrypt/ -d agou-ops.top -d www.agou-ops.top
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>如果输出以下信息, 则表已经成功申请到&lt;code>SSL&lt;/code>证书文件:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">IMPORTANT NOTES:
-- Congratulations! Your certificate and chain have been saved at:
-/etc/letsencrypt/live/agou-ops.top/fullchain.pem
-Your key file has been saved at:
-/etc/letsencrypt/live/agou-ops.top/privkey.pem
-Your cert will expire on 2020-10-06. To obtain a new or tweaked
-version of this certificate in the future, simply run certbot
-again. To non-interactively renew *all* of your certificates, run
-&lt;span class="s2">&amp;#34;certbot renew&amp;#34;&lt;/span>
-- Your account credentials have been saved in your Certbot
-configuration directory at /etc/letsencrypt. You should make a
-secure backup of this folder now. This configuration directory will
-also contain certificates and private keys obtained by Certbot so
-making regular backups of this folder is ideal.
-- If you like Certbot, please consider supporting our work by:
-Donating to ISRG / Let&lt;span class="err">&amp;#39;&lt;/span>s Encrypt: https://letsencrypt.org/donate
-Donating to EFF: https://eff.org/donate-le
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="配置虚拟主机">配置虚拟主机&lt;/h2>
-&lt;p>创建一个虚拟主机&lt;code>conf.d/agou-ops-top.conf&lt;/code>(仅为示例):&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;span class="lnt">23
-&lt;/span>&lt;span class="lnt">24
-&lt;/span>&lt;span class="lnt">25
-&lt;/span>&lt;span class="lnt">26
-&lt;/span>&lt;span class="lnt">27
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&amp;lt;VirtualHost *:80&amp;gt;
-ServerName mail.agou-ops.top
-Redirect permanent / https://mail.agou-ops.top/
-&amp;lt;/VirtualHost&amp;gt;
-&amp;lt;VirtualHost *:443&amp;gt;
-ServerName mail.agou-ops.top
-Protocols h2 http:/1.1
-&amp;lt;If &lt;span class="s2">&amp;#34;%{HTTP_HOST} == &amp;#39;www.mail.agou-ops.top&amp;#39;&amp;#34;&lt;/span>&amp;gt;
-Redirect permanent / https://mail.agou-ops.top/
-&amp;lt;/If&amp;gt;
-DocumentRoot /var/www/mail.agou-ops.top/public_html
-ErrorLog &lt;span class="si">${&lt;/span>&lt;span class="nv">APACHE_LOG_DIR&lt;/span>&lt;span class="si">}&lt;/span>/mail.agou-ops.top-error.log
-CustomLog &lt;span class="si">${&lt;/span>&lt;span class="nv">APACHE_LOG_DIR&lt;/span>&lt;span class="si">}&lt;/span>/mail.agou-ops.top-access.log combined
-SSLEngine On
-SSLCertificateFile /etc/letsencrypt/live/mail.agou-ops.top/fullchain.pem
-SSLCertificateKeyFile /etc/letsencrypt/live/mail.agou-ops.top/privkey.pem
-&lt;span class="c1"># Other Apache Configuration&lt;/span>
-&amp;lt;/VirtualHost&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>重载&lt;code>httpd&lt;/code>使虚拟主机配置生效:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">systemctl reload httpd
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>现在, 就可以通过&lt;code>https&lt;/code>访问你的站点了: &lt;a href="https://agou-ops.top">https://agou-ops.top&lt;/a>&lt;/p>
-&lt;h2 id="自动更新lets-encrypt证书">自动更新Let’s Encrypt证书&lt;/h2>
-&lt;p>&lt;code>Let’s Encrypt&lt;/code>的证书有效期为90天, 自动更新证书到期前,certbot包创建一个计划, 一天两次, 并自动更新任何证书到期前30天.&lt;/p>
-&lt;p>解决方法, 添加定时任务, &lt;code>/etc/cron.d/cerbot&lt;/code>, 内容如下所示:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="m">0&lt;/span> */12 * * * root &lt;span class="nb">test&lt;/span> -x /usr/bin/certbot -a &lt;span class="se">\!&lt;/span> -d /run/systemd/system &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> perl -e &lt;span class="s1">&amp;#39;sleep int(rand(3600))&amp;#39;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> certbot -q renew --renew-hook &lt;span class="s2">&amp;#34;systemctl reload apache2&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>测试更新, 使用&lt;code>certbot&lt;/code>的干跑模式进行测试:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">sudo certbot renew --dry-run
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="参考链接">参考链接&lt;/h2>
-&lt;ul>
-&lt;li>SSL lab: &lt;a href="https://www.ssllabs.com/">https://www.ssllabs.com/&lt;/a>&lt;/li>
-&lt;li>Let&amp;rsquo;s Encrypt: &lt;a href="https://letsencrypt.org/">https://letsencrypt.org/&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;!-- raw HTML omitted --></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>
