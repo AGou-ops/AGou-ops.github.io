@@ -49,9 +49,9 @@ Vi IMproved - enhanced vi editor - with GTK3 GUI
 安装编译环境：
 
 ```bash
-sudo apt install -y build-essential            # 安装编译包组
+$ sudo apt install -y build-essential            # 安装编译包组
 # 其他必要软件包
-sudo apt install -y libxt-dev libgtk-3-dev \
+$ sudo apt install -y libxt-dev libgtk-3-dev \
     libpython3-dev  \    # 如果要添加python3支持，需要额外安装此包
     libtool libtool-bin \  # 编译时可能因没有libtool而报错
     libncurses5-dev libgnome2-dev libgnomeui-dev   libgtk2.0-dev libatk1.0-dev libbonoboui2-dev   libcairo2-dev libx11-dev libxpm-dev libxt-dev     # 其他额外可能用到的包
