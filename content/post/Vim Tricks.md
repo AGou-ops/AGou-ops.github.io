@@ -1,7 +1,7 @@
 ---
 title: "Vim Hotkeys and Cheat Sheet"
 date: 2020-12-06T11:53:04+08:00
-lastmod: 2020-12-06T11:53:04+08:00
+lastmod: 2021-08-20T15:17:04+08:00
 draft: false
 description: ""
 tags: ["vim", "tricks"]
@@ -26,6 +26,9 @@ mathjax: false
 ---
 
 > 该文章用于记录个人在使用`vim`期间常用的技巧和快捷键。
+>
+> - 2021-08-20 15:27:56：初始化；
+> - 2021年08月20日15:27:18 ： 更新vim分屏快捷键以及`NERDTree`快捷键；
 
 ## 通用技巧
 
@@ -175,12 +178,15 @@ q/		打开查找历史命令窗口
 :sp[lit] {file}		同`<C-w>s`, 水平切分当前窗口，并在新窗口中载入{file}
 :vsp[lit] {file}	同`<C-w>v`, 垂直切分当前窗口，并在新窗口中载入{file}
 <C-w><`上下左右`方向键或者`HJKL`键或者`w`键>		切换当前窗口, `w`为循环切换
+<C-w>H、J、K、L		左上右下移动当前窗口位置
 :clo[se]		同`<C-w>c`, 关闭活动窗口
 :on[ly]			同`<C-w>o`, 只保留活动窗口, 关闭其他所有窗口
 # 窗口大小调整
 <C-w>=		使所有窗口等宽、等高
 <C-w>_		最大化活动窗口的高度
 <C-w>｜		最大化活动窗口的宽度
+<C-w>>		窗口右移
+<C-w>>		窗口左移
 [N]<C-w>_		把活动窗口的高度设为[N]行
 [N]<C-w>｜		把活动窗口的宽度设为[N]列
 <C-w>T		把当前窗口移动到一个新的标签
@@ -338,8 +344,15 @@ doe,john,john@example.com
 :%s//\3,\2,\1
 ```
 
+## 附录：NERDTree 快捷键
+
+{{< gist "https://gist.github.com/geekontheway/2667442.js" >}}
+
+<script src="https://gist.github.com/geekontheway/2667442.js"></script>
+
 ## 参考链接
 
 - Vim实用技巧(第2版): https://agou-images.oss-cn-qingdao.aliyuncs.com/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf
 - Vim cheatsheet: https://devhints.io/vim
 - Vim Cheat Sheet: https://vim.rtorr.com/
+
