@@ -19,6 +19,10 @@ Vi IMproved - enhanced vi editor - with GTK3 GUI
 &lt;/div>
 &lt;/div></description></item><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.top/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.top/post/vim-tricks/</guid><description>&lt;blockquote>
 &lt;p>该文章用于记录个人在使用&lt;code>vim&lt;/code>期间常用的技巧和快捷键。&lt;/p>
+&lt;ul>
+&lt;li>2021-08-20 15:27:56：初始化；&lt;/li>
+&lt;li>2021年08月20日15:27:18 ： 更新vim分屏快捷键以及&lt;code>NERDTree&lt;/code>快捷键；&lt;/li>
+&lt;/ul>
 &lt;/blockquote>
 &lt;h2 id="通用技巧">通用技巧&lt;/h2>
 &lt;ul>

@@ -450,6 +450,10 @@ tc filter add dev tun0 parent ffff: protocol ip u32 match ip src 10.18.0.0/24 po
 &lt;p>该文章内容收集于网络。&lt;/p>
 &lt;/blockquote></description></item><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.top/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.top/post/vim-tricks/</guid><description>&lt;blockquote>
 &lt;p>该文章用于记录个人在使用&lt;code>vim&lt;/code>期间常用的技巧和快捷键。&lt;/p>
+&lt;ul>
+&lt;li>2021-08-20 15:27:56：初始化；&lt;/li>
+&lt;li>2021年08月20日15:27:18 ： 更新vim分屏快捷键以及&lt;code>NERDTree&lt;/code>快捷键；&lt;/li>
+&lt;/ul>
 &lt;/blockquote>
 &lt;h2 id="通用技巧">通用技巧&lt;/h2>
 &lt;ul>
@@ -754,6 +758,9 @@ $ 列选择, 选择结尾, 使用场景: 为选中区域的行尾添加指定符
 &lt;/span>&lt;span class="lnt">44
 &lt;/span>&lt;span class="lnt">45
 &lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">:ls 查看当前缓冲区, 输入数字进入指定
@@ -767,12 +774,15 @@ $ 列选择, 选择结尾, 使用场景: 为选中区域的行尾添加指定符
 :sp&lt;span class="o">[&lt;/span>lit&lt;span class="o">]&lt;/span> &lt;span class="o">{&lt;/span>file&lt;span class="o">}&lt;/span> 同&lt;span class="sb">`&lt;/span>&amp;lt;C-w&amp;gt;s&lt;span class="sb">`&lt;/span>, 水平切分当前窗口，并在新窗口中载入&lt;span class="o">{&lt;/span>file&lt;span class="o">}&lt;/span>
 :vsp&lt;span class="o">[&lt;/span>lit&lt;span class="o">]&lt;/span> &lt;span class="o">{&lt;/span>file&lt;span class="o">}&lt;/span> 同&lt;span class="sb">`&lt;/span>&amp;lt;C-w&amp;gt;v&lt;span class="sb">`&lt;/span>, 垂直切分当前窗口，并在新窗口中载入&lt;span class="o">{&lt;/span>file&lt;span class="o">}&lt;/span>
 &amp;lt;C-w&amp;gt;&amp;lt;&lt;span class="sb">`&lt;/span>上下左右&lt;span class="sb">`&lt;/span>方向键或者&lt;span class="sb">`&lt;/span>HJKL&lt;span class="sb">`&lt;/span>键或者&lt;span class="sb">`&lt;/span>w&lt;span class="sb">`&lt;/span>键&amp;gt; 切换当前窗口, &lt;span class="sb">`&lt;/span>w&lt;span class="sb">`&lt;/span>为循环切换
+&amp;lt;C-w&amp;gt;H、J、K、L 左上右下移动当前窗口位置
 :clo&lt;span class="o">[&lt;/span>se&lt;span class="o">]&lt;/span> 同&lt;span class="sb">`&lt;/span>&amp;lt;C-w&amp;gt;c&lt;span class="sb">`&lt;/span>, 关闭活动窗口
 :on&lt;span class="o">[&lt;/span>ly&lt;span class="o">]&lt;/span> 同&lt;span class="sb">`&lt;/span>&amp;lt;C-w&amp;gt;o&lt;span class="sb">`&lt;/span>, 只保留活动窗口, 关闭其他所有窗口
 &lt;span class="c1"># 窗口大小调整&lt;/span>
 &amp;lt;C-w&amp;gt;&lt;span class="o">=&lt;/span> 使所有窗口等宽、等高
 &amp;lt;C-w&amp;gt;_ 最大化活动窗口的高度
 &amp;lt;C-w&amp;gt;｜ 最大化活动窗口的宽度
+&amp;lt;C-w&amp;gt;&amp;gt; 窗口右移
+&amp;lt;C-w&amp;gt;&amp;gt; 窗口左移
 &lt;span class="o">[&lt;/span>N&lt;span class="o">]&lt;/span>&amp;lt;C-w&amp;gt;_ 把活动窗口的高度设为&lt;span class="o">[&lt;/span>N&lt;span class="o">]&lt;/span>行
 &lt;span class="o">[&lt;/span>N&lt;span class="o">]&lt;/span>&amp;lt;C-w&amp;gt;｜ 把活动窗口的宽度设为&lt;span class="o">[&lt;/span>N&lt;span class="o">]&lt;/span>列
 &amp;lt;C-w&amp;gt;T 把当前窗口移动到一个新的标签
@@ -1034,7 +1044,10 @@ doe,john,john@example.com
 :%s//&lt;span class="se">\3&lt;/span>,&lt;span class="se">\2&lt;/span>,&lt;span class="se">\1&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;/div>&lt;h2 id="附录nerdtree-快捷键">附录：NERDTree 快捷键&lt;/h2>
+&lt;script src="https://gist.github.com/geekontheway/2667442.js">&lt;/script>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="参考链接">参考链接&lt;/h2>
 &lt;ul>
 &lt;li>Vim实用技巧(第2版): &lt;a href="https://agou-images.oss-cn-qingdao.aliyuncs.com/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf">https://agou-images.oss-cn-qingdao.aliyuncs.com/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf&lt;/a>&lt;/li>
 &lt;li>Vim cheatsheet: &lt;a href="https://devhints.io/vim">https://devhints.io/vim&lt;/a>&lt;/li>

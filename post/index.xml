@@ -31,6 +31,10 @@ Vi IMproved - enhanced vi editor - with GTK3 GUI
 &lt;p>tc 是 Linux 系统中的一个工具，全名为&lt;code>traffic control&lt;/code>（流量控制）, 主要是通过在输出端口处建立一个队列来实现流量控制。tc 可以用来控制 netem 的工作模式，也就是说，想要使用 netem ，则需要内核开启了 netem，而且安装了 tc工具。&lt;/p>
 &lt;p>tc 控制的是发包动作，不能控制收包动作。它直接对物理接口生效，如果控制了物理的&lt;code>eth0&lt;/code>，那么逻辑网卡（比如&lt;code>eth0:1&lt;/code>）也会受到影响，反之则不行，&lt;strong>控制逻辑网卡是无效的&lt;/strong>。&lt;/p></description></item><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.top/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.top/post/vim-tricks/</guid><description>&lt;blockquote>
 &lt;p>该文章用于记录个人在使用&lt;code>vim&lt;/code>期间常用的技巧和快捷键。&lt;/p>
+&lt;ul>
+&lt;li>2021-08-20 15:27:56：初始化；&lt;/li>
+&lt;li>2021年08月20日15:27:18 ： 更新vim分屏快捷键以及&lt;code>NERDTree&lt;/code>快捷键；&lt;/li>
+&lt;/ul>
 &lt;/blockquote>
 &lt;h2 id="通用技巧">通用技巧&lt;/h2>
 &lt;ul>
