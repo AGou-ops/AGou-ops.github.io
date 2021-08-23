@@ -1,15 +1,15 @@
-name: CI #自动化的名称
+name: PUBLISH_TO_gh
 on:
-  push: # push的时候触发
-    branches: # 那些分支需要触发
+  push:
+    branches:
       - master
 jobs:
   build:
-    runs-on: ubuntu-latest # 镜像市场
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout # 步骤的名称
-        uses: actions/checkout@master #软件市场的名称
-        with: # 参数
+      - name: checkout
+        uses: actions/checkout@master
+        with:
           submodules: true
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -17,9 +17,9 @@ jobs:
           hugo-version: '0.75.1'
           extended: true
       - name: Build
-        run: hugo --minify
+        run: hugo --minify -e production
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./public
