@@ -47,7 +47,7 @@ mathjax: false
 
 **喜好标签（由高到低）：<font color='red'>#日常   #萌系  #轻百合  #搞笑   #治愈 (不是致郁)    #魔法 </font>**
 
-| 序号 |    时间    |                            动漫名                            |                         最喜欢的角fsdfdsfsdf                        |                            制片方                            |
+| 序号 |    时间    |                            动漫名                            |                         最喜欢的角色                        |                            制片方                            |
 | :--: | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | 000  | 2020/03/28 | **[《小林家的龙女仆》](https://zh.moegirl.org.cn/小林家的龙女仆)** :two_hearts: | [托尔](https://zh.moegirl.org.cn/托尔(小林家的龙女仆))、[康娜](https://zh.moegirl.org.cn/康娜卡姆依)、[尔科亚](https://zh.moegirl.org.cn/露科亚) | [京都动画](https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB) |
 | 001  | 2020/04/02 | **[《紫罗兰永恒花园》](https://zh.moegirl.org.cn/紫罗兰永恒花园)** :two_hearts: | **[薇尔莉特·伊芙加登](https://zh.moegirl.org.cn/薇尔莉特·伊芙加登)** | [京都动画](https://zh.moegirl.org.cn/%E4%BA%AC%E9%83%BD%E5%8A%A8%E7%94%BB) |
@@ -170,11 +170,11 @@ mathjax: false
 | 099 | 2021/02/17 | [《飞翔的魔女》](https://zh.moegirl.org.cn/飞翔的魔女) | [木幡真琴](https://zh.moegirl.org.cn/木幡真琴)、[仓本千夏](https://zh.moegirl.org.cn/仓本千夏) | [J.C.STAFF](https://zh.moegirl.org.cn/J.C.STAFF) |
 | 100 | 2021/02/18 | [幸运☆星](https://zh.moegirl.org.cn/%E5%B9%B8%E8%BF%90%E6%98%9F) | [柊司](https://zh.moegirl.org.cn/柊司)、[泉此方](https://zh.moegirl.org.cn/泉此方) | [京都动画](https://zh.moegirl.org.cn/京都动画) |
 | 101 | 2021/02/20 | [《+TIC模型姐妹》](https://zh.moegirl.org.cn/+TIC模型姐妹)🍜 | - | TYO Animations Inc.、BARNUM STUDIO |
-| 102 | 2021/02/21 | [《Lapis Re:LiGHTs》](https://zh.moegirl.org.cn/Lapis Re:LiGHTs) | [缇亚拉](https://zh.moegirl.org.cn/缇亚拉)、[嘉奈特](https://zh.moegirl.org.cn/嘉奈特) | 横滨动画研究所 |
+| 102 | 2021/02/21 | [《Lapis Re:LiGHTs》](https://zh.moegirl.org.cn/Lapis%20Re:LiGHTs) | [缇亚拉](https://zh.moegirl.org.cn/缇亚拉)、[嘉奈特](https://zh.moegirl.org.cn/嘉奈特) | 横滨动画研究所 |
 | 103 | 2021/03/06 | [《南家三姐妹》](https://zh.moegirl.org.cn/南家三姐妹)（共四季） | ALL | [童梦](https://zh.moegirl.org.cn/童梦)(1)、[asread](https://zh.moegirl.org.cn/Asread)(2-3)、[feel.](https://zh.moegirl.org.cn/Feel.)(4) |
 | 104 | 2021/03/11 | [《悠悠式》](https://zh.moegirl.org.cn/悠悠式) | - | [KINEMA CITRUS](https://zh.moegirl.org.cn/KINEMA_CITRUS) |
 | 105+ | 2021/04/05 | [《摇曳露营△第二季》](https://zh.moegirl.org.cn/摇曳露营) | ^ | ^ |
-| 106+ | 2021/04/05 | [《悠哉日常大王 第三季》](https://zh.moegirl.org.cn/悠哉日常大王 第三季) | ^ | ^ |
+| 106+ | 2021/04/05 | [《悠哉日常大王 第三季》](https://zh.moegirl.org.cn/悠哉日常大王) | ^ | ^ |
 | 107 | 2021/04/05 | [《里世界郊游》](https://zh.moegirl.org.cn/里世界郊游) | [紙越空魚](https://zh.moegirl.org.cn/index.php?title=纸越空鱼&action=edit&redlink=1)、[仁科鳥子](https://zh.moegirl.org.cn/index.php?title=仁科鸟子&action=edit&redlink=1) | LIDENFILMS×FelixFilm |
 | 108 | 2021/04/12 | [《剧偶像》](https://zh.moegirl.org.cn/剧偶像) | [各务爱理](https://zh.moegirl.org.cn/index.php?title=各务爱理&action=edit&redlink=1) | Hoods Entertainment |
 | 109 | 2021/04/19 | [《立花馆恋爱三角铃》](https://zh.moegirl.org.cn/立花馆恋爱三角铃)🍜 | - | Creators in pack/STUDIO LINGS |

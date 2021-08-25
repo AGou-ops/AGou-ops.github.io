@@ -1,4 +1,9 @@
 <style>
+    @font-face {
+        font-family: 'iconFont';
+        src: url("/fonts/Cookiemonster-gv11.ttf");
+    }
+    
     .content-wrapper {
         background-image: url('{{ .Get 0 }}');
         background-size: 100%;
@@ -14,6 +19,10 @@
     
     .bg-white {
         opacity: 0.92;
+    }
+    
+    #header>div>a {
+        font-family: 'iconFont';
     }
     
     #menu>li:nth-child(5)>a {
@@ -115,7 +124,7 @@
 <script src="/js/layer.js"></script>
 
 <script type="text/javascript">
-    document.querySelector("#header > div > a").innerHTML = "Anime Lover";
+    document.querySelector("#header > div > a").innerHTML = "✨Anime Lover";
     // document.querySelector("head > meta:nth-child(7)").remove();
 
     if (document.body.clientWidth < 767) {

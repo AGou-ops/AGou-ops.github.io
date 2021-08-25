@@ -61,7 +61,7 @@ defaultContentLanguage = "en"           # Default language to use
 #   identifier = "categories"
 #   url = "/categories/"
 [[languages.en.menus.main]]
-  name = "Anime"
+  name = "💞Anime"
   weight = 50
   identifier = "Anime"
   url = "/Anime/"
