@@ -17,7 +17,7 @@ vim-gtk3
 Vi IMproved - enhanced vi editor - with GTK3 GUI
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.top/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.top/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
+&lt;/div></description></item><item><title>根据csv重归档文件</title><link>https://agou-ops.top/post/%E6%A0%B9%E6%8D%AEcsv%E9%87%8D%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6/</link><pubDate>Wed, 11 Aug 2021 11:04:05 +0800</pubDate><guid>https://agou-ops.top/post/%E6%A0%B9%E6%8D%AEcsv%E9%87%8D%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6/</guid><description>&lt;p>&lt;strong>需求：根据excel中的文件列表，将excel进行简单处理成csv格式，使用sed、awk等结合正则对图片文件按照年月的格式来进行重新归档并输出相关日志。&lt;/strong>&lt;/p></description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.top/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.top/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
 &lt;ul>
 &lt;li>显示屏是否有问题，或者是不是HDMI线接触不良？&lt;/li>
 &lt;li>主板上显卡是不是接触不良？&lt;/li>
@@ -94,4 +94,4 @@ $ yum install -y nload
 yum install -y cerbot
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>生成高安全性的&lt;code>DH&lt;/code>秘钥到&lt;code>/etc/ssl/certs/&lt;/code>目录当中去:&lt;/p></description></item><item><title>【日记】果然大学生都是廉价劳动力吗？可恶！</title><link>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E6%9E%9C%E7%84%B6%E5%A4%A7%E5%AD%A6%E7%94%9F%E9%83%BD%E6%98%AF%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%90%97%E5%8F%AF%E6%81%B6/</link><pubDate>Sun, 28 Jun 2020 22:14:03 +0800</pubDate><guid>https://agou-ops.top/post/%E6%97%A5%E8%AE%B0%E6%9E%9C%E7%84%B6%E5%A4%A7%E5%AD%A6%E7%94%9F%E9%83%BD%E6%98%AF%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%90%97%E5%8F%AF%E6%81%B6/</guid><description>​ 2020年06月28日，端午“三天小短假”已经过去了，按常理说应当放假，哪怕一天也好，但我们没有放假，一行五人还是像往常一样出外业，经理呢</description></item></channel></rss>
+&lt;/div>&lt;p>生成高安全性的&lt;code>DH&lt;/code>秘钥到&lt;code>/etc/ssl/certs/&lt;/code>目录当中去:&lt;/p></description></item></channel></rss>

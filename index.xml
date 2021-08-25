@@ -244,7 +244,9 @@ sudo update-alternatives --config gvim
 &lt;li>Github gist: &lt;a href="https://gist.github.com/lirenlin/63453cda5181028b2565">https://gist.github.com/lirenlin/63453cda5181028b2565&lt;/a>&lt;/li>
 &lt;li>why-is-vim-for-debian-compiled-without-clipboard: &lt;a href="https://vi.stackexchange.com/questions/13564/why-is-vim-for-debian-compiled-without-clipboard">https://vi.stackexchange.com/questions/13564/why-is-vim-for-debian-compiled-without-clipboard&lt;/a>&lt;/li>
 &lt;li>How to Copy Text to Clipboard in Vim: &lt;a href="https://linoxide.com/copy-text-to-clipboard-in-vim/">https://linoxide.com/copy-text-to-clipboard-in-vim/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.top/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.top/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
+&lt;/ul></description></item><item><title>根据csv重归档文件</title><link>https://agou-ops.top/post/%E6%A0%B9%E6%8D%AEcsv%E9%87%8D%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6/</link><pubDate>Wed, 11 Aug 2021 11:04:05 +0800</pubDate><guid>https://agou-ops.top/post/%E6%A0%B9%E6%8D%AEcsv%E9%87%8D%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6/</guid><description>&lt;p>&lt;strong>需求：根据excel中的文件列表，将excel进行简单处理成csv格式，使用sed、awk等结合正则对图片文件按照年月的格式来进行重新归档并输出相关日志。&lt;/strong>&lt;/p>
+&lt;p>代码如下：&lt;/p>
+&lt;script src="https://gist.github.com/AGou-ops/8943c03635e47c1fc1a3d78de85bd84e.js">&lt;/script></description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.top/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.top/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
 &lt;ul>
 &lt;li>显示屏是否有问题，或者是不是HDMI线接触不良？&lt;/li>
 &lt;li>主板上显卡是不是接触不良？&lt;/li>
@@ -1672,6 +1674,10 @@ text: '',
 ],
 });
 &lt;/script></description></item><item><title>我的动漫之旅(My Anime Trip.)</title><link>https://agou-ops.top/anime/</link><pubDate>Wed, 30 Sep 2020 19:14:44 +0800</pubDate><guid>https://agou-ops.top/anime/</guid><description>&lt;style>
+@font-face {
+font-family: 'iconFont';
+src: url("/fonts/Cookiemonster-gv11.ttf");
+}
 .content-wrapper {
 background-image: url('http://www.dmoe.cc/random.php');
 background-size: 100%;
@@ -1685,6 +1691,9 @@ cursor: url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.ani)
 }
 .bg-white {
 opacity: 0.92;
+}
+#header>div>a {
+font-family: 'iconFont';
 }
 #menu>li:nth-child(5)>a {
 color: #FF69B4;
@@ -1766,7 +1775,7 @@ opacity: 1
 &lt;script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js">&lt;/script>
 &lt;script src="https://agou-ops.top/js/layer.js">&lt;/script>
 &lt;script type="text/javascript">
-document.querySelector("#header > div > a").innerHTML = "Anime Lover";
+document.querySelector("#header > div > a").innerHTML = "✨Anime Lover";
 if (document.body.clientWidth &lt; 767) {
 layer.alert('推荐使用「PC、Pad」端进行访问喔~', {
 skin: 'layui-layer-molv'
@@ -1805,7 +1814,7 @@ anim: 0
 &lt;th style="text-align:center">序号&lt;/th>
 &lt;th style="text-align:center">时间&lt;/th>
 &lt;th style="text-align:center">动漫名&lt;/th>
-&lt;th style="text-align:center">最喜欢的角fsdfdsfsdf&lt;/th>
+&lt;th style="text-align:center">最喜欢的角色&lt;/th>
 &lt;th style="text-align:center">制片方&lt;/th>
 &lt;/tr>
 &lt;/thead>
@@ -2554,7 +2563,7 @@ anim: 0
 &lt;tr>
 &lt;td style="text-align:center">102&lt;/td>
 &lt;td style="text-align:center">2021/02/21&lt;/td>
-&lt;td style="text-align:center">[《Lapis Re:LiGHTs》](&lt;a href="https://zh.moegirl.org.cn/Lapis">https://zh.moegirl.org.cn/Lapis&lt;/a> Re:LiGHTs)&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/Lapis%20Re:LiGHTs">《Lapis Re:LiGHTs》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E7%BC%87%E4%BA%9A%E6%8B%89">缇亚拉&lt;/a>、&lt;a href="https://zh.moegirl.org.cn/%E5%98%89%E5%A5%88%E7%89%B9">嘉奈特&lt;/a>&lt;/td>
 &lt;td style="text-align:center">横滨动画研究所&lt;/td>
 &lt;/tr>
@@ -2582,7 +2591,7 @@ anim: 0
 &lt;tr>
 &lt;td style="text-align:center">106+&lt;/td>
 &lt;td style="text-align:center">2021/04/05&lt;/td>
-&lt;td style="text-align:center">[《悠哉日常大王 第三季》](&lt;a href="https://zh.moegirl.org.cn/">https://zh.moegirl.org.cn/&lt;/a>悠哉日常大王 第三季)&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://zh.moegirl.org.cn/%E6%82%A0%E5%93%89%E6%97%A5%E5%B8%B8%E5%A4%A7%E7%8E%8B">《悠哉日常大王 第三季》&lt;/a>&lt;/td>
 &lt;td style="text-align:center">^&lt;/td>
 &lt;td style="text-align:center">^&lt;/td>
 &lt;/tr>
@@ -4288,128 +4297,4 @@ eth0 132.0B/s 0.0B/s
 &lt;/div>
 &lt;/div>&lt;blockquote>
 &lt;p>该文章内容收集于网络。&lt;/p>
-&lt;/blockquote></description></item><item><title>Linux 系统封装</title><link>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</link><pubDate>Fri, 10 Jul 2020 21:16:31 +0800</pubDate><guid>https://agou-ops.top/post/linux-%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</guid><description>&lt;h2 id="mondo-rescue">Mondo Rescue&lt;/h2>
-&lt;p>Mondo Rescue（简称 Mondo）：是一款开源免费的故障恢复和备份工具，可以说是 Linux 操作系统下的 Ghost ，你可以轻松地创建系统（Linux 或 Windows）克隆或备份的 ISO 镜像，可以将这些镜像存放在 CD、DVD、磁带、USB 设备、硬盘和 NFS 上。&lt;/p>
-&lt;p>官方站点:http://www.mondorescue.org/&lt;/p>
-&lt;h3 id="安装-mondo">安装 mondo&lt;/h3>
-&lt;p>从&lt;a href="http://mondo.mirror.pclark.com/ftp/pub/mondorescue/">官方指定的仓库&lt;/a>下载&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wget http://mondo.mirror.pclark.com/ftp/pub/mondorescue/centos/7/x86_64/mondorescue.repo -O /etc/yum.repos.d/mondorescue.repo
-yum install -y mondo
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>或者直接安装&lt;code>rpm&lt;/code>包:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum install -y http://mondo.mirror.pclark.com/ftp/pub/mondorescue/centos/7/x86_64/mondo-3.3.0-1.centos7.x86_64.rpm
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>使用该方法安装可能会缺少依赖包文件,在这里手动解决依赖关系即可(太多了,说着玩的,还是推荐用在线仓库安装吧&amp;hellip;):&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">yum install -y http://ftp.mondorescue.org/centos/7/x86_64/afio-2.5-1.centos7.x86_64.rpm
-yum install -y http://ftp.mondorescue.org/centos/7/x86_64/mindi-3.3.0-1.centos7.x86_64.rpm
-yum install -y http://ftp.mondorescue.org/centos/7/x86_64/buffer-1.19-8.centos7.x86_64.rpm
-...
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="制作光盘镜像">制作光盘镜像&lt;/h3>
-&lt;p>安装完毕后，在终端下输入&lt;code>mondoarchive&lt;/code>，即可进入图形安装界面。&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">mondoarchive
-See /var/log/mondoarchive.log &lt;span class="k">for&lt;/span> details of backup run.
-Checking sanity of your Linux distribution
-.......
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>随后,按照引导一步步设置即可.&lt;/p>
-&lt;h2 id="remastersys">Remastersys&lt;/h2>
-&lt;p>Remastersys 可以将你安装的 Ubuntu、Debian 及其衍生版打包成一个可以用来安装的 Live CD/DVD 的 ISO 镜像文件，可打包一个包含个人数据的 ISO 镜像文件作为操作系统备份，也可以打包一个不包含个人数据的 ISO 镜像文件发布给其他人安装。&lt;/p>
-&lt;h3 id="remastersys-包下载">&lt;strong>Remastersys 包下载&lt;/strong>&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ mkdir tools
-$ cd tools/
-$ wget ftp://ftp.gwdg.de/pub/linux/easyvdr/mirror/remastersys/ubuntu/remastersys/remastersys_3.0.4-2_all.deb
-$ wget ftp://ftp.gwdg.de/pub/linux/easyvdr/mirror/remastersys/ubuntu/remastersys-gui/remastersys-gui_3.0.4-1_amd64.deb
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="安装-remastersys-依赖">&lt;strong>安装 Remastersys 依赖&lt;/strong>&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ sudo apt-get install syslinux-utils isolinux squashfs-tools casper libdebian-installer4 ubiquity-frontend-debconf user-setup discover xresprobe systemd
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="安装-remastersys-gui-依赖">&lt;strong>安装 Remastersys-gui 依赖&lt;/strong>&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ sudo apt-get install libvte-common libvte9 plymouth-x11
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="开始安装-remastersys">&lt;strong>开始安装 Remastersys&lt;/strong>&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">$ cd tools/
-$ sudo dpkg -i remastersys_3.0.4-2_all.deb
-$ sudo dpkg -i remastersys-gui_3.0.4-1_amd64.deb
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>Remastersys 备份操作系统&lt;/strong>&lt;/p>
-&lt;p>&lt;strong>命令行模式：&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">$&lt;/span> &lt;span class="n">sudo&lt;/span> &lt;span class="n">remastersys&lt;/span> &lt;span class="n">backup&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>图形化模式：&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">$&lt;/span> &lt;span class="n">sudo&lt;/span> &lt;span class="n">remastersys&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">gui&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/blockquote></description></item></channel></rss>
