@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://agou-ops.top/sitemap.xml
+Sitemap: https://agou-ops.cn/myBlog/sitemap.xml
