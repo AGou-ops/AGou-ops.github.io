@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/myBlog/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 17 Aug 2021 14:08:32 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/myBlog/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/myBlog/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/myBlog/aboutme/</guid><description>&lt;p>&lt;strong>岂能尽如人意，但求无愧我心。&lt;/strong>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 17 Aug 2021 14:08:32 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;p>&lt;strong>岂能尽如人意，但求无愧我心。&lt;/strong>&lt;/p>
 &lt;hr>
 &lt;ul>
 &lt;li>本站地址：&lt;a href="https://agou-ops.top">https://agou-ops.top&lt;/a>&lt;/li>
@@ -8,7 +8,7 @@
 &lt;li>Docs 备用站点2：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
 &lt;li>myStudyNote：&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
 &lt;li>发布站点：&lt;a href="http://fabu.agou-ops.top/">http://fabu.agou-ops.top/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>手动编译vim增加X Windows Clipboard功能模块</title><link>https://agou-ops.cn/myBlog/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</link><pubDate>Tue, 17 Aug 2021 14:08:32 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</guid><description>&lt;p>默认直接通过&lt;code>apt&lt;/code>或者&lt;code>apt-get&lt;/code>安装的vim功能不全，缺少&lt;code>clipboard&lt;/code>功能，原因是debian官方为了兼容性才如此考虑，但debian官方也同样提供了以下几个包来满足GUI需求：&lt;/p>
+&lt;/ul></description></item><item><title>手动编译vim增加X Windows Clipboard功能模块</title><link>https://agou-ops.cn/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</link><pubDate>Tue, 17 Aug 2021 14:08:32 +0800</pubDate><guid>https://agou-ops.cn/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</guid><description>&lt;p>默认直接通过&lt;code>apt&lt;/code>或者&lt;code>apt-get&lt;/code>安装的vim功能不全，缺少&lt;code>clipboard&lt;/code>功能，原因是debian官方为了兼容性才如此考虑，但debian官方也同样提供了以下几个包来满足GUI需求：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
@@ -244,9 +244,9 @@ sudo update-alternatives --config gvim
 &lt;li>Github gist: &lt;a href="https://gist.github.com/lirenlin/63453cda5181028b2565">https://gist.github.com/lirenlin/63453cda5181028b2565&lt;/a>&lt;/li>
 &lt;li>why-is-vim-for-debian-compiled-without-clipboard: &lt;a href="https://vi.stackexchange.com/questions/13564/why-is-vim-for-debian-compiled-without-clipboard">https://vi.stackexchange.com/questions/13564/why-is-vim-for-debian-compiled-without-clipboard&lt;/a>&lt;/li>
 &lt;li>How to Copy Text to Clipboard in Vim: &lt;a href="https://linoxide.com/copy-text-to-clipboard-in-vim/">https://linoxide.com/copy-text-to-clipboard-in-vim/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>根据csv重归档文件</title><link>https://agou-ops.cn/myBlog/post/%E6%A0%B9%E6%8D%AEcsv%E9%87%8D%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6/</link><pubDate>Wed, 11 Aug 2021 11:04:05 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E6%A0%B9%E6%8D%AEcsv%E9%87%8D%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6/</guid><description>&lt;p>&lt;strong>需求：根据excel中的文件列表，将excel进行简单处理成csv格式，使用sed、awk等结合正则对图片文件按照年月的格式来进行重新归档并输出相关日志。&lt;/strong>&lt;/p>
+&lt;/ul></description></item><item><title>根据csv重归档文件</title><link>https://agou-ops.cn/post/%E6%A0%B9%E6%8D%AEcsv%E9%87%8D%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6/</link><pubDate>Wed, 11 Aug 2021 11:04:05 +0800</pubDate><guid>https://agou-ops.cn/post/%E6%A0%B9%E6%8D%AEcsv%E9%87%8D%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6/</guid><description>&lt;p>&lt;strong>需求：根据excel中的文件列表，将excel进行简单处理成csv格式，使用sed、awk等结合正则对图片文件按照年月的格式来进行重新归档并输出相关日志。&lt;/strong>&lt;/p>
 &lt;p>代码如下：&lt;/p>
-&lt;script src="https://gist.github.com/AGou-ops/8943c03635e47c1fc1a3d78de85bd84e.js">&lt;/script></description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.cn/myBlog/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
+&lt;script src="https://gist.github.com/AGou-ops/8943c03635e47c1fc1a3d78de85bd84e.js">&lt;/script></description></item><item><title>记戴尔品牌机开机黑屏无logo故障</title><link>https://agou-ops.cn/post/dell_unable_startup/</link><pubDate>Mon, 26 Jul 2021 19:43:31 +0800</pubDate><guid>https://agou-ops.cn/post/dell_unable_startup/</guid><description>&lt;p>今天白天同事钉钉上联系我，说电脑无法正常开机，约定好时间之后，我去到该同事工位看了看。其确切故障是电脑按下开机键之后无任何反应，显示器上连品牌logo都不显示。我的初步判断是：&lt;/p>
 &lt;ul>
 &lt;li>显示屏是否有问题，或者是不是HDMI线接触不良？&lt;/li>
 &lt;li>主板上显卡是不是接触不良？&lt;/li>
@@ -269,7 +269,7 @@ sudo update-alternatives --config gvim
 &lt;li>电脑正常开机之后，关机完全断电，然后将JUMP蓝色跳线帽接回原来位置，合好机箱，正常开机即可。&lt;/li>
 &lt;/ol>
 &lt;h2 id="总结">总结&lt;/h2>
-&lt;p>故障处理很简单，原因可能是内存条金手指接触不良原因导致，学了一手插拔跳线帽操作，针不戳。&lt;/p></description></item><item><title>大学毕业。</title><link>https://agou-ops.cn/myBlog/post/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A/</link><pubDate>Mon, 28 Jun 2021 19:20:04 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A/</guid><description>&lt;blockquote>
+&lt;p>故障处理很简单，原因可能是内存条金手指接触不良原因导致，学了一手插拔跳线帽操作，针不戳。&lt;/p></description></item><item><title>大学毕业。</title><link>https://agou-ops.cn/post/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A/</link><pubDate>Mon, 28 Jun 2021 19:20:04 +0800</pubDate><guid>https://agou-ops.cn/post/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A/</guid><description>&lt;blockquote>
 &lt;p>&lt;h3 id="啊多想再继续当一名学生但是已经不可以了">啊，多想再继续当一名学生，但是已经不可以了。&lt;/h3>
 &lt;/p>
 &lt;footer>
@@ -298,7 +298,7 @@ return " ";
 document.write(password());
 &lt;/SCRIPT>
 &lt;div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-&lt;link rel="stylesheet" href="https://agou-ops.cn/myBlog/myBlog/css/hugo-easy-gallery.css" />
+&lt;link rel="stylesheet" href="https://agou-ops.cn/css/hugo-easy-gallery.css" />
 &lt;div class="box">
 &lt;figure itemprop="associatedMedia"
 itemscope itemtype="http://schema.org/ImageObject" >
@@ -348,7 +348,7 @@ itemscope itemtype="http://schema.org/ImageObject" >
 &lt;/figure>
 &lt;/div>
 &lt;/div>
-&lt;p>以此纪念。&lt;/p></description></item><item><title>TC 高级流控</title><link>https://agou-ops.cn/myBlog/post/tc-%E9%AB%98%E7%BA%A7%E6%B5%81%E6%8E%A7/</link><pubDate>Wed, 16 Dec 2020 15:30:58 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/tc-%E9%AB%98%E7%BA%A7%E6%B5%81%E6%8E%A7/</guid><description>&lt;h2 id="tc-简介及原理">TC 简介及原理&lt;/h2>
+&lt;p>以此纪念。&lt;/p></description></item><item><title>TC 高级流控</title><link>https://agou-ops.cn/post/tc-%E9%AB%98%E7%BA%A7%E6%B5%81%E6%8E%A7/</link><pubDate>Wed, 16 Dec 2020 15:30:58 +0800</pubDate><guid>https://agou-ops.cn/post/tc-%E9%AB%98%E7%BA%A7%E6%B5%81%E6%8E%A7/</guid><description>&lt;h2 id="tc-简介及原理">TC 简介及原理&lt;/h2>
 &lt;p>tc 是 Linux 系统中的一个工具，全名为&lt;code>traffic control&lt;/code>（流量控制）, 主要是通过在输出端口处建立一个队列来实现流量控制。tc 可以用来控制 netem 的工作模式，也就是说，想要使用 netem ，则需要内核开启了 netem，而且安装了 tc工具。&lt;/p>
 &lt;p>tc 控制的是发包动作，不能控制收包动作。它直接对物理接口生效，如果控制了物理的&lt;code>eth0&lt;/code>，那么逻辑网卡（比如&lt;code>eth0:1&lt;/code>）也会受到影响，反之则不行，&lt;strong>控制逻辑网卡是无效的&lt;/strong>。&lt;/p>
 &lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/others/tc.png" alt="img">&lt;/p>
@@ -450,7 +450,7 @@ tc filter add dev tun0 parent ffff: protocol ip u32 match ip src 10.18.0.0/24 po
 &lt;/div>
 &lt;/div>&lt;blockquote>
 &lt;p>该文章内容收集于网络。&lt;/p>
-&lt;/blockquote></description></item><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.cn/myBlog/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/vim-tricks/</guid><description>&lt;blockquote>
+&lt;/blockquote></description></item><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.cn/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.cn/post/vim-tricks/</guid><description>&lt;blockquote>
 &lt;p>该文章用于记录个人在使用&lt;code>vim&lt;/code>期间常用的技巧和快捷键。&lt;/p>
 &lt;ul>
 &lt;li>2021-08-20 15:27:56：初始化；&lt;/li>
@@ -1062,11 +1062,11 @@ doe,john,john@example.com
 &lt;li>Vim实用技巧(第2版): &lt;a href="https://agou-images.oss-cn-qingdao.aliyuncs.com/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf">https://agou-images.oss-cn-qingdao.aliyuncs.com/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf&lt;/a>&lt;/li>
 &lt;li>Vim cheatsheet: &lt;a href="https://devhints.io/vim">https://devhints.io/vim&lt;/a>&lt;/li>
 &lt;li>Vim Cheat Sheet: &lt;a href="https://vim.rtorr.com/">https://vim.rtorr.com/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>DevOps - Notes</title><link>https://agou-ops.cn/myBlog/post/devops-notes/</link><pubDate>Tue, 27 Oct 2020 18:31:58 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/devops-notes/</guid><description>&lt;p>&lt;strong>篇幅有限，点击下方链接进行访问。&lt;/strong>&lt;/p>
+&lt;/ul></description></item><item><title>DevOps - Notes</title><link>https://agou-ops.cn/post/devops-notes/</link><pubDate>Tue, 27 Oct 2020 18:31:58 +0800</pubDate><guid>https://agou-ops.cn/post/devops-notes/</guid><description>&lt;p>&lt;strong>篇幅有限，点击下方链接进行访问。&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>DevOps Note-01（中文， @sunrisenan 备份站点）：&lt;a href="http://bak.agou-ops.top/">http://bak.agou-ops.top/&lt;/a>&lt;/li>
 &lt;li>DevOps Note-02（英文， @vinayhegde1990 转载）：&lt;a href="http://agou-ops.top/devops">http://agou-ops.top/devops&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>在k8s上使用Prometheus监控MongoDB</title><link>https://agou-ops.cn/myBlog/post/%E5%9C%A8k8s%E4%B8%8A%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7mongodb/</link><pubDate>Thu, 08 Oct 2020 14:04:30 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E5%9C%A8k8s%E4%B8%8A%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7mongodb/</guid><description>&lt;h2 id="预先准备">预先准备&lt;/h2>
+&lt;/ul></description></item><item><title>在k8s上使用Prometheus监控MongoDB</title><link>https://agou-ops.cn/post/%E5%9C%A8k8s%E4%B8%8A%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7mongodb/</link><pubDate>Thu, 08 Oct 2020 14:04:30 +0800</pubDate><guid>https://agou-ops.cn/post/%E5%9C%A8k8s%E4%B8%8A%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7mongodb/</guid><description>&lt;h2 id="预先准备">预先准备&lt;/h2>
 &lt;ul>
 &lt;li>minikube For Windows(资源充足, 有集群更好不过);&lt;/li>
 &lt;li>Helm;&lt;/li>
@@ -1435,7 +1435,7 @@ $ helm repo update
 &lt;li>mongodb-exporter: &lt;a href="https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-mongodb-exporter">https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-mongodb-exporter&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="附录2-kubectl-get-all">附录2: kubectl get all&lt;/h2>
-&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%2Bk8s/kubectl%20get%20all.png" alt="">&lt;/p></description></item><item><title>自定义 shortcode</title><link>https://agou-ops.cn/myBlog/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</link><pubDate>Tue, 06 Oct 2020 16:06:48 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</guid><description>&lt;h1 id="shortcode-">shortcode ???&lt;/h1>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%2Bk8s/kubectl%20get%20all.png" alt="">&lt;/p></description></item><item><title>自定义 shortcode</title><link>https://agou-ops.cn/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</link><pubDate>Tue, 06 Oct 2020 16:06:48 +0800</pubDate><guid>https://agou-ops.cn/post/%E8%87%AA%E5%AE%9A%E4%B9%89shortcode/</guid><description>&lt;h1 id="shortcode-">shortcode ???&lt;/h1>
 &lt;p>什么是&lt;code>shortcode&lt;/code>以及&lt;code>hugo内置shortcode&lt;/code>参考： &lt;a href="https://agou-ops.top/post/shortcodes-preview/">shortcodes-preview&lt;/a>&lt;/p>
 &lt;h2 id="github-shortcode">github shortcode&lt;/h2>
 &lt;p>在指定目录添加以下文件：&lt;/p>
@@ -1681,7 +1681,7 @@ text: '',
 },
 ],
 });
-&lt;/script></description></item><item><title>我的动漫之旅(My Anime Trip.)</title><link>https://agou-ops.cn/myBlog/anime/</link><pubDate>Wed, 30 Sep 2020 19:14:44 +0800</pubDate><guid>https://agou-ops.cn/myBlog/anime/</guid><description>&lt;style>
+&lt;/script></description></item><item><title>我的动漫之旅(My Anime Trip.)</title><link>https://agou-ops.cn/anime/</link><pubDate>Wed, 30 Sep 2020 19:14:44 +0800</pubDate><guid>https://agou-ops.cn/anime/</guid><description>&lt;style>
 @font-face {
 font-family: 'iconFont';
 src: url("/fonts/Cookiemonster-gv11.ttf");
@@ -1781,7 +1781,7 @@ opacity: 1
 &lt;a title="黄前久美子" href="https://zh.moegirl.org.cn/index.php?title=%E9%BB%84%E5%89%8D%E4%B9%85%E7%BE%8E%E5%AD%90" target="_blank">&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Kumiko01.png" />&lt;/a>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js">&lt;/script>
-&lt;script src="https://agou-ops.cn/myBlog/js/layer.js">&lt;/script>
+&lt;script src="https://agou-ops.cn/js/layer.js">&lt;/script>
 &lt;script type="text/javascript">
 document.querySelector("#header > div > a").innerHTML = "✨Anime Lover";
 if (document.body.clientWidth &lt; 767) {
@@ -2845,7 +2845,7 @@ anim: 0
 &lt;ul>
 &lt;li>泡面番🍜：&lt;code>【20】&lt;/code>&lt;/li>
 &lt;li>续集番：&lt;code>【4】&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>【日记】闲鱼垃圾佬的一天</title><link>https://agou-ops.cn/myBlog/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</link><pubDate>Mon, 14 Sep 2020 20:36:21 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</guid><description>&lt;h2 id="购置背景">购置背景&lt;/h2>
+&lt;/ul></description></item><item><title>【日记】闲鱼垃圾佬的一天</title><link>https://agou-ops.cn/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</link><pubDate>Mon, 14 Sep 2020 20:36:21 +0800</pubDate><guid>https://agou-ops.cn/post/%E6%97%A5%E8%AE%B0%E9%97%B2%E9%B1%BC%E5%9E%83%E5%9C%BE%E4%BD%AC%E7%9A%84%E4%B8%80%E5%A4%A9/</guid><description>&lt;h2 id="购置背景">购置背景&lt;/h2>
 &lt;p>　　长达两个多月的菏泽实习结束了，感觉如释重负，终于摆脱了实习带来的困扰和限制，心情也不由地变好了起来。在返校的火车上，闲着没事刷了刷闲鱼，看了看自己这段时间以来卖出的虚拟商品（代搭建博客/代下载GitHub资源等），大概赚了&lt;code>1k&lt;/code>块钱左右吧，呃&amp;hellip;还是蛮不错的。&lt;/p>
 &lt;p>&lt;img src="http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/Screenshot%20from%202020-09-14%2021-04-11.png" alt="">&lt;/p>
 &lt;p>　　然后不经意之间就看到我上上学期买到的&lt;code>蜗牛星际B款双千&lt;/code>（矿难无情人有情），想起来机子还在宿舍桌子上，大半年没动过了，估计已经吃灰了。正当我犹豫是挂闲鱼转手再卖出去时（能小赚一笔），我看到了二手的笔记本拆机屏幕，萌发起重振蜗牛星际的想法，又想了想实习也赚了点小钱，&lt;strong>搞！&lt;/strong>。询问了一圈之后，最终买下了这款型号为&lt;code>友达(AUO)-B101EW05 V1(AUO51D4)&lt;/code>的拆机屏，大小是&lt;code>10.1寸&lt;/code>，最高分辨率为&lt;code>1280*800&lt;/code>，参数如下图所示：&lt;/p>
@@ -2887,7 +2887,7 @@ anim: 0
 &lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ul>
 &lt;li>【装机日常】废旧笔记本不要扔，拆下屏幕，裹上驱动板，做成副屏，隔壁小孩都馋哭啦！： &lt;a href="https%EF%BC%9A//www.youtube.com/watch?v=V1wC3KKF2TM">https：//www.youtube.com/watch?v=V1wC3KKF2TM&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>搭建内网yum源(nginx、ftp)</title><link>https://agou-ops.cn/myBlog/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</link><pubDate>Tue, 04 Aug 2020 10:23:39 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</guid><description>&lt;blockquote>
+&lt;/ul></description></item><item><title>搭建内网yum源(nginx、ftp)</title><link>https://agou-ops.cn/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</link><pubDate>Tue, 04 Aug 2020 10:23:39 +0800</pubDate><guid>https://agou-ops.cn/post/%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91yum%E6%BA%90/</guid><description>&lt;blockquote>
 &lt;p>搭建内网yum源，摆脱软件包困扰。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="选择合适稳定的公网yum仓库">选择合适稳定的公网yum仓库&lt;/h2>
@@ -3158,7 +3158,7 @@ yum &lt;span class="nb">history&lt;/span> info N
 yum &lt;span class="nb">history&lt;/span> undo N
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Git Hook介绍与使用</title><link>https://agou-ops.cn/myBlog/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>Git 钩子和其它版本控制系统一样，Git 能在特定的重要动作发生时触发自定义脚本。&lt;/p>
+&lt;/div></description></item><item><title>Git Hook介绍与使用</title><link>https://agou-ops.cn/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.cn/post/git-hook%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>Git 钩子和其它版本控制系统一样，Git 能在特定的重要动作发生时触发自定义脚本。&lt;/p>
 &lt;p>有两组这样的钩子：客户端的和服务器端的。 客户端钩子由诸如提交和合并这样的操作所调用，而服务器端钩子作用于诸如接收被推送的提交这样的联网操作。 你可以随心所欲地运用这些钩子。&lt;/p>
 &lt;h2 id="安装钩子">安装钩子&lt;/h2>
 &lt;p>钩子都被存储在 Git 目录下的 hooks 子目录中。 也即绝大部分项目中的 &lt;code>.git/hooks&lt;/code> 。 当你用 &lt;code>git init&lt;/code> 初始化一个新版本库时，Git 默认会在这个目录中放置一些示例脚本。 这些脚本除了本身可以被调用外，它们还透露了被触发时所传入的参数。 所有的示例都是 shell 脚本，其中一些还混杂了 Perl 代码，不过，任何正确命名的可执行脚本都可以正常使用 —— 你可以用 Ruby 或 Python，或任何你熟悉的语言编写它们。 这些示例的名字都是以 &lt;code>.sample&lt;/code> 结尾，如果你想启用它们，得先移除这个后缀。
@@ -3398,7 +3398,7 @@ cp -rf &lt;span class="si">${&lt;/span>&lt;span class="nv">TMP_GIT_CLONE&lt;/spa
 &lt;li>&lt;a href="https://www.ituring.com.cn/article/206985">git钩子-图灵社区&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://devslash.net/easy-git-hooks-with-python/">git hooks with python&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.jianshu.com/p/ccd135180783">commit-msg实用示例&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Hexo博客使用gulp压缩静态资源 1</title><link>https://agou-ops.cn/myBlog/post/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90-1/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90-1/</guid><description>&lt;p>gulp 将开发流程中让人痛苦或耗时的任务自动化，从而减少你所浪费的时间、创造更大价值。&lt;/p>
+&lt;/ul></description></item><item><title>Hexo博客使用gulp压缩静态资源 1</title><link>https://agou-ops.cn/post/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90-1/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.cn/post/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90-1/</guid><description>&lt;p>gulp 将开发流程中让人痛苦或耗时的任务自动化，从而减少你所浪费的时间、创造更大价值。&lt;/p>
 &lt;p>官方站点：https://www.gulpjs.com.cn/&lt;/p>
 &lt;!-- raw HTML omitted -->
 &lt;h3 id="1全局安装gulp">1、全局安装gulp&lt;/h3>
@@ -3667,7 +3667,7 @@ console.log(&amp;#34;----------gulp Finished----------&amp;#34;);
 }
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>使用GitHub Actions将文件push到OSS</title><link>https://agou-ops.cn/myBlog/post/%E4%BD%BF%E7%94%A8github-actions%E5%B0%86%E6%96%87%E4%BB%B6push%E5%88%B0oss/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E4%BD%BF%E7%94%A8github-actions%E5%B0%86%E6%96%87%E4%BB%B6push%E5%88%B0oss/</guid><description>&lt;p>阿里云对象存储服务（Object Storage Service，简称OSS）为您提供基于网络的数据存取服务。使用OSS，您可以通过网络随时存储和调用包括文本、图片、音频和视频等在内的各种非结构化数据文件。&lt;/p>
+&lt;/div></description></item><item><title>使用GitHub Actions将文件push到OSS</title><link>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8github-actions%E5%B0%86%E6%96%87%E4%BB%B6push%E5%88%B0oss/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8github-actions%E5%B0%86%E6%96%87%E4%BB%B6push%E5%88%B0oss/</guid><description>&lt;p>阿里云对象存储服务（Object Storage Service，简称OSS）为您提供基于网络的数据存取服务。使用OSS，您可以通过网络随时存储和调用包括文本、图片、音频和视频等在内的各种非结构化数据文件。&lt;/p>
 &lt;p>官方帮助文档：https://help.aliyun.com/document_detail/31883.html&lt;/p>
 &lt;!-- raw HTML omitted -->
 &lt;ol>
@@ -3746,7 +3746,7 @@ console.log(&amp;#34;----------gulp Finished----------&amp;#34;);
 &lt;a href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">GitHub Pages 官方文档&lt;/a>
 &lt;a href="https://lukeboyle.com/blog-posts/2019/08/github-actions-for-web-apps/">Github Actions for web apps&lt;/a>, Luke Boyle
 &lt;a href="https://medium.com/@adam.zolyak/my-first-week-with-github-actions-5d92de4c4851">My First Week With GitHub Actions&lt;/a>, Adam Zolyak&lt;/p>
-&lt;/blockquote></description></item><item><title>编写shell帮助信息通用小技巧</title><link>https://agou-ops.cn/myBlog/post/%E7%BC%96%E5%86%99shell%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</link><pubDate>Tue, 14 Jul 2020 11:00:31 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/%E7%BC%96%E5%86%99shell%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</guid><description>&lt;p>废话少说， 直接上脚本：&lt;/p>
+&lt;/blockquote></description></item><item><title>编写shell帮助信息通用小技巧</title><link>https://agou-ops.cn/post/%E7%BC%96%E5%86%99shell%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</link><pubDate>Tue, 14 Jul 2020 11:00:31 +0800</pubDate><guid>https://agou-ops.cn/post/%E7%BC%96%E5%86%99shell%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</guid><description>&lt;p>废话少说， 直接上脚本：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -3822,7 +3822,7 @@ Options:
 -h &lt;span class="p">|&lt;/span> --help Show this message.
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Web 压测工具</title><link>https://agou-ops.cn/myBlog/post/web-benchmark/</link><pubDate>Tue, 14 Jul 2020 10:23:47 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/web-benchmark/</guid><description>&lt;h2 id="web-benchmark-tools">web benchmark tools&lt;/h2>
+&lt;/div></description></item><item><title>Web 压测工具</title><link>https://agou-ops.cn/post/web-benchmark/</link><pubDate>Tue, 14 Jul 2020 10:23:47 +0800</pubDate><guid>https://agou-ops.cn/post/web-benchmark/</guid><description>&lt;h2 id="web-benchmark-tools">web benchmark tools&lt;/h2>
 &lt;h3 id="apache-bench">Apache Bench&lt;/h3>
 &lt;blockquote>
 &lt;p>ApacheBench 是一个用来衡量http服务器性能的单线程命令行工具。原本针对Apache http服务器，但是也适用于其他http服务器。&lt;/p>
@@ -3889,7 +3889,7 @@ make install
 &lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wrk -t12 -c400 -d30s http://127.0.0.1:8080/index.html
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="待续">待续。。。&lt;/h3></description></item><item><title>ECS-Linux 故障处理</title><link>https://agou-ops.cn/myBlog/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</link><pubDate>Tue, 14 Jul 2020 09:41:39 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</guid><description>&lt;p>&lt;strong>篇幅有限，转至 &lt;a href="https://agou-ops.top/linux_sys_fix">https://agou-ops.top/linux_sys_fix&lt;/a> 进行查看。&lt;/strong>&lt;/p></description></item><item><title>Linux 实时查看网卡流量</title><link>https://agou-ops.cn/myBlog/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 11 Jul 2020 22:12:17 +0800</pubDate><guid>https://agou-ops.cn/myBlog/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><description>&lt;h2 id="nload工具">nload工具&lt;/h2>
+&lt;/div>&lt;h3 id="待续">待续。。。&lt;/h3></description></item><item><title>ECS-Linux 故障处理</title><link>https://agou-ops.cn/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</link><pubDate>Tue, 14 Jul 2020 09:41:39 +0800</pubDate><guid>https://agou-ops.cn/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</guid><description>&lt;p>&lt;strong>篇幅有限，转至 &lt;a href="https://agou-ops.top/linux_sys_fix">https://agou-ops.top/linux_sys_fix&lt;/a> 进行查看。&lt;/strong>&lt;/p></description></item><item><title>Linux 实时查看网卡流量</title><link>https://agou-ops.cn/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 11 Jul 2020 22:12:17 +0800</pubDate><guid>https://agou-ops.cn/post/linux-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><description>&lt;h2 id="nload工具">nload工具&lt;/h2>
 &lt;p>nload用于实时查看网卡流量，默认系统都没有安装，首先安装方式如下：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
