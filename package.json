@@ -3,7 +3,9 @@
     "algolia": "atomic-algolia"
   },
   "dependencies": {
+    "algolia": "^0.0.0",
+    "algoliasearch": "^4.10.5",
+    "atomic-algolia": "^0.3.19",
     "clipboard": "^2.0.6"
-
   }
 }
