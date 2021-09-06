@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 17 Aug 2021 14:08:32 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;p>&lt;strong>岂能尽如人意，但求无愧我心。&lt;/strong>&lt;/p>
 &lt;hr>
 &lt;ul>
-&lt;li>本站地址：&lt;a href="https://agou-ops.top">https://agou-ops.top&lt;/a>&lt;/li>
-&lt;li>备用地址：&lt;a href="https://x.agou-ops.top">https://x.agou-ops.top&lt;/a>&lt;/li>
-&lt;li>my Docs：&lt;a href="https://agou-ops.top/beforeWork">https://agou-ops.top/beforeWork&lt;/a>&lt;/li>
-&lt;li>Docs 备用站点1： &lt;a href="http://bak.agou-ops.top/mydocs">http://bak.agou-ops.top/mydocs&lt;/a>&lt;/li>
-&lt;li>Docs 备用站点2：&lt;a href="https://d.agou-ops.top">https://d.agou-ops.top&lt;/a>&lt;/li>
-&lt;li>myStudyNote：&lt;a href="https://agou-ops.top/myStudyNote">https://agou-ops.top/myStudyNote&lt;/a>&lt;/li>
-&lt;li>发布站点：&lt;a href="http://fabu.agou-ops.top/">http://fabu.agou-ops.top/&lt;/a>&lt;/li>
+&lt;li>本站地址：&lt;a href="https://agou-ops.cn">https://agou-ops.cn&lt;/a>&lt;/li>
+&lt;li>备用地址：&lt;a href="https://agou-ops.cn/myBlog-bak">https://x.agou-ops.cn&lt;/a>&lt;/li>
+&lt;li>my Docs：&lt;a href="https://agou-ops.cn/myDocs">https://agou-ops.cn/myDocs&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>手动编译vim增加X Windows Clipboard功能模块</title><link>https://agou-ops.cn/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</link><pubDate>Tue, 17 Aug 2021 14:08:32 +0800</pubDate><guid>https://agou-ops.cn/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/</guid><description>&lt;p>默认直接通过&lt;code>apt&lt;/code>或者&lt;code>apt-get&lt;/code>安装的vim功能不全，缺少&lt;code>clipboard&lt;/code>功能，原因是debian官方为了兼容性才如此考虑，但debian官方也同样提供了以下几个包来满足GUI需求：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
