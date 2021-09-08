@@ -75,7 +75,8 @@
 
 <!-- Jane theme main style -->
 {{ $style := resources.Get "sass/jane.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="" media="screen" crossorigin="anonymous">
 <!-- End -->
 
 <!-- custom css -->
