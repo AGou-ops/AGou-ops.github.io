@@ -1724,7 +1724,7 @@ border-radius: 10px;
 cursor: url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.ani), url(https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/gam1571.png), auto !important;
 }
 .bg-white {
-opacity: 0.92;
+opacity: 0.89;
 }
 #header>div>a {
 font-family: 'iconFont';
