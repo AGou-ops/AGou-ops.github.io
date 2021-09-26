@@ -451,6 +451,7 @@ tc filter add dev tun0 parent ffff: protocol ip u32 match ip src 10.18.0.0/24 po
 &lt;ul>
 &lt;li>2021-08-20 15:27:56：初始化；&lt;/li>
 &lt;li>2021年08月20日15:27:18 ： 更新vim分屏快捷键以及&lt;code>NERDTree&lt;/code>快捷键；&lt;/li>
+&lt;li>2021年09月18日09:53:28： 更新插件快捷键；&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
 &lt;h2 id="通用技巧">通用技巧&lt;/h2>
@@ -646,6 +647,9 @@ caw 删除整个单词
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">o/O 快速跳转到可视化区域的首段和末端
@@ -654,6 +658,8 @@ U/u 将所选区域字母转换为大写或者小写
 r&amp;lt;字符&amp;gt; 将所选区域的内容全部替换为&amp;lt;字符&amp;gt;内容
 &amp;lt;S-i&amp;gt; 列插入
 $ 列选择, 选择结尾, 使用场景: 为选中区域的行尾添加指定符号
+viw 快速选中当前单词
+ve 快速选中当前字符到单词结尾
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;ul>
@@ -1050,11 +1056,35 @@ doe,john,john@example.com
 :%s//&lt;span class="se">\3&lt;/span>,&lt;span class="se">\2&lt;/span>,&lt;span class="se">\1&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
+&lt;/div>&lt;h2 id="其他hotkeys">其他hotkeys&lt;/h2>
+&lt;p>插件中的hotkey：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">ctrl + p 打开文件搜索
+gd 跳转定义
+ctrl + o 从定义返回
+m 打开nerdtree菜单
+&lt;span class="c1"># simpleflod 快捷键&lt;/span>
+zc/zC 折叠单个/所有
+zo/zO 展开单个/所有
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
 &lt;/div>&lt;h2 id="附录nerdtree-快捷键">附录：NERDTree 快捷键&lt;/h2>
 &lt;script src="https://gist.github.com/geekontheway/2667442.js">&lt;/script>
 &lt;!-- raw HTML omitted -->
 &lt;h2 id="参考链接">参考链接&lt;/h2>
 &lt;ul>
+&lt;li>我的vim dotfile: &lt;a href="https://github.com/AGou-ops/dotfiles">https://github.com/AGou-ops/dotfiles&lt;/a>&lt;/li>
 &lt;li>Vim实用技巧(第2版): &lt;a href="https://agou-images.oss-cn-qingdao.aliyuncs.com/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf">https://agou-images.oss-cn-qingdao.aliyuncs.com/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf&lt;/a>&lt;/li>
 &lt;li>Vim cheatsheet: &lt;a href="https://devhints.io/vim">https://devhints.io/vim&lt;/a>&lt;/li>
 &lt;li>Vim Cheat Sheet: &lt;a href="https://vim.rtorr.com/">https://vim.rtorr.com/&lt;/a>&lt;/li>
@@ -1683,7 +1713,7 @@ font-family: 'iconFont';
 src: url("/fonts/Cookiemonster-gv11.ttf");
 }
 .content-wrapper {
-background-image: url('http://www.dmoe.cc/random.php');
+background-image: url('https://www.dmoe.cc/random.php');
 background-size: 100%;
 background-repeat: no-repeat;
 background-attachment: fixed;
