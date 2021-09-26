@@ -29,6 +29,7 @@ mathjax: false
 >
 > - 2021-08-20 15:27:56：初始化；
 > - 2021年08月20日15:27:18 ： 更新vim分屏快捷键以及`NERDTree`快捷键；
+> - 2021年09月18日09:53:28： 更新插件快捷键；
 
 ## 通用技巧
 
@@ -135,6 +136,9 @@ U/u	将所选区域字母转换为大写或者小写
 r<字符>	将所选区域的内容全部替换为<字符>内容
 <S-i>	列插入
 $	列选择, 选择结尾, 使用场景: 为选中区域的行尾添加指定符号
+
+viw	快速选中当前单词
+ve  快速选中当前字符到单词结尾
 ```
 
 - `Ex` 命令
@@ -348,6 +352,22 @@ doe,john,john@example.com
 :%s//\3,\2,\1
 ```
 
+## 其他hotkeys
+
+
+插件中的hotkey：
+```bash
+ctrl + p		打开文件搜索
+gd 			跳转定义
+ctrl + o 	从定义返回
+m  			打开nerdtree菜单
+
+# simpleflod 快捷键
+zc/zC  		折叠单个/所有
+zo/zO		展开单个/所有
+```
+
+
 ## 附录：NERDTree 快捷键
 
 {{< gist "https://gist.github.com/geekontheway/2667442.js" >}}
@@ -356,6 +376,7 @@ doe,john,john@example.com
 
 ## 参考链接
 
+- 我的vim dotfile: https://github.com/AGou-ops/dotfiles
 - Vim实用技巧(第2版): https://agou-images.oss-cn-qingdao.aliyuncs.com/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf
 - Vim cheatsheet: https://devhints.io/vim
 - Vim Cheat Sheet: https://vim.rtorr.com/

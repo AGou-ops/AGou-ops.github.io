@@ -1,13 +1,13 @@
 #!/bin/sh
 set -e
-hugo && npm run algolia
-cp -rnf content/post/* ../myBlog\ -\ 2/content/posts
-git add -A
-git commit -m "rebuilding site $(date)"
-git push 
+
+rsync -av --progress content/post/* ../myBlog\ -\ 2/content/posts/
+
+/usr/bin/sh ./push.sh
+
+echo "缓一缓"
+sleep 1
 
 cd ../myBlog\ -\ 2
-hugo && npm run algolia
-git add -A
-git commit -m "rebuilding site $(date)"
-git push 
+
+/usr/bin/sh ./push.sh
