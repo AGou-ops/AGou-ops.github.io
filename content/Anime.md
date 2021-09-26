@@ -25,7 +25,7 @@ mathjax: false
 #     weight: 1
 ---
 
-{{< changeBG "https://acg.zjgsuzjx.top/api" >}}
+{{< changeBG "https://acg.toubiec.cn/random.php" >}}
 
 ***按照观看结束时间排序，序号仅用于计数。(2020-03-28 至 ????-??-??)***
 
