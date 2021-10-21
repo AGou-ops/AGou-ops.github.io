@@ -199,7 +199,7 @@
 </code></pre></td></tr></table></div></div><h1 id=写在最后>写在最后</h1><p>本文介绍了kubernetes中的调度机制，默认创建pod是全自动调度机制，调度由kube-scheduler实现，调度过程分为两个阶段调度阶段（过滤和沉重排序）和绑定阶段（在node上运行pod）。通过干预有四种方式：</p><ol><li>指定nodeName</li><li>通过nodeSelector</li><li>通过node affinity和anti-affinity</li><li>通过pod affinity和anti-affinity</li></ol><h1 id=附录>附录</h1><p>调度框架介绍：https://kubernetes.io/docs/concepts/configuration/scheduling-framework/</p><p>Pod调度方法：https://kubernetes.io/docs/concepts/configuration/assign-pod-node/</p><blockquote><p>『 转载 』该文章来源于网络，侵删。</p></blockquote></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
 <span class=item-content><a href=https://agou-ops.cn/author/agou-ops/>AGou-ops</a></span></p><p class=copyright-item><span class=item-title>LastMod</span>
 <span class=item-content>2019-08-04</span></p><p class=copyright-item><span class=item-title>License</span>
-<span class=item-content><a href=https://creativecommons.org/licenses/by-nc-nd/4.0/ rel=noopener target=_blank>CC BY-NC-ND 4.0</a></span></p></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<span class=item-content><a href=http://www.wtfpl.net/about/ rel=noopener target=_blank>WTFPL v2</a></span></p></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
 <label class=reward-button for=reward>Want To Reward Me?</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/wechat.png>
 <span>Wechat</span></label>
 <label class=qr-code-image for=reward><img class=image src=https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/alipay.png>

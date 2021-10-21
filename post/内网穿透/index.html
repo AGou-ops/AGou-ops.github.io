@@ -1,0 +1,367 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>内网穿透工具 - AGou's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content="width"><meta name=HandheldFriendly content="true"><meta name=applicable-device content="pc,mobile"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=mobile-web-app-capable content="yes"><meta name=author content="AGou-ops"><meta name=description content="整理三款流行的内网穿透工具，frp【开源】，nps【开源】，ngrok【基础版免费】，前两款属于开源产品，需要自行搭建，ngrok属于付费产品，但是基础版，白嫖的足够用了.😄"><meta name=keywords content="AGou,AGou-ops,阿狗,阿狗博客,阿狗的博客,AGou blog"><meta name=baidu-site-verification content="eS8otJ2dE7My4oKT"><meta name=generator content="Hugo 0.75.1"><link rel=canonical href=https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/><link rel=icon type=image/x-ico href=https://s1.ax1x.com/2020/05/19/Y4cixe.png><link rel=stylesheet href=/sass/jane.min.d5b9080304304479cf335b97425e7c5ca30fd3190c22d701672dcf4d6ceb0363.css integrity media=screen crossorigin=anonymous><link rel=stylesheet href=/css/layer.css><meta property="og:title" content="内网穿透工具"><meta property="og:description" content="整理三款流行的内网穿透工具，frp【开源】，nps【开源】，ngrok【基础版免费】，前两款属于开源产品，需要自行搭建，ngrok属于付费产品，但是基础版，白嫖的足够用了.😄"><meta property="og:type" content="article"><meta property="og:url" content="https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"><meta property="article:published_time" content="2021-10-21T09:01:46+08:00"><meta property="article:modified_time" content="2021-10-21T09:01:46+08:00"><meta itemprop=name content="内网穿透工具"><meta itemprop=description content="整理三款流行的内网穿透工具，frp【开源】，nps【开源】，ngrok【基础版免费】，前两款属于开源产品，需要自行搭建，ngrok属于付费产品，但是基础版，白嫖的足够用了.😄"><meta itemprop=datePublished content="2021-10-21T09:01:46+08:00"><meta itemprop=dateModified content="2021-10-21T09:01:46+08:00"><meta itemprop=wordCount content="4045"><meta itemprop=keywords content="内网穿透,"><meta name=twitter:card content="summary"><meta name=twitter:title content="内网穿透工具"><meta name=twitter:description content="整理三款流行的内网穿透工具，frp【开源】，nps【开源】，ngrok【基础版免费】，前两款属于开源产品，需要自行搭建，ngrok属于付费产品，但是基础版，白嫖的足够用了.😄"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','G-L2ZSBBBCY0','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>AGou's blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/>主页</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/post/>归档</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/tags/>标签</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/aboutme/>关于</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/anime/>💞Anime</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/myDocsv2 rel=noopener target=_blank>myDocs
+<i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92.0.0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"/><path d="M841.152 457.152c-30.528.0-54.784 24.512-54.784 54.656V786.56H237.696V237.696h206.016c6.656.0 10.752.0 13.248.0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128H183.04C153.216 128 128 152.576 128 182.848c0 3.136.256 6.272.768 9.28C128.256 195.136 128 198.272 128 201.408v639.488c0 .064.0.192.0.256.0.128.0.192.0.32.0 30.528 24.512 54.784 54.784 54.784H829.76c6.592.0 9.728.0 11.712.0 28.736.0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344v-20.352V561.408 512.128C896 481.792 871.424 457.152 841.152 457.152z"/></svg></i></a></li><input size=15 maxlength=15 type=search class=docsearch placeholder="Search Here..."></ul></nav><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css integrity="sha256-LWdHSKWG7zv3DTpee8YAgoTfkj3gNkfauF624h4P2Nw=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css integrity="sha256-Q9bBMw/rHRRag46GDWY84J3elDNc8JJjKXL9tIC4oe8=" crossorigin=anonymous><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><style>.fork-me-on-github{position:absolute;top:0;right:0;border:0}@media(max-width:1080px){.fork-me-on-github{display:none}}</style><a href=https://github.com/AGou-ops><img loading=lazy width=149 height=149 class=fork-me-on-github src=https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/forkme_right_gray_6d6d6d.svg data-recalc-dims=1 alt="Fork me on GitHub"></a><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>AGou's blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/>主页</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/aboutme/>关于</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/anime/>💞Anime</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/myDocsv2 rel=noopener target=_blank>myDocs
+<i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92.0.0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"/><path d="M841.152 457.152c-30.528.0-54.784 24.512-54.784 54.656V786.56H237.696V237.696h206.016c6.656.0 10.752.0 13.248.0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128H183.04C153.216 128 128 152.576 128 182.848c0 3.136.256 6.272.768 9.28C128.256 195.136 128 198.272 128 201.408v639.488c0 .064.0.192.0.256.0.128.0.192.0.32.0 30.528 24.512 54.784 54.784 54.784H829.76c6.592.0 9.728.0 11.712.0 28.736.0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344v-20.352V561.408 512.128C896 481.792 871.424 457.152 841.152 457.152z"/></svg></i></a></li><input size=15 maxlength=15 type=search class=docsearch-input placeholder="Search Here..."></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>内网穿透工具</h1><div class=post-meta><time datetime=2021-10-21 class=post-time>2021-10-21</time><div class=post-category><a href=https://agou-ops.cn/categories/linux/>Linux</a></div><span class=more-meta>4045 words</span>
+<span class=more-meta>9 min read</span>
+<span id=busuanzi_container_page_pv>| 阅读 <span id=busuanzi_value_page_pv></span></span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Table of Contents</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#frp>frp</a></li><li><a href=#nps>nps</a></li><li><a href=#ngrok>ngrok</a></li><li><a href=#参考链接>参考链接</a></li></ul></nav></div></div><div class=post-content><p>整理三款流行的内网穿透工具，<a href=https://github.com/fatedier/frp>frp</a>【开源】，<a href=https://github.com/ehang-io/nps>nps</a>【开源】，<a href=https://ngrok.com/>ngrok</a>【基础版免费】，前两款属于开源产品，需要自行搭建，<code>ngrok</code>属于付费产品，但是基础版，白嫖的足够用了.😄</p><h2 id=frp>frp</h2><blockquote><p>A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.</p><p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p></blockquote><p>frp架构图：</p><p><img src=https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211021094816933.png alt=image-20211021094816933></p><p>⚠️<code>frp</code>如果想外网访问，需要带有公网IP的服务器才可以，另外需要安全组放行相应的端口，要不然嗝屁没法正常访问，如果没有公网IP的服务器，建议使用下面要介绍的<a href=#ngrok>ngrok</a>。</p><p>废话少说，想要了解更多可以去GayHub仓库详细了解，下面开始快速安装步骤：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># frp官方release仓库：https://github.com/fatedier/frp/releases</span>
+<span class=c1># 服务端frps客户端frpc二进制包都在一起，所以下面的步骤基本一样</span>
+$ wget https://github.com/fatedier/frp/releases/download/v0.37.1/frp_0.37.1_linux_amd64.tar.gz
+$ tar xf frp_0.37.1_linux_amd64.tar.g <span class=o>&amp;&amp;</span> <span class=nb>cd</span> frp_0.37.1_linux_amd64
+</code></pre></td></tr></table></div></div><p>以下列举我常用的服务器端以及客户端配置【以后有增加会更新】：</p><ul><li>通过RDP访问内网Windows主机</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># --- server</span>
+<span class=c1># frps.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>bind_port</span> <span class=o>=</span> 7000			<span class=c1># 绑定的端口</span>
+<span class=nv>token</span> <span class=o>=</span> X56Fdsfx			<span class=c1># 用于身份验证，请自行修改，要保证服务端与客户端一致</span>
+<span class=nv>dashboard_port</span> <span class=o>=</span> 7500		<span class=c1># 面板</span>
+<span class=c1># dashboard 用户名密码，默认都为 admin</span>
+<span class=nv>dashboard_user</span> <span class=o>=</span> admin
+<span class=nv>dashboard_pwd</span> <span class=o>=</span> admin
+
+<span class=c1># --- client</span>
+<span class=c1># frpc.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>server_addr</span> <span class=o>=</span> x.x.x.x	<span class=c1>#  公网IP地址</span>
+<span class=nv>server_port</span> <span class=o>=</span> 7000		<span class=c1># 与服务器端的`bind_port`地址一致</span>
+<span class=nv>token</span> <span class=o>=</span> X56Fdsfx		<span class=c1># 用于身份验证，请自行修改，要保证服务端与客户端一致</span>
+
+<span class=o>[</span>rdp<span class=o>]</span>					<span class=c1># 这里面填的时连接名称，可以在dashboard中直观的分辨出你所穿透的服务</span>
+<span class=nb>type</span> <span class=o>=</span> tcp
+<span class=nv>local_ip</span> <span class=o>=</span> 127.0.0.1
+<span class=nv>local_port</span> <span class=o>=</span> <span class=m>3389</span>
+<span class=nv>remote_port</span> <span class=o>=</span> <span class=m>6000</span>
+</code></pre></td></tr></table></div></div><p>✌️ 验证RDP远程访问内网Windows机器：随便找个<code>RDP</code>客户端工具，使用<code>&lt;PUBLIC_IP>:6000</code>连接即可。</p><p>ℹ️小技巧：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-powershell data-lang=powershell><span class=s1>&#39; 针对于Windows，为了方便使用，我们可以将frp添加为开机启动项，或者注册为服务。
+</span><span class=s1>
+</span><span class=s1># 添加为开机启动项
+</span><span class=s1>&#39;</span> <span class=n>文件名为</span><span class=err>：</span><span class=n>start_frpc</span><span class=p>.</span><span class=n>vbs</span><span class=err>，</span><span class=n>内容如下所示</span><span class=err>：</span>
+<span class=n>CreateObject</span><span class=p>(</span><span class=s2>&#34;WScript.Shell&#34;</span><span class=p>).</span><span class=n>Run</span> <span class=s2>&#34;&#34;&#34;D:\frp_windows_amd64\frpc.exe&#34;&#34;&#34;</span> <span class=p>&amp;</span> <span class=s2>&#34;-c&#34;</span> <span class=p>&amp;</span> <span class=s2>&#34;&#34;&#34;D:\frp_windows_amd64\frpc.ini&#34;&#34;&#34;</span><span class=p>,</span><span class=n>0</span>
+<span class=s1>&#39; 将该文件放到：C:\Users\&lt;USER_NAME&gt;\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup文件夹里面即可。
+</span><span class=s1>
+</span><span class=s1># 注册为服务
+</span><span class=s1>&#39;</span> <span class=n>下载一个nssm工具傻瓜式注册服务</span><span class=err>，</span><span class=n>然后将服务类型改为自启动即可</span><span class=err>，</span><span class=n>这个地方我就略过不详细讲了</span><span class=p>.</span>
+</code></pre></td></tr></table></div></div><ul><li>通过SSH访问内网机器（其实和RDP差不多，就不做解释了）</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># --- server</span>
+<span class=c1># frps.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>bind_port</span> <span class=o>=</span> <span class=m>7000</span>
+
+<span class=c1># --- client</span>
+<span class=c1># frpc.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>server_addr</span> <span class=o>=</span> x.x.x.x
+<span class=nv>server_port</span> <span class=o>=</span> <span class=m>7000</span>
+
+<span class=o>[</span>ssh<span class=o>]</span>
+<span class=nb>type</span> <span class=o>=</span> tcp
+<span class=nv>local_ip</span> <span class=o>=</span> 127.0.0.1
+<span class=nv>local_port</span> <span class=o>=</span> <span class=m>22</span>
+<span class=nv>remote_port</span> <span class=o>=</span> <span class=m>6000</span>
+</code></pre></td></tr></table></div></div><p>✌️ 验证SSH访问内网机器：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ ssh -oPort<span class=o>=</span><span class=m>6000</span> &lt;USER_NAME&gt;@&lt;PUBLIC_IP&gt;			<span class=c1># 如ssh -oPort=6000 agou-ops@69.42.6.43</span>
+</code></pre></td></tr></table></div></div><p>frp 会将请求 <code>&lt;PUBLIC_IP>:6000</code> 的流量转发到内网机器的<code>22</code>端口。</p><p>⚠️使用上面的服务直接将SSH暴露于公网之中犹如裸奔，安全隐患极高，使用 <code>stcp(secret tcp)</code> 类型的代理可以避免让任何人都能访问到要穿透的服务，但是访问者也需要运行另外一个 frpc 客户端。其配置文件如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># --- server</span>
+<span class=c1># frps.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>bind_port</span> <span class=o>=</span> <span class=m>7000</span>
+
+<span class=c1># --- client</span>
+<span class=c1># frpc.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>server_addr</span> <span class=o>=</span> x.x.x.x
+<span class=nv>server_port</span> <span class=o>=</span> <span class=m>7000</span>
+
+<span class=o>[</span>secret_ssh<span class=o>]</span>
+<span class=nb>type</span> <span class=o>=</span> stcp
+<span class=c1># 只有 sk 一致的用户才能访问到此服务</span>
+<span class=nv>sk</span> <span class=o>=</span> abcdefg
+<span class=nv>local_ip</span> <span class=o>=</span> 127.0.0.1
+<span class=nv>local_port</span> <span class=o>=</span> <span class=m>22</span>
+
+<span class=c1># --- client，想要访问内网ssh的客户端也需要启动frpc</span>
+<span class=c1># frpc.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>server_addr</span> <span class=o>=</span> x.x.x.x
+<span class=nv>server_port</span> <span class=o>=</span> <span class=m>7000</span>
+
+<span class=o>[</span>secret_ssh_visitor<span class=o>]</span>
+<span class=nb>type</span> <span class=o>=</span> stcp
+<span class=c1># stcp 的访问者</span>
+<span class=nv>role</span> <span class=o>=</span> visitor
+<span class=c1># 要访问的 stcp 代理的名字</span>
+<span class=nv>server_name</span> <span class=o>=</span> secret_ssh
+<span class=nv>sk</span> <span class=o>=</span> abcdefg
+<span class=c1># 绑定本地端口用于访问 SSH 服务</span>
+<span class=nv>bind_addr</span> <span class=o>=</span> 127.0.0.1
+<span class=nv>bind_port</span> <span class=o>=</span> <span class=m>6000</span>
+</code></pre></td></tr></table></div></div><p>✌️验证：访问本地<code>6000</code>端口即可内网穿透到我们所需的另一台内网客户端机器.</p><p>使用以上类型<code>stcp</code>的流量会通过服务器，如果希望传输大量数据且流量不经过服务器，可以使用<a href=https://gofrp.org/docs/examples/xtcp/>点对点内网穿透xctp</a>，这里我就不过多介绍，感兴趣或者有需要的可以去了解了解。</p><ul><li>通过WEB访问内网网站服务</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># --- server</span>
+<span class=c1># frps.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>bind_port</span> <span class=o>=</span> <span class=m>7000</span>
+<span class=nv>vhost_http_port</span> <span class=o>=</span> <span class=m>8080</span>
+
+<span class=c1># --- client</span>
+<span class=c1># frpc.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>server_addr</span> <span class=o>=</span> x.x.x.x
+<span class=nv>server_port</span> <span class=o>=</span> <span class=m>7000</span>
+
+<span class=o>[</span>web<span class=o>]</span>
+<span class=nb>type</span> <span class=o>=</span> http
+<span class=nv>local_port</span> <span class=o>=</span> <span class=m>80</span>
+<span class=nv>custom_domains</span> <span class=o>=</span> agou-ops.cn
+
+<span class=o>[</span>web2<span class=o>]</span>
+<span class=nb>type</span> <span class=o>=</span> http
+<span class=nv>local_port</span> <span class=o>=</span> <span class=m>8080</span>
+<span class=nv>custom_domains</span> <span class=o>=</span> agou-ops.cn
+
+<span class=c1># 【可选】以下为将本地http服务转换为https服务并对外提供的插件配置</span>
+<span class=c1># -----------------------------</span>
+<span class=nv>plugin</span> <span class=o>=</span> https2http
+<span class=nv>plugin_local_addr</span> <span class=o>=</span> 127.0.0.1:80
+
+<span class=c1># HTTPS 证书相关的配置</span>
+<span class=nv>plugin_crt_path</span> <span class=o>=</span> ./server.crt
+<span class=nv>plugin_key_path</span> <span class=o>=</span> ./server.key
+<span class=nv>plugin_host_header_rewrite</span> <span class=o>=</span> 127.0.0.1
+plugin_header_X-From-Where <span class=o>=</span> frp
+<span class=c1># -----------------------------</span>
+</code></pre></td></tr></table></div></div><p>✌️ 验证外网访问内网WEB：</p><blockquote><ol><li>将 <code>agou-ops.cn</code> 和 <code>agou-ops.cn</code> 的域名 A 记录解析到 IP <code>x.x.x.x</code>，如果服务器已经有对应的域名，也可以将 <code>CNAME</code> 记录解析到服务器原先的域名。或者可以通过修改 HTTP 请求的 Host 字段来实现同样的效果。</li><li>通过浏览器访问 <code>http://agou-ops.cn:8080</code> 即可访问到处于内网机器上 80 端口的服务，访问 <code>http://agou-ops.cn:8080</code> 则访问到内网机器上 8080 端口的服务。</li></ol></blockquote><ul><li>外网访问内网文件</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># --- server</span>
+<span class=c1># frps.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>bind_port</span> <span class=o>=</span> <span class=m>7000</span>
+
+<span class=c1># --- client</span>
+<span class=c1># frpc.ini文件内容如下</span>
+<span class=o>[</span>common<span class=o>]</span>
+<span class=nv>server_addr</span> <span class=o>=</span> x.x.x.x
+<span class=nv>server_port</span> <span class=o>=</span> <span class=m>7000</span>
+
+<span class=o>[</span>test_static_file<span class=o>]</span>
+<span class=nb>type</span> <span class=o>=</span> tcp
+<span class=nv>remote_port</span> <span class=o>=</span> <span class=m>6000</span>
+<span class=nv>plugin</span> <span class=o>=</span> static_file
+<span class=c1># 要对外暴露的文件目录</span>
+<span class=nv>plugin_local_path</span> <span class=o>=</span> /tmp/file
+<span class=c1># 用户访问 URL 中会被去除的前缀，保留的内容即为要访问的文件路径</span>
+<span class=nv>plugin_strip_prefix</span> <span class=o>=</span> static
+<span class=nv>plugin_http_user</span> <span class=o>=</span> abc
+<span class=nv>plugin_http_passwd</span> <span class=o>=</span> abc
+</code></pre></td></tr></table></div></div><p>✌️ 验证外网访问内网指定目录：通过浏览器访问 <a href=http://x.x.x.x>http://x.x.x.x</a>:6000/static/ 来查看位于<code>/tmp/file</code>目录下的文件，会要求输入已设置好的用户名和密码。</p><p><strong>编写完配置文件之后，先通过 <code>./frps -c ./frps.ini</code> 启动服务端，再通过 <code>./frpc -c ./frpc.ini</code> 启动客户端。如果需要在后台长期运行，建议结合其他工具使用，例如 <code>systemd</code> 和 <code>supervisor</code>。</strong></p><p>Done.</p><p>附：Dashboard样例图</p><p><img src=https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211021110047098.png alt=image-20211021110047098></p><p>该小节部分内容来源于官方文档，详情请查看<a href=#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5>参考链接</a>。</p><h2 id=nps>nps</h2><blockquote><p>nps是一款轻量级、高性能、功能强大的<strong>内网穿透</strong>代理服务器。目前支持<strong>tcp、udp流量转发</strong>，可支持任何<strong>tcp、udp</strong>上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还<strong>支持内网http代理、内网socks5代理</strong>、<strong>p2p等</strong>，并带有功能强大的web管理端。</p></blockquote><p>同样，直接快速开始，不过多介绍：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># nps的客户端和服务端是分离开的，需要分别单独下载</span>
+
+<span class=c1># 服务端</span>
+$ wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_server.tar.gz
+$ tar xf linux_amd64_server.tar.gz
+$ sudo mv nps /usr/local/bin		<span class=c1># 自己做软连接也可以</span>
+
+<span class=c1># 客户端</span>
+$ wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz
+$ tar xf linux_amd64_client.tar.gz
+$ sudo mv npc /usr/local/bin
+</code></pre></td></tr></table></div></div><p>安装与启动服务端与客户端的连接服务端：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 服务端</span>
+$ nps install			<span class=c1># 安装，该命令完成之后会在当前目录生成一个conf目录和一个web目录，文件用途显而易见</span>
+<span class=c1># 服务端配置文件需要修改的东西很少，按需进行调整即可，终端获取公网ip可以使用curl ifconfig.me或者curl ip.cip.cc等接口获取。</span>
+$ sed -i <span class=s1>&#39;s/web_host=.*/web_host=&lt;YOUR_PUBLIC_IP&gt;/&#39;</span> nps.conf
+$ nps start 			<span class=c1># 启动</span>
+
+<span class=c1># 客户端连接服务端</span>
+$ npc -server<span class=o>=</span>&lt;YOUR_PUBLIC_IP&gt;:8024 -vkey<span class=o>=</span>&lt;客户端的密钥&gt;		<span class=c1># 这个8024端口对应server端`nps.conf`中的bridge_port参数</span>
+</code></pre></td></tr></table></div></div><blockquote><p>停止和重启可用，stop和restart</p><p><strong>如果发现没有启动成功，可以使用<code>nps(.exe) stop</code>，然后运行<code>nps.(exe)</code>运行调试，或查看日志</strong>(Windows日志文件位于当前运行目录下，linux和darwin位于/var/log/nps.log)</p><ul><li>访问服务端ip:web服务端口（默认为8080）</li><li>使用用户名和密码登陆（默认admin/123，正式使用一定要更改）</li><li>创建客户端</li></ul></blockquote><p>客户端密钥可以从web页面中获取：</p><p><img src=https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211021155239660.png alt=image-20211021155239660></p><p>上图也是新建客户端的步骤（说是步骤，基本是没有，xd）。</p><p>新建完客户端之后就可以建立隧道连接了，这里以HTTP服务为例：</p><p><img src=https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211021155808549.png alt=image-20211021155808549></p><p>傻瓜式配置，我就不多说了，<code>客户端ID</code>即为你上面创建的那个，可以去<code>客户端</code>页面中进行查看。</p><p>✌️验证：访问公网的9090端口，即访问的是内网指定IP和端口的应用。</p><p>附：<code>nps.conf</code>配置文件名称及含义（来自官方文档）：</p><table><thead><tr><th>名称</th><th>含义</th></tr></thead><tbody><tr><td>web_port</td><td>web管理端口</td></tr><tr><td>web_password</td><td>web界面管理密码</td></tr><tr><td>web_username</td><td>web界面管理账号</td></tr><tr><td>web_base_url</td><td>web管理主路径,用于将web管理置于代理子路径后面</td></tr><tr><td>bridge_port</td><td>服务端客户端通信端口</td></tr><tr><td>https_proxy_port</td><td>域名代理https代理监听端口</td></tr><tr><td>http_proxy_port</td><td>域名代理http代理监听端口</td></tr><tr><td>auth_key</td><td>web api密钥</td></tr><tr><td>bridge_type</td><td>客户端与服务端连接方式kcp或tcp</td></tr><tr><td>public_vkey</td><td>客户端以配置文件模式启动时的密钥，设置为空表示关闭客户端配置文件连接模式</td></tr><tr><td>ip_limit</td><td>是否限制ip访问，true或false或忽略</td></tr><tr><td>flow_store_interval</td><td>服务端流量数据持久化间隔，单位分钟，忽略表示不持久化</td></tr><tr><td>log_level</td><td>日志输出级别</td></tr><tr><td>auth_crypt_key</td><td>获取服务端authKey时的aes加密密钥，16位</td></tr><tr><td>p2p_ip</td><td>服务端Ip，使用p2p模式必填</td></tr><tr><td>p2p_port</td><td>p2p模式开启的udp端口</td></tr><tr><td>pprof_ip</td><td>debug pprof 服务端ip</td></tr><tr><td>pprof_port</td><td>debug pprof 端口</td></tr><tr><td>disconnect_timeout</td><td>客户端连接超时，单位 5s，默认值 60，即 300s = 5mins</td></tr></tbody></table><h2 id=ngrok>ngrok</h2><p>首先注册一个<code>ngrok</code>账号，<a href=https://ngrok.com/>官网地址</a>，注册登录之后会跳转一个<a href=https://dashboard.ngrok.com/get-started/setup>快速开始页面</a>，如下所示，安装对应操作系统及架构的二进制包即可使用：</p><p><img src=https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211021092125885.png alt=image-20211021092125885></p><p>官网讲的很详细，这里我就简单的把要使用的命令罗列出来，方便使用：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 这里以linux系统为例</span>
+$ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+$ unzip ngrok-stable-linux-amd64.zip
+$ sudo mv ngrok /usr/local/bin
+<span class=c1># 验证ngrok是否成功安装</span>
+$ ngrok version
+ngrok version 2.3.40
+<span class=c1># 获取你的token，https://dashboard.ngrok.com/get-started/your-authtoken</span>
+$ ngrok authtoken &lt;YOUR_TOKEN_HERE&gt; 		<span class=c1># 该命令执行之后会在用户家目录生成一个token文件，路径为~/.ngrok2/ngrok.yml</span>
+</code></pre></td></tr></table></div></div><p>这里我随便起个web服务，以我的博客<code>hugo</code>为例：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ <span class=nb>cd</span> myWeb/myBlog <span class=o>&amp;&amp;</span> hugo server			<span class=c1># hugo默认会监听在本地localhost:1313端口</span>
+<span class=c1># 启用一个http隧道来外网远程访问本地博客</span>
+$ ngrok http <span class=m>1313</span> 
+</code></pre></td></tr></table></div></div><p><img src=https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211021093201714.png alt=image-20211021093201714></p><p>可以看到<code>ngrok</code>服务已经正常运行，而且给出了远程访问的http地址和https地址，复制到浏览器即可外网远程访问本地web服务.</p><p>此外，<code>ngrok</code>还内置了一个web接口，即图上的<code>Web Interface</code>，默认地址是http://127.0.0.1:4040</p><p><img src=https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211021093501423.png alt=image-20211021093501423></p><p>可以看到<code>ngrok</code>的一些状态以及一些对资源的分析内容。</p><p>总之，<code>ngrok</code>非常的方便易用，最重要的一点是无需自备服务器，开箱即用，<code>ngrok</code>还提供有其他增强型功能，比如自定义域名、IP黑白名单、隧道客户端、TLS、IP规则等等，但这些都是付费内容，想白嫖的就别想了. 😆</p><h2 id=参考链接>参考链接</h2><ul><li>frp GitHub repo: <a href=https://github.com/fatedier/frp>https://github.com/fatedier/frp</a></li><li>nps GitHub repo: <a href=https://github.com/ehang-io/nps>https://github.com/ehang-io/nps</a></li><li>ngrok Offical website: <a href=https://ngrok.com/>https://ngrok.com/</a></li></ul></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content><a href=https://agou-ops.cn/author/agou-ops/>AGou-ops</a></span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2021-10-21</span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a href=http://www.wtfpl.net/about/ rel=noopener target=_blank>WTFPL v2</a></span></p></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>Want To Reward Me?</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/wechat.png>
+<span>Wechat</span></label>
+<label class=qr-code-image for=reward><img class=image src=https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/alipay.png>
+<span>Alipay</span></label></div></div><footer class=post-footer><div class=post-tags><a href=https://agou-ops.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/>内网穿透</a></div><nav class=post-nav><a class=next href=/post/%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91vim%E5%A2%9E%E5%8A%A0x-windows-clipboard%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/><span class="next-text nav-default">手动编译vim增加X Windows Clipboard功能模块</span>
+<span class="prev-text nav-mobile">Next</span>
+<i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"/></svg></i></a></nav></footer></article><div class="post bg-white"><script src=https://utteranc.es/client.js repo=AGou-ops/comments issue-term=pathname theme=github-light crossorigin=anonymous async></script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=mailto:agou-ops@foxmail.com rel="me noopener" class=iconfont title=email><svg class="icon" viewBox="0 0 1451 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36"><path d="M664.781909 681.472759.0 97.881301C0 3.997201 71.046997.0 71.046997.0H474.477909 961.649408 1361.641813S1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759S764.482731 685.154773 753.594283 688.65053V688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858V688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759zM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633.0 212.052267.0 212.052267V942.809523L83.726336 1024H682.532949 753.579947 1348.948139L1432.688811 942.809523V212.052267S893.138176 701.759633 817.019477 767.734955C777.248 802.205449 742.347691 811.03081 718.063616 811.603883z"/></svg></a><a href=https://space.bilibili.com/283008785 rel="me noopener" class=iconfont title=bilibili target=_blank><svg class="icon" viewBox="0 0 1024 1024" width="36" height="36" id="svg8"><path d="M744.60599.00486267A41.779915 41.779915.0 00710.4184 18.673394L548.5048 255.32642h-11.70046a41.779915 41.779915.0 00-10.80295-7.84928L235.66 97.084498a41.779915 41.779915.0 00-20.07193-4.960864 41.779915 41.779915.0 00-18.3748 79.145436L359.4859 255.32642H128.16909c-49.458302.0-89.27932 39.82105-89.27932 89.27932v508.65224c0 49.4583 39.821018 89.27934 89.27932 89.27934h19.48445C149.12802 984.5043 179.92773 1024 224.79179 1024c44.86407.0 75.66379-39.4957 77.13826-81.46268H719.98116C721.45559 984.5043 752.25533 1024 797.1194 1024c44.86406.0 75.6638-39.4957 77.13824-81.46268h21.57323c49.45831.0 89.27936-39.82104 89.27936-89.27934V344.60574c0-49.45827-39.82105-89.27932-89.27936-89.27932H649.74567L779.38103 65.866924A41.779915 41.779915.0 00744.60599.00486267zM644.49108 418.70871c6.29985.21538 12.44451 2.01107 17.86888 5.22196l171.36218 98.10771c18.23417 10.21935 24.63334 33.34627 14.24614 51.48533-10.38726 18.13909-33.57344 24.32718-51.61587 13.77296L624.9903 489.18895c-15.21356-8.41858-22.66871-26.1765-18.03211-42.93436 4.63664-16.75784 20.15573-28.14465 37.53289-27.54588zM350.2006 432.31846c16.89952.0317 31.69582 11.33328 36.17844 27.62747 4.48262 16.2942-2.44981 33.57765-16.95507 42.24898l-140.7157 86.91312c-17.68528 11.18244-41.09629 5.77692-52.08912-12.02686-10.99282-17.80373-5.33855-41.15658 12.58167-51.95857L329.9002 438.2095c6.0643-3.86439 13.10951-5.90891 20.3004-5.89104zM501.605 641.53985c3.75002-.15248 7.48645.53903 10.93349 2.0235.15842.0637.31618.12888.47325.19582.59328.27092 1.17574.56489 1.74609.88121.15868.0854.31643.17233.47325.2611.55694.32165 1.10131.66458 1.63185 1.02807.16455.1123.32777.2265.48956.34269.50382.36781.99371.75428 1.46868 1.15864.18724.15504.37218.31282.55484.47323.43271.38784.8518.79061 1.25653 1.20756.15449.16114.30679.32437.45693.48959.40798.44266.79989.89988 1.17494 1.37076.17799.22544.35205.45395.5222.68538.25932.34701.50964.70071.75064 1.06071.26712.39516.52286.79784.76699 1.20757.16907.29043.33231.58424.48957.88123.21836.41297.42513.83199.62009 1.25653.14836.32333.28983.64976.42429.97911.21319.51552.40915 1.03801.58747 1.5666.0677.19499.13296.39085.19582.58748.18652.60823.34984 1.22334.48957 1.84399.0397.16277.0779.32601.11423.48957.1436.69112.25788 1.38801.34269 2.08877.005.0381.0111.0761.0163.11424.0857.78056.13474 1.56471.14687 2.34988.005.0543.0111.10879.0163.1632.0.0-.008 1.12132.0 1.45234.0.0-.14697 17.84761 5.89102 34.12231 3.01902 8.13734 7.33278 15.10615 12.61433 19.61501 5.28157 4.50889 11.42894 7.62081 23.64572 7.62081 12.2168.0 18.36416-3.11192 23.64573-7.62081 5.28154-4.50886 9.5953-11.47767 12.6143-19.61501 6.03799-16.2747 5.89103-34.12231 5.89103-34.12231-.44885-13.87045 10.45922-25.46302 24.3311-25.86506 13.87189-.40201 25.42828 10.53953 25.78348 24.41272.0.0 1.11929 25.7226-9.00791 53.01927-5.06359 13.64832-13.1986 28.46036-27.05631 40.29073-13.85772 11.83039-33.5454 19.63135-56.20142 19.63135-22.65603.0-42.34371-7.80096-56.20141-19.63135-4.1801-3.56856-7.78733-7.42433-10.99878-11.42303-3.21235 4.00037-6.81703 7.85309-10.99876 11.42303-13.85773 11.83039-33.5454 19.63135-56.20144 19.63135-22.65601.0-42.3437-7.80096-56.2014-19.63135-13.85775-11.83037-21.99272-26.64241-27.05632-40.29073-10.12725-27.29667-9.00789-53.01928-9.00789-53.01927.20714-13.83687 11.58744-24.88848 25.42444-24.69013 14.1263.19991 25.2971 12.0278 24.69011 26.14247.0.0-.14697 17.84761 5.89103 34.12231 3.01902 8.13734 7.31646 15.10615 12.598 19.61501 5.28155 4.50889 11.44526 7.62081 23.66203 7.62081 12.21681.0 18.36418-3.11192 23.64573-7.62081 5.28154-4.50886 9.57899-11.47767 12.598-19.61501 5.76352-15.53489 5.89112-32.05691 5.89103-33.56746.006-.37466.0111-1.05336.0163-1.20759-.0117-.74583.0105-1.49177.0652-2.23565.009-.15784.0204-.31561.0327-.47324.14204-1.56859.43163-3.12027.86487-4.63449.0213-.0763.0433-.15244.0652-.22848 3.0335-10.25748 12.24157-17.46007 22.92769-17.93417z" id="rect824"/></svg></a><a href=https://www.youtube.com/channel/UCkLgMBY9hnLegjLTulM1guw rel="me noopener" class=iconfont title=youtube target=_blank><svg fill="#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="36" height="36"><path fill-rule="evenodd" d="M13 5l3 9v6h2V14l3-9H19l-2 6-2-6zM24 9C22.933594 9 22.410156 9.167969 21.757813 9.703125 21.132813 10.230469 20.960938 10.636719 21 12v5C21 17.996094 21.164063 18.652344 21.765625 19.234375 22.390625 19.816406 22.980469 20 24 20 25.066406 20 25.648438 19.816406 26.25 19.234375 26.875 18.675781 27 17.996094 27 17V12C27 11.117188 26.84375 10.28125 26.238281 9.722656 25.613281 9.148438 24.96875 9 24 9zm5 0v9C29 18.972656 29.980469 20 31 20S32.558594 19.488281 33 19v1h2V9H33v8C32.988281 17.683594 32.183594 18 32 18 31.792969 18 31 17.957031 31 17V9zm-5 2C24.300781 11 25 10.996094 25 12v5C25 17.96875 24.324219 18 24 18 23.699219 18 23 17.988281 23 17V12C23 11.183594 23.433594 11 24 11zM10 22C6.40625 22 4 24.382813 4 28v9.5C4 41.117188 6.40625 44 10 44H40C43.59375 44 46 41.617188 46 38V28C46 24.382813 43.59375 22 40 22zm2 4h6v2H16V40H14V28H12zm14 0h2v4C28.230469 29.640625 28.574219 29.355469 28.902344 29.195313 29.222656 29.03125 29.546875 28.9375 29.875 28.9375 30.523438 28.9375 31.03125 29.171875 31.378906 29.609375 31.726563 30.050781 32 30.636719 32 31.5v6C32 38.242188 31.75 38.703125 31.421875 39.097656 31.101563 39.492188 30.621094 39.992188 30 40 28.949219 40.011719 28.386719 39.449219 28 39v1H26zm-8 3h2v8C20 37.230469 20.269531 38.007813 21 38 21.8125 37.992188 21.820313 37.234375 22 37V29h2V40H22V39C21.628906 39.4375 21.4375 39.574219 21.019531 39.78125 20.605469 40.015625 20.183594 40 19.792969 40 19.308594 40 18.757813 39.5625 18.5 39.234375 18.269531 38.933594 18 38.625 18 38zm18.199219.0C37.148438 29 37.816406 29.203125 38.320313 29.734375 38.835938 30.265625 39 30.886719 39 31.886719V35H35v1.546875C35 37.105469 35.074219 37.460938 35.21875 37.671875 35.355469 37.902344 35.632813 38.003906 36 38 36.40625 37.996094 36.664063 37.914063 36.800781 37.730469 36.941406 37.566406 37 37.101563 37 36.5V36h2v.59375C39 37.683594 38.914063 38.496094 38.375 39.027344 37.867188 39.585938 37.074219 39.84375 36.035156 39.84375 35.085938 39.84375 34.34375 39.5625 33.8125 38.984375S33.003906 37.613281 33.003906 36.59375V31.886719C33.003906 30.980469 33.320313 30.308594 33.902344 29.710938 34.371094 29.230469 35.25 29 36.199219 29zM29 30.5C28.449219 30.5 28.007813 30.996094 28 31.5v6C28.007813 37.789063 28.449219 38 29 38S30 37.574219 30 37.023438V32C30 31 29.550781 30.5 29 30.5zm7 .5C35.449219 31 35.007813 31.464844 35 32v1h2V32C37 31.386719 36.550781 31 36 31z"/></svg></a><a href=https://twitter.com/AgouOps rel="me noopener" class=iconfont title=twitter target=_blank><svg class="icon" viewBox="0 0 1264 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36"><path d="M1229.8616 18.043658s-117.852626 63.135335-164.151872 67.344358c-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"/></svg></a><a href=https://github.com/AGou-ops rel="me noopener" class=iconfont title=github target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36"><path d="M512 12.672c-282.88.0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667.0-12.16-.426667-44.373333-.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333.0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333.0.0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667.0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72.0 68.522667-.64 123.562667-.64 140.202666.0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"/></svg></a><a href=https://agou-ops.cn/index.xml rel="noopener alternate" type=application/rss+xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 01140.501333 140.586667A140.928 140.928.0 01140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=copyright-year>&copy;
+2018 -
+2021
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>AGou-ops</span></span>
+<span class=power-by><a title="Host on GitHub & AliOSS"><img alt="Ecologi (Carbon Offset)" src=https://img.shields.io/badge/Host%20on-GitHub%20%26%20AliOSS-blue></a></span>
+<span class=theme-info><a title="Provided by Algolia & utteranc"><img alt="Ecologi (Carbon Offset)" src=https://img.shields.io/badge/Providers-Algolia%20%26%20utteranc-brightgreen></a></span></br><span id=busuanzi_container style=font-size:15px>访客数/访问量：<span id=busuanzi_value_site_uv></span>/<span id=busuanzi_value_site_pv></span></span>
+<span><a class=theme-link href=https://beian.miit.gov.cn style=font-size:15px>鲁ICP备19050296号-2</a></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777zm0 0"/></svg></i></div></div><script type=text/javascript src=https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js crossorigin=anonymous></script><script type=text/javascript src=https://cdn.bootcss.com/slideout/1.0.1/slideout.min.js crossorigin=anonymous></script><script type=text/javascript src=/js/main.5807252ad094527cad5c7951a7789078ffbe07989e278d5d65298bfbaa35c615.js integrity crossorigin=anonymous></script><script id=baidu_push>(function(){if(window.location.hostname==='localhost')return;var bp=document.createElement('script');bp.async=true;var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js';}else{bp.src='http://push.zhanzhang.baidu.com/push.js';}
+var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp,s);})();</script><script src=/js/load-photoswipe.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin=anonymous></script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><script src=https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js></script><script>docsearch({apiKey:"6a2c773473e3d77a8e761f3f64825c5a",indexName:"main-blog",appId:"5M8VQRD7W9",inputSelector:'.docsearch-input',debug:false,});</script><script src=https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js></script><script>docsearch({apiKey:"6a2c773473e3d77a8e761f3f64825c5a",indexName:"main-blog",appId:"5M8VQRD7W9",inputSelector:'.docsearch',debug:false,});</script><script src=/js/layer.js></script></body></html>
