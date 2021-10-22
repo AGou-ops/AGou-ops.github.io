@@ -27,5 +27,16 @@ mathjax: false
 
 * 本站地址：[https://agou-ops.cn](https://agou-ops.cn)  
 * 备用地址：[https://x.agou-ops.cn](https://agou-ops.cn/myBlog-bak)  
-* my Docs：[https://agou-ops.cn/myDocs](https://agou-ops.cn/myDocs)  
+* my Docs：[https://agou-ops.cn/myDocs](https://agou-ops.cn/myDocs)
 
+## License
+
+本站所有原创内容开源许可协议均为：**`WTFPL`**
+
+> **何为`WTFPL`？**
+>
+> **[Do What the Fuck You Want to Public License](http://www.wtfpl.net/)**【意思自行体会】
+>
+> *The WTFPL is a very permissive license for software and other scientific or artistic works that offers a great degree of freedom. In fact, it is probably the best license out there. *
+
+{{< figure src="https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211022084650825.png" title="图片来源于WTFPL官网" >}}
