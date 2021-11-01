@@ -21,7 +21,7 @@ reward: false
 mathjax: false
 ---
 
-**岂能尽如人意，但求无愧我心。**
+{{< info >}}
 
 ---
 
