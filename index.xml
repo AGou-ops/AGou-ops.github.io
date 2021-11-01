@@ -1,4 +1,141 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 21 Oct 2021 09:01:46 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;p>&lt;strong>岂能尽如人意，但求无愧我心。&lt;/strong>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 21 Oct 2021 09:01:46 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;!DOCTYPE html>
+&lt;html lang="en" >
+&lt;head>
+&lt;meta charset="UTF-8">
+&lt;title>CodePen - CSS 3D Flip Box&lt;/title>
+&lt;style>
+.panel {
+margin: 0 auto;
+height: 90px;
+width: auto;
+position: relative;
+-webkit-perspective: 600px;
+-moz-perspective: 600px;
+}
+.panel .front,
+.panel .back {
+text-align: center;
+}
+.panel .front {
+height: inherit;
+position: absolute;
+top: 0;
+z-index: 900;
+text-align: center;
+-webkit-transform: rotateX(0deg) rotateY(0deg);
+-moz-transform: rotateX(0deg) rotateY(0deg);
+-webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+-ms-transition: all .4s ease-in-out;
+-o-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
+.panel .back {
+height: inherit;
+position: absolute;
+top: 0;
+z-index: 1000;
+-webkit-transform: rotateY(-180deg);
+-moz-transform: rotateY(-180deg);
+-webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+-ms-transition: all .4s ease-in-out;
+-o-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
+.panel.flip .front {
+z-index: 900;
+-webkit-transform: rotateY(180deg);
+-moz-transform: rotateY(180deg);
+}
+.panel.flip .back {
+z-index: 1000;
+-webkit-transform: rotateX(0deg) rotateY(0deg);
+-moz-transform: rotateX(0deg) rotateY(0deg);
+}
+.box1{
+background-color: #c05b4d;
+color: #ffffff;
+width: max-content;
+font-weight: bolder;
+height: auto;
+margin: 0 auto;
+padding: 10px;
+border-radius: 10px;
+display: inline-block;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+}
+.box2{
+background-color: #000000;
+color: #00FF00;
+font-weight: bolder;
+border-style: dashed;
+border-color: #00FF00;
+width: auto;
+height: auto;
+margin: 0 auto;
+padding: 1px;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+}
+&lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div class="wrapper">
+&lt;div class="col_third">
+&lt;div class="hover panel">
+&lt;div class="front">
+&lt;div class="box1">
+&lt;p>岂能尽如人意，但求无愧我心。&lt;/p>
+&lt;/div>&lt;/b>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hover here to show all your network information.&lt;/b>
+&lt;/div>
+&lt;div class="back">
+&lt;div class="box2">
+&lt;p style="text-align: left; color: whitesmoke; font-size: small;">All your network information is shown below:&lt;/p>
+&lt;center>
+&lt;p id="IPAddr">&lt;/p>
+&lt;p id="AddressFullText">&lt;/p>
+&lt;p id="os">&lt;/p>
+&lt;p id="UserAgent">&lt;/p>
+&lt;/center>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'>&lt;/script>
+&lt;script type="text/javascript">
+$(document).ready(function(){
+$('.hover').hover(function(){
+$(this).addClass('flip');
+},function(){
+$(this).removeClass('flip');
+});
+});
+&lt;/script>
+&lt;script src="https://agou-ops.cn/js/ua-parser.min.js">&lt;/script>
+&lt;script>
+$.getJSON("https://ipv4.ipw.cn/api/ip/locate", function(data) {
+$("#IPAddr").html(data.IPVersion + ": " + data.IP)
+$("#AddressFullText").html("Location: " + data.AddressFullText + " " + data.ISP)
+var parser = new UAParser();
+var result = parser.getResult();
+$("#os").html("OS: " + result.os.name + " " + result.os.version + "（Arch: " + result.cpu.architecture + "）");
+$("#UserAgent").html("UserAgent: " + result.ua);
+})
+&lt;/script>
+&lt;/body>
+&lt;/html>
 &lt;hr>
 &lt;ul>
 &lt;li>本站地址：&lt;a href="https://agou-ops.cn">https://agou-ops.cn&lt;/a>&lt;/li>
