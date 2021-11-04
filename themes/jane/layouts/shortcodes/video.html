@@ -29,11 +29,19 @@
         hotkey: true, 	                                 
         preload: 'auto',                                
         volume	: 0.7,                                    
-        mutex: true,                                    
+        mutex: true,    
+        logo: 'https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/youtube.png',                                
         video: {
             type: 'auto',
             url: '{{ .Get "link" }}',      
             pic: '{{ .Get "pic" }}'         
+        },
+        subtitle: {
+            type: 'webvtt',
+            url: '{{ .Get "subtitle" }}',
+            fontSize: '20px',
+            bottom: '40px',
+            color: '#fff'
         },
         contextmenu: [                                 
             {
