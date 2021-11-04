@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 21 Oct 2021 09:01:46 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 02 Nov 2021 14:30:23 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;!DOCTYPE html>
 &lt;html lang="en" >
 &lt;head>
 &lt;meta charset="UTF-8">
@@ -161,7 +161,313 @@ itemscope itemtype="http://schema.org/ImageObject" >
 &lt;figcaption>&lt;h4>图片来源于WTFPL官网&lt;/h4>
 &lt;/figcaption>
 &lt;/figure>
-&lt;/div></description></item><item><title>内网穿透工具</title><link>https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link><pubDate>Thu, 21 Oct 2021 09:01:46 +0800</pubDate><guid>https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid><description>&lt;p>整理三款流行的内网穿透工具，&lt;a href="https://github.com/fatedier/frp">frp&lt;/a>【开源】，&lt;a href="https://github.com/ehang-io/nps">nps&lt;/a>【开源】，&lt;a href="https://ngrok.com/">ngrok&lt;/a>【基础版免费】，前两款属于开源产品，需要自行搭建，&lt;code>ngrok&lt;/code>属于付费产品，但是基础版，白嫖的足够用了.😄&lt;/p>
+&lt;/div></description></item><item><title>K8s网络学习</title><link>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</link><pubDate>Tue, 02 Nov 2021 14:30:23 +0800</pubDate><guid>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</guid><description>&lt;p>从简单&lt;code>p2p&lt;/code>网络到k8s复杂型网络。&lt;/p>
+&lt;h2 id="简单p2p网络模型">简单p2p网络模型&lt;/h2>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211102145031780.png" alt="image-20211102145031780">&lt;/p>
+&lt;p>ℹ️简单说明：创建两个网络命名空间&lt;code>client&lt;/code>和&lt;code>server&lt;/code>，然后创建一对虚拟网卡将两端的命名空间相连起来，就好像直接相连的网线一样，中间没有阻拦，创建完的虚拟网卡对存在于默认的命名空间中，接着我们将其分别放入&lt;code>client&lt;/code>和&lt;code>server&lt;/code>命名空间中，最后为两个虚拟网卡对&lt;code>veth-client&lt;/code>和&lt;code>veth-server&lt;/code>分配IP地址并启用网卡。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 步骤全流程&lt;/span>
+$ ip netns add client
+$ ip netns add server
+$ ip netns list
+server
+client
+$ ip link add veth-client &lt;span class="nb">type&lt;/span> veth peer name veth-server
+$ ip link list &lt;span class="p">|&lt;/span> grep veth
+4: veth-server@veth-client: &amp;lt;BROADCAST,MULTICAST,M-DOWN&amp;gt; mtu &lt;span class="m">1500&lt;/span> qdisc noop state DOWN mode DEFAULT group default qlen &lt;span class="m">1000&lt;/span>
+5: veth-client@veth-server: &amp;lt;BROADCAST,MULTICAST,M-DOWN&amp;gt; mtu &lt;span class="m">1500&lt;/span> qdisc noop state DOWN mode DEFAULT group default qlen &lt;span class="m">1000&lt;/span>
+$ ip link &lt;span class="nb">set&lt;/span> veth-client netns client
+$ ip link &lt;span class="nb">set&lt;/span> veth-server netns server &lt;span class="c1"># 将虚拟网卡移动至相应的命名空间去，此时默认的网络命名空间中将不复存在&lt;/span>
+$ ip netns &lt;span class="nb">exec&lt;/span> client ip address add 10.0.0.11/24 dev veth-client
+$ ip netns &lt;span class="nb">exec&lt;/span> client ip link &lt;span class="nb">set&lt;/span> veth-client up
+$ ip netns &lt;span class="nb">exec&lt;/span> server ip address add 10.0.0.12/24 dev veth-server
+$ ip netns &lt;span class="nb">exec&lt;/span> server ip link &lt;span class="nb">set&lt;/span> veth-server up
+$ ip netns &lt;span class="nb">exec&lt;/span> client ip addr
+1: lo: &amp;lt;LOOPBACK&amp;gt; mtu &lt;span class="m">65536&lt;/span> qdisc noop state DOWN group default qlen 1 &lt;span class="c1"># 默认的lo暂时用不到，所以在此就不启用了&lt;/span>
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+5: veth-client@if4: &amp;lt;BROADCAST,MULTICAST,UP,LOWER_UP&amp;gt; mtu &lt;span class="m">1500&lt;/span> qdisc noqueue &lt;span class="sb">`&lt;/span>state UP&lt;span class="sb">`&lt;/span> group default qlen 1000 &lt;span class="c1"># 可以看到网卡已被成功启用&lt;/span>
+link/ether ca:e8:30:2e:f9:d2 brd ff:ff:ff:ff:ff:ff link-netnsid &lt;span class="m">1&lt;/span>
+inet 10.0.0.11/24 scope global veth-client
+valid_lft forever preferred_lft forever
+inet6 fe80::c8e8:30ff:fe2e:f9d2/64 scope link
+valid_lft forever preferred_lft forever
+&lt;span class="c1"># 同样，server网络命名空间，输出相似，略&lt;/span>
+$ ip netns &lt;span class="nb">exec&lt;/span> server ip addr
+。。。
+&lt;span class="c1"># 互ping测试&lt;/span>
+$ ip netns &lt;span class="nb">exec&lt;/span> client ping 10.0.0.12
+$ ip netns &lt;span class="nb">exec&lt;/span> server ping 10.0.0.11
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="docker网桥模型">Docker网桥模型&lt;/h2>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211102145100986.png" alt="image-20211102145100986">&lt;/p>
+&lt;p>如果要创建更网络命名空间并互相连接，用 &lt;code>veth&lt;/code> 对将这些网络命名空间进行两两连接就很麻烦了。可以创建创建一个 Linux 网桥来连接这些网络命名空间。Docker 就是这样为同一主机内的容器进行连接的。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 步骤全流程&lt;/span>
+$ &lt;span class="nv">BR&lt;/span>&lt;span class="o">=&lt;/span>bridge1
+$ &lt;span class="nv">HOST_IP&lt;/span>&lt;span class="o">=&lt;/span>192.168.0.116
+$ ip link add client1-veth &lt;span class="nb">type&lt;/span> veth peer name client1-veth-br &lt;span class="c1"># 添加虚拟网卡与虚拟网桥对&lt;/span>
+$ ip link add server1-veth &lt;span class="nb">type&lt;/span> veth peer name server1-veth-br
+$ ip link add &lt;span class="nv">$BR&lt;/span> &lt;span class="nb">type&lt;/span> bridge &lt;span class="c1"># 添加网桥&lt;/span>
+$ ip netns add client1
+$ ip netns add server1
+$ ip link &lt;span class="nb">set&lt;/span> client1-veth netns client1
+$ ip link &lt;span class="nb">set&lt;/span> server1-veth netns server1
+$ ip link &lt;span class="nb">set&lt;/span> client1-veth-br master &lt;span class="nv">$BR&lt;/span>
+$ ip link &lt;span class="nb">set&lt;/span> server1-veth-br master &lt;span class="nv">$BR&lt;/span>
+$ ip link &lt;span class="nb">set&lt;/span> &lt;span class="nv">$BR&lt;/span> up
+$ ip link &lt;span class="nb">set&lt;/span> client1-veth-br up
+$ ip link &lt;span class="nb">set&lt;/span> server1-veth-br up
+$ ip netns &lt;span class="nb">exec&lt;/span> client1 ip link &lt;span class="nb">set&lt;/span> client1-veth up
+$ ip netns &lt;span class="nb">exec&lt;/span> server1 ip link &lt;span class="nb">set&lt;/span> server1-veth up
+$ ip netns &lt;span class="nb">exec&lt;/span> client1 ip addr add 192.168.1.11/24 dev client1-veth
+$ ip netns &lt;span class="nb">exec&lt;/span> server1 ip addr add 192.168.1.12/24 dev server1-veth
+$ ip addr add 192.168.1.1/24 dev &lt;span class="nv">$BR&lt;/span> &lt;span class="c1"># 为网桥分配ip地址&lt;/span>
+$ ip netns &lt;span class="nb">exec&lt;/span> client1 ping 192.168.1.12 -c &lt;span class="m">5&lt;/span>
+$ ip netns &lt;span class="nb">exec&lt;/span> client1 ping 192.168.1.1 -c &lt;span class="m">5&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>发现最后一条命令报错&lt;code>connect: Network is unreachable&lt;/code>，原因路由不通，加入一条缺省路由即可：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ ip netns &lt;span class="nb">exec&lt;/span> client1 ip route add default via 192.168.1.1
+$ ip netns &lt;span class="nb">exec&lt;/span> server1 ip route add default via 192.168.1.1
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>外部服务器访问内部(Docker为例)：&lt;/strong>&lt;/p>
+&lt;p>Docker 创建的 &lt;code>netns&lt;/code> 没有保存在缺省位置，所以 &lt;code>ip netns list&lt;/code> 是看不到这个网络命名空间的。我们可以在缺省位置创建一个符号链接：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ &lt;span class="nv">container_id&lt;/span>&lt;span class="o">=&lt;/span>web
+$ &lt;span class="nv">container_netns&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>docker inspect &lt;span class="si">${&lt;/span>&lt;span class="nv">container_id&lt;/span>&lt;span class="si">}&lt;/span> --format &lt;span class="s1">&amp;#39;{{ .NetworkSettings.SandboxKey }}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+$ mkdir -p /var/run/netns
+$ rm -f /var/run/netns/&lt;span class="si">${&lt;/span>&lt;span class="nv">container_id&lt;/span>&lt;span class="si">}&lt;/span>
+$ ln -sv &lt;span class="si">${&lt;/span>&lt;span class="nv">container_netns&lt;/span>&lt;span class="si">}&lt;/span> /var/run/netns/&lt;span class="si">${&lt;/span>&lt;span class="nv">container_id&lt;/span>&lt;span class="si">}&lt;/span>
+&lt;span class="s1">&amp;#39;/var/run/netns/web&amp;#39;&lt;/span> -&amp;gt; &lt;span class="s1">&amp;#39;/var/run/docker/netns/c009f2a4be71&amp;#39;&lt;/span>
+$ ip netns list
+web &lt;span class="o">(&lt;/span>id: 3&lt;span class="o">)&lt;/span>
+server1 &lt;span class="o">(&lt;/span>id: 1&lt;span class="o">)&lt;/span>
+client1 &lt;span class="o">(&lt;/span>id: 0&lt;span class="o">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>看看 &lt;code>web&lt;/code> 命名空间的 IP 地址：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ ip netns &lt;span class="nb">exec&lt;/span> web ip addr
+1: lo: &amp;lt;LOOPBACK,UP,LOWER_UP&amp;gt; mtu &lt;span class="m">65536&lt;/span> qdisc noqueue state UNKNOWN group default qlen &lt;span class="m">1&lt;/span>
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+valid_lft forever preferred_lft forever
+11: eth0@if12: &amp;lt;BROADCAST,MULTICAST,UP,LOWER_UP&amp;gt; mtu &lt;span class="m">1500&lt;/span> qdisc noqueue state UP group default
+link/ether 02:42:ac:12:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid &lt;span class="m">0&lt;/span>
+inet 172.18.0.3/24 brd 172.18.0.255 scope global eth0
+valid_lft forever preferred_lft forever
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后看看容器里的 IP 地址：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ &lt;span class="nv">WEB_IP&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>docker inspect -f &lt;span class="s2">&amp;#34;{{ .NetworkSettings.IPAddress }}&amp;#34;&lt;/span> web&lt;span class="sb">`&lt;/span>
+$ &lt;span class="nb">echo&lt;/span> &lt;span class="nv">$WEB_IP&lt;/span>
+172.18.0.3
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>加入端口转发规则，其它主机就能访问这个 nginx 了：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ iptables -t nat -A PREROUTING -p tcp --dport &lt;span class="m">80&lt;/span> -j DNAT --to-destination &lt;span class="nv">$WEB_IP&lt;/span>:80
+$ curl localhost:80
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/blockquote>
+&lt;h3 id="节点间网络传输">节点间网络传输&lt;/h3>
+&lt;p>如下图所示：&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/others/simple-network-k8s.gif" alt="image-20211104090616265">&lt;/p>
+&lt;h2 id="k8s服务网络">k8s服务网络&lt;/h2>
+&lt;p>技术类文章网上一搜一大片，这里我分享一个之前YouTube上看到的一个视频，简洁明了。&lt;/p>
+&lt;style type="text/css">
+#dplayer-video-container {
+max-width: 800px;
+margin: 0 auto;
+margin-top: -1rem;
+}
+@media screen and (max-device-width: 400px) {
+#dplayer {
+width: 100%;
+}
+}
+&lt;/style>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css">
+&lt;div id="dplayer-video-container">
+&lt;div id="dplayer">&lt;/div>
+&lt;div>
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.26.0/DPlayer.min.js">&lt;/script>
+&lt;script>
+const dp = new DPlayer({
+container: document.getElementById('dplayer'),
+autoplay: false,
+theme: '#b7daff',
+loop: true,
+lang: 'zh-cn',
+screenshot: false,
+hotkey: true,
+preload: 'auto',
+volume : 0.7,
+mutex: true,
+logo: 'https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/youtube.png',
+video: {
+type: 'auto',
+url: 'https:\/\/agou-resources.oss-cn-chengdu.aliyuncs.com\/video\/Kubernetes%20Services%20networking.mp4',
+pic: ''
+},
+subtitle: {
+type: 'webvtt',
+url: 'https:\/\/agou-resources.oss-cn-chengdu.aliyuncs.com\/subtitles\/Kubernetes%20Services%20networking%20-%20English.vtt',
+fontSize: '20px',
+bottom: '40px',
+color: '#fff'
+},
+contextmenu: [
+{
+text: '❤ 博客主页',
+link: 'https://agou-ops.github.io'
+},
+{
+text: '播放器信息',
+click: (player) => {
+console.log(player);
+}
+}
+],
+highlight: [
+{
+time: '0',
+text: 'ClusterIP',
+},
+{
+time: '107',
+text: 'NodePort',
+},
+{
+time: '108',
+text: 'ServiceIP with Calio',
+},
+{
+time: '',
+text: '',
+},
+{
+time: '',
+text: '',
+},
+],
+});
+&lt;/script>
+&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Life of a Packet in Kubernetes — Part 1: &lt;a href="https://dramasamy.medium.com/life-of-a-packet-in-kubernetes-part-1-f9bc0909e051">https://dramasamy.medium.com/life-of-a-packet-in-kubernetes-part-1-f9bc0909e051&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>kubernetes services network YouTube: &lt;a href="https://www.youtube.com/watch?v=NFApeJRXos4">https://www.youtube.com/watch?v=NFApeJRXos4&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>内网穿透工具</title><link>https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link><pubDate>Thu, 21 Oct 2021 09:01:46 +0800</pubDate><guid>https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid><description>&lt;p>整理三款流行的内网穿透工具，&lt;a href="https://github.com/fatedier/frp">frp&lt;/a>【开源】，&lt;a href="https://github.com/ehang-io/nps">nps&lt;/a>【开源】，&lt;a href="https://ngrok.com/">ngrok&lt;/a>【基础版免费】，前两款属于开源产品，需要自行搭建，&lt;code>ngrok&lt;/code>属于付费产品，但是基础版，白嫖的足够用了.😄&lt;/p>
 &lt;h2 id="frp">frp&lt;/h2>
 &lt;blockquote>
 &lt;p>A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.&lt;/p>
@@ -2391,10 +2697,18 @@ hotkey: true,
 preload: 'auto',
 volume : 0.7,
 mutex: true,
+logo: 'https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/youtube.png',
 video: {
 type: 'auto',
 url: 'http:\/\/agou-resources.oss-cn-chengdu.aliyuncs.com\/video\/test.mp4',
 pic: 'http:\/\/agou-images.oss-cn-qingdao.aliyuncs.com\/Wallpapers\/violet.png'
+},
+subtitle: {
+type: 'webvtt',
+url: '',
+fontSize: '20px',
+bottom: '40px',
+color: '#fff'
 },
 contextmenu: [
 {
@@ -4639,4 +4953,4 @@ make install
 &lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wrk -t12 -c400 -d30s http://127.0.0.1:8080/index.html
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="待续">待续。。。&lt;/h3></description></item><item><title>ECS-Linux 故障处理</title><link>https://agou-ops.cn/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</link><pubDate>Tue, 14 Jul 2020 09:41:39 +0800</pubDate><guid>https://agou-ops.cn/post/ecs-linux-%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/</guid><description>&lt;p>&lt;strong>篇幅有限，转至 &lt;a href="https://agou-ops.top/linux_sys_fix">https://agou-ops.top/linux_sys_fix&lt;/a> 进行查看。&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;/div>&lt;h3 id="待续">待续。。。&lt;/h3></description></item></channel></rss>
