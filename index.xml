@@ -397,31 +397,31 @@ width: 100%;
 &lt;div id="dplayer-video-container">
 &lt;div id="dplayer">&lt;/div>
 &lt;div>
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.26.0/DPlayer.min.js">&lt;/script>
+&lt;script src="https://cdn.jsdelivr.net/npm/dplayer@1.26.0/dist/DPlayer.min.js">&lt;/script>
 &lt;script>
 const dp = new DPlayer({
 container: document.getElementById('dplayer'),
 autoplay: false,
-theme: '#b7daff',
-loop: true,
+theme: '#c05b4d',
+loop: false,
 lang: 'zh-cn',
 screenshot: false,
 hotkey: true,
 preload: 'auto',
-volume : 0.7,
+volume: 0.7,
 mutex: true,
 logo: 'https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/youtube.png',
+subtitle: {
+url: '\/subtitles\/Kubernetes%20Services networking-English.vtt',
+type: 'webvtt',
+fontSize: '20px',
+bottom: '3%',
+color: '#0000',
+},
 video: {
 type: 'auto',
-url: 'https:\/\/agou-resources.oss-cn-chengdu.aliyuncs.com\/video\/Kubernetes%20Services%20networking.mp4',
+url: '\/subtitles\/Kubernetes%20Services%20networking.mp4',
 pic: ''
-},
-subtitle: {
-type: 'webvtt',
-url: 'https:\/\/agou-resources.oss-cn-chengdu.aliyuncs.com\/subtitles\/Kubernetes%20Services%20networking%20-%20English.vtt',
-fontSize: '20px',
-bottom: '40px',
-color: '#fff'
 },
 contextmenu: [
 {
@@ -459,6 +459,7 @@ text: '',
 ],
 });
 &lt;/script>
+&lt;!-- raw HTML omitted -->
 &lt;h2 id="参考链接">参考链接&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -2684,31 +2685,31 @@ width: 100%;
 &lt;div id="dplayer-video-container">
 &lt;div id="dplayer">&lt;/div>
 &lt;div>
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.26.0/DPlayer.min.js">&lt;/script>
+&lt;script src="https://cdn.jsdelivr.net/npm/dplayer@1.26.0/dist/DPlayer.min.js">&lt;/script>
 &lt;script>
 const dp = new DPlayer({
 container: document.getElementById('dplayer'),
 autoplay: false,
-theme: '#b7daff',
-loop: true,
+theme: '#c05b4d',
+loop: false,
 lang: 'zh-cn',
 screenshot: false,
 hotkey: true,
 preload: 'auto',
-volume : 0.7,
+volume: 0.7,
 mutex: true,
 logo: 'https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/youtube.png',
+subtitle: {
+url: '',
+type: 'webvtt',
+fontSize: '20px',
+bottom: '3%',
+color: '#0000',
+},
 video: {
 type: 'auto',
 url: 'http:\/\/agou-resources.oss-cn-chengdu.aliyuncs.com\/video\/test.mp4',
 pic: 'http:\/\/agou-images.oss-cn-qingdao.aliyuncs.com\/Wallpapers\/violet.png'
-},
-subtitle: {
-type: 'webvtt',
-url: '',
-fontSize: '20px',
-bottom: '40px',
-color: '#fff'
 },
 contextmenu: [
 {
