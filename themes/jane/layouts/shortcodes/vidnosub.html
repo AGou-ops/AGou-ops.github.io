@@ -1,0 +1,75 @@
+<style type="text/css">
+    #dplayer-video-container {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: -1rem;
+    }
+
+    @media screen and (max-device-width: 400px) {
+        #dplayer {
+            width: 100%;
+        }
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css">
+<div id="dplayer-video-container">
+    <div id="dplayer"></div>
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/dplayer@1.26.0/dist/DPlayer.min.js"></script>
+
+
+        <script>
+            const dp = new DPlayer({
+                container: document.getElementById('dplayer'),
+                autoplay: false,
+                theme: '#b7daff',
+                loop: false,
+                lang: 'zh-cn',
+                screenshot: false,
+                hotkey: true,
+                preload: 'auto',
+                volume: 0.7,
+                mutex: true,
+                logo: 'https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/youtube.png',
+                video: {
+                    type: 'auto',
+                    url: '{{ .Get "link" }}',
+                    pic: '{{ .Get "pic" }}'
+                },
+                contextmenu: [
+                    {
+                        text: '❤ 博客主页',
+                        link: 'https://agou-ops.github.io'
+                    },
+                    {
+                        text: '播放器信息',
+                        click: (player) => {
+                            console.log(player);
+                        }
+                    }
+                ],
+                highlight: [
+                    {
+                        time: '{{ .Get "time" }}',
+                        text: '{{ .Get "text" }}',
+                    },
+                    {
+                        time: '{{ .Get "time1" }}',
+                        text: '{{ .Get "text1" }}',
+                    },
+                    {
+                        time: '{{ .Get "time2" }}',
+                        text: '{{ .Get "text2" }}',
+                    },
+                    {
+                        time: '{{ .Get "time3" }}',
+                        text: '{{ .Get "text3" }}',
+                    },
+                    {
+                        time: '{{ .Get "time4" }}',
+                        text: '{{ .Get "text4" }}',
+                    },
+                ],
+            });
+        </script>
