@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技巧 on AGou's blog</title><link>https://agou-ops.cn/categories/%E6%8A%80%E5%B7%A7/</link><description>Recent content in 技巧 on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 06 Dec 2020 11:53:04 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/categories/%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.cn/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.cn/post/vim-tricks/</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技巧 on AGou's blog</title><link>https://agou-ops.cn/categories/%E6%8A%80%E5%B7%A7/</link><description>Recent content in 技巧 on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 06 Dec 2020 11:53:04 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/categories/%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.cn/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.cn/post/vim-tricks/</guid><description>&lt;p>&lt;img src="https://api.ixiaowai.cn/gqapi/gqapi.php" alt="">&lt;/p>
+&lt;blockquote>
 &lt;p>该文章用于记录个人在使用&lt;code>vim&lt;/code>期间常用的技巧和快捷键。&lt;/p>
 &lt;ul>
 &lt;li>2021-08-20 15:27:56：初始化；&lt;/li>
 &lt;li>2021年08月20日15:27:18 ： 更新vim分屏快捷键以及&lt;code>NERDTree&lt;/code>快捷键；&lt;/li>
 &lt;li>2021年09月18日09:53:28： 更新插件快捷键；&lt;/li>
 &lt;/ul>
-&lt;/blockquote>
-&lt;h2 id="通用技巧">通用技巧&lt;/h2>
-&lt;ul>
-&lt;li>普通模式快捷键/操作符(直接使用, 无需使用&lt;code>:&lt;/code>)&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/blockquote></description></item></channel></rss>

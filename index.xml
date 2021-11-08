@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 02 Nov 2021 14:30:23 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 08 Nov 2021 11:25:31 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;!DOCTYPE html>
 &lt;html lang="en" >
 &lt;head>
 &lt;meta charset="UTF-8">
@@ -144,11 +144,11 @@ $("#UserAgent").html("UserAgent: " + result.ua);
 &lt;li>my Docs：&lt;a href="https://agou-ops.cn/myDocs">https://agou-ops.cn/myDocs&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="license">License&lt;/h2>
-&lt;p>本站所有原创内容开源许可协议均为：&lt;strong>&lt;code>WTFPL&lt;/code>&lt;/strong>&lt;/p>
+&lt;p>本站所有原创内容开源许可协议均为：&lt;strong>&lt;code>WTFPL&lt;/code>，转载的时候随便去掉本站信息都可以，不用经过博主同意。&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>何为&lt;code>WTFPL&lt;/code>？&lt;/strong>&lt;/p>
-&lt;p>&lt;strong>&lt;a href="http://www.wtfpl.net/">Do What the Fuck You Want to Public License&lt;/a>&lt;/strong>【意思自行体会】&lt;/p>
-&lt;p>*The WTFPL is a very permissive license for software and other scientific or artistic works that offers a great degree of freedom. In fact, it is probably the best license out there. *&lt;/p>
+&lt;p>&lt;strong>&lt;a href="http://www.wtfpl.net/">WTFPL © Do What the Fuck You Want to Public License&lt;/a>&lt;/strong>【意思自行体会】&lt;/p>
+&lt;p>&lt;em>The WTFPL is a very permissive license for software and other scientific or artistic works that offers a great degree of freedom. In fact, it is probably the best license out there.&lt;/em>&lt;/p>
 &lt;/blockquote>
 &lt;link rel="stylesheet" href="https://agou-ops.cn/css/hugo-easy-gallery.css" />
 &lt;div class="box">
@@ -161,7 +161,680 @@ itemscope itemtype="http://schema.org/ImageObject" >
 &lt;figcaption>&lt;h4>图片来源于WTFPL官网&lt;/h4>
 &lt;/figcaption>
 &lt;/figure>
-&lt;/div></description></item><item><title>K8s网络学习</title><link>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</link><pubDate>Tue, 02 Nov 2021 14:30:23 +0800</pubDate><guid>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</guid><description>&lt;p>从简单&lt;code>p2p&lt;/code>网络到k8s复杂型网络。&lt;/p>
+&lt;/div></description></item><item><title>Shell Tricks</title><link>https://agou-ops.cn/post/shell-tricks/</link><pubDate>Mon, 08 Nov 2021 11:25:31 +0800</pubDate><guid>https://agou-ops.cn/post/shell-tricks/</guid><description>&lt;p>&lt;img src="https://api.ixiaowai.cn/gqapi/gqapi.php" style="zoom:65%;" />&lt;/p>
+&lt;p>&lt;strong>🚩该文章将持续更新。&lt;/strong>&lt;/p>
+&lt;p>分享和记录个人日常和工作中，学习和实际用到的shell片段以及一些小技巧。&lt;/p>
+&lt;h2 id="shell-前两行">shell 前两行&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>#!/usr/bin/env bash&lt;/code>和&lt;code>#!/bin/bash&lt;/code>区别&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">前者无需在意所运行的解释器在何处&lt;span class="o">(&lt;/span>bash&lt;span class="o">)&lt;/span>, 只要存在于你的&lt;span class="sb">`&lt;/span>&lt;span class="nv">$PATH&lt;/span>&lt;span class="sb">`&lt;/span>环境变量中即可, 根据你的环境寻找并运行默认的版本，具有灵活性.
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Shell &lt;code>set&lt;/code>常用参数：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>-x&lt;/code>: 用于调试(debug)；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>-u&lt;/code>: 如果遇到不存在的变量，Bash 默认忽略它。 使用&lt;code>-u&lt;/code>选项来避免这种情况。 即遇到未定义的变量。 则异常退出脚本. &lt;strong>等价于&lt;code>set -o nounset&lt;/code>命令；&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>-e&lt;/code>: 脚本只要发生错误，就终止执行。 &lt;code>set -e&lt;/code>有一个例外情况，就是&lt;em>不适用于管道命令&lt;/em>。&lt;strong>等价于&lt;code>set -o errexit&lt;/code>命令；&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>-o pipefail&lt;/code>：用于解决&lt;code>-e&lt;/code>选项无法处理管道命令错误的问题，只要一个子命令失败，整个管道命令就失败，脚本就会终止执行。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>使用场景：&lt;/strong>&lt;/p>
+&lt;p>一般shell脚本将以下内容放置到前几行：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nb">set&lt;/span> -euxo pipefail
+&lt;span class="nb">set&lt;/span> -o errexit
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/blockquote>
+&lt;h2 id="杂项命令小技巧">⭐杂项（命令小技巧）&lt;/h2>
+&lt;h3 id="命令相关">命令相关&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>command -v &amp;lt;COMMAND&amp;gt;&lt;/code>: 用于验证某个命令是否存在。 不存在则返回一个非零值，存在则会返回该命令的绝对路径。&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>使用场景:&lt;/strong>&lt;/p>
+&lt;p>shell脚本中判断一个命令是否存在且可执行。 可以使用以下命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> -x &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">command&lt;/span> -v systemctl&lt;span class="k">)&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span> ...
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;code>exec &amp;gt; SOMEFILE&lt;/code>: 将脚本输出内容全部输出到指定文件中(除非单独指定)&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>使用场景:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="c1"># 查找某目录中的占用空间最大的几个文件&lt;/span>
+du -S /home/suofeiya/mycharts/ &lt;span class="p">|&lt;/span> sort -rn &lt;span class="p">|&lt;/span> sed &lt;span class="s1">&amp;#39;{11,$D};=&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> sed &lt;span class="s1">&amp;#39;N; s/\n/ /&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;BEGIN {print &amp;#34;序号\t大小(k)\t文件夹&amp;#34;}{printf $1 &amp;#34;:&amp;#34; &amp;#34;\t&amp;#34; $2 &amp;#34;\t&amp;#34; $3 &amp;#34;\n&amp;#34;}&amp;#39;&lt;/span>
+&lt;span class="c1"># 将输出存到指定文件&lt;/span>
+&lt;span class="nb">exec&lt;/span> &amp;gt; result.txt
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;code>exec&lt;/code>: exec 是 bash 的内置命令, 不启用新的shell进程。就像&lt;code>source&lt;/code>或者&lt;code>.&lt;/code>一样, 相反使用&lt;code>bash&lt;/code>或者&lt;code>sh&lt;/code>执行命令时, 会另起一个子shell, 子shell会继承父shell的环境变量, 子shell执行完毕之后不影响父shell.&lt;/li>
+&lt;li>&lt;code>trap&lt;/code>: 捕获信号, 通常用途是在shell脚本被中断时完成清理工作&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">信号名称&lt;/th>
+&lt;th style="text-align:center">信号数&lt;/th>
+&lt;th style="text-align:left">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">SIGINT&lt;/td>
+&lt;td style="text-align:center">2&lt;/td>
+&lt;td style="text-align:left">程序终止(interrupt)信号, 在用户键入INTR字符(通常是Ctrl+C)时发出。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">SIGQUIT&lt;/td>
+&lt;td style="text-align:center">3&lt;/td>
+&lt;td style="text-align:left">和SIGINT类似, 但由QUIT字符(通常是Ctrl /)来控制. 进程在因收到SIGQUIT退出时会产生core文件, 在这个意义上类似于一个程序错误信号。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">SIGFPE&lt;/td>
+&lt;td style="text-align:center">8&lt;/td>
+&lt;td style="text-align:left">在发生致命的算术运算错误时发出. 不仅包括浮点运算错误, 还包括溢出及除数为0等其它所有的算术的错误。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">SIGKILL&lt;/td>
+&lt;td style="text-align:center">9&lt;/td>
+&lt;td style="text-align:left">用来立即结束程序的运行. 本信号不能被阻塞, 处理和忽略。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">SIGALRM&lt;/td>
+&lt;td style="text-align:center">14&lt;/td>
+&lt;td style="text-align:left">时钟定时信号, 计算的是实际的时间或时钟时间. alarm函数使用该信号。 SIGTERM&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>使用场景:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>脚本退出前执行命令&lt;/li>
+&lt;/ul>
+&lt;p>脚本在执行时按下&lt;code>CTRL+c&lt;/code>时，将显示&amp;quot;program exit&amp;hellip;&amp;ldquo;并退出(&lt;code>CTRL+c&lt;/code>的信号是SIGINT)&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="nb">trap&lt;/span> &lt;span class="s2">&amp;#34;echo &amp;#39;program exit...&amp;#39;; exit 2&amp;#34;&lt;/span> SIGINT
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>忽略信号&lt;/li>
+&lt;/ul>
+&lt;p>例：脚本运行时忽略 &lt;code>SIGINT&lt;/code> &lt;code>SIGQUIT&lt;/code> &lt;code>SIGFPE&lt;/code>等信号&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="nb">trap&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span> &lt;span class="m">2&lt;/span> &lt;span class="m">3&lt;/span> &lt;span class="m">8&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;code>IFS&lt;/code>：换行符&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>使用场景：&lt;/strong>&lt;/p>
+&lt;p>修改默认的空格换行符，多用于读取文件内容：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nv">IFS_old&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$IFS&lt;/span> &lt;span class="c1"># 将原IFS值保存，以便用完后恢复&lt;/span>
+&lt;span class="nv">IFS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">$&amp;#39;\n&amp;#39;&lt;/span> &lt;span class="c1"># 指定回车为分隔符&lt;/span>
+&lt;span class="k">for&lt;/span> LINE in &lt;span class="k">$(&lt;/span>cat test.file&lt;span class="k">)&lt;/span>
+&lt;span class="k">do&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="si">${&lt;/span>&lt;span class="nv">LINE&lt;/span>&lt;span class="si">}&lt;/span>
+&lt;span class="k">done&lt;/span>
+&lt;span class="c1"># 读取文件，或&lt;/span>
+cat test.file &lt;span class="p">|&lt;/span> &lt;span class="k">while&lt;/span> &lt;span class="nb">read&lt;/span> line&lt;span class="p">;&lt;/span>&lt;span class="k">do&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">line&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">done&lt;/span>
+&lt;span class="c1"># 读取文件，再或&lt;/span>
+&lt;span class="k">while&lt;/span> &lt;span class="nb">read&lt;/span> line
+&lt;span class="k">do&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">line&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="k">done&lt;/span> &amp;lt; test.file
+&lt;span class="nv">IFS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$IFS_old&lt;/span> &lt;span class="c1"># 恢复原IFS值&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/blockquote>
+&lt;h3 id="文件相关">文件相关&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>/etc/os-release&lt;/code>：查看系统名称、版本、基于版本、版本代号、帮助信息、系统官方主页等；&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>使用场景：&lt;/strong>&lt;/p>
+&lt;p>对不同的系统使用不同的命令进行处理：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 检查·sysctl·命令是否存在且可执行，如果不存在则进行下载安装。&lt;/span>
+&lt;span class="k">if&lt;/span> ! &lt;span class="o">[&lt;/span> -x &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">command&lt;/span> -v sysctl&lt;span class="k">)&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s1">&amp;#39;sysctl not installed. Installing it...&amp;#39;&lt;/span>
+&lt;span class="nv">distro&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>awk -F&lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;/^ID=/{print $2}&amp;#39;&lt;/span> /etc/os-release &lt;span class="p">|&lt;/span> tr -d &lt;span class="s1">&amp;#39;&amp;#34;&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="nv">$distro&lt;/span> in
+ol &lt;span class="p">|&lt;/span> centos&lt;span class="o">)&lt;/span>
+yum install -y procps
+rm -rf /var/cache/yum&lt;span class="p">;;&lt;/span>
+ubuntu &lt;span class="p">|&lt;/span> debian&lt;span class="o">)&lt;/span>
+apt-get update -qq &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> apt-get install -y --no-install-recommends procps
+rm -rf /var/lib/apt/lists /var/cache/apt/archives&lt;span class="p">;;&lt;/span>
+&lt;span class="k">esac&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/blockquote>
+&lt;h2 id="命令成功与否判断">命令成功与否判断&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nb">command&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;succ&amp;#34;&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;fail&amp;#34;&lt;/span>
+&lt;span class="nb">command&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">{&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;command failed&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nb">exit&lt;/span> 1&lt;span class="p">;&lt;/span> &lt;span class="o">}&lt;/span>
+&lt;span class="k">if&lt;/span> ! command； &lt;span class="k">then&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;command failed&amp;#34;&lt;/span>； &lt;span class="nb">exit&lt;/span> 1； &lt;span class="k">fi&lt;/span>
+&lt;span class="nb">command&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$?&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> -ne &lt;span class="m">0&lt;/span> &lt;span class="o">]&lt;/span>； &lt;span class="k">then&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;command failed&amp;#34;&lt;/span>； &lt;span class="nb">exit&lt;/span> 1； &lt;span class="k">fi&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="变量字符串操作大全">变量/字符串操作大全&lt;/h2>
+&lt;h3 id="变量截取">变量截取&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">变量配置方式&lt;/th>
+&lt;th style="text-align:left">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">${变量#关键词} ${变量##关键词}&lt;/td>
+&lt;td style="text-align:left">若变量内容从头开始的数据符合『关键词』，则将符合的最短数据删除 若变量内容从头开始的数据符合『关键词』，则将符合的最长数据删除&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">${变量%关键词} ${变量%%关键词}&lt;/td>
+&lt;td style="text-align:left">若变量内容从尾向前的数据符合『关键词』，则将符合的最短数据删除 若变量内容从尾向前的数据符合『关键词』，则将符合的最长数据删除&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">${变量/旧字符串/新字符串} ${变量//旧字符串/新字符串}&lt;/td>
+&lt;td style="text-align:left">若变量内容符合『旧字符串』则『第一个旧字符串会被新字符串取代』 若变量内容符合『旧字符串』则『全部的旧字符串会被新字符串取代』&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="变量默认值">变量默认值&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">变量配置方式&lt;/th>
+&lt;th style="text-align:left">str 没有配置&lt;/th>
+&lt;th style="text-align:left">str 为空字符串&lt;/th>
+&lt;th style="text-align:left">str 已配置非为空字符串&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">var=${str-expr}&lt;/td>
+&lt;td style="text-align:left">var=expr&lt;/td>
+&lt;td style="text-align:left">var=&lt;/td>
+&lt;td style="text-align:left">var=$str&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">var=${str:-expr}&lt;/td>
+&lt;td style="text-align:left">var=expr&lt;/td>
+&lt;td style="text-align:left">var=expr&lt;/td>
+&lt;td style="text-align:left">var=$str&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">var=${str+expr}&lt;/td>
+&lt;td style="text-align:left">var=&lt;/td>
+&lt;td style="text-align:left">var=expr&lt;/td>
+&lt;td style="text-align:left">var=expr&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">var=${str:+expr}&lt;/td>
+&lt;td style="text-align:left">var=&lt;/td>
+&lt;td style="text-align:left">var=&lt;/td>
+&lt;td style="text-align:left">var=expr&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">var=${str=expr}&lt;/td>
+&lt;td style="text-align:left">str=expr var=expr&lt;/td>
+&lt;td style="text-align:left">str 不变 var=&lt;/td>
+&lt;td style="text-align:left">str 不变 var=$str&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">var=${str:=expr}&lt;/td>
+&lt;td style="text-align:left">str=expr var=expr&lt;/td>
+&lt;td style="text-align:left">str=expr var=expr&lt;/td>
+&lt;td style="text-align:left">str 不变 var=$str&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">var=${str?expr}&lt;/td>
+&lt;td style="text-align:left">expr 输出至 stderr&lt;/td>
+&lt;td style="text-align:left">var=&lt;/td>
+&lt;td style="text-align:left">var=$str&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">var=${str:?expr}&lt;/td>
+&lt;td style="text-align:left">expr 输出至 stderr&lt;/td>
+&lt;td style="text-align:left">expr 输出至 stderr&lt;/td>
+&lt;td style="text-align:left">var=$str&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="字符串是否包含子串">字符串是否包含子串&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 通过 ** 匹配&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">==&lt;/span> *&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">sub_string&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>* &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;span class="nb">printf&lt;/span> &lt;span class="s1">&amp;#39;%s\n&amp;#39;&lt;/span> &lt;span class="s2">&amp;#34;sub_string is in var.&amp;#34;&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;span class="c1"># 通过 bash 内置的 =~ 判断&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">sub_string&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">=&lt;/span>~ &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;span class="nb">printf&lt;/span> &lt;span class="s1">&amp;#39;%s\n&amp;#39;&lt;/span> &lt;span class="s2">&amp;#34;sub_string is in var.&amp;#34;&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="shell参数处理">shell参数处理&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nv">$#&lt;/span> 传递到脚本的参数个数
+&lt;span class="nv">$*&lt;/span> 以一个单字符串显示所有向脚本传递的参数。 如&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$*&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>用「&lt;span class="s2">&amp;#34;」括起来的情况、以&amp;#34;&lt;/span>&lt;span class="nv">$1&lt;/span> &lt;span class="nv">$2&lt;/span> … &lt;span class="nv">$n&lt;/span>&lt;span class="s2">&amp;#34;的形式输出所有参数。
+&lt;/span>&lt;span class="s2">&lt;/span>&lt;span class="nv">$$&lt;/span>&lt;span class="s2"> 脚本运行的当前进程ID号
+&lt;/span>&lt;span class="s2">&lt;/span>&lt;span class="nv">$!&lt;/span>&lt;span class="s2"> 后台运行的最后一个进程的ID号
+&lt;/span>&lt;span class="s2">&lt;/span>&lt;span class="nv">$@&lt;/span>&lt;span class="s2"> 与&lt;/span>&lt;span class="nv">$*&lt;/span>&lt;span class="s2">相同，但是使用时加引号，并在引号中返回每个参数。 如&amp;#34;&lt;/span>&lt;span class="nv">$@&lt;/span>&lt;span class="s2">&amp;#34;用「&amp;#34;&lt;/span>」括起来的情况、以&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$1&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$2&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> … &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$n&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> 的形式输出所有参数。
+&lt;span class="nv">$-&lt;/span> 显示Shell使用的当前选项，与set命令功能相同。
+&lt;span class="nv">$?&lt;/span> 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="打印多行信息多用于jio本帮助信息">打印多行信息（多用于jio本帮助信息）&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">cat &amp;gt;&lt;span class="p">&amp;amp;&lt;/span>&lt;span class="m">1&lt;/span> &lt;span class="s">&amp;lt;&amp;lt;-EOF # 或者直接使用cat &amp;lt;&amp;lt; EOF&lt;/span>
+first line
+second line
+third line
+EOF
+&lt;span class="c1"># 或&lt;/span>
+cat &lt;span class="s">&amp;lt;&amp;lt; EOF
+&lt;/span>&lt;span class="s">111
+&lt;/span>&lt;span class="s">222
+&lt;/span>&lt;span class="s">EOF&lt;/span>
+&lt;span class="c1"># 或&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;11
+&lt;/span>&lt;span class="s2">22
+&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="c1"># 或（来源于StackOverflow）&lt;/span>
+&lt;span class="nv">__usage&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;
+&lt;/span>&lt;span class="s2">Usage: &lt;/span>&lt;span class="k">$(&lt;/span>basename &lt;span class="nv">$0&lt;/span>&lt;span class="k">)&lt;/span>&lt;span class="s2"> [OPTIONS]
+&lt;/span>&lt;span class="s2">
+&lt;/span>&lt;span class="s2">Options:
+&lt;/span>&lt;span class="s2"> -l, --level &amp;lt;n&amp;gt; Something something something level
+&lt;/span>&lt;span class="s2"> -n, --nnnnn &amp;lt;levels&amp;gt; Something something something n
+&lt;/span>&lt;span class="s2"> -h, --help Something something something help
+&lt;/span>&lt;span class="s2"> -v, --version Something something something version
+&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+Then I can simply use it as
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$__usage&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="传递数组到函数">传递数组到函数&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="k">function&lt;/span> update&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="nb">declare&lt;/span> -a &lt;span class="nv">apps_version&lt;/span>&lt;span class="o">=(&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="p">!1&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">apps_version&lt;/span>&lt;span class="p">[@]&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="nv">APPS_VERSION&lt;/span>&lt;span class="o">=(&lt;/span>&lt;span class="s2">&amp;#34;aaa&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;bbb&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;ccc&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+update APPS_VERSION&lt;span class="o">[&lt;/span>@&lt;span class="o">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="获取选项select-case">获取选项select case&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nv">PS3&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;enter option: &amp;#34;&lt;/span> &lt;span class="c1"># 使用select时的提示符&lt;/span>
+&lt;span class="k">select&lt;/span> option in &lt;span class="s2">&amp;#34;option1&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;option2&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;option3&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;option4&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;exit&amp;#34;&lt;/span>
+&lt;span class="k">do&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="nv">$option&lt;/span> in
+&lt;span class="s2">&amp;#34;exit&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+break&lt;span class="p">;;&lt;/span>
+&lt;span class="s2">&amp;#34;option1&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+break&lt;span class="p">;;&lt;/span>
+...
+*&lt;span class="o">)&lt;/span>
+...
+esca
+&lt;span class="k">done&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="查看进程占用的文件句柄">查看进程占用的文件句柄&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 用户级&lt;/span>
+find /proc/*/fd/* -type l -lname &lt;span class="s1">&amp;#39;anon_inode:inotify&amp;#39;&lt;/span> -print 2&amp;gt;/dev/null &lt;span class="p">|&lt;/span> cut -d/ -f3 &lt;span class="p">|&lt;/span>xargs -I &lt;span class="s1">&amp;#39;{}&amp;#39;&lt;/span> -- ps --no-headers -o &lt;span class="s1">&amp;#39;%U&amp;#39;&lt;/span> -p &lt;span class="s1">&amp;#39;{}&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> sort &lt;span class="p">|&lt;/span> uniq -c &lt;span class="p">|&lt;/span> sort -nr &lt;span class="c1"># 结果: 第一列表示打开的句柄，第二列表示用户&lt;/span>
+&lt;span class="c1"># 进程级&lt;/span>
+find /proc/*/fd/* -type l -lname &lt;span class="s1">&amp;#39;anon_inode:inotify&amp;#39;&lt;/span> -print 2&amp;gt;/dev/null &lt;span class="p">|&lt;/span> cut -d/ -f3 &lt;span class="p">|&lt;/span>xargs -I &lt;span class="s1">&amp;#39;{}&amp;#39;&lt;/span> -- ps --no-headers -o &lt;span class="s1">&amp;#39;%U %p %c&amp;#39;&lt;/span> -p &lt;span class="s1">&amp;#39;{}&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> sort &lt;span class="p">|&lt;/span> uniq -c &lt;span class="p">|&lt;/span> sort -nr &lt;span class="c1"># 结果: 第一列表示打开的句柄，第二列表示用户，第三列表示用户id，第四列表示进程&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="修改crontab内容">修改crontab内容&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">(&lt;/span>crontab -l 2&amp;gt;/dev/null&lt;span class="p">;&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s1">&amp;#39;*/2 * * * * &amp;lt;SOME_COMMAND or SOME_SCRIPT&amp;gt; &amp;gt; &amp;lt;SOME_OUTPUT_FILE&amp;gt;.$(date &amp;#34;+\%Y\%m\%d-\%H\%M\%S&amp;#34;) 2&amp;gt;&amp;amp;1&amp;#39;&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="p">|&lt;/span> crontab -
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="加载kv配置型文件">加载kv配置型文件&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">cat xx
+&lt;span class="nv">key1&lt;/span>&lt;span class="o">=&lt;/span>value1
+&lt;span class="nv">key2&lt;/span>&lt;span class="o">=&lt;/span>value2
+cat xx.sh
+. xx &lt;span class="c1"># 这里直接使用. xx即可把xx文件里的key-value引入,后续可直接使用k.&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$key1&lt;/span>, &lt;span class="nv">$key2&lt;/span>
+&lt;span class="c1">#注意, 配置文件只能是k=v的形式(多个k=v可以在一行, 使用空格隔开), 其它形式会报错&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="循环打印带空格的字符串数组">循环打印带空格的字符串/数组&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 需求, 提供个数组，循环数组中的元素， 如果元素存在于某个文件中，则不追加，如果不存在,则追加&lt;/span>
+&lt;span class="nv">K8S_CLUSTER&lt;/span>&lt;span class="o">=(&lt;/span>&lt;span class="s2">&amp;#34;172.1.52.250 k8s-master-250&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;172.1.52.50 k8s-master-50&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;span class="k">for&lt;/span> x in &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">K8S_CLUSTER&lt;/span>&lt;span class="p">[@]&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">do&lt;/span> grep &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$x&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> /etc/hosts &amp;gt; /dev/null &lt;span class="o">||&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$x&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &amp;gt;&amp;gt; /etc/hosts&lt;span class="p">;&lt;/span>&lt;span class="k">done&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="shell-getopts-demoshell-参数">Shell getopts Demo（Shell 参数）&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;span class="cp">&lt;/span>&lt;span class="nv">status&lt;/span>&lt;span class="o">=&lt;/span>off &lt;span class="c1"># 定义变量status，初始值设置为off&lt;/span>
+&lt;span class="nv">filename&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span> &lt;span class="c1"># 定义变量filename，用于保存选项参数（文件）&lt;/span>
+&lt;span class="nv">output&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span> &lt;span class="c1"># 定义变量output，用于保存选项参数（目录）&lt;/span>
+Usage &lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span> &lt;span class="c1"># 定义函数Usage，输出脚本使用方法&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;Usage&amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;myscript [-h] [-v] [-f &amp;lt;filename&amp;gt;] [-o &amp;lt;filename&amp;gt;]&amp;#34;&lt;/span>
+&lt;span class="nb">exit&lt;/span> -1
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">while&lt;/span> &lt;span class="nb">getopts&lt;/span> :hvf:o: varname &lt;span class="c1"># 告诉getopts此脚本有-h、-v、-f、-o四个选项，-f和-o后面需要跟参数（没有选项时，getopts会设置一个退出状态FALSE，退出循环）&lt;/span>
+&lt;span class="k">do&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="nv">$varname&lt;/span> in
+h&lt;span class="o">)&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$varname&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+Usage
+&lt;span class="nb">exit&lt;/span>
+&lt;span class="p">;;&lt;/span>
+v&lt;span class="o">)&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$varname&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="nv">status&lt;/span>&lt;span class="o">=&lt;/span>on
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$status&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="nb">exit&lt;/span>
+&lt;span class="p">;;&lt;/span>
+f&lt;span class="o">)&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$varname&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$OPTARG&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="nv">filename&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$OPTARG&lt;/span> &lt;span class="c1"># 将选项的参数赋值给filename&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> ! -f &lt;span class="nv">$filename&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span> &lt;span class="c1"># 判断选项所跟的参数是否存在且是文件&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;the source file &lt;/span>&lt;span class="nv">$filename&lt;/span>&lt;span class="s2"> not exist!&amp;#34;&lt;/span>
+&lt;span class="nb">exit&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;span class="p">;;&lt;/span>
+o&lt;span class="o">)&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$varname&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$OPTARG&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="nv">output&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$OPTARG&lt;/span> &lt;span class="c1"># 将选项参数赋值给output&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> ! -d &lt;span class="nv">$output&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span> &lt;span class="c1"># 判断选项参数是否存在且是目录&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;the output path &lt;/span>&lt;span class="nv">$output&lt;/span>&lt;span class="s2"> not exist&amp;#34;&lt;/span>
+&lt;span class="nb">exit&lt;/span>
+&lt;span class="k">fi&lt;/span>
+&lt;span class="p">;;&lt;/span>
+&lt;span class="c1"># 当选项后面没有参数时，varname的值被设置为（：），OPTARG的值被设置为选项本身&lt;/span>
+:&lt;span class="o">)&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$varname&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;the option -&lt;/span>&lt;span class="nv">$OPTARG&lt;/span>&lt;span class="s2"> require an arguement&amp;#34;&lt;/span> &lt;span class="c1"># 提示用户此选项后面需要一个参数&lt;/span>
+&lt;span class="nb">exit&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;span class="p">;;&lt;/span>
+?&lt;span class="o">)&lt;/span> &lt;span class="c1"># 当选项不匹配时，varname的值被设置为（？），OPTARG的值被设置为选项本身&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$varname&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;Invaild option: -&lt;/span>&lt;span class="nv">$OPTARG&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="c1"># 提示用户此选项无效&lt;/span>
+Usage
+&lt;span class="nb">exit&lt;/span> &lt;span class="m">2&lt;/span>
+&lt;span class="p">;;&lt;/span>
+&lt;span class="k">esac&lt;/span>
+&lt;span class="k">done&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="参考链接">参考链接&lt;/h2>
+&lt;p>大部分都来源于网络，都亲测使用过没啥问题，由于涉及内容太杂太多了，就不一一标注了。&lt;/p></description></item><item><title>K8s网络学习</title><link>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</link><pubDate>Tue, 02 Nov 2021 14:30:23 +0800</pubDate><guid>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</guid><description>&lt;p>从简单&lt;code>p2p&lt;/code>网络到k8s复杂型网络。&lt;/p>
 &lt;h2 id="简单p2p网络模型">简单p2p网络模型&lt;/h2>
 &lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211102145031780.png" alt="image-20211102145031780">&lt;/p>
 &lt;p>ℹ️简单说明：创建两个网络命名空间&lt;code>client&lt;/code>和&lt;code>server&lt;/code>，然后创建一对虚拟网卡将两端的命名空间相连起来，就好像直接相连的网线一样，中间没有阻拦，创建完的虚拟网卡对存在于默认的命名空间中，接着我们将其分别放入&lt;code>client&lt;/code>和&lt;code>server&lt;/code>命名空间中，最后为两个虚拟网卡对&lt;code>veth-client&lt;/code>和&lt;code>veth-server&lt;/code>分配IP地址并启用网卡。&lt;/p>
@@ -459,7 +1132,78 @@ text: '',
 ],
 });
 &lt;/script>
-&lt;!-- raw HTML omitted -->
+&lt;p>&lt;video src="https://agou-resources.oss-cn-chengdu.aliyuncs.com/video/Kubernetes%20Services%20networking.mp4">&lt;/video>&lt;/p>
+&lt;!-- &lt;style type="text/css">
+#dplayer-video-container {
+max-width: 800px;
+margin: 0 auto;
+margin-top: -1rem;
+}
+@media screen and (max-device-width: 400px) {
+#dplayer {
+width: 100%;
+}
+}
+&lt;/style>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css">
+&lt;div id="dplayer-video-container">
+&lt;div id="dplayer">&lt;/div>
+&lt;div>
+&lt;script src="https://cdn.jsdelivr.net/npm/dplayer@1.26.0/dist/DPlayer.min.js">&lt;/script>
+&lt;script>
+const dp = new DPlayer({
+container: document.getElementById('dplayer'),
+autoplay: false,
+theme: '#b7daff',
+loop: false,
+lang: 'zh-cn',
+screenshot: false,
+hotkey: true,
+preload: 'auto',
+volume: 0.7,
+mutex: true,
+logo: 'https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/youtube.png',
+video: {
+type: 'auto',
+url: '\/subtitles\/Kubernetes%20Services%20networking.mp4',
+pic: ''
+},
+contextmenu: [
+{
+text: '❤ 博客主页',
+link: 'https://agou-ops.github.io'
+},
+{
+text: '播放器信息',
+click: (player) => {
+console.log(player);
+}
+}
+],
+highlight: [
+{
+time: '0',
+text: 'ClusterIP',
+},
+{
+time: '107',
+text: 'NodePort',
+},
+{
+time: '108',
+text: 'ServiceIP with Calio',
+},
+{
+time: '',
+text: '',
+},
+{
+time: '',
+text: '',
+},
+],
+});
+&lt;/script> -->
 &lt;h2 id="参考链接">参考链接&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -468,7 +1212,8 @@ text: '',
 &lt;li>
 &lt;p>kubernetes services network YouTube: &lt;a href="https://www.youtube.com/watch?v=NFApeJRXos4">https://www.youtube.com/watch?v=NFApeJRXos4&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>内网穿透工具</title><link>https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link><pubDate>Thu, 21 Oct 2021 09:01:46 +0800</pubDate><guid>https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid><description>&lt;p>整理三款流行的内网穿透工具，&lt;a href="https://github.com/fatedier/frp">frp&lt;/a>【开源】，&lt;a href="https://github.com/ehang-io/nps">nps&lt;/a>【开源】，&lt;a href="https://ngrok.com/">ngrok&lt;/a>【基础版免费】，前两款属于开源产品，需要自行搭建，&lt;code>ngrok&lt;/code>属于付费产品，但是基础版，白嫖的足够用了.😄&lt;/p>
+&lt;/ul></description></item><item><title>内网穿透工具</title><link>https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link><pubDate>Thu, 21 Oct 2021 09:01:46 +0800</pubDate><guid>https://agou-ops.cn/post/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid><description>&lt;!-- ![](https://tu.ltyuanfang.cn/api/fengjing.php) -->
+&lt;p>整理三款流行的内网穿透工具，&lt;a href="https://github.com/fatedier/frp">frp&lt;/a>【开源】，&lt;a href="https://github.com/ehang-io/nps">nps&lt;/a>【开源】，&lt;a href="https://ngrok.com/">ngrok&lt;/a>【基础版免费】，前两款属于开源产品，需要自行搭建，&lt;code>ngrok&lt;/code>属于付费产品，但是基础版，白嫖的足够用了.😄&lt;/p>
 &lt;h2 id="frp">frp&lt;/h2>
 &lt;blockquote>
 &lt;p>A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.&lt;/p>
@@ -1475,7 +2220,8 @@ tc filter add dev tun0 parent ffff: protocol ip u32 match ip src 10.18.0.0/24 po
 &lt;/div>
 &lt;/div>&lt;blockquote>
 &lt;p>该文章内容收集于网络。&lt;/p>
-&lt;/blockquote></description></item><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.cn/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.cn/post/vim-tricks/</guid><description>&lt;blockquote>
+&lt;/blockquote></description></item><item><title>Vim Hotkeys and Cheat Sheet</title><link>https://agou-ops.cn/post/vim-tricks/</link><pubDate>Sun, 06 Dec 2020 11:53:04 +0800</pubDate><guid>https://agou-ops.cn/post/vim-tricks/</guid><description>&lt;p>&lt;img src="https://api.ixiaowai.cn/gqapi/gqapi.php" alt="">&lt;/p>
+&lt;blockquote>
 &lt;p>该文章用于记录个人在使用&lt;code>vim&lt;/code>期间常用的技巧和快捷键。&lt;/p>
 &lt;ul>
 &lt;li>2021-08-20 15:27:56：初始化；&lt;/li>
@@ -2112,7 +2858,7 @@ zo/zO 展开单个/所有
 &lt;/div>
 &lt;/div>&lt;h2 id="附录nerdtree-快捷键">附录：NERDTree 快捷键&lt;/h2>
 &lt;script src="https://gist.github.com/geekontheway/2667442.js">&lt;/script>
-&lt;!-- raw HTML omitted -->
+&lt;script src="https://gist.github.com/geekontheway/2667442.js">&lt;/script>
 &lt;h2 id="参考链接">参考链接&lt;/h2>
 &lt;ul>
 &lt;li>我的vim dotfile: &lt;a href="https://github.com/AGou-ops/dotfiles">https://github.com/AGou-ops/dotfiles&lt;/a>&lt;/li>
@@ -2880,7 +3626,7 @@ anim: 0
 &lt;/blockquote>
 &lt;p>⚠️ 注：&lt;code>-&lt;/code>表示无或不祥，&lt;code>^&lt;/code>表示和上个一样。ℹ️ &lt;strong>&amp;mdash; 移动端双击屏幕查看更佳～ &amp;mdash;&lt;/strong>&lt;/p>
 &lt;h2 id="二二年">二〇二〇年&lt;/h2>
-&lt;p>&lt;strong>喜好标签（由高到低）：&lt;!-- raw HTML omitted -->#日常   #萌系  #轻百合  #搞笑   #治愈 (不是致郁)    #魔法 &lt;!-- raw HTML omitted -->&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>喜好标签（由高到低）：&lt;font color='red'>#日常   #萌系  #轻百合  #搞笑   #治愈 (不是致郁)    #魔法 &lt;/font>&lt;/strong>&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -3938,7 +4684,7 @@ anim: 0
 &lt;p>所以就有了下面这个设备😆。&lt;/p>
 &lt;h3 id="usb30-to-msata-box">USB3.0 TO mSATA Box&lt;/h3>
 &lt;p>　　这小东西功能很简单，就是把&lt;code>mSATA&lt;/code>接口转为&lt;code>USB&lt;/code>接口，以便直接插在电脑上直接使用。实体图如下所示：&lt;/p>
-&lt;p>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/xianyu_1/IMG_20200914_140533.jpg" alt="USB3.0 TO mSATA Box" style="zoom:10%;" />&lt;/p>
 &lt;p>还是蛮好看的，不错，不错。&lt;/p>
 &lt;h3 id="hdmi-线--亚克力壳">HDMI 线 &amp;amp; 亚克力壳&lt;/h3>
 &lt;p>　　主要设备买完之后，突然发现还缺一条&lt;code>HDMI&lt;/code>线，回宿舍找了找没找到原来那根，于是&lt;code>10块钱&lt;/code>在闲鱼又买了条绿联&lt;code>0.75m&lt;/code>的&lt;code>HDMI&lt;/code>线，黄色扁线型的。&lt;/p>
@@ -4465,7 +5211,7 @@ cp -rf &lt;span class="si">${&lt;/span>&lt;span class="nv">TMP_GIT_CLONE&lt;/spa
 &lt;li>&lt;a href="https://www.jianshu.com/p/ccd135180783">commit-msg实用示例&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Hexo博客使用gulp压缩静态资源 1</title><link>https://agou-ops.cn/post/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90-1/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.cn/post/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8gulp%E5%8E%8B%E7%BC%A9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90-1/</guid><description>&lt;p>gulp 将开发流程中让人痛苦或耗时的任务自动化，从而减少你所浪费的时间、创造更大价值。&lt;/p>
 &lt;p>官方站点：https://www.gulpjs.com.cn/&lt;/p>
-&lt;!-- raw HTML omitted -->
+&lt;!-- more -->
 &lt;h3 id="1全局安装gulp">1、全局安装gulp&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -4734,7 +5480,7 @@ console.log(&amp;#34;----------gulp Finished----------&amp;#34;);
 &lt;/div>
 &lt;/div></description></item><item><title>使用GitHub Actions将文件push到OSS</title><link>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8github-actions%E5%B0%86%E6%96%87%E4%BB%B6push%E5%88%B0oss/</link><pubDate>Tue, 04 Aug 2020 10:23:38 +0800</pubDate><guid>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8github-actions%E5%B0%86%E6%96%87%E4%BB%B6push%E5%88%B0oss/</guid><description>&lt;p>阿里云对象存储服务（Object Storage Service，简称OSS）为您提供基于网络的数据存取服务。使用OSS，您可以通过网络随时存储和调用包括文本、图片、音频和视频等在内的各种非结构化数据文件。&lt;/p>
 &lt;p>官方帮助文档：https://help.aliyun.com/document_detail/31883.html&lt;/p>
-&lt;!-- raw HTML omitted -->
+&lt;!-- more -->
 &lt;ol>
 &lt;li>首先打开所要使用&lt;code>Github Actions&lt;/code>的仓库，点击&lt;code>Actions&lt;/code>，并创建一个新的&lt;code>workflow&lt;/code>
 &lt;img src="https://s2.ax1x.com/2020/03/08/3zlpwD.png" alt="3zlpwD.png">
@@ -4887,71 +5633,4 @@ Options:
 -h &lt;span class="p">|&lt;/span> --help Show this message.
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Web 压测工具</title><link>https://agou-ops.cn/post/web-benchmark/</link><pubDate>Tue, 14 Jul 2020 10:23:47 +0800</pubDate><guid>https://agou-ops.cn/post/web-benchmark/</guid><description>&lt;h2 id="web-benchmark-tools">web benchmark tools&lt;/h2>
-&lt;h3 id="apache-bench">Apache Bench&lt;/h3>
-&lt;blockquote>
-&lt;p>ApacheBench 是一个用来衡量http服务器性能的单线程命令行工具。原本针对Apache http服务器，但是也适用于其他http服务器。&lt;/p>
-&lt;/blockquote>
-&lt;p>如果你的操作系统没有&lt;code>ab&lt;/code>工具， 那么只需安装&lt;code>httpd-tools&lt;/code>(CentOS)或者&lt;code>apache-utils&lt;/code>(Ubuntu)即可。&lt;/p>
-&lt;p>常用参数说明：&lt;/p>
-&lt;ul>
-&lt;li>-n：执行的请求次数&lt;/li>
-&lt;li>-c：并发数量&lt;/li>
-&lt;li>-s：响应的超时时间&lt;/li>
-&lt;li>-p：post请求的数据文件路径，需要设置-T参数&lt;/li>
-&lt;li>-T：Content-Type&lt;/li>
-&lt;li>-C：设置cookie，格式为&amp;quot;name=zhou&amp;quot;&lt;/li>
-&lt;/ul>
-&lt;p>常用组合：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">ab -n &lt;span class="m">10000&lt;/span> -c &lt;span class="m">1000&lt;/span> http://localhost/index.html
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="wrk">wrk&lt;/h3>
-&lt;blockquote>
-&lt;p>wrk HTTP是一个现代的基准测试工具能产生显著的负载运行时在一个多核CPU。它结合了多线程设计可伸缩的系统如epoll和kqueue事件通知。&lt;/p>
-&lt;/blockquote>
-&lt;p>官方github仓库： &lt;a href="https://github.com/wg/wrk">https://github.com/wg/wrk&lt;/a>&lt;/p>
-&lt;p>编译安装：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wget https://github.com/wg/wrk/archive/4.1.0.tar.gz
-tar xf 4.1.0.tar.gz
-&lt;span class="nb">cd&lt;/span> 4.1.0/deps
-tar xf LuaJIT-2.1.0-beta3.tar.gz -C /usr/local
-tar xf openssl-1.1.0g.tar.gz -C /usr/local
-&lt;span class="nb">cd&lt;/span> ..
-make &lt;span class="nv">WITH_LUAJIT&lt;/span>&lt;span class="o">=&lt;/span>/usr/local/LuaJIT-2.1.0-beta3 &lt;span class="nv">WITH_OPENSSL&lt;/span>&lt;span class="o">=&lt;/span>/usr/local/openssl-1.1.0g
-make install
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>常用参数说明：&lt;/p>
-&lt;ul>
-&lt;li>-t：线程数&lt;/li>
-&lt;li>-c：http总请求数量&lt;/li>
-&lt;li>-d：测试时长，e.g. 2s, 2m, 2h&lt;/li>
-&lt;/ul>
-&lt;p>简单使用：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">wrk -t12 -c400 -d30s http://127.0.0.1:8080/index.html
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="待续">待续。。。&lt;/h3></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>
