@@ -5,7 +5,7 @@ lastmod: 2021-08-25T15:17:04+08:00
 draft: false
 description: ""
 tags: ["vim", "tricks"]
-categories: ["vim","技巧"]
+categories: ["vim","技巧","持续更新"]
 keywords: []
 
 author: "AGou-ops"
@@ -25,17 +25,21 @@ mathjax: false
 #     weight: 1
 ---
 
+![](https://api.ixiaowai.cn/gqapi/gqapi.php)
+
 > 该文章用于记录个人在使用`vim`期间常用的技巧和快捷键。
 >
 > - 2021-08-20 15:27:56：初始化；
 > - 2021年08月20日15:27:18 ： 更新vim分屏快捷键以及`NERDTree`快捷键；
 > - 2021年09月18日09:53:28： 更新插件快捷键；
 
+<!--more-->
+
 ## 通用技巧
 
 - 普通模式快捷键/操作符(直接使用, 无需使用`:`)
 
-<!--more-->
+
 
 ```bash
 # :h operator 来查阅完整的列表

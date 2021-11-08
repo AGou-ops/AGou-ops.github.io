@@ -4,8 +4,8 @@ date: 2021-11-02T14:30:23+08:00
 lastmod: 2021-11-02T14:30:23+08:00
 draft: false
 description: ""
-tags: []
-categories: []
+tags: ["network", "kubernetes"]
+categories: ["kubernetes"]
 keywords: []
 
 author: "AGou-ops"
@@ -165,6 +165,8 @@ $ ip netns exec server1 ip route add default via 192.168.1.1
 技术类文章网上一搜一大片，这里我分享一个之前YouTube上看到的一个视频，简洁明了。
 
 {{< video link="/subtitles/Kubernetes%20Services%20networking.mp4" subtitle="/subtitles/Kubernetes%20Services networking-English.vtt" time="0" text="ClusterIP" time1="107" text1="NodePort" time2="108" text2="ServiceIP with Calio" >}}
+
+<video src="https://agou-resources.oss-cn-chengdu.aliyuncs.com/video/Kubernetes%20Services%20networking.mp4"></video>
 
 <!-- {{< vidnosub link="/subtitles/Kubernetes%20Services%20networking.mp4"  time="0" text="ClusterIP" time1="107" text1="NodePort" time2="108" text2="ServiceIP with Calio" >}} -->
 

@@ -31,12 +31,12 @@ mathjax: false
 
 ## License
 
-本站所有原创内容开源许可协议均为：**`WTFPL`**
+本站所有原创内容开源许可协议均为：**`WTFPL`，转载的时候随便去掉本站信息都可以，不用经过博主同意。**
 
 > **何为`WTFPL`？**
 >
-> **[Do What the Fuck You Want to Public License](http://www.wtfpl.net/)**【意思自行体会】
+> **[WTFPL © Do What the Fuck You Want to Public License](http://www.wtfpl.net/)**【意思自行体会】
 >
-> *The WTFPL is a very permissive license for software and other scientific or artistic works that offers a great degree of freedom. In fact, it is probably the best license out there. *
+> *The WTFPL is a very permissive license for software and other scientific or artistic works that offers a great degree of freedom. In fact, it is probably the best license out there.*
 
 {{< figure src="https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211022084650825.png" title="图片来源于WTFPL官网" >}}

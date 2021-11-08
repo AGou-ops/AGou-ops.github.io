@@ -20,6 +20,9 @@ PygmentsUseClasses = true # Use CSS classes to format highlighted code
 PygmentsCodefencesGuessSyntax = true
 PygmentsOptions = "linenos=table"
 
+# 使markdown渲染raw HTML标签
+[markup.goldmark.renderer]
+unsafe= true
 
 # Enable author pages
 [taxonomies]
