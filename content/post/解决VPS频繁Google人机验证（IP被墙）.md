@@ -89,7 +89,7 @@ echoColor(){
 
 # 启用ipv6
 
-tee /etc/sysctl.conf <<EOF
+cat << EOF >> /etc/sysctl.conf
 net.ipv6.conf.all.disable_ipv6 = 0
 net.ipv6.conf.default.disable_ipv6 = 0
 net.ipv6.conf.lo.disable_ipv6 = 0
@@ -100,7 +100,7 @@ echoColor "====== 启用ipv6 ======\n"
 
 # ！！！！！重要！！！！！
 # 将下面的重定向内容替换为上面示例的配置片段内容
-tee /etc/network/interfaces <<EOF
+cat << EOF >>  /etc/network/interfaces
 
  auto he-ipv6
   iface he-ipv6 inet6 v4tunnel
@@ -129,7 +129,7 @@ echoColor "========================\n"
 # 备份原来的dns
 cp -a /etc/resolv.conf{,.bak}
 
-tee /etc/resolv.conf <EOF
+cat << EOF >> /etc/resolv.conf
 nameserver 8.8.8.8
 nameserver 8.8.4.4
 EOF
