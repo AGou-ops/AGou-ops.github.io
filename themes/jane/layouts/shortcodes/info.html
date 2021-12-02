@@ -160,20 +160,26 @@
   <script src="/js/ua-parser.min.js"></script>
   <script>
 
-    $.ajax({
-      type: "GET",
-      url: "https://ifconfig.me/ip",
-      success: function (data) {
-        console.log("Your IPv4 is: " + data)
-        var ipv4 = data
-        $.getJSON("https://ip-api.com/json/" + ipv4, function (data) {
-          $("#IPAddr").html("IPv4" + ": " + data.query + "（" + data.isp + "）")
-          $("#AddressFullText").html("Location: " + data.city + ", " + data.regionName + ", " + data.country)
-        })
-        //do something when request is successfull
-      },
-      dataType: "text"
-    });
+    // $.ajax({
+    //   type: "GET",
+    //   url: "https://ifconfig.me/ip",
+    //   success: function (data) {
+    //     console.log("Your IPv4 is: " + data)
+    //     var ipv4 = data
+    //     $.getJSON("https://api.ipgeolocation.io/ipgeo?apiKey=f1291bb1ca134449812fa4cd762847ad&ip=" + ipv4, function (data) {
+    //       $("#IPAddr").html("IPv4" + ": " + data.ip + "（" + data.isp + "）")
+    //       $("#AddressFullText").html("Location: "  + data.city + ", " + data.country_capital + ", " + data.continent_name + "（zip: " +data.zip + "）")
+    //     })
+    //     //do something when request is successfull
+    //   },
+    //   dataType: "text"
+    // });
+
+    $.getJSON("https://api.ipgeolocation.io/ipgeo?apiKey=f1291bb1ca134449812fa4cd762847ad", function (data) {
+      $("#IPAddr").html("IPv4" + ": " + data.ip + "（" + data.isp + "）")
+      $("#AddressFullText").html("Location: " + '<img src="'+data.country_flag+'" width="30" height="25"></img>' + data.city + ", " + data.country_capital + ", " + data.continent_name + "（lo.la: " + data.latitude + ", " + data.longitude + "）")
+    })
+
 
     var parser = new UAParser();
     var result = parser.getResult();
