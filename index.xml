@@ -131,7 +131,7 @@ url: "https://ifconfig.me/ip",
 success: function (data) {
 console.log("Your IPv4 is: " + data)
 var ipv4 = data
-$.getJSON("http://ip-api.com/json/" + ipv4, function (data) {
+$.getJSON("https://ip-api.com/json/" + ipv4, function (data) {
 $("#IPAddr").html("IPv4" + ": " + data.query + "（" + data.isp + "）")
 $("#AddressFullText").html("Location: " + data.city + ", " + data.regionName + ", " + data.country)
 })
