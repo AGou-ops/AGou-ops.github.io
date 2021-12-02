@@ -147,7 +147,7 @@ Shell `set`常用参数：
 >
 > ```bash
 > # 检查·sysctl·命令是否存在且可执行，如果不存在则进行下载安装。
-> 	if ! [ -x "$(command -v sysctl)" ]; then
+> if ! [ -x "$(command -v sysctl)" ]; then
 >    echo 'sysctl not installed. Installing it...'
 >    distro=$(awk -F= '/^ID=/{print $2}' /etc/os-release | tr -d '"')
 >    case $distro in
