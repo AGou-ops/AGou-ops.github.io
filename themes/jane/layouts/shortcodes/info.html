@@ -1,168 +1,188 @@
 <!DOCTYPE html>
 <!-- 东拼西凑的代码，像坨屎一样，我自己都看不下去了. -->
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-<style>
+  <style>
+    .panel {
+      margin: 0 auto;
+      height: 90px;
+      width: auto;
+      position: relative;
+      -webkit-perspective: 600px;
+      -moz-perspective: 600px;
+    }
 
-.panel {
-  margin: 0 auto;
-  height: 90px;  
-  width: auto;
-  position: relative;
-  -webkit-perspective: 600px;
-  -moz-perspective: 600px;
-}
+    .panel .front,
+    .panel .back {
+      text-align: center;
+    }
 
-.panel .front,
-.panel .back {
-  text-align: center;
-}
-  
-.panel .front {
-  height: inherit;
-  position: absolute;
-  top: 0;
-  z-index: 900;
-  text-align: center;
-  -webkit-transform: rotateX(0deg) rotateY(0deg);
-     -moz-transform: rotateX(0deg) rotateY(0deg);
-  -webkit-transform-style: preserve-3d;
-     -moz-transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-     -moz-backface-visibility: hidden;
-  -webkit-transition: all .4s ease-in-out;
-     -moz-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-     -o-transition: all .4s ease-in-out;
+    .panel .front {
+      height: inherit;
+      position: absolute;
+      top: 0;
+      z-index: 900;
+      text-align: center;
+      -webkit-transform: rotateX(0deg) rotateY(0deg);
+      -moz-transform: rotateX(0deg) rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -webkit-transition: all .4s ease-in-out;
+      -moz-transition: all .4s ease-in-out;
+      -ms-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
       transition: all .4s ease-in-out;
-}
+    }
 
-.panel .back {
-  height: inherit;
-  position: absolute;
-  top: 0;
-  z-index: 1000;
-  -webkit-transform: rotateY(-180deg);
-     -moz-transform: rotateY(-180deg);
-  -webkit-transform-style: preserve-3d;
-     -moz-transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-     -moz-backface-visibility: hidden;
-  -webkit-transition: all .4s ease-in-out;
-     -moz-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-     -o-transition: all .4s ease-in-out;
+    .panel .back {
+      height: inherit;
+      position: absolute;
+      top: 0;
+      z-index: 1000;
+      -webkit-transform: rotateY(-180deg);
+      -moz-transform: rotateY(-180deg);
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -webkit-transition: all .4s ease-in-out;
+      -moz-transition: all .4s ease-in-out;
+      -ms-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
       transition: all .4s ease-in-out;
-}
-.panel.flip .front {
-  z-index: 900;
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-}
-.panel.flip .back {
-  z-index: 1000;
-  -webkit-transform: rotateX(0deg) rotateY(0deg);
-  -moz-transform: rotateX(0deg) rotateY(0deg);
-}
-.box1{
-  background-color: #c05b4d;
-  color: #ffffff;
-  width: max-content;
-  /* display:table; */
-font-weight: bolder;
+    }
+
+    .panel.flip .front {
+      z-index: 900;
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+    }
+
+    .panel.flip .back {
+      z-index: 1000;
+      -webkit-transform: rotateX(0deg) rotateY(0deg);
+      -moz-transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    .box1 {
+      background-color: #c05b4d;
+      color: #ffffff;
+      width: max-content;
+      /* display:table; */
+      font-weight: bolder;
       /* margin:0 auto; */
-  height: auto;
-  margin: 0 auto;
-  padding: 5px;
-  border-radius: 10px;
-  display: inline-block;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
-.box2{
-  background-color: #000000;
-  color: #00FF00;
-  font-weight: bolder;
-  border-style: dashed;
-  border-color: #00FF00;
-  /* width: 250px; */
-  width: auto;
-  height: auto;
-  margin: 0 auto;
-  /* line-height: normal; */
-  padding: 1px;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
+      height: auto;
+      margin: 0 auto;
+      padding: 5px;
+      border-radius: 10px;
+      display: inline-block;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
 
-</style>
+    .box2 {
+      background-color: #000000;
+      color: #00FF00;
+      font-weight: bolder;
+      border-style: dashed;
+      border-color: #00FF00;
+      /* width: 250px; */
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      /* line-height: normal; */
+      padding: 1px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
+  </style>
 
 
 
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
+  <!-- partial:index.partial.html -->
 
 
 
-<div class="wrapper">
-      <div class="col_third">
-        <div class="hover panel">
-          <div class="front">
-            <div class="box1">
-              <p>岂能尽如人意，但求无愧我心。</p>
-            </div></b>&nbsp;&nbsp;&nbsp;&nbsp;Hover here to show all your network information.</b>
-          </div>
-          <div class="back">
-            <div class="box2">
-                <p style="text-align: left; color: whitesmoke; font-size: small;">All your network information is shown below:</p>
-  <!-- <center> -->
-    
+  <div class="wrapper">
+    <div class="col_third">
+      <div class="hover panel">
+        <div class="front">
+          <div class="box1">
+            <p>岂能尽如人意，但求无愧我心。</p>
+          </div></b>&nbsp;&nbsp;&nbsp;&nbsp;Hover here to show all your network information.</b>
+        </div>
+        <div class="back">
+          <div class="box2">
+            <p style="text-align: left; color: whitesmoke; font-size: small;">All your network information is shown
+              below:</p>
+            <!-- <center> -->
 
-      <p id="IPAddr"></p>
-      <p id="AddressFullText"></p>
-      <p id="os"></p>
-      <p id="UserAgent"></p>
 
-  <!-- </center> -->
-            </div>
+            <p id="IPAddr"></p>
+            <p id="AddressFullText"></p>
+            <p id="os"></p>
+            <p id="UserAgent"></p>
+
+            <!-- </center> -->
           </div>
         </div>
-		</div>
+      </div>
+    </div>
 
-	 </div>
-<!-- partial -->
+  </div>
+  <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 
   <script type="text/javascript">
-  console.clear();
-  console.log("东拼西凑的代码，像坨屎一样，我自己都看不下去了.");
-  $(document).ready(function(){
-    // set up hover panels
-    // although this can be done without JavaScript, we've attached these events
-    // because it causes the hover to be triggered when the element is tapped on a touch device
-    $('.hover').hover(function(){
-      $(this).addClass('flip');
-    },function(){
-      $(this).removeClass('flip');
+    console.clear();
+    console.log("东拼西凑的代码，像坨屎一样，我自己都看不下去了.");
+    $(document).ready(function () {
+      // set up hover panels
+      // although this can be done without JavaScript, we've attached these events
+      // because it causes the hover to be triggered when the element is tapped on a touch device
+      $('.hover').hover(function () {
+        $(this).addClass('flip');
+      }, function () {
+        $(this).removeClass('flip');
+      });
     });
-  });
-</script>
-<script src="/js/ua-parser.min.js"></script>
-<script>
-  $.getJSON("https://ipv4.ipw.cn/api/ip/locate", function(data) {
-    $("#IPAddr").html(data.IPVersion + ": " + data.IP)
-    $("#AddressFullText").html("Location: " + data.AddressFullText + " " + data.ISP)
+  </script>
+  <script src="/js/ua-parser.min.js"></script>
+  <script>
+
+    $.ajax({
+      type: "GET",
+      url: "https://ifconfig.me/ip",
+      success: function (data) {
+        console.log("Your IPv4 is: " + data)
+        var ipv4 = data
+        $.getJSON("http://ip-api.com/json/" + ipv4, function (data) {
+          $("#IPAddr").html("IPv4" + ": " + data.query + "（" + data.isp + "）")
+          $("#AddressFullText").html("Location: " + data.city + ", " + data.regionName + ", " + data.country)
+        })
+        //do something when request is successfull
+      },
+      dataType: "text"
+    });
+
     var parser = new UAParser();
     var result = parser.getResult();
     $("#os").html("OS: " + result.os.name + "  " + result.os.version + "（Arch: " + result.cpu.architecture + "）");
     $("#UserAgent").html("UserAgent:  " + result.ua);
-  })
-</script>
+
+
+  </script>
 
 </body>
+
 </html>
