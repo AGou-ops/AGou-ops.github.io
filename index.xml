@@ -101,12 +101,10 @@ border-radius: 10px;
 &lt;div class="back">
 &lt;div class="box2">
 &lt;p style="text-align: left; color: whitesmoke; font-size: small;">All your network information is shown below:&lt;/p>
-&lt;center>
 &lt;p id="IPAddr">&lt;/p>
 &lt;p id="AddressFullText">&lt;/p>
 &lt;p id="os">&lt;/p>
 &lt;p id="UserAgent">&lt;/p>
-&lt;/center>
 &lt;/div>
 &lt;/div>
 &lt;/div>
