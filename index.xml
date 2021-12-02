@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>suofeiyaxx@gmail.com (AGou-ops)</managingEditor><webMaster>suofeiyaxx@gmail.com (AGou-ops)</webMaster><copyright>WTFPL</copyright><lastBuildDate>Thu, 02 Dec 2021 08:50:05 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;!DOCTYPE html>
-&lt;html lang="en" >
+&lt;html lang="en">
 &lt;head>
 &lt;meta charset="UTF-8">
 &lt;style>
@@ -60,7 +60,7 @@ z-index: 1000;
 -webkit-transform: rotateX(0deg) rotateY(0deg);
 -moz-transform: rotateX(0deg) rotateY(0deg);
 }
-.box1{
+.box1 {
 background-color: #c05b4d;
 color: #ffffff;
 width: max-content;
@@ -73,7 +73,7 @@ display: inline-block;
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
 }
-.box2{
+.box2 {
 background-color: #000000;
 color: #00FF00;
 font-weight: bolder;
@@ -100,7 +100,8 @@ border-radius: 10px;
 &lt;/div>
 &lt;div class="back">
 &lt;div class="box2">
-&lt;p style="text-align: left; color: whitesmoke; font-size: small;">All your network information is shown below:&lt;/p>
+&lt;p style="text-align: left; color: whitesmoke; font-size: small;">All your network information is shown
+below:&lt;/p>
 &lt;p id="IPAddr">&lt;/p>
 &lt;p id="AddressFullText">&lt;/p>
 &lt;p id="os">&lt;/p>
@@ -114,24 +115,33 @@ border-radius: 10px;
 &lt;script type="text/javascript">
 console.clear();
 console.log("东拼西凑的代码，像坨屎一样，我自己都看不下去了.");
-$(document).ready(function(){
-$('.hover').hover(function(){
+$(document).ready(function () {
+$('.hover').hover(function () {
 $(this).addClass('flip');
-},function(){
+}, function () {
 $(this).removeClass('flip');
 });
 });
 &lt;/script>
 &lt;script src="https://agou-ops.cn/js/ua-parser.min.js">&lt;/script>
 &lt;script>
-$.getJSON("https://ipv4.ipw.cn/api/ip/locate", function(data) {
-$("#IPAddr").html(data.IPVersion + ": " + data.IP)
-$("#AddressFullText").html("Location: " + data.AddressFullText + " " + data.ISP)
+$.ajax({
+type: "GET",
+url: "https://ifconfig.me/ip",
+success: function (data) {
+console.log("Your IPv4 is: " + data)
+var ipv4 = data
+$.getJSON("http://ip-api.com/json/" + ipv4, function (data) {
+$("#IPAddr").html("IPv4" + ": " + data.query + "（" + data.isp + "）")
+$("#AddressFullText").html("Location: " + data.city + ", " + data.regionName + ", " + data.country)
+})
+},
+dataType: "text"
+});
 var parser = new UAParser();
 var result = parser.getResult();
 $("#os").html("OS: " + result.os.name + " " + result.os.version + "（Arch: " + result.cpu.architecture + "）");
 $("#UserAgent").html("UserAgent: " + result.ua);
-})
 &lt;/script>
 &lt;/body>
 &lt;/html>
