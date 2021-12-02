@@ -40,6 +40,7 @@ mathjax: false
 - 更换IP：频繁跳Google验证意味着你的IP被Google墙了，被识别为恶意IP，`换了IP也不一定管用，到头来折了IP又损了money，亏到裤衩都没了`；
 - 使用IPv6：配置IPv6来访问Google，`我这十几刀/yr的VPS就别想IPv6了，xd`；
 - 使用IPv6隧道：同上，不同之处就是借用了IPv6隧道，使原来仅有IPv4的机子拥有IPv6的能力，`或许这是个很好的解决方案，值得尝试，事实上这也解决了我的问题`；
+- 【附加】：听tg群友说套`warp VPN`也可以解决，但是没试过，具体参考[用 Cloudflare Warp 彻底解决 Google IP 定位中国的问题](https://www.v2ex.com/t/800581)；
 
 ## 申请免费的IPv6隧道
 
@@ -165,5 +166,21 @@ chmod +x install_ipv6_tunnel.sh
 ```bash
 wget -P /root -N --no-check-certificate "https://gist.githubusercontent.com/AGou-ops/d0c65269da6c77e49a410c6dbe9ce244/raw/cb3ecd53a69c89d6c0e5933d0b838d97b83407e3/install_ipv6_tunnel.sh" && chmod +x /root/install_ipv6_tunnel.sh && /root/install_ipv6_tunnel.sh
 ```
+
+## 检查VPS的IPv6地址
+
+检查VPS的IPv6地址是否生效，以及VPS的网络是否`IPv4`优先：
+
+```bash
+# 查询本机外网IPv6地址
+curl 6.ipw.cn
+# 备用查询地址
+curl ipv6.ip.sb
+
+# 测试网络是IPv4还是IPv6访问优先(访问IPv4/IPv6双栈站点，如果返回IPv6地址，则IPv6访问优先)
+curl test.ipw.cn
+```
+
+也可以浏览器直接访问[https://ipw.cn/](https://ipw.cn/)进行查看.
 
 Done.
