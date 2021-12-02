@@ -160,25 +160,25 @@
   <script src="/js/ua-parser.min.js"></script>
   <script>
 
-    // $.ajax({
-    //   type: "GET",
-    //   url: "https://ifconfig.me/ip",
-    //   success: function (data) {
-    //     console.log("Your IPv4 is: " + data)
-    //     var ipv4 = data
-    //     $.getJSON("https://api.ipgeolocation.io/ipgeo?apiKey=f1291bb1ca134449812fa4cd762847ad&ip=" + ipv4, function (data) {
-    //       $("#IPAddr").html("IPv4" + ": " + data.ip + "（" + data.isp + "）")
-    //       $("#AddressFullText").html("Location: "  + data.city + ", " + data.country_capital + ", " + data.continent_name + "（zip: " +data.zip + "）")
-    //     })
-    //     //do something when request is successfull
-    //   },
-    //   dataType: "text"
-    // });
+    $.ajax({
+      type: "GET",
+      url: "https://ifconfig.me/ip",
+      success: function (data) {
+        console.log("Your IPv4 is: " + data)
+        var ipv4 = data
+        $.getJSON("https://ipapi.co/" + ipv4 + "/json", function (data) {
+          $("#IPAddr").html(data.version + ": " + data.ip + "（" + data.org + "）")
+          $("#AddressFullText").html("Location: "  + data.city + ", " + data.region + ", " + data.country_name + "（lo.la: " + data.latitude + ", " + data.longitude + "）")
+        })
+        //do something when request is successfull
+      },
+      dataType: "text"
+    });
 
-    $.getJSON("https://api.ipgeolocation.io/ipgeo?apiKey=f1291bb1ca134449812fa4cd762847ad", function (data) {
-      $("#IPAddr").html("IPv4" + ": " + data.ip + "（" + data.isp + "）")
-      $("#AddressFullText").html("Location: " + '<img src="'+data.country_flag+'" width="30" height="25"></img>' + data.city + ", " + data.country_capital + ", " + data.continent_name + "（lo.la: " + data.latitude + ", " + data.longitude + "）")
-    })
+    // $.getJSON("https://api.ipgeolocation.io/ipgeo?apiKey=f1291bb1ca134449812fa4cd762847ad", function (data) {
+    //   $("#IPAddr").html("IPv4" + ": " + data.ip + "（" + data.isp + "）")
+    //   $("#AddressFullText").html("Location: " + '<img src="'+data.country_flag+'" width="30" height="25"></img>' + data.city + ", " + data.country_capital + ", " + data.continent_name + "（lo.la: " + data.latitude + ", " + data.longitude + "）")
+    // })
 
 
     var parser = new UAParser();
