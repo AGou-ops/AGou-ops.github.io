@@ -125,10 +125,19 @@ $(this).removeClass('flip');
 &lt;/script>
 &lt;script src="https://agou-ops.cn/js/ua-parser.min.js">&lt;/script>
 &lt;script>
-$.getJSON("https://api.ipgeolocation.io/ipgeo?apiKey=f1291bb1ca134449812fa4cd762847ad", function (data) {
-$("#IPAddr").html("IPv4" + ": " + data.ip + "（" + data.isp + "）")
-$("#AddressFullText").html("Location: " + '&lt;img src="'+data.country_flag+'" width="30" height="25">&lt;/img>' + data.city + ", " + data.country_capital + ", " + data.continent_name + "（lo.la: " + data.latitude + ", " + data.longitude + "）")
+$.ajax({
+type: "GET",
+url: "https://ifconfig.me/ip",
+success: function (data) {
+console.log("Your IPv4 is: " + data)
+var ipv4 = data
+$.getJSON("https://ipapi.co/" + ipv4 + "/json", function (data) {
+$("#IPAddr").html(data.version + ": " + data.ip + "（" + data.org + "）")
+$("#AddressFullText").html("Location: " + data.city + ", " + data.region + ", " + data.country_name + "（lo.la: " + data.latitude + ", " + data.longitude + "）")
 })
+},
+dataType: "text"
+});
 var parser = new UAParser();
 var result = parser.getResult();
 $("#os").html("OS: " + result.os.name + " " + result.os.version + "（Arch: " + result.cpu.architecture + "）");
