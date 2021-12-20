@@ -40,6 +40,7 @@ mathjax: false
 >   - 增加泡面番标识🍜，更新序号至`100`；
 > - 2021年06月21日：增加统计，更新序号至`125`；
 > - 2021年08月17日：更换页面title为艺术字，增加emoji，更新序号至`138`；
+> - 2021年12月20日：更新序号至`154`，**2021即将结束**；
 
 :warning: 注：`-`表示无或不祥，`^`表示和上个一样。:information_source: **--- 移动端双击屏幕查看更佳～ ---**
 
@@ -198,15 +199,31 @@ mathjax: false
 | 127 | 2021/06/23 | [《女子落语》](https://zh.moegirl.org.cn/女子落语)	| [芜罗亭魔梨威](https://zh.moegirl.org.cn/芜罗亭魔梨威) | [J.C.STAFF](https://zh.moegirl.org.cn/J.C.STAFF) |
 | 128 | 2021/06/25 | [《归宅部活动记录》](https://zh.moegirl.org.cn/归宅部活动记录)	| [道明寺樱](https://zh.moegirl.org.cn/道明寺樱) | [NOMAD](https://zh.moegirl.org.cn/NOMAD) |
 | 129 | 2021/06/26 | [《本田小狼与我》](https://zh.moegirl.org.cn/本田小狼与我)	| [小熊](https://zh.moegirl.org.cn/小熊(本田小狼与我)) | [STUDIO KAI](https://zh.moegirl.org.cn/STUDIO_KAI) |
-| 130 | 2021/06/26 | [《打了300年的史莱姆，不知不觉就练到了满级》](https://zh.moegirl.org.cn/打了300年的史莱姆，不知不觉就练到了满级):two_hearts:	| [相泽梓](https://zh.moegirl.org.cn/相泽梓)、[莱卡](https://zh.moegirl.org.cn/莱卡)、[芙拉德露忒](https://zh.moegirl.org.cn/芙拉德露忒) | [REVOROOT](https://zh.moegirl.org.cn/REVOROOT) |
+| 130 | 2021/06/26 | **[《打了300年的史莱姆，不知不觉就练到了满级》](https://zh.moegirl.org.cn/打了300年的史莱姆，不知不觉就练到了满级):two_hearts:**	| [相泽梓](https://zh.moegirl.org.cn/相泽梓)、[莱卡](https://zh.moegirl.org.cn/莱卡)、[芙拉德露忒](https://zh.moegirl.org.cn/芙拉德露忒) | [REVOROOT](https://zh.moegirl.org.cn/REVOROOT) |
 | 131 | 2021/07/02 | [《普通女高中生要做当地偶像》](https://zh.moegirl.org.cn/普通女高中生要做当地偶像)	| - | [feel.](https://zh.moegirl.org.cn/Feel.) |
 | 132 | 2021/07/07 | [《任性HighSpec》](https://zh.moegirl.org.cn/任性HighSpec)🍜	| - | [AXsiZ](https://zh.moegirl.org.cn/AXsiZ) |
 | 133 | 2021/07/18 | [《贫穷姐妹物语》](https://zh.moegirl.org.cn/贫穷姐妹物语)	| ALL | [东映动画](https://zh.moegirl.org.cn/东映动画) |
 | 134 | 2021/07/18 | [《烧窑的话也要马克杯》](https://zh.moegirl.org.cn/烧窑的话也要马克杯)	| - | 日本动画公司 |
 | 135 | 2021/07/31 | [《向阳素描》](https://zh.moegirl.org.cn/向阳素描)（全季+SP）	| - | [SHAFT](https://zh.moegirl.org.cn/SHAFT)、【[Aniplex](https://zh.moegirl.org.cn/Aniplex)、[芳文社](https://zh.moegirl.org.cn/芳文社)、Movic】（协助） |
-| 136 | 2021/08/01 | 《天宝伏妖录（第二季）	| - | 玄机 |
+| 136- | 2021/08/01 | 《天宝伏妖录（第二季）	| - | 玄机 |
 | 137 | 2021/08/04 | [《前说》](https://zh.moegirl.org.cn/前说)	| - | Studio五组、AXsiZ |
 | 138 | 2021/08/09 | [《夏色奇迹》](https://zh.moegirl.org.cn/夏色奇迹)	| - | [日升动画](https://zh.moegirl.org.cn/日升动画) |
+| 139 | 2021/08/20 | [一起一起这里那里](https://zh.moegirl.org.cn/一起一起这里那里) | - |[AIC](https://zh.moegirl.org.cn/AIC)|
+| 140 | 2021/08/28 | [放学后桌游俱乐部](https://zh.moegirl.org.cn/放学后桌游俱乐部) | - |LIDENFILMS|
+| 141 | 2021/08/29 | [Bang Dream](https://zh.moegirl.org.cn/BanG_Dream!) | [户山香](https://zh.moegirl.org.cn/户山香澄)、[市谷有咲](https://zh.moegirl.org.cn/市谷有咲) |[三次元](https://zh.moegirl.org.cn/SANZIGEN)|
+| 142 | 2021/09/12 | [Show by rock!!STARS!!](https://zh.moegirl.org.cn/Show_by_rock!!STARS!!) | [希安](https://zh.moegirl.org.cn/希安)、[莫亞](https://zh.moegirl.org.cn/index.php?title=莫亚&action=edit&redlink=1)、[狐丸](https://zh.moegirl.org.cn/狐丸)、[真島姬子](https://zh.moegirl.org.cn/index.php?title=真岛姬子&action=edit&redlink=1) |[BONES](https://zh.moegirl.org.cn/BONES)|
+| 143 | 2021/09/21 | **[赛马娘](https://zh.moegirl.org.cn/赛马娘)（第一二季）:two_hearts:** | [特别周](https://zh.moegirl.org.cn/特别周)、[东海帝王](https://zh.moegirl.org.cn/东海帝王)、[无声铃鹿](https://zh.moegirl.org.cn/无声铃鹿) |[P.A.WORKS](https://zh.moegirl.org.cn/P.A.WORKS)、[STUDIO KAI](https://zh.moegirl.org.cn/STUDIO_KAI)|
+| 144+ | 2021/09/24 | **[小林家的龍女僕S](https://zh.moegirl.org.cn/小林家的龍女僕S):two_hearts:** | ^ |^|
+| 145 | 2021/09/27 | [Re:STAGE! Dream Days♪](https://zh.moegirl.org.cn/zh-hans/Re:Stage!) | - |[梦太公司](https://zh.moegirl.org.cn/梦太公司)×[Graphinica](https://zh.moegirl.org.cn/Graphinica)|
+| 146 | 2021/10/02 | [灼热乒乓妹](https://zh.moegirl.org.cn/zh-cn/%E7%81%BC%E7%83%AD%E7%9A%84%E4%B9%92%E4%B9%93%E7%90%83%E5%A8%98) | 上矢阿贺里 |KINEMA CITRUS|
+| 147 | 2021/10/07 | [八月的棒球甜心](https://zh.moegirl.org.cn/八月的棒球甜心) | - |TMS Entertainment|
+| 148 | 2021/10/10 | [Regalia三圣星](https://zh.moegirl.org.cn/Regalia三圣星) | 尤因希艾露·阿斯特利亚(尤伊) |[Actas](https://mzh.moegirl.org.cn/Actas)|
+| 149 | 2021/10/17 | [终末的伊泽塔](https://zh.moegirl.org.cn/终末的伊泽塔) | [伊泽塔](https://zh.moegirl.org.cn/伊泽塔)、[菲涅](https://zh.moegirl.org.cn/菲涅) |[亚细亚堂](https://zh.moegirl.org.cn/亚细亚堂)|
+| 150 | 2021/10/20 | **[LoveLive!Superstar!!](https://zh.moegirl.org.cn/zh-hans/LoveLive!Superstar!!):two_hearts:** | ALL |[日昇](https://zh.moegirl.org.cn/日昇) • [BANDAI NAMCO Arts](https://zh.moegirl.org.cn/BANDAI_NAMCO_Arts)（[Lantis](https://zh.moegirl.org.cn/Lantis) • [BANDAI VISUAL](https://zh.moegirl.org.cn/index.php?title=BANDAI_VISUAL&action=edit&redlink=1)） • [KADOKAWA](https://zh.moegirl.org.cn/index.php?title=KADOKAWA&action=edit&redlink=1)（[ASCII Media Works](https://zh.moegirl.org.cn/ASCII_Media_Works) • [电击G's magazine](https://zh.moegirl.org.cn/电击G's_magazine)）|
+| 151 | 2021/10/21 | [临时女友](https://zh.moegirl.org.cn/临时女友) | [椎名心实](https://zh.moegirl.org.cn/椎名心实)(声优势力强大，出场角色太多了以至于一个都没记住) |[SILVER LINK.](https://zh.moegirl.org.cn/SILVER_LINK.)、[C-Station](https://zh.moegirl.org.cn/C-Station)|
+| 152 | 2021/11/04 | [美妙射击部](https://zh.moegirl.org.cn/美妙射击部) | [涉澤泉水](https://zh.moegirl.org.cn/index.php?title=涉泽泉水&action=edit&redlink=1) |Studio 3Hz|
+| 153 | 2021/12/05 | [伯纳德小姐说](https://zh.moegirl.org.cn/伯纳德小姐说)。🍜 | - |Creators in Pack|
+| 154 | 2021/12/19 | **[白沙的水族馆](https://zh.moegirl.org.cn/白沙的水族馆):two_hearts:** | [海咲野心](https://zh.moegirl.org.cn/海咲野心)、[宮澤風花](https://zh.moegirl.org.cn/宫泽风花) |[P.A.WORKS](https://zh.moegirl.org.cn/P.A.WORKS)|
 
 ### 年度最喜欢的声优(及所配音角色)
 
@@ -221,7 +238,7 @@ mathjax: false
 
 ## -- 统计 --
 
-截止`2021年08月17日09:42:22`，番剧总数为`【138+】`，其中：
+截止`2021年08月17日09:42:22`，番剧总数为`【154+】`，其中：
 
-- 泡面番🍜：`【20】`
-- 续集番：`【4】`
+- 泡面番🍜：`【21】`
+- 续集番：`【6】`
