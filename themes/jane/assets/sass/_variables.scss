@@ -185,3 +185,8 @@ $categories-title-border-bottom: 2px solid $theme-color !default;
 $categories-tags-link-margin: 5px 10px !default;
 // Font size of the category count
 $category-count-font-size: 12px !default;
+
+
+$deputy-color: nth($theme-color-map, 2) !default;
+// Border color of the table.
+$content-table-border-color: darken($deputy-color, 3%) !default;
