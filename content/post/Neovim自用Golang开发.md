@@ -26,7 +26,6 @@ mathjax: false
 ---
 
 
-<!--more-->
 
 
 ## TL;DR
@@ -36,13 +35,12 @@ mathjax: false
 github仓库：:point_right: [https://github.com/AGou-ops/dotfiles](https://github.com/AGou-ops/dotfiles) :point_left:
 
 
-
 - **Neovim及其插件简单视频介绍：https://www.bilibili.com/video/BV1am4y197bR/**
 - **保姆级安装up主同款Neovim：https://www.bilibili.com/video/BV1YF411i72t/**
 
+<!--more-->
 
-
-视频讲的一般，可以直接看下面的介绍：
+视频讲的一般，可以直接看下面的介绍.
 
 ## 主流三种配置结构对比
 
