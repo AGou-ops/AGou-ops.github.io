@@ -282,7 +282,7 @@
                     slot: "header"
                 },
                 slot: "header"
-            }, [e._v(" 订阅转换(钓鱼演示站，不要提交隐私数据) "), o("svg-icon", {
+            }, [e._v(" 订阅转换 "), o("svg-icon", {
                 staticStyle: {
                     "margin-left": "20px"
                 },
