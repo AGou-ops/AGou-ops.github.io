@@ -5,7 +5,7 @@ lastmod: 2020-08-04T10:23:38+08:00
 draft: false
 description: ""
 tags: ["hexo", "gulp"]
-categories: []
+categories: ["博客"]
 keywords: []
 
 author: "AGou-ops"
