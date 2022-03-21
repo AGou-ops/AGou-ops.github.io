@@ -166,7 +166,7 @@ $ ip netns exec server1 ip route add default via 192.168.1.1
 
 {{< video link="/subtitles/Kubernetes%20Services%20networking.mp4" subtitle="/subtitles/Kubernetes%20Services networking-English.vtt" time="0" text="ClusterIP" time1="107" text1="NodePort" time2="108" text2="ServiceIP with Calio" >}}
 
-<video src="https://agou-resources.oss-cn-chengdu.aliyuncs.com/video/Kubernetes%20Services%20networking.mp4"></video>
+
 
 <!-- {{< vidnosub link="/subtitles/Kubernetes%20Services%20networking.mp4"  time="0" text="ClusterIP" time1="107" text1="NodePort" time2="108" text2="ServiceIP with Calio" >}} -->
 

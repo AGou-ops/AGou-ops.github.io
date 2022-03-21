@@ -24,6 +24,29 @@
     </div>
   {{ end }}
 
+  <!-- 懒得做加密和secret了，如果你想要的话，直接拿去就好了。。 -->
+  {{ if .Site.Params.giscus.enable }}
+    <div class="post bg-white">
+      <script src="https://giscus.app/client.js"
+      data-repo="AGou-ops/comments"
+      data-repo-id="MDEwOlJlcG9zaXRvcnkyNDU4MjMwMTU="
+      data-category="General"
+      data-category-id="DIC_kwDODqb2J84COMZZ"
+      data-mapping="pathname"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+</script>
+    </div>
+  {{ end }}
+
+
+
   <!-- changyan -->
   {{- if and .Site.Params.changyanAppid .Site.Params.changyanAppkey -}}
     <div id="SOHUCS"></div>
