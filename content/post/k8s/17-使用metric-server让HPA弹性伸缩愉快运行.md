@@ -2,7 +2,7 @@
 title: "17 使用metric Server让HPA弹性伸缩愉快运行"
 date: 2019-08-04T10:36:48+08:00
 lastmod: 2019-08-04T10:36:48+08:00
-draft: false
+draft: true
 description: ""
 tags: ['kubernetes']
 categories: ['转载', 'kubernetes', '基础教程']

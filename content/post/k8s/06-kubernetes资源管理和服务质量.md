@@ -2,7 +2,7 @@
 title: "06 Kubernetes资源管理和服务质量"
 date: 2019-08-04T10:36:47+08:00
 lastmod: 2019-08-04T10:36:47+08:00
-draft: false
+draft: true
 description: ""
 tags: ['kubernetes']
 categories: ['转载', 'kubernetes', '基础教程']

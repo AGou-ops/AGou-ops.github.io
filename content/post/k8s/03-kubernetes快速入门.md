@@ -2,7 +2,7 @@
 title: "03 Kubernetes快速入门"
 date: 2019-08-04T10:36:47+08:00
 lastmod: 2019-08-04T10:36:47+08:00
-draft: false
+draft: true
 description: ""
 tags: ['kubernetes']
 categories: ['转载', 'kubernetes', '基础教程']

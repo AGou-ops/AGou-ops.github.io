@@ -2,7 +2,7 @@
 title: "13 一次性任务Job和周期任务"
 date: 2019-08-04T10:36:48+08:00
 lastmod: 2019-08-04T10:36:48+08:00
-draft: false
+draft: true
 description: ""
 tags: ['kubernetes']
 categories: ['转载', 'kubernetes', '基础教程']
