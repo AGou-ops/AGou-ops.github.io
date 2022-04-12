@@ -164,7 +164,7 @@ chmod +x install_ipv6_tunnel.sh
 直接在线运行上面的脚本，不用手动复制然后执行了，一条命令完事:
 
 ```bash
-wget -P /root -N --no-check-certificate "https://gist.githubusercontent.com/AGou-ops/d0c65269da6c77e49a410c6dbe9ce244/raw/cb3ecd53a69c89d6c0e5933d0b838d97b83407e3/install_ipv6_tunnel.sh" && chmod +x /root/install_ipv6_tunnel.sh && /root/install_ipv6_tunnel.sh
+wget -P /root -N --no-check-certificate "https://gist.githubusercontent.com/AGou-ops/d0c65269da6c77e49a410c6dbe9ce244/raw/e81ed2bcaea9aef80eeda799adbba2bfb63b2f67/install_ipv6_tunnel.sh" && chmod +x /root/install_ipv6_tunnel.sh && /root/install_ipv6_tunnel.sh
 ```
 
 ## 检查VPS的IPv6地址
