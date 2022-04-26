@@ -27,7 +27,7 @@ mathjax: false
 
 ![image-20220424105947609](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20220424105947609.png)
 
-以上是`Grafana Template`的页面截图，[🔗https://grafana.com/grafana/dashboards/12268](https://grafana.com/grafana/dashboards/12268)
+以上是`Grafana Template`的页面截图，🔗 [https://grafana.com/grafana/dashboards/12268](https://grafana.com/grafana/dashboards/12268)
 
 <!--more-->
 
@@ -50,7 +50,7 @@ sudo apt install libmaxminddb0 libmaxminddb-dev mmdb-bin
 
 ### 编译nginx with ngx_http_geoip2_module
 
-`ngx_http_geoip2_module`模块地址：https://github.com/leev/ngx_http_geoip2_module
+`ngx_http_geoip2_module`模块地址：[https://github.com/leev/ngx_http_geoip2_module](https://github.com/leev/ngx_http_geoip2_module)
 
 ```bash
 # 下载nginx源码包
@@ -117,7 +117,7 @@ log_format custom '$remote_addr - $remote_user [$time_local]'
 access_log /config/log/nginx/access.log custom;
 ```
 
-:information_source:`GeoLite2-City.mmdb`文件可以从[GitHub下载](https://github.com/search?q=GeoLite2-City.mmdb)或者自己注册一个账号下载：https://www.maxmind.com/en/geolite2/signup
+:information_source:`GeoLite2-City.mmdb`文件可以从[GitHub下载](https://github.com/search?q=GeoLite2-City.mmdb)或者自己注册一个账号下载：[https://www.maxmind.com/en/geolite2/signup](https://www.maxmind.com/en/geolite2/signup)
 
 修改完成之后重启nginx，`systemctl restart nginx`
 

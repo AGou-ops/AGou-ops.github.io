@@ -53,7 +53,7 @@ $global-headings: ( h1: 1.6em, h2: 1.5em, h3: 1.3em, h4: 1.2em, h5: 1.1em, h6: 1
 // Font size of the logo.
 $logo-font-size: 36px !default;
 // Font family of the logo.
-$logo-font-family: "cursive,LiSu,sans-serif" !default;
+$logo-font-family: "cursive,LiSu,sans-serif" !important;
 // Margin of menu item.
 $menu-item-margin-left: 10px !default;
 // Margin of menu item in mobile.
@@ -185,8 +185,6 @@ $categories-title-border-bottom: 2px solid $theme-color !default;
 $categories-tags-link-margin: 5px 10px !default;
 // Font size of the category count
 $category-count-font-size: 12px !default;
-
-
 $deputy-color: nth($theme-color-map, 2) !default;
 // Border color of the table.
 $content-table-border-color: darken($deputy-color, 3%) !default;
