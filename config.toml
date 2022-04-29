@@ -147,6 +147,10 @@ defaultContentLanguage = "en"           # Default language to use
     photoswipeUI = '<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin="anonymous"></script>'
     photoswipeCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css" integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin="anonymous">'
     photoswipeSKIN = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css" integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin="anonymous">'
+    darkmode = '<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>'
+
+  [params.darkmode]
+    enable = true
 
   [params.utteranc]         # utteranc is a comment system based on GitHub issues. see https://utteranc.es
     enable = false

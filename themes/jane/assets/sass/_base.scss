@@ -104,3 +104,22 @@ a {
 .bg-white {
   background-color: #FFF;
 }
+
+
+.darkmode-layer, .darkmode-toggle {
+  z-index: 500;
+}
+
+.darkmode--activated img {
+  mix-blend-mode: difference;
+  isolation: isolate;
+}
+
+.darkmode--activated .logo{
+  mix-blend-mode: difference;
+  color: white !important;
+}
+.darkmode--activated .menu-item-link {
+  mix-blend-mode: difference;
+  color: white !important;
+}
