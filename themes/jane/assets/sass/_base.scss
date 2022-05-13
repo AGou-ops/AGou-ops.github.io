@@ -110,16 +110,19 @@ a {
   z-index: 500;
 }
 
-.darkmode--activated img {
-  mix-blend-mode: difference;
-  isolation: isolate;
-}
-
-.darkmode--activated .logo{
+.darkmode--activated .logo {
   mix-blend-mode: difference;
   color: white !important;
 }
 .darkmode--activated .menu-item-link {
   mix-blend-mode: difference;
   color: white !important;
+}
+
+.darkmode--activated img {
+  mix-blend-mode: difference;
+}
+
+.darkmode--activated .content-wrapper {
+  background-image: none !important;
 }
