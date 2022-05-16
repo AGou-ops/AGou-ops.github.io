@@ -43,7 +43,7 @@ mathjax: false
 
 - 使用IPv6隧道：同上，不同之处就是借用了IPv6隧道，使原来仅有IPv4的机子拥有IPv6的能力，`或许这是个很好的解决方案，值得尝试，事实上这也解决了我的问题`；
 
-- 【附加】：听tg群友说套`warp VPN`也可以解决，但是没试过，具体参考[用 Cloudflare Warp 彻底解决 Google IP 定位中国的问题](https://www.v2ex.com/t/800581)；
+- 【附加】：听tg群友说套`warp VPN`也可以解决，但是没试过，具体参考:link: [用 Cloudflare Warp 彻底解决 Google IP 定位中国的问题](https://www.v2ex.com/t/800581)、:link: [安装warp解决Google搜索出现人机验证、解锁Netfix非自制剧最新教程](https://www.4spaces.org/warp-netflix-google-code-solved/)；
 
     - > 【补充】：感谢[@crazypeace](https://github.com/crazypeace)网友推荐的一键安装`Cloudflare WARP` 并添加` IPv6` 脚本；:heart:
         >
@@ -196,3 +196,7 @@ curl test.ipw.cn
 也可以浏览器直接访问[https://ipw.cn/](https://ipw.cn/)进行查看.
 
 Done.
+
+## 参考链接
+
+- 安装warp解决Google搜索出现人机验证、解锁Netfix非自制剧最新教程: https://www.4spaces.org/warp-netflix-google-code-solved/
