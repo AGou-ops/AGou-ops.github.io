@@ -38,9 +38,21 @@ mathjax: false
 网上搜集的解决方案有以下几种：
 
 - 更换IP：频繁跳Google验证意味着你的IP被Google墙了，被识别为恶意IP，`换了IP也不一定管用，到头来折了IP又损了money，亏到裤衩都没了`；
+
 - 使用IPv6：配置IPv6来访问Google，`我这十几刀/yr的VPS就别想IPv6了，xd`；
+
 - 使用IPv6隧道：同上，不同之处就是借用了IPv6隧道，使原来仅有IPv4的机子拥有IPv6的能力，`或许这是个很好的解决方案，值得尝试，事实上这也解决了我的问题`；
+
 - 【附加】：听tg群友说套`warp VPN`也可以解决，但是没试过，具体参考[用 Cloudflare Warp 彻底解决 Google IP 定位中国的问题](https://www.v2ex.com/t/800581)；
+
+    - > 【补充】：感谢[@crazypeace](https://github.com/crazypeace)网友推荐的一键安装`Cloudflare WARP` 并添加` IPv6` 脚本；:heart:
+        >
+        > ```bash
+        > bash <(curl -fsSL git.io/warp.sh) 6
+        > ```
+        >
+        > GitHub仓库地址：[https://github.com/P3TERX/warp.sh](https://github.com/P3TERX/warp.sh)
+
 
 ## 申请免费的IPv6隧道
 
