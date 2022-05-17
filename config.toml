@@ -9,7 +9,7 @@ paginate = 10         # Number of articles displayed on the homepage # 首页每
 rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
 disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
-copyright = "WTFPL"            # default: author.name ↓        # 默认为下面配置的author.name ↓
+copyright = "WTFPLv2"            # default: author.name ↓        # 默认为下面配置的author.name ↓
 languageCode = "en-us"
 enableGitInfo = true      # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
 # uglyURLs = true         # more info: https://gohugo.io/content-management/urls/#ugly-urls
@@ -129,7 +129,7 @@ defaultContentLanguage = "en"           # Default language to use
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
   customCSS = ["layer.css"]            # if ['custom.css'], load '/static/css/custom.css' file
-  customJS = ["layer.js"]             # if ['custom.js'], load '/static/js/custom.js' file
+  customJS = ["code_expander.js"]             # if ['custom.js'], load '/static/js/custom.js' file
 
   # enable 'fork me on github', see https://blog.github.com/2008-12-19-github-ribbons/
   forkMeOnGithub = "https://github.com/AGou-ops"
