@@ -135,7 +135,7 @@ defaultContentLanguage = "en"           # Default language to use
   forkMeOnGithub = "https://github.com/AGou-ops"
 
   # add custom info on the footer.   # 添加备案信息
-  customFooter = '<a class="theme-link" href="https://beian.miit.gov.cn" style="font-size: 15px;" >鲁ICP备19050296号-2</a>'
+  customFooter = '<a class="theme-link" href="https://beian.miit.gov.cn" style="font-size: 15px;" >浙ICP备2022018790号-1</a>'
 
   [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
     enable = false
