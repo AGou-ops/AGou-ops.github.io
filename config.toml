@@ -73,7 +73,7 @@ defaultContentLanguage = "en"           # Default language to use
 [[languages.en.menus.main]]
   name = "myDocs"
   weight = 55
-  url = "https://agou-ops.cn/myDocsv2"
+  url = "https://docs.agou-ops.cn"
 # [[menu.main]]
 #   name = "myStudyNote"
 #   weight = 60
