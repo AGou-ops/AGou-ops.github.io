@@ -149,7 +149,7 @@ $("#UserAgent").html("UserAgent: " + result.ua);
 &lt;ul>
 &lt;li>本站地址：&lt;a href="https://agou-ops.cn">https://agou-ops.cn&lt;/a>&lt;/li>
 &lt;li>备用地址：&lt;a href="https://agou-ops.cn/myBlog-bak">https://x.agou-ops.cn&lt;/a>&lt;/li>
-&lt;li>my Docs：&lt;a href="https://docs.agou-ops.cn">https://docs.agou-ops.cn&lt;/a>&lt;/li>
+&lt;li>my Docs：&lt;a href="https://agou-ops.cn/myDocsv3">https://docs.agou-ops.cn&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="license">License&lt;/h2>
 &lt;p>本站所有原创内容开源许可协议均为：&lt;strong>&lt;code>WTFPL&lt;/code>，转载的时候随便去掉本站信息都可以，不用经过博主同意。&lt;/strong>&lt;/p>
