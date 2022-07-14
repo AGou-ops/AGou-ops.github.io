@@ -10,7 +10,7 @@ keywords: []
 
 author: "AGou-ops"
 
-# weight:
+weight: 1
 # menu: "main"
 # comment: true
 toc: true
