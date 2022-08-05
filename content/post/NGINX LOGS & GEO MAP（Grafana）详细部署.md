@@ -123,7 +123,7 @@ access_log /config/log/nginx/access.log custom;
 
 ## 使用脚本将日志写入influxDB
 
-运行脚本之前，安装一下`influxDB`，注意安装版本要使用`1.8x`版本，新版`2.x`版本不可以，github releases地址：https://github.com/influxdata/influxdb/releases
+运行脚本之前，安装一下`influxDB`，注意安装版本要使用`1.8x`版本，新版`2.x`版本不可以，github releases地址：[https://github.com/influxdata/influxdb/releases](https://github.com/influxdata/influxdb/releases)
 
 ```bash
 # 安装influxdb
