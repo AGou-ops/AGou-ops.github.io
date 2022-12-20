@@ -41,12 +41,12 @@ mathjax: false
 
 ```shell
 [dmy@www2020 ~]$ cat ~/web.com.git/hooks/post-receive 
-#!/usr/bin/bash
+#!/bin/bash
 GIT_REPO=/home/dmy/web.com.git
 TMP_GIT_CLONE=/tmp/web.com.git
 PUBLIC_WWW=/var/www/html/test
 rm -rf ${TMP_GIT_CLONE}
-git clone ${GIT_REPO} ${TMP_GIT_CLONE}
+git clone -b main ${GIT_REPO} ${TMP_GIT_CLONE}
 sleep 1
 cd ${TMP_GIT_CLONE}
 # rm -rf ${PUBLIC_WWW}/*
@@ -125,5 +125,4 @@ EOF
 ![image-20220406103914712](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20220406103914712.png)
 
 Done.
-
 
