@@ -25,7 +25,7 @@ mathjax: false
 #     weight: 1
 ---
 
-{{< changeBG "https://acg.toubiec.cn/random.php" >}}
+{{< changeBG "https://api.ixiaowai.cn/api/api.php" >}}
 
 ***按照观看结束时间排序，序号仅用于计数。(2020-03-28 至 ????-??-??)***
 
@@ -256,11 +256,11 @@ mathjax: false
 
 ### 年度最喜欢的声优(及所配音角色)
 
-- 
+-
 
 ### 年度最喜欢的OP/ED/OST/IN
 
-- 
+-
 
 ## -- 统计 --
 
@@ -268,4 +268,3 @@ mathjax: false
 
 - 泡面番🍜：`【21】`
 - 续集番：`【6】`
-
