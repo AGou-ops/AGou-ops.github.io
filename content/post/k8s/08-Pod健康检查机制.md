@@ -286,7 +286,7 @@ Setting up htop (2.2.0-1+b1) ...
 
 1. 运行htop查看进程，容器进程通常为1
 
-![htop运行结果](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89Pod%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5%E6%9C%BA%E5%88%B6/1%20-%201620.jpg)
+![htop运行结果](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89Pod%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5%E6%9C%BA%E5%88%B6/1%20-%201620.jpg)
 
 1. kill掉进程观察容器状态，观察RESTART次数重启次数增加
 

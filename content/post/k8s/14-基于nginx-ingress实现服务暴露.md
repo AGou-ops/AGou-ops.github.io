@@ -43,7 +43,7 @@ mathjax: false
 - SSL加密，客户端到Ingress Controller为https加密，到后端Pod为明文的http；
 - 基于名称的虚拟主机，提供基于域名或URI更灵活的路由方式
 
-![Ingress Controller](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/1%20-%201620.jpg)
+![Ingress Controller](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/1%20-%201620.jpg)
 
 实现Ingress包含的组件有：
 
@@ -69,11 +69,11 @@ mathjax: false
 
 > By default, pods of Kubernetes services are not accessible from the external network, but only by other pods within the Kubernetes cluster. Kubernetes has a built‑in configuration for HTTP load balancing, called Ingress, that defines rules for external connectivity to Kubernetes services. Users who need to provide external access to their Kubernetes services create an *Ingress resource* that defines rules, including the URI path, backing service name, and other information. The Ingress controller can then automatically program a frontend load balancer to enable Ingress configuration. The NGINX Ingress Controller for Kubernetes is what enables Kubernetes to configure NGINX and NGINX Plus for load balancing Kubernetes services.
 
-![Nginx ingress](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/2%20-%201620.jpg)
+![Nginx ingress](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/2%20-%201620.jpg)
 
 Nginx Ingress Controller是实现ingress的具体实现，包含有两个版本：Ngnix OSS和Nginx Plus版，后者是商业化增强版，支持更多的功能，详情参考官方文档介绍https://www.nginx.com/products/nginx/kubernetes-ingress-controller#compare-versions
 
-![Nginx ingress版本features对比](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/3%20-%201620.jpg)
+![Nginx ingress版本features对比](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/3%20-%201620.jpg)
 
 ## 2.2 Nginx ingress安装
 
@@ -440,7 +440,7 @@ nginx-ingress-tgf6r   1/1     Running   0          2m44s   10.244.2.160   node-3
 
 3、校验Nginx Ingress安装情况，此时三个节点均是对等，即访问任意一个节点均能实现相同的效果，统一入口则通过外部负载均衡，如果在云环境下执行kubectl apply -f service/loadbalancer.yaml创建外部负载均衡实现入口调度，自建的可以通过lvs或nginx等负载均衡实现接入，本文不再赘述，读者可以自行研究。
 
-![nginx ingress安装校验](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/4%20-%201620.jpg)
+![nginx ingress安装校验](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/4%20-%201620.jpg)
 
 **备注说明**：如果以Deployments的方式部署，则需要执行service/nodeport.yaml创建NodePort类型的Service，实现的效果和DaemonSets类似。
 
@@ -531,7 +531,7 @@ Events:
 
 6、测试验证，ingress规则的配置信息已注入到Ingress Controller中，环境中Ingress Controller是以DaemonSets的方式部署在集群中，如果有外部的负载均衡，则将www.happylau.cn域名的地址解析为负载均衡VIP。由于测试环境没有搭建负载均衡，将hosts解析执行node-1，node-2或者node-3任意一个IP都能实现相同的功能。
 
-![ingress测试](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/5%20-%201620.jpg)
+![ingress测试](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/5%20-%201620.jpg)
 
 上述测试解析正常，当然也可以解析为node-1和node-2的IP，如下：
 
@@ -625,11 +625,11 @@ ingress-demo   3/3     3            3           123m
 
 3、再次查看nginx的配置文件，ingress借助于service的服务发现机制，将加入的Pod自动加入到nginx upstream中
 
-![nginx动态更新配置](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/6%20-%201620.jpg)
+![nginx动态更新配置](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/6%20-%201620.jpg)
 
 4、查看nginx pod的日志（kubectl logs nginx-ingress-7mpfc -n nginx-ingress），有reload优雅重启的记录，即通过更新配置文件+reload实现配置动态更新。
 
-![nginx控制器重启日志记录](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/7%20-%201620.jpg)
+![nginx控制器重启日志记录](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/7%20-%201620.jpg)
 
 通过上述的配置可知，ingress调用kubernetes api去感知kubernetes集群中的变化情况，Pod的增加或减少这些变化，然后动态更新nginx ingress controller的配置文件，并重新载入配置。当集群规模越大时，会频繁涉及到配置文件的变动和重载，因此nginx这方面会存在先天的劣势，专门为微服务负载均衡应运而生，如Traefik，Envoy，Istio，这些负载均衡工具能够提供大规模，频繁动态更新的场景，但性能相比Nginx，HAproxy还存在一定的劣势。往后的章节中，我们再对其他的Ingress控制器做介绍。
 
@@ -1077,11 +1077,11 @@ Events:
 
 5、 将news.happylau.cn和sports.happylau.cn写入到hosts文件中，并通过[https://news.happylau.cn](https://news.happylau.cn/) 的方式访问，浏览器访问内容提示证书如下，信任证书即可访问到站点内容。
 
-![tls测试页面](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/8%20-%201620.jpg)
+![tls测试页面](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/8%20-%201620.jpg)
 
 查看证书详情，正是我们制作的自签名证书，生产实际使用时，推荐使用CA机构颁发签名证书。
 
-![证书详情](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/9%20-%201620.jpg)
+![证书详情](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/9%20-%201620.jpg)
 
 6、接下来查看一下tls配置https的nginx配置文件内容，可以看到在server块启用了https并配置证书，同时配置了http跳转，因此直接访问http也能够实现自动跳转到https功能。
 
@@ -1214,7 +1214,7 @@ metadata:
 
 3 、此时，ConfigMap定义的配置参数会被集群中所有的Ingress资源继承（除了annotations定义之外）
 
-![ConfigMap参数验证](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/10%20-%201620.jpg)
+![ConfigMap参数验证](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/10%20-%201620.jpg)
 
 有很多参数可以定义，详情配置可参考方文档说明：https://github.com/nginxinc/kubernetes-ingress/blob/master/docs/configmap-and-annotations.md#Summary-of-ConfigMap-and-Annotations
 
@@ -1252,19 +1252,19 @@ spec:
 
 2、 重新应用ingress对象并查看参数配置情况
 
-![Nginx Annotations演示](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/11%20-%201620.jpg)
+![Nginx Annotations演示](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/11%20-%201620.jpg)
 
 由上面的演示可得知，Annotations的优先级高于ConfigMapMap，Annotations修改参数只会影响到某一个具体的ingress资源，其定义的方法和ConfigMap相相近似，但又有差别，部分ConfigMap的参数Annotations无法支持，反过来Annotations定义的参数ConfigMap也不一定支持，下图列举一下常规支持参数情况：
 
-![通用参数](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/12%20-%201620.jpg)
+![通用参数](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/12%20-%201620.jpg)
 
-![日志支持](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/13%20-%201620.jpg)
+![日志支持](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/13%20-%201620.jpg)
 
-![请求头部](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/14%20-%201620.jpg)
+![请求头部](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/14%20-%201620.jpg)
 
-![认证和安全](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/15%20-%201620.jpg)
+![认证和安全](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/15%20-%201620.jpg)
 
-![upstream支持](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/16%20-%201620.jpg)
+![upstream支持](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AD)%E5%9F%BA%E4%BA%8Enginx%20ingress%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/16%20-%201620.jpg)
 
 ConfigMap和Annotations详细支持说明：[链接说明](https://github.com/nginxinc/kubernetes-ingress/blob/master/docs/configmap-and-annotations.md)
 

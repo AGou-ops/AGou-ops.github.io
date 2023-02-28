@@ -29,7 +29,7 @@ mathjax: false
 
 ## 简单p2p网络模型
 
-![image-20211102145031780](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211102145031780.png)
+![image-20211102145031780](http://cdn.agou-ops.cn/others/image-20211102145031780.png)
 
 :information_source:简单说明：创建两个网络命名空间`client`和`server`，然后创建一对虚拟网卡将两端的命名空间相连起来，就好像直接相连的网线一样，中间没有阻拦，创建完的虚拟网卡对存在于默认的命名空间中，接着我们将其分别放入`client`和`server`命名空间中，最后为两个虚拟网卡对`veth-client`和`veth-server`分配IP地址并启用网卡。
 
@@ -71,7 +71,7 @@ $ ip netns exec server ping 10.0.0.11
 
 ## Docker网桥模型
 
-![image-20211102145100986](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211102145100986.png)
+![image-20211102145100986](http://cdn.agou-ops.cn/others/image-20211102145100986.png)
 
 如果要创建更网络命名空间并互相连接，用 `veth` 对将这些网络命名空间进行两两连接就很麻烦了。可以创建创建一个 Linux 网桥来连接这些网络命名空间。Docker 就是这样为同一主机内的容器进行连接的。
 
@@ -158,7 +158,7 @@ $ ip netns exec server1 ip route add default via 192.168.1.1
 
 如下图所示：
 
-![image-20211104090616265](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/simple-network-k8s.gif)
+![image-20211104090616265](http://cdn.agou-ops.cn/others/simple-network-k8s.gif)
 
 ## k8s服务网络
 

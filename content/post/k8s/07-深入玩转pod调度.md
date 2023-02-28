@@ -39,7 +39,7 @@ mathjax: false
 
   kubernets是容器编排引擎，其中最主要的一个功能是容器的调度，通过kube-scheduler实现容器的完全自动化调度，调度周期分为：调度周期Scheduling Cycle和绑定周期Binding Cycle，其中调度周期细分为过滤filter和weight称重，按照指定的调度策略将满足运行pod节点的node赛选出来，然后进行排序；绑定周期是经过kube-scheduler调度优选的pod后，由特定的node节点watch然后通过kubelet运行。
 
-![Pod调度机制](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89%E6%B7%B1%E5%85%A5%E7%8E%A9%E8%BD%ACpod%E8%B0%83%E5%BA%A6/1%20-%201620.jpg)
+![Pod调度机制](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89%E6%B7%B1%E5%85%A5%E7%8E%A9%E8%BD%ACpod%E8%B0%83%E5%BA%A6/1%20-%201620.jpg)
 
 过滤阶段包含预选Predicate和scoring排序，预选是筛选满足条件的node，排序是最满足条件的node打分并排序，预选的算法包含有：
 
@@ -58,7 +58,7 @@ mathjax: false
 
 过滤条件需要检查node上满足的条件，可以通过kubectl describe node node-id方式查看，如下图：
 
-![node调度条件condition](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89%E6%B7%B1%E5%85%A5%E7%8E%A9%E8%BD%ACpod%E8%B0%83%E5%BA%A6/2%20-%201620.jpg)
+![node调度条件condition](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89%E6%B7%B1%E5%85%A5%E7%8E%A9%E8%BD%ACpod%E8%B0%83%E5%BA%A6/2%20-%201620.jpg)
 
 优选调度算法有：
 

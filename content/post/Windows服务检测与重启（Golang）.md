@@ -28,7 +28,7 @@ mathjax: false
 
 ## 检测和处理逻辑
 
-![image-20220406085729985](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20220406085729985.png)
+![image-20220406085729985](http://cdn.agou-ops.cn/others/image-20220406085729985.png)
 
 <!--more-->
 
@@ -259,7 +259,7 @@ $ CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -v -o iDoc_prd_v1.1.exe main.
 
 “高可用”服务，当服务挂掉的时候，自动进行重启操作：
 
-![image-20220406090535863](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20220406090535863.png)
+![image-20220406090535863](http://cdn.agou-ops.cn/others/image-20220406090535863.png)
 
 Done.
 

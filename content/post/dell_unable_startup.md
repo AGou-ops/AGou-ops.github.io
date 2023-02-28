@@ -37,17 +37,17 @@ mathjax: false
 
 1. 电脑完全断电关机之后，拔掉下图中的蓝色JUMP跳线帽，然后接上电源开机；
 
-![pic1](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/dell/dell_1.jpg?x-oss-process=style/images)
+![pic1](http://cdn.agou-ops.cn/blog-images/dell/dell_1.jpg?x-oss-process=style/images)
 
 2. 开机会自动进入BIOS自检，会提示一个警告信息，内容为`警告，上次启动时未检测到内存`，实际意思大概就是`内存有变动`，不用管这个警告，点击下一步continue即可；
 
 
-![pic2](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/dell/dell_2.jpg?x-oss-process=style/images)
+![pic2](http://cdn.agou-ops.cn/blog-images/dell/dell_2.jpg?x-oss-process=style/images)
 
 3. 如若未插跳线帽，每次开机会提示以下信息，意思很简单，就不翻译了；
 
 
-![pic3](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/dell/dell_3.jpg?x-oss-process=style/images)
+![pic3](http://cdn.agou-ops.cn/blog-images/dell/dell_3.jpg?x-oss-process=style/images)
 
 4. 电脑正常开机之后，关机完全断电，然后将JUMP蓝色跳线帽接回原来位置，合好机箱，正常开机即可。
 

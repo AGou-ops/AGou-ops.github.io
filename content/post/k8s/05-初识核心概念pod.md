@@ -54,7 +54,7 @@ mathjax: false
 
 Pods是kubernetes中最小的调度单位，Pods内运行一个或者多个container，container之间共享pod的网络ip资源，存储volume资源，计算等资源，方便pod内部的container之间能够实现快速的访问和交互。
 
-![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%94)%E5%88%9D%E8%AF%86%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5pod/1%20-%201620.jpg)Pod概念介绍
+![img](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E4%BA%94)%E5%88%9D%E8%AF%86%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5pod/1%20-%201620.jpg)Pod概念介绍
 
  如上图所示，Pod的使用方式通常包含两种：
 

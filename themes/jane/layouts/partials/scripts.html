@@ -1,7 +1,7 @@
 <!-- js -->
 {{ if .Site.Params.bootcdn -}}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdn.bootcss.com/slideout/1.0.1/slideout.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/jquery.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/slideout.min.js" crossorigin="anonymous"></script>
 {{- else if .Site.Params.publicCDN.enable -}} {{ .Site.Params.publicCDN.jquery | safeHTML }} {{ .Site.Params.publicCDN.slideout | safeHTML }} {{- else -}}
 <script type="text/javascript" src="{{"lib/jquery/jquery-3.2.1.min.js" | relURL }}"></script>
 <script type="text/javascript" src="{{"lib/slideout/slideout-1.0.1.min.js" | relURL }}"></script>
@@ -92,8 +92,8 @@
 <!-- Load PhotoSwipe js if the load-photoswipe shortcode has been used -->
 {{ if or .Site.Params.photoswipe .Site.Params.fancybox }} {{ if .Site.Params.bootcdn }}
 <script src="{{"/js/load-photoswipe.js" | relURL }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="/js/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 {{ else if .Site.Params.publicCDN.enable }}
 <script type="text/javascript" src="{{"/js/load-photoswipe.js" | relURL }}"></script>
 {{ .Site.Params.publicCDN.photoswipe | safeHTML }} {{ .Site.Params.publicCDN.photoswipeUI | safeHTML }} {{ else }}
@@ -104,7 +104,7 @@
 
 <!-- Counter busuanzi -->
 {{ if .Site.Params.counter.busuanzi.enable }}
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="/js/busuanzi.pure.mini.js"></script>
 {{ end }}
 
 <!-- Counter leancloud -->
@@ -273,7 +273,7 @@
 
 
 {{- if .Site.Params.search.algolia.enable -}}
-<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js"></script>
+<script src="/js/docsearch.min.js"></script>
 <script>
     docsearch({
         apiKey: "{{ .Site.Params.search.algolia.appKey }}",
@@ -284,7 +284,7 @@
     });
 </script>
 {{- end -}} {{- if .Site.Params.search.algolia.enable -}}
-<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js"></script>
+<script src="/js/docsearch.min.js"></script>
 <script>
     docsearch({
         apiKey: "{{ .Site.Params.search.algolia.appKey }}",

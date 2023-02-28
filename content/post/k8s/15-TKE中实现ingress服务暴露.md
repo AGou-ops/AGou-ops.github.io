@@ -43,7 +43,7 @@ mathjax: false
 - 外网CLB，四层[负载均衡](https://cloud.tencent.com/document/product/214?from=10680)，提供公网访问，需要node节点具有访问公网的能力；
 - ingress， 七层[负载均衡](https://cloud.tencent.com/document/product/214?from=10680)，提供http和https接入，提供ingress控制器的功能，借助NodePort转发
 
-![TKE service和ingress](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/1%20-%201620.jpg)
+![TKE service和ingress](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/1%20-%201620.jpg)
 
 要使用TKE的ingress功能，需要了解一下相关的组件内容：
 
@@ -54,7 +54,7 @@ mathjax: false
 
 由于nginx ingress controller是直接以Pod的形势部署在kubernetes集群中，借助于service的服务发现可直接实现和pod通讯，而[TKE](https://cloud.tencent.com/document/product/457?from=10680)中ingress controller未直接部署在k8s集群中，网络的接入需借助于service的NodePort实现接入，其数据流如下图：
 
-![TKE ingress数据流走向](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/2%20-%201620.jpg)
+![TKE ingress数据流走向](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/2%20-%201620.jpg)
 
 ## 1.2 ingress虚拟主机
 
@@ -148,11 +148,11 @@ Events:
 
 5、测试验证，将IP和域名写入到hosts文件中，访问域名测试验证，如下通过curl解析的方式测试验证
 
-![ingress测试验证](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/3%20-%201620.jpg)
+![ingress测试验证](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/3%20-%201620.jpg)
 
 6、ingress会创建一个CLB，并在CLB中创建监听器、设置转发规则、绑定后端RS，下图是CLB上自动生成的规则
 
-![CLB规则](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/4%20-%201620.jpg)
+![CLB规则](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/4%20-%201620.jpg)
 
 通过上面演示可知：
 
@@ -310,11 +310,11 @@ Events:
 
 6、测试验证，hosts文件中解析www.happylauliu.cn到CLB的VIP，或者DNS解析，打开浏览器访问站点，由于是经过CA认证签名的证书，因此没有提示告警信息，查看证书的详情信息
 
-![tke ingress ssl验证](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/5%20-%201620.jpg)
+![tke ingress ssl验证](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/5%20-%201620.jpg)
 
 7、查看CLB的配置可得知，CLB上配置了443的监听端口，并关联了证书，采用单向认证方式
 
-![tke ingres ssl配置规则](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/6%20-%201620.jpg)
+![tke ingres ssl配置规则](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/6%20-%201620.jpg)
 
 通过CLB的配置规则可知，CLB配置了监听443的监听器，80端口并未设置规则，因此此时无法访问http，如何实现在TKE使用ingress实现http和https共存呢，可以通过定义kubernetes.io/ingress.http-rules和
 
@@ -347,15 +347,15 @@ spec:
 
 设置ingress.http-rules和ingress.https-rules注解之后，会在监听器中创建http和https的转发规则，并绑定RS，此时访问http和https均能实现站点访问，[CLB](https://cloud.tencent.com/document/product/214?from=10680)对应的规则内容如下图：
 
-![http和https规则混合使用](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/7%20-%201620.jpg)
+![http和https规则混合使用](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/7%20-%201620.jpg)
 
 通过测试访问http://www.happylauliu.cn/和https://www.happylauliu.cn/均能正常访问，如果要实现访问http自动跳转到https，则可以在控制台开启自动跳转的功能，如下图：
 
-![开启http自动重定向功能](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/8%20-%201620.jpg)
+![开启http自动重定向功能](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/8%20-%201620.jpg)
 
 开启重定向功能后再次访问http站点后此时会自动跳转到https，如下图所示location已经跳转至https://www.happylauliu.cn/
 
-![http自动跳转测试](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/9%20-%201620.jpg)
+![http自动跳转测试](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E5%85%AB)TKE%E4%B8%AD%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/9%20-%201620.jpg)
 
 # 写在最后
 

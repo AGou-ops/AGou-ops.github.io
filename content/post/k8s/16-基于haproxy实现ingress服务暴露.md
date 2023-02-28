@@ -41,7 +41,7 @@ mathjax: false
 
 和Nginx相类似，HAproxy通过监视kubernetes api获取到service后端pod的状态，动态更新haproxy配置文件，以实现七层的[负载均衡。](https://cloud.tencent.com/document/product/214?from=10680)
 
-![HAproxy Ingress简介](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B8%83)%E5%9F%BA%E4%BA%8Ehaproxy%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/1%20-%201620.jpg)
+![HAproxy Ingress简介](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B8%83)%E5%9F%BA%E4%BA%8Ehaproxy%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/1%20-%201620.jpg)
 
 HAproxy Ingress控制器具备的特性如下：
 
@@ -152,7 +152,7 @@ ingress-default-backend   1/1     1            1           18m
 
 6、 查看haproxy ingress的日志，通过查询日志可知，多个haproxy ingress是通过选举实现高可用HA机制。
 
-![haprox ingress日志](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B8%83)%E5%9F%BA%E4%BA%8Ehaproxy%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/2%20-%201620.jpg)
+![haprox ingress日志](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B8%83)%E5%9F%BA%E4%BA%8Ehaproxy%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/2%20-%201620.jpg)
 
 其他资源包括ServiceAccount，ClusterRole，ConfigMaps请单独确认，至此HAproxy ingress controller部署完毕。另外两种部署方式：
 
@@ -581,7 +581,7 @@ Events:
 
 4、测试验证虚拟机主机配置，通过curl直接解析的方式，或者通过写hosts文件
 
-![haproxy ingress虚拟主机验证](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B8%83)%E5%9F%BA%E4%BA%8Ehaproxy%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/3%20-%201620.jpg)
+![haproxy ingress虚拟主机验证](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B8%83)%E5%9F%BA%E4%BA%8Ehaproxy%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/3%20-%201620.jpg)
 
 5、查看配置配置文件内容，配置中更新了haproxy.cfg的front段和backend段的内容
 
@@ -784,7 +784,7 @@ Events:
 
 5、测试https站点访问，可以看到安全的https访问
 
-![haproxy ingress https测试](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B8%83)%E5%9F%BA%E4%BA%8Ehaproxy%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/4%20-%201620.jpg)
+![haproxy ingress https测试](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%8D%81%E4%B8%83)%E5%9F%BA%E4%BA%8Ehaproxy%E5%AE%9E%E7%8E%B0ingress%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2/4%20-%201620.jpg)
 
 # 写在最后
 

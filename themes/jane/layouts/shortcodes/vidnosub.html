@@ -12,11 +12,11 @@
     }
 </style>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css">
+<link rel="stylesheet" href="/css/DPlayer.min.css">
 <div id="dplayer-video-container">
     <div id="dplayer"></div>
     <div>
-        <script src="https://cdn.jsdelivr.net/npm/dplayer@1.26.0/dist/DPlayer.min.js"></script>
+        <script src="/js/DPlayer.min.js"></script>
 
 
         <script>
@@ -31,7 +31,7 @@
                 preload: 'auto',
                 volume: 0.7,
                 mutex: true,
-                logo: 'https://agou-images.oss-cn-qingdao.aliyuncs.com/BaseIMG/youtube.png',
+                logo: 'http://cdn.agou-ops.cn/BaseIMG/youtube.png',
                 video: {
                     type: 'auto',
                     url: '{{ .Get "link" }}',

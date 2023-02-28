@@ -51,7 +51,7 @@ mathjax: false
 
 Katacoda使用MiniKube提供了一个在线部署kubernetres环境，当然也可以基于MiniKube本地安装，如果是初学者想初探一下kubernetes的功能，可以使用Katacoda提供的线上环境，达到快速入门学习的目的。参考文档，直接在[Hello MiniKube](https://kubernetes.io/docs/tutorials/hello-minikube/)文档中点击Open terminal即可自动创建一个kubernetes环境，其会自动拉取镜像并部署所需环境。
 
-![MiniKube在线安装环境](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89kubeadm%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B21.14.1%E9%9B%86%E7%BE%A4/1%20-%20ze6fcsx8gv.gif)
+![MiniKube在线安装环境](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89kubeadm%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B21.14.1%E9%9B%86%E7%BE%A4/1%20-%20ze6fcsx8gv.gif)
 
 如上图所示，MiniKube的提供的优点如下：
 
@@ -61,7 +61,7 @@ Katacoda使用MiniKube提供了一个在线部署kubernetres环境，当然也�
 
 # 2 kubeadm部署k8s集群
 
-![kubeadm安装部署集群](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89kubeadm%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B21.14.1%E9%9B%86%E7%BE%A4/2%20-%201620.jpg)
+![kubeadm安装部署集群](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89kubeadm%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B21.14.1%E9%9B%86%E7%BE%A4/2%20-%201620.jpg)
 
 ## 2.1 环境说明和准备
 
@@ -264,7 +264,7 @@ k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        19 
 
 ## 2.5 kubeadm初始化集群
 
-![kubeadm初始化集群](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89kubeadm%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B21.14.1%E9%9B%86%E7%BE%A4/3%20-%201620.jpg)
+![kubeadm初始化集群](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89kubeadm%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B21.14.1%E9%9B%86%E7%BE%A4/3%20-%201620.jpg)
 
 1、 kubeadm初始化集群，需要设置初始参数
 
@@ -378,7 +378,7 @@ node-2   NotReady   <none>   4m34s   v1.14.1
 node-3   NotReady   <none>   2m10s   v1.14.1
 ```
 
-![kubeadm join添加节点](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89kubeadm%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B21.14.1%E9%9B%86%E7%BE%A4/4%20-%201620.jpg)
+![kubeadm join添加节点](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89kubeadm%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B21.14.1%E9%9B%86%E7%BE%A4/4%20-%201620.jpg)
 
 4、安装网络plugin，kubernetes支持多种类型网络插件，要求网络支持CNI插件即可，CNI是Container Network Interface，要求kubernetes的中pod网络访问方式：
 

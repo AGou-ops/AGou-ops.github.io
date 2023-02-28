@@ -86,7 +86,7 @@ kube-system   coredns   2/2     2            2           25h
 
 4、查看kubernetes最新版本（配置kubernetes的yum源，需要合理上网才可以访问），使用yum list --showduplicates kubeadm --disableexcludes=kubernetes查看当前能升级版本，绿色为当前版本，蓝色为可以升级的版本，如下图：
 
-![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%9B%9B)%E7%A6%BB%E7%BA%BF%E5%8D%87%E7%BA%A7kubernetes%E9%9B%86%E7%BE%A4/1%20-%201620.jpg)kubernetes可升级版本列表
+![img](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%9B%9B)%E7%A6%BB%E7%BA%BF%E5%8D%87%E7%BA%A7kubernetes%E9%9B%86%E7%BE%A4/1%20-%201620.jpg)kubernetes可升级版本列表
 
 ## 1.3 升级master节点
 
@@ -121,7 +121,7 @@ k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        21 
 
 2、更新kubeadm版本至1.15.1，国内可以参考https://blog.51cto.com/2157217/1983992设置kubernetes源
 
-![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%9B%9B)%E7%A6%BB%E7%BA%BF%E5%8D%87%E7%BA%A7kubernetes%E9%9B%86%E7%BE%A4/2%20-%201620.jpg)更新kubeadm版本至1.15.1
+![img](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%9B%9B)%E7%A6%BB%E7%BA%BF%E5%8D%87%E7%BA%A7kubernetes%E9%9B%86%E7%BE%A4/2%20-%201620.jpg)更新kubeadm版本至1.15.1
 
 3、校验kubeadm版本,已升级至1.1.5.1版本
 

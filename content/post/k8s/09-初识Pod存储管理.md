@@ -191,7 +191,7 @@ root@emptydir-redis:/data# apt-get update ; apt-get install procps
 root@emptydir-redis:/data# kill 1
 ```
 
-![redis-server进程](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/1%20-%201620.jpg)
+![redis-server进程](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/1%20-%201620.jpg)
 
 1. pod异常重启后，再次登录redis并查看redis中的数据内容，发现数据没有丢失。
 
@@ -213,7 +213,7 @@ dfef32905fe5        k8s.gcr.io/pause:3.1    "/pause"                 45 minutes 
 
 docker container inspect e0e9a6b0ed77查看存储内容如下图：
 
-![empty存储mount信息](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/2%20-%201620.jpg)
+![empty存储mount信息](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/2%20-%201620.jpg)
 
 查看目录的信息：
 
@@ -300,7 +300,7 @@ hostPath test page
 
 1. 查看容器挂载存储的情况，以bind mount的形式挂载到容器中
 
-![hostPath的容器挂载信息](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/3%20-%201620.jpg)
+![hostPath的容器挂载信息](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/3%20-%201620.jpg)
 
 1. 模拟容器重启的的故障，容器重启后volume中的数据依保留
 
@@ -431,11 +431,11 @@ TKE支持在创建Workload时如Deployments，DaemonSets，StatefulSets等指定
 
 1. 创建存储卷，使用NFS挂载腾讯云CFS存储
 
-![TKE创建nfs的volume](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/4%20-%201620.jpg)
+![TKE创建nfs的volume](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/4%20-%201620.jpg)
 
 1. Pod中使用存储，通过volume-nfs-demo名字调用存储卷
 
-![TKE中pod使用volume存储](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/5%20-%201620.jpg)
+![TKE中pod使用volume存储](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89%E5%88%9D%E8%AF%86Pod%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/5%20-%201620.jpg)
 
 1. 对应生成的yaml文件内容如下
 
