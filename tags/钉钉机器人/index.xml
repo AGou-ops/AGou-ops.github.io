@@ -2,4 +2,4 @@
 &lt;p>通过&lt;code>钉钉开放平台·钉钉机器人&lt;/code>的&lt;a href="https://open.dingtalk.com/document/robots/enterprise-created-chatbot?spm=ding_open_doc.document.0.0.3d6d24cb7j00JN#topic-2097982">企业自建机器人&lt;/a>官方文档以及网络上其他语言（Java，Python等）的钉钉机器人的实现，自己瞎编写出来了一个基础版本的小机器人。&lt;/p>
 &lt;p>奇怪的是用Golang来写的人很少，可能是官方的示例中没有Golang吧，虽然会一些Python，但是现在转学Golang了，故借此机会来巩固一下最近所学的一些东西😄 。&lt;/p>
 &lt;p>&lt;code>DingTalk_robot&lt;/code>群聊机器人处理流程图：&lt;/p>
-&lt;p>&lt;img src="http://cdn.agou-ops.cn/others/DingTalk_robot.png" alt="DingTalk_robot">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://cdn.agou-ops.cn/others/DingTalk_robot.png" alt="DingTalk_robot">&lt;/p></description></item></channel></rss>
