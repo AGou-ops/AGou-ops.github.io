@@ -21,9 +21,9 @@ Now, we could use `{{</* gallery */>}}` shortcode in hugo-theme-jane.
 This is an image in `static/image` folder.
 
 ```markdown
-![This is an image in `static/image` folder.](http://cdn.agou-ops.cn/violet-evergarden/Screenshot_2020-03-29-21-40-19.png)
+![This is an image in `static/image` folder.](https://cdn.agou-ops.cn/violet-evergarden/Screenshot_2020-03-29-21-40-19.png)
 ```
-![This is an image in `static/image` folder.](http://cdn.agou-ops.cn/violet-evergarden/Screenshot_2020-03-29-21-40-19.png)
+![This is an image in `static/image` folder.](https://cdn.agou-ops.cn/violet-evergarden/Screenshot_2020-03-29-21-40-19.png)
 
 <!--more-->
 

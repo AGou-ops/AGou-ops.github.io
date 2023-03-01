@@ -97,35 +97,35 @@ github仓库：:point_right: [https://github.com/AGou-ops/dotfiles](https://gith
 
 - 分屏，两个垂直分屏，一个水平分屏，左边`nvim-tree`，下面状态栏分别为`lualine`和tmux的menu bar
 
-![iShot2022-01-11 14.23.21](http://cdn.agou-ops.cn/others/iShot2022-01-11%2014.23.21.png)
+![iShot2022-01-11 14.23.21](https://cdn.agou-ops.cn/others/iShot2022-01-11%2014.23.21.png)
 
 - 悬浮终端，可直接在neovim中弹出终端进行使用，无需关闭或挂起neovim，或者在命令行模式运行，非常方便
 
-![iShot2022-01-11 14.25.02](http://cdn.agou-ops.cn/others/iShot2022-01-11%2014.25.02.png)
+![iShot2022-01-11 14.25.02](https://cdn.agou-ops.cn/others/iShot2022-01-11%2014.25.02.png)
 
 - 悬浮lazygit，很好用的一个终端git工具，tui可视化可进行快速提交推送拉取等等操作
 
-![image-20220112152808455](http://cdn.agou-ops.cn/others/image-20220112152808455.png)
+![image-20220112152808455](https://cdn.agou-ops.cn/others/image-20220112152808455.png)
 
 - Golang lsp智能提示，可显示函数签名以及一些相关的注释信息
 
-![iShot2022-01-11 14.27.06](http://cdn.agou-ops.cn/others/iShot2022-01-11%2014.27.06.png)
+![iShot2022-01-11 14.27.06](https://cdn.agou-ops.cn/others/iShot2022-01-11%2014.27.06.png)
 
 - 快速重命名函数，改变一处函数名称，可以自动改变其相关地方的名称
 
-![iShot2022-01-11 14.27.55](http://cdn.agou-ops.cn/others/iShot2022-01-11%2014.27.55.png)
+![iShot2022-01-11 14.27.55](https://cdn.agou-ops.cn/others/iShot2022-01-11%2014.27.55.png)
 
 - 文件内快速查找，快速查找当前光标下所出现的词
 
-![iShot2022-01-11 16.54.09](http://cdn.agou-ops.cn/others/iShot2022-01-11%2016.54.09.png)
+![iShot2022-01-11 16.54.09](https://cdn.agou-ops.cn/others/iShot2022-01-11%2016.54.09.png)
 
 - 悬浮函数定义，弹出悬浮窗来显示当前光标下的函数定义，使用gd命令可以直接跳转到函数的定义文件中
 
-![iShot2022-01-11 16.55.02](http://cdn.agou-ops.cn/others/iShot2022-01-11%2016.55.02.png)
+![iShot2022-01-11 16.55.02](https://cdn.agou-ops.cn/others/iShot2022-01-11%2016.55.02.png)
 
 - lsp，自动将报错信息打印到行尾，右边为tagbar，可以显示函数和变量等目录树
 
-![iShot2022-01-12 15.02.45](http://cdn.agou-ops.cn/others/iShot2022-01-12%2015.02.45.png)
+![iShot2022-01-12 15.02.45](https://cdn.agou-ops.cn/others/iShot2022-01-12%2015.02.45.png)
 
 ## 写在最后
 

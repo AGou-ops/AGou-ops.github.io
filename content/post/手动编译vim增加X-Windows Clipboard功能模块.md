@@ -38,7 +38,7 @@ Vi IMproved - enhanced vi editor - with GTK3 GUI
 
 <!--more-->
 
-![debian_vim_packages](http://cdn.agou-ops.cn/blog-images/vim/debian_vim_packages.png)
+![debian_vim_packages](https://cdn.agou-ops.cn/blog-images/vim/debian_vim_packages.png)
 
 可以直接通过`apt install <Package_name>`来安装以上包来直接使用。
 

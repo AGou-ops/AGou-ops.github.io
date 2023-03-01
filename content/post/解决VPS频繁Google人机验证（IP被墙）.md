@@ -60,15 +60,15 @@ mathjax: false
 
 申请账号的过程非常简单，输入一些虚拟的个人信息就行，直接胡编乱填就行了，或者在[虚拟外国身份站点](https://www.fakenamegenerator.com/advanced.php?t=country&n%5B%5D=us&c%5B%5D=us&gen=100&age-min=19&age-max=21)上随机一个身份信息，填好邮箱接受邮箱验证就完事了。
 
-![image-20211202092104454](http://cdn.agou-ops.cn/others/image-20211202092104454.png)
+![image-20211202092104454](https://cdn.agou-ops.cn/others/image-20211202092104454.png)
 
  申请完账号之后登录，点击左边的这个`Create Regular Tunnel`创建一般隧道，输入你的IPv4公网IP，选择一个合适的隧道服务器节点，系统会自动选择和你区域相当的节点，所以默认就可以，然后直接点击下方的`Create Tunel`即可.
 
-![image-20211202092502459](http://cdn.agou-ops.cn/others/image-20211202092502459.png)
+![image-20211202092502459](https://cdn.agou-ops.cn/others/image-20211202092502459.png)
 
 创建完成之后，点击隧道详情，就可以看到申请好的`IPv6`地址：
 
-![image-20211202092729022](http://cdn.agou-ops.cn/others/image-20211202092729022.png)
+![image-20211202092729022](https://cdn.agou-ops.cn/others/image-20211202092729022.png)
 
 要使用的是上图红框中的`IPv6`客户端地址.
 
@@ -76,7 +76,7 @@ mathjax: false
 
 在[Tunnelbroker](https://tunnelbroker.net/)的隧道详情页中点击`Example Configurations`示例配置，找到匹配自己VPS系统的配置片段，这里我以我的`Ubuntu 20.04`为例（其他发行版类似）：
 
-![image-20211202093034680](http://cdn.agou-ops.cn/others/image-20211202093034680.png)
+![image-20211202093034680](https://cdn.agou-ops.cn/others/image-20211202093034680.png)
 
 需要输的命令挺多的，这里我整理为脚本，一条命令傻瓜式运行即可，建议直接使用`root`用户运行，省事：
 

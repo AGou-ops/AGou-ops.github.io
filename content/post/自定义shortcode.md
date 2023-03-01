@@ -125,7 +125,7 @@ mathjax: false
 ## video shortcode
 
 ```markdown
-{{/*<  video link="#" pic="http://cdn.agou-ops.cn/Wallpapers/violet.png" time=10 text="高能部分" time1=20 text1="高能结束" >*/}}
+{{/*<  video link="#" pic="https://cdn.agou-ops.cn/Wallpapers/violet.png" time=10 text="高能部分" time1=20 text1="高能结束" >*/}}
 ```
 
-{{<  video link="#" pic="http://cdn.agou-ops.cn/Wallpapers/violet.png" time=10 text="高能部分" time1=20 text1="高能结束" >}}
+{{<  video link="#" pic="https://cdn.agou-ops.cn/Wallpapers/violet.png" time=10 text="高能部分" time1=20 text1="高能结束" >}}

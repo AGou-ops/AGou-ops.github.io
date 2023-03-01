@@ -336,11 +336,11 @@ Containers:
 ```
 
 4、登陆到特定的node节点，通过docker container stats查看容器的资源使用详情
-![limits.cpu资源使用率](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%85%AD)kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/1%20-%201620.jpg)
+![limits.cpu资源使用率](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%85%AD)kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/1%20-%201620.jpg)
 
 
 在pod所属的node上通过top查看，cpu的使用率限制百分比为50%。
-![limits.cpu验证，宿主机上top查看cpu资源的使用率](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%85%AD)kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/2kj7ydd8yr.png)
+![limits.cpu验证，宿主机上top查看cpu资源的使用率](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%85%AD)kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/2kj7ydd8yr.png)
 
 
 通过上面的验证可以得出结论，我们在stress容器中定义使用1个core，通过limits.cpu限定可使用的cpu大小是500m，测试验证pod的资源已在容器内部或宿主机上都严格限制在50%（node机器上只有一个cpu，如果有2个cpu则会分摊为25%）。
@@ -432,7 +432,7 @@ Containers:
 
 4、查看容器内存资源的使用情况，分配256M内存，最大可使用为512Mi，利用率为50%，此时没有超过limits限制的大小，容器运行正常
 
-![limits.memory限制](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%85%AD)kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/2%20-%201620.jpg)
+![limits.memory限制](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B(%E5%85%AD)kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/2%20-%201620.jpg)
 
 5、当容器内部超过内存的大小会怎么样呢，我们将--vm-byte设置为513M，容器会尝试运行，超过内存后会OOM，kube-controller-manager会不停的尝试重启容器,RESTARTS的次数会不停的增加。
 

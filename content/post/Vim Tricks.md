@@ -382,7 +382,7 @@ zo/zO		展开单个/所有
 ## 参考链接
 
 - 我的vim dotfile: https://github.com/AGou-ops/dotfiles
-- Vim实用技巧(第2版): http://cdn.agou-ops.cn/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf
+- Vim实用技巧(第2版): https://cdn.agou-ops.cn/pdfs/Vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf
 - Vim cheatsheet: https://devhints.io/vim
 - Vim Cheat Sheet: https://vim.rtorr.com/
 

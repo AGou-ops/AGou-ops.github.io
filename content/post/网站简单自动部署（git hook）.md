@@ -27,7 +27,7 @@ mathjax: false
 
 ## 大致流程
 
-![autodeploy001](http://cdn.agou-ops.cn/others/autodeploy001.png)
+![autodeploy001](https://cdn.agou-ops.cn/others/autodeploy001.png)
 
 从gitee私有仓库拉取代码，通过本地jenkins将代码push到指定的git服务器（通过ssh），最后rsync同步到指定的网站目录当中。
 
@@ -122,7 +122,7 @@ EOF
 
 ## jenkins中构建运行结果
 
-![image-20220406103914712](http://cdn.agou-ops.cn/others/image-20220406103914712.png)
+![image-20220406103914712](https://cdn.agou-ops.cn/others/image-20220406103914712.png)
 
 Done.
 

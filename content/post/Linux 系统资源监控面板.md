@@ -39,7 +39,7 @@ mathjax: false
 
 先放一张截图吧：
 
-![](http://cdn.agou-ops.cn/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/WTF.png "WTF截图")
+![](https://cdn.agou-ops.cn/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/WTF.png "WTF截图")
 
 面板中有以下展示模块：
 
@@ -295,13 +295,13 @@ Zendesk
 
 官方开源仓库：[https://github.com/aristocratos/bashtos](https://github.com/aristocratos/bashtos)
 
-![](http://cdn.agou-ops.cn/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop.png "截图")
+![](https://cdn.agou-ops.cn/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop.png "截图")
 
 主菜单：
-![](http://cdn.agou-ops.cn/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop-1.png "主菜单")
+![](https://cdn.agou-ops.cn/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop-1.png "主菜单")
 
 选项菜单：
-![](http://cdn.agou-ops.cn/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop-1.png "选项菜单")
+![](https://cdn.agou-ops.cn/blog-images/Linux%20%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/bashtop-1.png "选项菜单")
 
 ### 安装与使用
 

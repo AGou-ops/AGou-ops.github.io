@@ -35,7 +35,7 @@ mathjax: false
 
 `DingTalk_robot`群聊机器人处理流程图：
 
-![DingTalk_robot](http://cdn.agou-ops.cn/others/DingTalk_robot.png)
+![DingTalk_robot](https://cdn.agou-ops.cn/others/DingTalk_robot.png)
 
 <!--more-->
 
@@ -47,15 +47,15 @@ mathjax: false
 
 
 
-![image-20211209095700036](http://cdn.agou-ops.cn/others/image-20211209095700036.png)
+![image-20211209095700036](https://cdn.agou-ops.cn/others/image-20211209095700036.png)
 
 依次点击，创建一个属于自己的机器人🤖，里面的`应用名称`、`应用描述`和`应用图标`随便填。
 
-![image-20211209100434862](http://cdn.agou-ops.cn/others/image-20211209100434862.png)
+![image-20211209100434862](https://cdn.agou-ops.cn/others/image-20211209100434862.png)
 
 创建完成之后，记录下`AppSecret`（后面计算sign校验会用到），然后:warning:重点来到`开放管理`页面，如下图所示：
 
-![image-20211209100749557](http://cdn.agou-ops.cn/others/image-20211209100749557.png)
+![image-20211209100749557](https://cdn.agou-ops.cn/others/image-20211209100749557.png)
 
 相关解释：
 
@@ -107,31 +107,31 @@ remote_port = 9999
 
 程序前台启动界面：
 
-![image-20211209135948692](http://cdn.agou-ops.cn/others/image-20211209135948692.png)
+![image-20211209135948692](https://cdn.agou-ops.cn/others/image-20211209135948692.png)
 
 日志文件写到了`/var/log/dingtalk_robot.log`，注意用户权限。
 
 日志文件初步内容如下所示（分屏左边:point_left:）：
 
-![image-20211209142418519](http://cdn.agou-ops.cn/others/image-20211209142418519.png)
+![image-20211209142418519](https://cdn.agou-ops.cn/others/image-20211209142418519.png)
 
 钉钉群聊机器人自动回复界面：
 
 - `ip`关键字（消息类型Markdown）：
 
-![image-20211209140912581](http://cdn.agou-ops.cn/others/image-20211209140912581.png)
+![image-20211209140912581](https://cdn.agou-ops.cn/others/image-20211209140912581.png)
 
 - `help`关键字（（消息类型Markdown）：
 
-![image-20211209140952071](http://cdn.agou-ops.cn/others/image-20211209140952071.png)
+![image-20211209140952071](https://cdn.agou-ops.cn/others/image-20211209140952071.png)
 
 - `about`关键字（消息类型ActionCard）：
 
-![image-20211209141021944](http://cdn.agou-ops.cn/others/image-20211209141021944.png)
+![image-20211209141021944](https://cdn.agou-ops.cn/others/image-20211209141021944.png)
 
 - 无关键字（消息类型Markdown）：
 
-![image-20211209141048037](http://cdn.agou-ops.cn/others/image-20211209141048037.png)
+![image-20211209141048037](https://cdn.agou-ops.cn/others/image-20211209141048037.png)
 
 ## 总结
 

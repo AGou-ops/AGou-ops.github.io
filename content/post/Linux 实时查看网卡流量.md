@@ -70,7 +70,7 @@ $ yum install -y iftop
 
 安装完成之后，输入iftop便可看到如下界面
 
-![null](http://cdn.agou-ops.cn/blog-images/Others/iftop.png)
+![null](https://cdn.agou-ops.cn/blog-images/Others/iftop.png)
 
 其中，相关参数解释如下：
 

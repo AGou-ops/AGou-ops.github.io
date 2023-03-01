@@ -34,7 +34,7 @@ mathjax: false
 
 Docker提供了一种将应用程序安全，隔离运行的一种方式，能够将应用程序依赖和库文件打包在一个容器中，后续再任何地方运行起来即可，其包含了应用程序所依赖相关环境，一次构建，任意运行（build once，run anywhere）
 
-![docker架构图](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AF%E7%9E%B0kubernetes%E5%85%A8%E8%B2%8C/1%20-%201620.jpg)
+![docker架构图](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AF%E7%9E%B0kubernetes%E5%85%A8%E8%B2%8C/1%20-%201620.jpg)
 
 Docker组成：
 
@@ -64,7 +64,7 @@ Kubernetes是google开源的一套微服务，容器化的编排引擎，提供�
 
 kuberntes内置有很多非常优秀的特性使开发者专注于业务本身，其包含的功能如下：
 
-![kubernetes功能](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AF%E7%9E%B0kubernetes%E5%85%A8%E8%B2%8C/2%20-%201620.jpg)
+![kubernetes功能](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AF%E7%9E%B0kubernetes%E5%85%A8%E8%B2%8C/2%20-%201620.jpg)
 
 - Service discovery and load balancing，服务发现和[负载均衡](#)，通过DNS实现内部解析，service实现负载均衡
 - Storage orchestration，存储编排，通过plungin的形式支持多种存储，如本地，nfs，ceph，公有云快存储等
@@ -77,7 +77,7 @@ kuberntes内置有很多非常优秀的特性使开发者专注于业务本身�
 
 ## 1.3 kubernetes架构解析
 
-![kubernetes整体架构](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AF%E7%9E%B0kubernetes%E5%85%A8%E8%B2%8C/3%20-%201620.jpg)
+![kubernetes整体架构](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AF%E7%9E%B0kubernetes%E5%85%A8%E8%B2%8C/3%20-%201620.jpg)
 
 kubernetes包含两种角色：master节点和node节点，master节点是集群的控制管理节点，作为整个k8s集群的大脑。
 
@@ -121,7 +121,7 @@ kubernetes高可用集群通常由3或5个节点组成高可用集群，需要�
 - kube-scheduler 内置选举机制，保障调度器高可用，确保同个时刻一个leader节点工作，其他处于阻塞，防止脑裂
 - kube-controller-manager 内置的选举机制保障控制器高可用，机制和kube-scheduler一致。
 
-![kubernetes高可用架构](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AF%E7%9E%B0kubernetes%E5%85%A8%E8%B2%8C/4%20-%201620.jpg)
+![kubernetes高可用架构](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AF%E7%9E%B0kubernetes%E5%85%A8%E8%B2%8C/4%20-%201620.jpg)
 
 # 参考文档
 

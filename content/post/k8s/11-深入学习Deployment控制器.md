@@ -150,25 +150,25 @@ AGE创建至今运行的时长
 
 \4.  查看Deployment的详情，可以看到Deployment通过一个deployment-nginx-demo-866bb6cf78 replicaset副本控制器控制Pod的副本数量
 
-![Deployment详情信息](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/1%20-%201620.jpg)
+![Deployment详情信息](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/1%20-%201620.jpg)
 
 \5. 查看replicaset的详情信息，通过Events可查看到deployment-nginx-demo-866bb6cf78创建了三个Pod
 
-![ReplicaSet详情信息](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/2%20-%201620.jpg)
+![ReplicaSet详情信息](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/2%20-%201620.jpg)
 
 \6. 查看Pod详情，最终通过Pod定义的模版创建container，资源定义，健康检查等包含在Pod定义的模版中
 
-![Pod详情信息](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/3%20-%201620.jpg)
+![Pod详情信息](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/3%20-%201620.jpg)
 
 通过上面的实战演练我们可得知Deployment的副本控制功能是由replicaset实现，replicaset生成Deployment中定义的replicas副本的数量，即创建多个副本，如下图所示：
 
-![Deployment创建结构示意图](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/4%20-%201620.jpg)
+![Deployment创建结构示意图](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/4%20-%201620.jpg)
 
 ### 1.2.2 Deployment扩容
 
 当业务比较繁忙时可以通过增加副本数，增加副本数是通过yaml文件中的replicas控制的，当设置了replias后，Deployment控制器会自动根据当前副本数目创建所需的Pod数，这些pod会自动加入到service中实现负载均衡，相反减少副本数，这些pod会自动从service中删除。
 
-![Deployment扩容](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/5%20-%201620.jpg)
+![Deployment扩容](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/5%20-%201620.jpg)
 
 \1. 将deployment的副本数扩容至4个，可通过修改yaml文件的replicas个数或者通过scale命令扩展。
 
@@ -187,7 +187,7 @@ deployment-nginx-demo   4/4     4            4           77m
 
 \3. 副本的扩容是如何实现的呢？我们查看replicaset的详情信息观察，增加副本的个数是通过replicaset来扩容，通过模版复制新的Pod
 
-![Deployment扩展](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/6%20-%201620.jpg)
+![Deployment扩展](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/6%20-%201620.jpg)
 
 \4. 副本缩容
 
@@ -200,7 +200,7 @@ NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
 deployment-nginx-demo   2/2     2            2           7h41m
 ```
 
-![Deployment减少副本](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/7%20-%201620.jpg)
+![Deployment减少副本](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/7%20-%201620.jpg)
 
 通过上面的操作演练我们可以得知:Deployment的扩容是通过ReplicaSet的模版创建Pod或删除Pod实现，scale是手动扩展实现副本的机制，kubernetes还提供了另外一种副本自动扩容机制horizontalpodautoscalers(Horizontal Pod Autoscaling),即通过定义CPU的利用率实现自动的横向扩展，由于需要依赖于监控组件，后续我们再做介绍。
 
@@ -208,7 +208,7 @@ deployment-nginx-demo   2/2     2            2           7h41m
 
 Deployment支持滚动更新，默认创建Deployment后会增加滚动更新的策略，通过逐步替代replicas中的pod实现更新无服务中断（需要结合service），如下图所示：将一个deployment副本数为3的应用更新，先更新10.0.0.6 pod，更新pod应用，替换新的ip，然后加入到service中，以此类推再继续更新其他pod，从而实现滚动更新，不影响服务的升级。
 
-![滚动更新](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/8%20-%201620.jpg)
+![滚动更新](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/8%20-%201620.jpg)
 
 通过类型为：RollingUpdate，每次更新最大的数量maxSurge是replicas总数的25%,最大不可用的数量maxUnavailable为25%，如下是通过kubectl get deployments deployment-nginx-demo -o yaml查看滚动更新相关的策略。
 
@@ -252,7 +252,7 @@ REVISION  CHANGE-CAUSE
 
 \3. 观察Deployment的升级过程，新创建一个RS deployment-nginx-demo-65c8c98c7b，逐渐将旧RS中的pod替换，直至旧的RS deployment-nginx-demo-866bb6cf78上的副本数为0.
 
-![滚动升级原理](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/9%20-%201620.jpg)
+![滚动升级原理](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/9%20-%201620.jpg)
 
 \4. 查看RS的列表，可以看到新的RS的副本数为2，其他RS副本数为0
 
@@ -310,7 +310,7 @@ REVISION  CHANGE-CAUSE
 
 \3. 查看Deployment的详情，可以看到RS已经会退到原始的RS了
 
-![版本回退](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/10%20-%201620.jpg)
+![版本回退](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/10%20-%201620.jpg)
 
 \4. 测试nginx的版本
 
@@ -410,7 +410,7 @@ replicaset-demo   2         2         2       114s
 replicaset.extensions/replicaset-demo image updated  #命令执行成功了
 ```
 
-![ReplicaSet验证版本更新](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/11%20-%201620.jpg)
+![ReplicaSet验证版本更新](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0Deployment%E6%8E%A7%E5%88%B6%E5%99%A8/11%20-%201620.jpg)
 
 ReplicaSet小结：通过上面的演示可以知道，RS定义和Deployment类似，能实现副本的控制，扩展和缩减，Deployment是更高层次的副本控制器，ReplicaSet主要为Deployment的副本控制器和滚动更新机制，ReplicaSet本身无法提供滚动更新的能力。
 

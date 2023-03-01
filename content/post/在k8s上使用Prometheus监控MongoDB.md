@@ -36,7 +36,7 @@ mathjax: false
 
 ## 整体框架
 
-![](http://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/arch.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/arch.png)
 
 ~~随手在线画的, 不美观, qwq.~~
 
@@ -112,7 +112,7 @@ Handling connection for 9090
 
 打开浏览器访问`http://127.0.0.1:9090/`查看`prometheus UI`:
 
-![](http://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/prometheus%20ui.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/prometheus%20ui.png)
 
 使用以下命令查看`prometheus`的`servicemonitor`(其对应`prometheus UI`中的`target`):
 
@@ -247,11 +247,11 @@ $ kubectl port-forward service/mongodb-exporter-prometheus-mongodb-exporter 9216
 
 打开浏览器访问`http://localhost:9216/metrics`进行查看:
 
-![](http://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/mongodb%20metrics.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/mongodb%20metrics.png)
 
 此时, 再打开`prometheus UI`查看`target`可以看到`mongodb-exporter`已经处于`UP`状态:
 
-![](http://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/mongodb%20target.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/mongodb%20target.png)
 
 ### 在`Grafana`查看
 
@@ -261,7 +261,7 @@ $ kubectl port-forward deployment/prometheus-grafana 3000
 
 打开浏览器访问`http://localhost:3000`:
 
-![](http://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/mongodb%20grafana.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/mongodb%20grafana.png)
 
 :information_source:默认账号`admin`, 默认密码`prom-operator` (从官方文档中即可获取)
 
@@ -274,4 +274,4 @@ $ kubectl port-forward deployment/prometheus-grafana 3000
 
 ## 附录2: kubectl get all
 
-![](http://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/kubectl%20get%20all.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%2Bk8s/kubectl%20get%20all.png)

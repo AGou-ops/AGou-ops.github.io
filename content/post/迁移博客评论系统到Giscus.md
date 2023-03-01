@@ -25,7 +25,7 @@ mathjax: false
 #     weight: 1
 ---
 
-![img](http://cdn.agou-ops.cn/others/utterances-to-giscus.png)
+![img](https://cdn.agou-ops.cn/others/utterances-to-giscus.png)
 
 图片来自：[https://shipit.dev/posts/from-utterances-to-giscus.html](https://shipit.dev/posts/from-utterances-to-giscus.html)
 <!--more-->
@@ -49,7 +49,7 @@ mathjax: false
 
 效果图如下所示：
 
-![image-20220321102950127](http://cdn.agou-ops.cn/others/image-20220321102950127.png)
+![image-20220321102950127](https://cdn.agou-ops.cn/others/image-20220321102950127.png)
 
 相比于[Utteranc.es](https://github.com/utterance/utterances)，[Giscus](https://github.com/giscus/giscus)支持对整篇文章进行点赞和其他一些回应，还可以**按照评论新旧进行排序，可支持直接回复，支持懒加载**，自定义主题，可自建服务，高度自定义配置等优点。（前三点比较吸引我）
 
@@ -61,13 +61,13 @@ mathjax: false
 
 打开[giscus APP](https://github.com/apps/giscus)，首次打开如下所示：
 
-![image-20220321104037431](http://cdn.agou-ops.cn/others/image-20220321104037431.png)
+![image-20220321104037431](https://cdn.agou-ops.cn/others/image-20220321104037431.png)
 
 
 
 点击`Install`，然后：
 
-![image-20220321104053274](http://cdn.agou-ops.cn/others/image-20220321104053274.png)
+![image-20220321104053274](https://cdn.agou-ops.cn/others/image-20220321104053274.png)
 
 ### 迁移评论的issues到Discussions
 
@@ -75,11 +75,11 @@ mathjax: false
 
 相对于在issues里面提交评论（毕竟issues主要用于问问题pr啥的），GitHub Discussions提供更加丰富的评论功能。
 
-![image-20220321104944816](http://cdn.agou-ops.cn/others/image-20220321104944816.png)
+![image-20220321104944816](https://cdn.agou-ops.cn/others/image-20220321104944816.png)
 
 接着打开`Labels`，将issues转换成Discussions（这里我转换过了，所以没有出现，所以我换了个演示账号）
 
-![image-20220321110234121](http://cdn.agou-ops.cn/others/image-20220321110234121.png)
+![image-20220321110234121](https://cdn.agou-ops.cn/others/image-20220321110234121.png)
 
 步骤参考上图，按照顺序点就完了。
 
@@ -87,18 +87,18 @@ mathjax: false
 
 我用的博客系统是`hugo`，主题是`jane`其他博客系统和主题都大同小异，需要修改的配置文件路径为`[YOUR_BLOG_ROOT_DIR]/themes/jane/layouts/partials/comments.html`（没有的话可以新建该文件）
 
-![image-20220321110725975](http://cdn.agou-ops.cn/others/image-20220321110725975.png)
+![image-20220321110725975](https://cdn.agou-ops.cn/others/image-20220321110725975.png)
 
 
 :information_source:**配置文件内容可自动生成：[https://giscus.app/zh-CN](https://giscus.app/zh-CN)，** 配置非常简单，按照页面提示完成即可，完成之后页面下方会给出相关js代码，直接将代码贴到上面我说的那个位置即可。
 
-![image-20220321110919107](http://cdn.agou-ops.cn/others/image-20220321110919107.png)
+![image-20220321110919107](https://cdn.agou-ops.cn/others/image-20220321110919107.png)
 
 ### 关闭Utteranc.es，启用Giscus
 
 这个步骤我不说应该都懂，修改hugo配置文件`config.toml`文件相关配置即可。
 
-![image-20220321111125576](http://cdn.agou-ops.cn/others/image-20220321111125576.png)
+![image-20220321111125576](https://cdn.agou-ops.cn/others/image-20220321111125576.png)
 
 ## 高级配置项
 

@@ -50,7 +50,7 @@ kubernetes中经常涉及到在node上安装部署应用，它是如何解决上
 - 新增节点会自动在节点增加一个Pod
 - 移除节点时垃圾回收机制会自动清理Pod
 
-![DaemnonSet控制器](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/1%20-%201620.jpg)
+![DaemnonSet控制器](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/1%20-%201620.jpg)
 
 DaemonSet适用于每个node节点均需要部署一个守护进程的场景，常见的场景例如：
 
@@ -72,7 +72,7 @@ kube-proxy              3         3         3       3            3           bet
 
 \2. 查看Pod的副本情况，可以看到DaemonSet在每个节点都运行一个Pod
 
-![img](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/1%20-%201620.jpg)
+![img](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/1%20-%201620.jpg)
 
 ## 1.2 DaemonSet定义
 
@@ -261,7 +261,7 @@ daemon set "fluentd-elasticsearch" successfully rolled out
 
 \3. 查看DaemonSet详情，可以看到DS滚动更新的过程：DaemonSet先将node上的pod删除然后再创建
 
-![DaemonSet滚动更新过程](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/3%20-%201620.jpg)
+![DaemonSet滚动更新过程](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/3%20-%201620.jpg)
 
 \4. 查看DaemonSet滚动更新版本，REVSION 1为初始的版本
 
@@ -282,11 +282,11 @@ daemonset.extensions/fluentd-elasticsearch rolled back
 
 \6. 确认版本回退情况
 
-![DaemonSet版本回退](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/4%20-%201620.jpg)
+![DaemonSet版本回退](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/4%20-%201620.jpg)
 
 \7. 观察版本回退的过程，回退的过程和和滚动更新过程类似，先删除Pod再创建
 
-![DaemonSet回退过程](http://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/5%20-%201620.jpg)
+![DaemonSet回退过程](https://cdn.agou-ops.cn/blog-images/k8s%E5%9F%BA%E7%A1%80/kubernetes%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E8%AF%A6%E8%A7%A3DaemonSet%E6%8E%A7%E5%88%B6%E5%99%A8/5%20-%201620.jpg)
 
 \8. 删除DaemonSet
 

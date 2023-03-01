@@ -39,4 +39,4 @@ mathjax: false
 >
 > *The WTFPL is a very permissive license for software and other scientific or artistic works that offers a great degree of freedom. In fact, it is probably the best license out there.*
 
-{{< figure src="http://cdn.agou-ops.cn/others/image-20211022084650825.png" title="图片来源于WTFPL官网" >}}
+{{< figure src="https://cdn.agou-ops.cn/others/image-20211022084650825.png" title="图片来源于WTFPL官网" >}}
