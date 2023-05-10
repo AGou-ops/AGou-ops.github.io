@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PVE on AGou's Blog</title><link>https://agou-ops.cn/categories/pve/</link><description>Recent content in PVE on AGou's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>suofeiyaxx@gmail.com (AGou-ops)</managingEditor><webMaster>suofeiyaxx@gmail.com (AGou-ops)</webMaster><copyright>WTFPLv2</copyright><lastBuildDate>Wed, 10 May 2023 17:21:51 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/categories/pve/index.xml" rel="self" type="application/rss+xml"/><item><title>PVE初始化相关</title><link>https://agou-ops.cn/post/pve%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9B%B8%E5%85%B3/</link><pubDate>Wed, 10 May 2023 17:21:51 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/pve%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9B%B8%E5%85%B3/</guid><description>&lt;h2 id="去除登录订阅弹窗">去除登录订阅弹窗&lt;/h2>
+&lt;p>备份该文件:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">cp /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js&lt;span class="o">{&lt;/span>,.bak&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>找到以下代码，大概在&lt;code>546&lt;/code>行:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="mi">546&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">res&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="kc">null&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">res&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="kc">undefined&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nx">res&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">res&lt;/span>
+&lt;span class="mi">547&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">status&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toLowerCase&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">!==&lt;/span> &lt;span class="s1">&amp;#39;active&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>将以上的if条件改为false即可，如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>修改完保存文件，重启服务：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">systemctl restart pveproxy
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>PVE制作镜像模板</title><link>https://agou-ops.cn/post/pve%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E6%A8%A1%E6%9D%BF/</link><pubDate>Wed, 10 May 2023 17:21:40 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/pve%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E6%A8%A1%E6%9D%BF/</guid><description>&lt;h2 id="创建虚拟机">创建虚拟机&lt;/h2>
+&lt;p>创建虚拟机，ID和名称按照自己的喜好随便取：&lt;/p>
+&lt;p>&lt;img src="https://cdn.agou-ops.cn/others/image-20230425100830230.png" alt="image-20230425100830230">&lt;/p>
+&lt;p>需要注意的是，在选择&lt;code>操作系统&lt;/code>这一步中，不要选择任何介质，如下图所示：&lt;/p></description></item></channel></rss>
