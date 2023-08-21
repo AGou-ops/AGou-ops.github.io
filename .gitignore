@@ -3,3 +3,5 @@
 /resources/*
 .env
 config.*
+content/.obsidian/
+.DS_Store
