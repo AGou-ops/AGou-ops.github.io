@@ -25,7 +25,7 @@ mathjax: false
 #     weight: 1
 ---
 
-篇幅过长，为了更好的阅读体验可以前往[我的文档-k8s Debian12 二进制安装](https://docs.agou-ops.cn/docs/CloudNative/k8s/Installation/k8s%20Debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85).
+篇幅过长，为了更好的阅读体验可以前往[我的文档-k8s Debian12 二进制安装](https://docs.agou-ops.cn/docs/CloudNative/k8s/Installation/k8s%20Debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85) 或者我的[备用博客地址](https://agou-ops.cn/myBlog-2/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/) .
 
 ## 一、预先准备
 ### 1.1 服务器角色
