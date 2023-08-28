@@ -1121,7 +1121,7 @@ vim /usr/local/kubernetes/server/bin/kube-apiserver-startup.sh
 </span><span class=se></span>  --requestheader-client-ca-file<span class=o>=</span>/etc/kubernetes/TLS/k8s/proxy-client/front-proxy-ca.pem  <span class=se>\
 </span><span class=se></span>  --proxy-client-cert-file<span class=o>=</span>/etc/kubernetes/TLS/k8s/proxy-client/front-proxy-client.pem  <span class=se>\
 </span><span class=se></span>  --proxy-client-key-file<span class=o>=</span>/etc/kubernetes/TLS/k8s/proxy-client/front-proxy-client-key.pem  <span class=se>\
-</span><span class=se></span>  --requestheader-allowed-names<span class=o>=</span>aggregator  <span class=se>\
+</span><span class=se></span>  --requestheader-allowed-names<span class=o>=</span>front-proxy-client  <span class=se>\
 </span><span class=se></span>  --requestheader-group-headers<span class=o>=</span>X-Remote-Group  <span class=se>\
 </span><span class=se></span>  --requestheader-extra-headers-prefix<span class=o>=</span>X-Remote-Extra-  <span class=se>\
 </span><span class=se></span>  --requestheader-username-headers<span class=o>=</span>X-Remote-User
