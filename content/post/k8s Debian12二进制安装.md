@@ -25,6 +25,8 @@ mathjax: false
 #     weight: 1
 ---
 
+篇幅过长，为了更好的阅读体验可以前往[我的文档-k8s Debian12 二进制安装](https://docs.agou-ops.cn/docs/CloudNative/k8s/Installation/k8s%20Debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85).
+
 ## 一、预先准备
 ### 1.1 服务器角色
 环境信息：
@@ -35,7 +37,7 @@ mathjax: false
 | ------ | ------------- | --------------------------------------------------------------------------------------------- |
 | master | 172.19.82.157 | kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd |
 | node01 | 172.19.82.158 | kubelet、kube-proxy、containerd、etcd                                                               |
-| node02 | 172.19.82.159 | kubelet、kube-proxy、containerd、etcd   
+| node02 | 172.19.82.159 | kubelet、kube-proxy、containerd、etcd
 
 
 <!--more-->
@@ -47,7 +49,7 @@ mathjax: false
 systemctl stop ufw
 systemctl disable ufw
 # 关闭SELinux，我这里cloudint安装的系统，没有防火墙和selinux
-sed -i 's/enforcing/disabled/' /etc/selinux/config  
+sed -i 's/enforcing/disabled/' /etc/selinux/config
 setenforce 0
 # 关闭交换分区swap
 swap -a
@@ -74,7 +76,7 @@ modprobe -- ip_vs_wrr
 modprobe -- ip_vs_sh
 modprobe -- nf_conntrack
 # 写入配置文件永久生效
-cat >> /etc/modules-load.d/ipvs.conf <<EOF 
+cat >> /etc/modules-load.d/ipvs.conf <<EOF
 ip_vs
 ip_vs_rr
 ip_vs_wrr
@@ -300,7 +302,7 @@ harbor建议部署在其他主机上，比如说主控机，与k8s集群分割�
 wget https://github.com/goharbor/harbor/releases/download/v2.8.4/harbor-offline-installer-v2.8.4.tgz
 tar xzvf harbor-offline-installer-v2.8.4.tgz
 # 运行安装程序即可
-sudo ./install.sh 
+sudo ./install.sh
 ```
 后续步骤略.
 ## 三、使用cfssl生成证书
@@ -426,13 +428,13 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=etcd
 ![image.png](https://cdn.agou-ops.cn/others/20230823104905.png)
 
 	ca-config.json解析：
-> 
+>
 > expiry：有效期为200年
 > profiles-server：启动server的时候需要配置证书
 > profiles-client：client去连接server的时候需要证书
 > profiles-peer：双向证书，服务端找客户端需要证书，客户端找服务端需要证书
 > etcd-peer-csr解析：
-> 
+>
 > hosts：etcd有可能部署到哪些组件的IP都要填进来
 > cfssl gencert：生成证书
 ![image.png](https://cdn.agou-ops.cn/others/20230823105545.png)
@@ -599,7 +601,7 @@ vim kube-apiserver-csr.json
             "C": "CN",
             "L": "HangZhou",
             "ST": "ZheJiang",
-            "O": "k8s",  
+            "O": "k8s",
 			"OU": "System"
         }
     ]
@@ -696,7 +698,7 @@ vim /usr/local/kubernetes/server/bin/kube-apiserver-startup.sh
   --requestheader-allowed-names=aggregator  \
   --requestheader-group-headers=X-Remote-Group  \
   --requestheader-extra-headers-prefix=X-Remote-Extra-  \
-  --requestheader-username-headers=X-Remote-User  
+  --requestheader-username-headers=X-Remote-User
 
 chmod +x /usr/local/kubernetes/server/bin/kube-apiserver-startup.sh
 mkdir -pv /data/logs/kubernetes/kube-apiserver
@@ -728,7 +730,7 @@ stdout_events_enabled=false                                     ; emit events on
 supervisorctl update
 ss -tnulp  | grep 6443
 # output
-tcp   LISTEN 0      16384                                *:6443             *:*    users:(("kube-apiserver",pid=5989,fd=7))                                            
+tcp   LISTEN 0      16384                                *:6443             *:*    users:(("kube-apiserver",pid=5989,fd=7))
 ```
 ![image.png](https://cdn.agou-ops.cn/others/20230822170053.png)
 ### 4.3 部署controller-manager
@@ -900,9 +902,9 @@ supervisorctl update
 至此，master节点的核心组件基本安装完成了，使用ss命令查看服务监听状态：
 ```bash
 > ss -tnulp | grep kube
-tcp   LISTEN 0      16384                        127.0.0.1:10259      0.0.0.0:*    users:(("kube-scheduler",pid=9385,fd=7))                                                                     
-tcp   LISTEN 0      16384                        127.0.0.1:10257      0.0.0.0:*    users:(("kube-controller",pid=9370,fd=7))                                                                    
-tcp   LISTEN 0      16384                                *:6443             *:*    users:(("kube-apiserver",pid=5989,fd=7))                                                                    
+tcp   LISTEN 0      16384                        127.0.0.1:10259      0.0.0.0:*    users:(("kube-scheduler",pid=9385,fd=7))
+tcp   LISTEN 0      16384                        127.0.0.1:10257      0.0.0.0:*    users:(("kube-controller",pid=9370,fd=7))
+tcp   LISTEN 0      16384                                *:6443             *:*    users:(("kube-apiserver",pid=5989,fd=7))
 ```
 ### 4.5 配置kubectl所需要的kubeconfig
 步骤大体和上面都是一致的。
@@ -921,7 +923,7 @@ vim kubectl-csr.json
             "C": "CN",
             "L": "HangZhou",
             "ST": "ZheJiang",
-			"O": "system:masters",  
+			"O": "system:masters",
 			"OU": "System"
         }
   ]
@@ -1205,13 +1207,13 @@ supervisorctl update
 
 >  以下来源于网络：
 > 当kubelet组件启动成功后，就会想apiserver发送一个请求加入集群的信息，只有当master节点授权同意后，才可以正常加入，虽然是master节点部署的node组件，> 但是也会发生一个加入集群的信息，需要master同意。
-> 
+>
 > 当kubelet启动之后，首先会在证书目录生成一个kubelet-client.key.tmp这个文件，当使用kubectl certificate approve命令授权成功node的请求之后，kubele> t-client.key.tmp小时，随之会生成一个kubelet-client-current.pem的证书文件，用于与apiserver建立连接，此时再使用kubectl get > node就会看到节点信息了。
-> 
+>
 > 扩展：如果后期想要修改node的名称，那么就把生成的kubelet证书文件全部删除，然后使用kubectl delete > node删除该节点，在修改kubelet配置文件中该节点的名称，然后使用kubectl delete > csr删除授权信息，再重启kubelet生成新的授权信息，然后授权通过即可看到新的名字的node节点。
-> 
+>
 > 只有当授权通过后，kubelet生成了证书文件，kubelet的端口才会被启动
-> 
+>
 > 注意：当kubelet的授权被master请求通后，kube-proxy启动成功后，节点才会正真的加入集群，即使kubectl get > node看到的节点是Ready，该节点也是不可用的，必须当kube-proxy启动完毕后，这个节点才算正真的启动完毕.
 
 ```bash
