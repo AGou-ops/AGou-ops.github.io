@@ -695,7 +695,7 @@ vim /usr/local/kubernetes/server/bin/kube-apiserver-startup.sh
   --requestheader-client-ca-file=/etc/kubernetes/TLS/k8s/proxy-client/front-proxy-ca.pem  \
   --proxy-client-cert-file=/etc/kubernetes/TLS/k8s/proxy-client/front-proxy-client.pem  \
   --proxy-client-key-file=/etc/kubernetes/TLS/k8s/proxy-client/front-proxy-client-key.pem  \
-  --requestheader-allowed-names=aggregator  \
+  --requestheader-allowed-names=front-proxy-client  \
   --requestheader-group-headers=X-Remote-Group  \
   --requestheader-extra-headers-prefix=X-Remote-Extra-  \
   --requestheader-username-headers=X-Remote-User
