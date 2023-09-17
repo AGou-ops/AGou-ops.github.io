@@ -25,7 +25,7 @@ mathjax: false
 #     weight: 1
 ---
 
-{{< changeBG "https://api.ixiaowai.cn/api/api.php" >}}
+{{< changeBG "https://tuapi.eees.cc/api.php?category=dongman&type=302" >}}
 
 ***按照观看结束时间排序，序号仅用于计数。(2020-03-28 至 ????-??-??)***
 
