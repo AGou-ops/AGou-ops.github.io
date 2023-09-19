@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>kubernetes on AGou's Blog</title><link>https://agou-ops.cn/tags/kubernetes/</link><description>Recent content in kubernetes on AGou's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>suofeiyaxx@gmail.com (AGou-ops)</managingEditor><webMaster>suofeiyaxx@gmail.com (AGou-ops)</webMaster><copyright>WTFPLv2</copyright><lastBuildDate>Tue, 02 Nov 2021 14:30:23 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>K8s网络学习</title><link>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</link><pubDate>Tue, 02 Nov 2021 14:30:23 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</guid><description>&lt;p>从简单&lt;code>p2p&lt;/code>网络到k8s复杂型网络。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>kubernetes on AGou's Blog</title><link>https://agou-ops.cn/tags/kubernetes/</link><description>Recent content in kubernetes on AGou's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>suofeiyaxx@gmail.com (AGou-ops)</managingEditor><webMaster>suofeiyaxx@gmail.com (AGou-ops)</webMaster><copyright>WTFPLv2</copyright><lastBuildDate>Tue, 19 Sep 2023 14:50:30 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>使用cert-manager颁发自签证书</title><link>https://agou-ops.cn/post/cert-manager%E9%A2%81%E5%8F%91%E8%87%AA%E7%AD%BE%E8%AF%81%E4%B9%A6/</link><pubDate>Tue, 19 Sep 2023 14:50:30 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/cert-manager%E9%A2%81%E5%8F%91%E8%87%AA%E7%AD%BE%E8%AF%81%E4%B9%A6/</guid><description>&lt;h2 id="cert-manager简介">cert-manager简介&lt;/h2>
+&lt;blockquote>
+&lt;p>cert-manager 是一个云原生证书管理开源项目，用于在 Kubernetes 集群中自动管理和颁发来自各种颁发源的 TLS 证书，它可以从各种受支持的来源颁发证书，包括 &lt;a href="https://letsencrypt.org/">Let’s Encrypt&lt;/a>、&lt;a href="https://www.vaultproject.io/">HashiCorp Vault&lt;/a>和&lt;a href="https://www.venafi.com/">Venafi&lt;/a>以及私有 PKI，它将确保证书定期有效和更新，并在到期前的适当时间尝试更新证书。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="k8s集群中安装cert-manager">k8s集群中安装cert-manager&lt;/h2>
+&lt;p>参考：&lt;a href="https://cert-manager.io/docs/installation/">https://cert-manager.io/docs/installation/&lt;/a>&lt;/p>
+&lt;p>推荐使用helm chart进行安装：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">helm repo add jetstack https://charts.jetstack.io
+helm repo update
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.0/cert-manager.crds.yaml
+helm install &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> cert-manager jetstack/cert-manager &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> --namespace cert-manager &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> --create-namespace &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> --version v1.13.0 &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> &lt;span class="c1"># --set installCRDs=true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>K8s中部署Apollo配置中心</title><link>https://agou-ops.cn/post/k8s%E4%B8%AD%E9%83%A8%E7%BD%B2apollo%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/</link><pubDate>Mon, 11 Sep 2023 14:23:18 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s%E4%B8%AD%E9%83%A8%E7%BD%B2apollo%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+&lt;blockquote>
+&lt;p>Apollo（阿波罗）是一款可靠的分布式配置管理中心，诞生于携程框架研发部，能够集中化管理应用不同环境、不同集群的配置，配置修改后能够实时推送到应用端，并且具备规范的权限、流程治理等特性，适用于微服务配置管理场景。&lt;/p>
+&lt;p>Apollo支持4个维度管理Key-Value格式的配置：&lt;/p>
+&lt;ol>
+&lt;li>application (应用)&lt;/li>
+&lt;li>environment (环境)&lt;/li>
+&lt;li>cluster (集群)&lt;/li>
+&lt;li>namespace (命名空间)&lt;/li>
+&lt;/ol>
+&lt;p>同时，Apollo基于开源模式开发，开源地址：https://github.com/ctripcorp/apollo&lt;/p>
+&lt;/blockquote></description></item><item><title>Debian12二进制安装k8s v1.25.12</title><link>https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</link><pubDate>Sun, 27 Aug 2023 10:33:38 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</guid><description>&lt;p>篇幅过长，为了更好的阅读体验可以前往&lt;a href="https://docs.agou-ops.cn/docs/CloudNative/k8s/Installation/k8s%20Debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85">我的文档-k8s Debian12 二进制安装&lt;/a> 或者我的&lt;a href="https://agou-ops.cn/myBlog-2/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">备用博客地址&lt;/a> .&lt;/p>
+&lt;h2 id="一预先准备">一、预先准备&lt;/h2>
+&lt;h3 id="11-服务器角色">1.1 服务器角色&lt;/h3>
+&lt;p>环境信息：&lt;/p>
+&lt;ul>
+&lt;li>k8s版本：v1.25.12&lt;/li>
+&lt;li>Debian12(bookworm)：内核6.1.0-9-amd64&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>角色&lt;/th>
+&lt;th>IP&lt;/th>
+&lt;th>组件列表&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>master&lt;/td>
+&lt;td>172.19.82.157&lt;/td>
+&lt;td>kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>node01&lt;/td>
+&lt;td>172.19.82.158&lt;/td>
+&lt;td>kubelet、kube-proxy、containerd、etcd&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>node02&lt;/td>
+&lt;td>172.19.82.159&lt;/td>
+&lt;td>kubelet、kube-proxy、containerd、etcd&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>K8s网络学习</title><link>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</link><pubDate>Tue, 02 Nov 2021 14:30:23 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/</guid><description>&lt;p>从简单&lt;code>p2p&lt;/code>网络到k8s复杂型网络。&lt;/p>
 &lt;h2 id="简单p2p网络模型">简单p2p网络模型&lt;/h2>
 &lt;p>&lt;img src="https://cdn.agou-ops.cn/others/image-20211102145031780.png" alt="image-20211102145031780">&lt;/p>
 &lt;p>ℹ️简单说明：创建两个网络命名空间&lt;code>client&lt;/code>和&lt;code>server&lt;/code>，然后创建一对虚拟网卡将两端的命名空间相连起来，就好像直接相连的网线一样，中间没有阻拦，创建完的虚拟网卡对存在于默认的命名空间中，接着我们将其分别放入&lt;code>client&lt;/code>和&lt;code>server&lt;/code>命名空间中，最后为两个虚拟网卡对&lt;code>veth-client&lt;/code>和&lt;code>veth-server&lt;/code>分配IP地址并启用网卡。&lt;/p></description></item></channel></rss>
