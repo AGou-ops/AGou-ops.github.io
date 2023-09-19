@@ -4,8 +4,8 @@ date: 2023-09-11T14:23:18+08:00
 lastmod: 2023-09-11T14:23:18+08:00
 draft: false
 description: ""
-tags: []
-categories: []
+tags: ["k8s", "kubernetes", "apollo"]
+categories: ["k8s", "kubernetes"]
 keywords: []
 
 author: "AGou-ops"

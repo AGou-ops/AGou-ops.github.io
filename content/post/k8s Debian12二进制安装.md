@@ -4,8 +4,8 @@ date: 2023-08-27T10:33:38+08:00
 lastmod: 2023-08-27T10:33:38+08:00
 draft: false
 description: ""
-tags: []
-categories: []
+tags: ["k8s", "kubernetes", "二进制安装"]
+categories: ["k8s", "kubernetes"]
 keywords: []
 
 author: "AGou-ops"
