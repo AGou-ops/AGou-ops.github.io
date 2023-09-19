@@ -279,3 +279,19 @@ spec:
 
 步骤和上面类似，就不在此赘述。
 
+## 手动更新证书
+
+```bash
+kubectl edit certificate kuard-tls -n test
+# 在spec字段下添加以下两行
+  duration: 87600h # 10 years
+  renewBefore: 720h # 30 days
+# 保存并退出
+
+# 删除原来的secret，让certmanager重新自动生成secret
+kubectl get certificate kuard-tls -o=jsonpath='{.spec.secretName}' | xargs kubectl delete secret
+```
+
+## 参考链接
+
+-  [SelfSigned - cert-manager Documentation](https://cert-manager.io/docs/configuration/selfsigned/)
