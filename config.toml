@@ -83,7 +83,7 @@ defaultContentLanguage = "en"           # Default language to use
 [params]
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
   since = "2018"            # Site creation time          # 站点建立时间
-  homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
+  homeFullContent = false   # if false, show post summaries on home page. Otherwise show full content.
   rssFullContent = true     # if false, Rss feed instead of the summary
   mainSections = ["post"]
 
@@ -196,7 +196,7 @@ defaultContentLanguage = "en"           # Default language to use
     alipay = "http://cdn.agou-ops.cn/BaseIMG/alipay.png"           # 支付宝二维码
 
   [params.counter.busuanzi]  # a Chinese visitor counter  # 不蒜子计数器
-    enable = true
+    enable = false
 
   [params.counter.leancloud]  # Chinese leancloud visitor counter  # leancloud 计数器
     enable = false
