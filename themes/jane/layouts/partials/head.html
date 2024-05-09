@@ -110,10 +110,6 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->` | safeHTML }}
 
-<!-- Analytics -->
-{{- if and (not .Site.IsServer) .Site.GoogleAnalytics -}}
-  {{ template "_internal/google_analytics_async.html" . }}
-{{- end -}}
 
 <!-- Custom head -->
 {{ partial "custom_head.html" . }}
