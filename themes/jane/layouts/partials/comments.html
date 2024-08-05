@@ -93,7 +93,7 @@
   {{- end }}
 
   <!-- Disqus -->
-  {{- if .Site.DisqusShortname -}}
+  {{- if .Site.Config.Services.Disqus.Shortname -}}
   <div class="disqus-comment">
   <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
     {{ i18n "loadDisqus" }}
@@ -101,7 +101,7 @@
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = {{ .Permalink }};
+      this.page.url = '{{ .Permalink }}';
     };
     function load_disqus() {
       // Don't ever inject Disqus on localhost--it creates unwanted
@@ -109,7 +109,7 @@
       if (window.location.hostname === 'localhost') return;
 
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = '{{ .Site.DisqusShortname }}';
+      var disqus_shortname = '{{ .Site.Config.Services.Disqus.Shortname }}';
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 
@@ -163,11 +163,11 @@
         el: '#comments' ,
         appId: '{{ .Site.Params.valine.appId }}',
         appKey: '{{ .Site.Params.valine.appKey }}',
-        notify: {{ .Site.Params.valine.notify }}, 
-        verify: {{ .Site.Params.valine.verify }}, 
-        avatar:'{{ .Site.Params.valine.avatar }}', 
+        notify: '{{ .Site.Params.valine.notify }}', 
+        verify: '{{ .Site.Params.valine.verify }}', 
+        avatar: '{{ .Site.Params.valine.avatar }}', 
         placeholder: '{{ .Site.Params.valine.placeholder }}',
-        visitor: {{ false }}
+        visitor: '{{ false }}'
     });
   </script>
   {{- end }}

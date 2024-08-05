@@ -31,7 +31,7 @@
 <!-- author & description & keywords  -->
 {{- if or .Params.author .Site.Author.name -}}
 {{- $author_id := .Params.author | default .Site.Author.name -}}
-{{- $author := (index ($.Site.Data.authors | default dict) $author_id) -}}
+{{- $author := (index ($.Site.Params.author | default dict) $author_id) -}}
 {{- $author_lang := (index ($author | default dict) .Site.Language.Lang) -}}
 {{- $author_name := $author_lang.name.display | default $author.name.display | default $author_id -}}
 <meta name="author" content="{{ $author_name | safeHTML }}" />
@@ -120,3 +120,7 @@
 
 <script async src="http://web.rn.agou-ops.cn/script.js" data-website-id="a2db4466-bd64-4222-913d-332c554abaeb"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d58077e07d54401e854cb5319c0f3a62"}'></script><!-- End Cloudflare Web Analytics -->
+
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
