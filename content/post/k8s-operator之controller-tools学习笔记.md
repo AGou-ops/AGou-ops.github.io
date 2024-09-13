@@ -64,7 +64,7 @@ go mod init controller-tools-study
 mkdir -pv pkg/apis/appcontroller/v1alpha1
 ```
 2. 使用`type-scaffold`工具生成`types.go`：
-```bash
+```go
 type-scaffold --kind=Application > pkg/apis/appcontroller/v1alpha1/types.go
 
 cat pkg/apis/appcontroller/v1alpha1/types.go
@@ -101,9 +101,8 @@ type ApplicationList struct {
         Items           []Application `json:"items"`
 }
 ```
-可以发现生成之后的代码，是没有包名和引用依赖包的，所以需要手动在文件头添加一下：
+可以发现生成之后的代码，是没有包名和引用依赖包的，所以需要手动在文件头添加一下，编辑`pkg/apis/appcontroller/v1alpha1/types.go`文件：
 ```
-vim pkg/apis/appcontroller/v1alpha1/types.go
 package v1alpha1 
 
 import metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -228,7 +227,7 @@ type ApplicationSpec struct {
 ...
 ```
 使用`controller-gen`重新生成`crd`：
-```bash
+```yaml
 controller-gen crd paths=./... output:crd:dir=config/crd
 
 # 再次查看crd文件内容，可以发现spec里面已经有上面代码中指定的字段了
@@ -250,28 +249,20 @@ controller-gen crd paths=./... output:crd:dir=config/crd
 
 ```
 4. 注册`crd`资源
-编辑`pkg/apis/appcontroller/register.go`文件，添加`GroupName`：
-```go
-package appcontroller
-
-const (
-	GroupName = "appcontroller.k8s.io"
-)
-```
-编辑`pkg/apis/appcontroller/v1alpha1/register.go`文件，添加以下代码来注册client：
+编辑`pkg/apis/appcontroller/v1alpha1/register.go`文件，添加以下代码来注册`client`：
 ```go
 package v1alpha1
 
 import (
-	"controller-tools-study/pkg/apis/appcontroller"
-
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 )
 
+const GroupName = "appcontroller.k8s.io"
+
 // SchemeGroupVersion is group version used to register these objects
-var SchemeGroupVersion = schema.GroupVersion{Group: appcontroller.GroupName, Version: "v1alpha1"}
+var SchemeGroupVersion = schema.GroupVersion{Group: GroupName, Version: "v1alpha1"}
 
 // Kind takes an unqualified kind and returns back a Group qualified GroupKind
 func Kind(kind string) schema.GroupKind {
@@ -299,6 +290,7 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil
 }
+
 ```
 5. 应用`crd`文件
 ```bash

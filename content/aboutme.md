@@ -26,8 +26,8 @@ mathjax: false
 ---
 
 * 本站地址：[https://agou-ops.cn](https://agou-ops.cn)
-* 备用地址：[https://x.agou-ops.cn](https://agou-ops.cn/myBlog-bak)
-* my Docs：[https://docs.agou-ops.cn](https://agou-ops.cn/myDocsv3)
+* 备用地址：[https://x.agou-ops.cn](https://agou-ops.cn/myBlog-2)
+* my Docs：[https://docsv5.agou-ops.cn/](https://docsv5.agou-ops.cn/)
 
 ## License
 
