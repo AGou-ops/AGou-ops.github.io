@@ -3,7 +3,7 @@
 仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries
 "><meta name=keywords content="AGou,AGou-ops,阿狗,阿狗博客,阿狗的博客,AGou blog"><meta name=baidu-site-verification content="eS8otJ2dE7My4oKT"><meta name=generator content="Hugo 0.130.0"><link rel=canonical href=https://agou-ops.cn/post/k8s-operator%E4%B9%8Bcontroller-tools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/><link rel=icon href=https://cdn.agou-ops.cn/BaseIMG/logo.png><link rel=stylesheet href=/sass/jane.min.673ab11f24bb14d40cb25177692d7f4d0ff33d2dc69cf8384c82475568406168.css integrity media=screen crossorigin=anonymous><link rel=stylesheet href=/css/layer.css><link rel=stylesheet href=https://agou-ops.cn/code_expander.js><meta property="og:url" content="https://agou-ops.cn/post/k8s-operator%E4%B9%8Bcontroller-tools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="AGou's Blog"><meta property="og:title" content="K8s Operator之controller Tools学习笔记"><meta property="og:description" content=" controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
 仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2024-09-12T16:07:54+08:00"><meta property="article:modified_time" content="2024-09-12T16:07:54+08:00"><meta property="article:tag" content="K8s"><meta property="article:tag" content="Controller-Tools"><meta property="article:tag" content="Operator"><meta itemprop=name content="K8s Operator之controller Tools学习笔记"><meta itemprop=description content=" controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
-仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries"><meta itemprop=datePublished content="2024-09-12T16:07:54+08:00"><meta itemprop=dateModified content="2024-09-12T16:07:54+08:00"><meta itemprop=wordCount content="2581"><meta itemprop=keywords content="K8s,Controller-Tools,Operator"><meta name=twitter:card content="summary"><meta name=twitter:title content="K8s Operator之controller Tools学习笔记"><meta name=twitter:description content=" controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
+仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries"><meta itemprop=datePublished content="2024-09-12T16:07:54+08:00"><meta itemprop=dateModified content="2024-09-12T16:07:54+08:00"><meta itemprop=wordCount content="2562"><meta itemprop=keywords content="K8s,Controller-Tools,Operator"><meta name=twitter:card content="summary"><meta name=twitter:title content="K8s Operator之controller Tools学习笔记"><meta name=twitter:description content=" controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
 仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script async src=/js/gtags.js></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-2DZCW6NJZF")</script><link rel=stylesheet href=/css/docsearch.min.css><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "d58077e07d54401e854cb5319c0f3a62"}'></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>AGou's Blog</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
 <span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/>主页</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/post/>归档</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/tags/>标签</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/aboutme/>关于</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/anime/>💞Anime</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://docs.agou-ops.cn rel=noopener target=_blank>myDocs
@@ -13,7 +13,7 @@
 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
 </button>
 <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><style>.fork-me-on-github{position:absolute;top:0;right:0;border:0}@media(max-width:1080px){.fork-me-on-github{display:none}}</style><a href=https://github.com/AGou-ops><img loading=lazy width=149 height=149 class=fork-me-on-github src=https://cdn.agou-ops.cn/BaseIMG/forkme_right_gray_6d6d6d.svg data-recalc-dims=1 alt="Fork me on GitHub"></a><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>AGou's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/>主页</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/aboutme/>关于</a></li><li class=menu-item><a class=menu-item-link href=https://agou-ops.cn/anime/>💞Anime</a></li><li class=menu-item><a class=menu-item-link href=https://docs.agou-ops.cn rel=noopener target=_blank>myDocs
-<i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6 21.568 21.632 54.144 54.208 54.144 54.208C534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92.0.0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"/><path d="M841.152 457.152c-30.528.0-54.784 24.512-54.784 54.656V786.56H237.696V237.696h206.016c6.656.0 10.752.0 13.248.0 30.72.0 55.04-24.512 55.04-54.848C512 152.32 487.36 128 456.96 128H183.04C153.216 128 128 152.576 128 182.848c0 3.136.256 6.272.768 9.28C128.256 195.136 128 198.272 128 201.408v639.488c0 .064.0.192.0.256.0.128.0.192.0.32.0 30.528 24.512 54.784 54.784 54.784H829.76c6.592.0 9.728.0 11.712.0 28.736.0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344v-20.352V561.408v-49.28C896 481.792 871.424 457.152 841.152 457.152z"/></svg></i></a></li><input size=20 maxlength=15 type=search class=docsearch-input placeholder="Search Here..."></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>K8s Operator之controller Tools学习笔记</h1><div class=post-meta><time datetime=2024-09-12 class=post-time>2024-09-12</time><div class=post-category><a href=https://agou-ops.cn/categories/k8s/>k8s </a><a href=https://agou-ops.cn/categories/operator/>operator</a></div><span class=more-meta>2581 words </span><span class=more-meta>6 min read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Table of Contents</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#controller-tools包含工具与安装>controller-tools包含工具与安装</a><ul><li><a href=#包含工具>包含工具</a></li><li><a href=#安装>安装</a></li></ul></li><li><a href=#快速开始及示例>快速开始及示例</a></li><li><a href=#参考链接>参考链接</a></li></ul></nav></div></div><div class=post-content><blockquote><p>controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。</p><p>仓库地址：<a href=https://github.com/kubernetes-sigs/controller-tools>GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries</a></p></blockquote><h2 id=controller-tools包含工具与安装>controller-tools包含工具与安装</h2><h3 id=包含工具>包含工具</h3><p>查看<code>controller-tools</code>源码的<code>cmd</code>目录可以发现，有以下三个cli工具：</p><ul><li>controller-gen：用于生成 zz_xxx.deepcopy.go 文件以及 crd 文件【kubebuilder也是通过这个工具生成crd的相关框架的】</li><li>type-scaffold：用于生成所需的 types.go 文件</li><li>helpgen：用于生成针对 Kubernetes API 对象的代码文档，可以包括 API 对象的字段、标签和注释等信息</li></ul><h3 id=安装>安装</h3><h4 id=从仓库release中下载>从仓库release中下载</h4><p><a href=https://github.com/kubernetes-sigs/controller-tools/releases>Releases · kubernetes-sigs/controller-tools</a>
+<i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6 21.568 21.632 54.144 54.208 54.144 54.208C534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92.0.0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"/><path d="M841.152 457.152c-30.528.0-54.784 24.512-54.784 54.656V786.56H237.696V237.696h206.016c6.656.0 10.752.0 13.248.0 30.72.0 55.04-24.512 55.04-54.848C512 152.32 487.36 128 456.96 128H183.04C153.216 128 128 152.576 128 182.848c0 3.136.256 6.272.768 9.28C128.256 195.136 128 198.272 128 201.408v639.488c0 .064.0.192.0.256.0.128.0.192.0.32.0 30.528 24.512 54.784 54.784 54.784H829.76c6.592.0 9.728.0 11.712.0 28.736.0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344v-20.352V561.408v-49.28C896 481.792 871.424 457.152 841.152 457.152z"/></svg></i></a></li><input size=20 maxlength=15 type=search class=docsearch-input placeholder="Search Here..."></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>K8s Operator之controller Tools学习笔记</h1><div class=post-meta><time datetime=2024-09-12 class=post-time>2024-09-12</time><div class=post-category><a href=https://agou-ops.cn/categories/k8s/>k8s </a><a href=https://agou-ops.cn/categories/operator/>operator</a></div><span class=more-meta>2562 words </span><span class=more-meta>6 min read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Table of Contents</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#controller-tools包含工具与安装>controller-tools包含工具与安装</a><ul><li><a href=#包含工具>包含工具</a></li><li><a href=#安装>安装</a></li></ul></li><li><a href=#快速开始及示例>快速开始及示例</a></li><li><a href=#参考链接>参考链接</a></li></ul></nav></div></div><div class=post-content><blockquote><p>controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。</p><p>仓库地址：<a href=https://github.com/kubernetes-sigs/controller-tools>GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries</a></p></blockquote><h2 id=controller-tools包含工具与安装>controller-tools包含工具与安装</h2><h3 id=包含工具>包含工具</h3><p>查看<code>controller-tools</code>源码的<code>cmd</code>目录可以发现，有以下三个cli工具：</p><ul><li>controller-gen：用于生成 zz_xxx.deepcopy.go 文件以及 crd 文件【kubebuilder也是通过这个工具生成crd的相关框架的】</li><li>type-scaffold：用于生成所需的 types.go 文件</li><li>helpgen：用于生成针对 Kubernetes API 对象的代码文档，可以包括 API 对象的字段、标签和注释等信息</li></ul><h3 id=安装>安装</h3><h4 id=从仓库release中下载>从仓库release中下载</h4><p><a href=https://github.com/kubernetes-sigs/controller-tools/releases>Releases · kubernetes-sigs/controller-tools</a>
 但看着只有controller-gen这个工具，没有看到另外两个。</p><h4 id=从源码编译安装>从源码编译安装</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -75,49 +75,47 @@
 </span><span class=lnt>33
 </span><span class=lnt>34
 </span><span class=lnt>35
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>type-scaffold --kind<span class=o>=</span>Application &gt; pkg/apis/appcontroller/v1alpha1/types.go
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span><span class=o>-</span><span class=nx>scaffold</span> <span class=o>--</span><span class=nx>kind</span><span class=p>=</span><span class=nx>Application</span> <span class=p>&gt;</span> <span class=nx>pkg</span><span class=o>/</span><span class=nx>apis</span><span class=o>/</span><span class=nx>appcontroller</span><span class=o>/</span><span class=nx>v1alpha1</span><span class=o>/</span><span class=nx>types</span><span class=p>.</span><span class=k>go</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>cat pkg/apis/appcontroller/v1alpha1/types.go
-</span></span><span class=line><span class=cl><span class=c1># 输出内容如下：</span>
-</span></span><span class=line><span class=cl>// ApplicationSpec defines the desired state of Application
-</span></span><span class=line><span class=cl><span class=nb>type</span> ApplicationSpec struct <span class=o>{</span>
-</span></span><span class=line><span class=cl>        // INSERT ADDITIONAL SPEC FIELDS -- desired state of cluster
-</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=nx>cat</span> <span class=nx>pkg</span><span class=o>/</span><span class=nx>apis</span><span class=o>/</span><span class=nx>appcontroller</span><span class=o>/</span><span class=nx>v1alpha1</span><span class=o>/</span><span class=nx>types</span><span class=p>.</span><span class=k>go</span>
+</span></span><span class=line><span class=cl><span class=err>#</span> <span class=nx>输出内容如下</span><span class=err>：</span>
+</span></span><span class=line><span class=cl><span class=c1>// ApplicationSpec defines the desired state of Application
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>type</span> <span class=nx>ApplicationSpec</span> <span class=kd>struct</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// INSERT ADDITIONAL SPEC FIELDS -- desired state of cluster
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>// ApplicationStatus defines the observed state of Application.
-</span></span><span class=line><span class=cl>// It should always be reconstructable from the state of the cluster and/or outside world.
-</span></span><span class=line><span class=cl><span class=nb>type</span> ApplicationStatus struct <span class=o>{</span>
-</span></span><span class=line><span class=cl>        // INSERT ADDITIONAL STATUS FIELDS -- observed state of cluster
-</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=c1>// ApplicationStatus defines the observed state of Application.
+</span></span></span><span class=line><span class=cl><span class=c1>// It should always be reconstructable from the state of the cluster and/or outside world.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>type</span> <span class=nx>ApplicationStatus</span> <span class=kd>struct</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// INSERT ADDITIONAL STATUS FIELDS -- observed state of cluster
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>// +k8s:deepcopy-gen:interfaces<span class=o>=</span>k8s.io/apimachinery/pkg/runtime.Object
+</span></span><span class=line><span class=cl><span class=c1>// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Application is the Schema for the applications API
+</span></span></span><span class=line><span class=cl><span class=c1>// +k8s:openapi-gen=true
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>type</span> <span class=nx>Application</span> <span class=kd>struct</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>metav1</span><span class=p>.</span><span class=nx>TypeMeta</span>   <span class=s>`json:&#34;,inline&#34;`</span>
+</span></span><span class=line><span class=cl>        <span class=nx>metav1</span><span class=p>.</span><span class=nx>ObjectMeta</span> <span class=s>`json:&#34;metadata,omitempty&#34;`</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>// Application is the Schema <span class=k>for</span> the applications API
-</span></span><span class=line><span class=cl>// +k8s:openapi-gen<span class=o>=</span><span class=nb>true</span>
-</span></span><span class=line><span class=cl><span class=nb>type</span> Application struct <span class=o>{</span>
-</span></span><span class=line><span class=cl>        metav1.TypeMeta   <span class=sb>`</span>json:<span class=s2>&#34;,inline&#34;</span><span class=sb>`</span>
-</span></span><span class=line><span class=cl>        metav1.ObjectMeta <span class=sb>`</span>json:<span class=s2>&#34;metadata,omitempty&#34;</span><span class=sb>`</span>
+</span></span><span class=line><span class=cl>        <span class=nx>Spec</span>   <span class=nx>ApplicationSpec</span>   <span class=s>`json:&#34;spec,omitempty&#34;`</span>
+</span></span><span class=line><span class=cl>        <span class=nx>Status</span> <span class=nx>ApplicationStatus</span> <span class=s>`json:&#34;status,omitempty&#34;`</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        Spec   ApplicationSpec   <span class=sb>`</span>json:<span class=s2>&#34;spec,omitempty&#34;</span><span class=sb>`</span>
-</span></span><span class=line><span class=cl>        Status ApplicationStatus <span class=sb>`</span>json:<span class=s2>&#34;status,omitempty&#34;</span><span class=sb>`</span>
-</span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>// +k8s:deepcopy-gen:interfaces<span class=o>=</span>k8s.io/apimachinery/pkg/runtime.Object
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>// ApplicationList contains a list of Application
-</span></span><span class=line><span class=cl><span class=nb>type</span> ApplicationList struct <span class=o>{</span>
-</span></span><span class=line><span class=cl>        metav1.TypeMeta <span class=sb>`</span>json:<span class=s2>&#34;,inline&#34;</span><span class=sb>`</span>
-</span></span><span class=line><span class=cl>        metav1.ListMeta <span class=sb>`</span>json:<span class=s2>&#34;metadata,omitempty&#34;</span><span class=sb>`</span>
-</span></span><span class=line><span class=cl>        Items           <span class=o>[]</span>Application <span class=sb>`</span>json:<span class=s2>&#34;items&#34;</span><span class=sb>`</span>
-</span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>可以发现生成之后的代码，是没有包名和引用依赖包的，所以需要手动在文件头添加一下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span><span class=line><span class=cl><span class=c1>// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// ApplicationList contains a list of Application
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>type</span> <span class=nx>ApplicationList</span> <span class=kd>struct</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>metav1</span><span class=p>.</span><span class=nx>TypeMeta</span> <span class=s>`json:&#34;,inline&#34;`</span>
+</span></span><span class=line><span class=cl>        <span class=nx>metav1</span><span class=p>.</span><span class=nx>ListMeta</span> <span class=s>`json:&#34;metadata,omitempty&#34;`</span>
+</span></span><span class=line><span class=cl>        <span class=nx>Items</span>           <span class=p>[]</span><span class=nx>Application</span> <span class=s>`json:&#34;items&#34;`</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>可以发现生成之后的代码，是没有包名和引用依赖包的，所以需要手动在文件头添加一下，编辑<code>pkg/apis/appcontroller/v1alpha1/types.go</code>文件：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=nx>vim</span> <span class=nx>pkg</span><span class=o>/</span><span class=nx>apis</span><span class=o>/</span><span class=nx>appcontroller</span><span class=o>/</span><span class=nx>v1alpha1</span><span class=o>/</span><span class=nx>types</span><span class=p>.</span><span class=k>go</span>
-</span></span><span class=line><span class=cl><span class=kn>package</span> <span class=nx>v1alpha1</span> 
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>v1alpha1</span> 
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nx>metav1</span> <span class=s>&#34;k8s.io/apimachinery/pkg/apis/meta/v1&#34;</span>
 </span></span><span class=line><span class=cl>
@@ -342,36 +340,26 @@
 </span><span class=lnt>16
 </span><span class=lnt>17
 </span><span class=lnt>18
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>controller-gen crd <span class=nv>paths</span><span class=o>=</span>./... output:crd:dir<span class=o>=</span>config/crd
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 再次查看crd文件内容，可以发现spec里面已经有上面代码中指定的字段了</span>
-</span></span><span class=line><span class=cl>...
-</span></span><span class=line><span class=cl>          spec:
-</span></span><span class=line><span class=cl>            description: ApplicationSpec defines the desired state of Application
-</span></span><span class=line><span class=cl>            properties:
-</span></span><span class=line><span class=cl>              name:
-</span></span><span class=line><span class=cl>                description: INSERT ADDITIONAL SPEC FIELDS -- desired state of cluster
-</span></span><span class=line><span class=cl>                type: string
-</span></span><span class=line><span class=cl>              replicas:
-</span></span><span class=line><span class=cl>                format: int32
-</span></span><span class=line><span class=cl>                type: integer
-</span></span><span class=line><span class=cl>            required:
-</span></span><span class=line><span class=cl>            - name
-</span></span><span class=line><span class=cl>            - replicas
-</span></span><span class=line><span class=cl>            type: object
-</span></span><span class=line><span class=cl>...
-</span></span></code></pre></td></tr></table></div></div><ol start=4><li>注册<code>crd</code>资源
-编辑<code>pkg/apis/appcontroller/register.go</code>文件，添加<code>GroupName</code>：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>appcontroller</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kd>const</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=nx>GroupName</span> <span class=p>=</span> <span class=s>&#34;appcontroller.k8s.io&#34;</span>
-</span></span><span class=line><span class=cl><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><p>编辑<code>pkg/apis/appcontroller/v1alpha1/register.go</code>文件，添加以下代码来注册client：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=l>controller-gen crd paths=./... output:crd:dir=config/crd</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 再次查看crd文件内容，可以发现spec里面已经有上面代码中指定的字段了</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>...</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>spec</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=l>ApplicationSpec defines the desired state of Application</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>properties</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>name</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=l>INSERT ADDITIONAL SPEC FIELDS -- desired state of cluster</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>string</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>replicas</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=nt>format</span><span class=p>:</span><span class=w> </span><span class=l>int32</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>integer</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>required</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>name</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>replicas</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>object</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>...</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=4><li>注册<code>crd</code>资源
+编辑<code>pkg/apis/appcontroller/v1alpha1/register.go</code>文件，添加以下代码来注册<code>client</code>：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -413,15 +401,15 @@
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>v1alpha1</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;controller-tools-study/pkg/apis/appcontroller&#34;</span>
-</span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>	<span class=nx>metav1</span> <span class=s>&#34;k8s.io/apimachinery/pkg/apis/meta/v1&#34;</span>
 </span></span><span class=line><span class=cl>	<span class=s>&#34;k8s.io/apimachinery/pkg/runtime&#34;</span>
 </span></span><span class=line><span class=cl>	<span class=s>&#34;k8s.io/apimachinery/pkg/runtime/schema&#34;</span>
 </span></span><span class=line><span class=cl><span class=p>)</span>
 </span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>const</span> <span class=nx>GroupName</span> <span class=p>=</span> <span class=s>&#34;appcontroller.k8s.io&#34;</span>
+</span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// SchemeGroupVersion is group version used to register these objects
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>SchemeGroupVersion</span> <span class=p>=</span> <span class=nx>schema</span><span class=p>.</span><span class=nx>GroupVersion</span><span class=p>{</span><span class=nx>Group</span><span class=p>:</span> <span class=nx>appcontroller</span><span class=p>.</span><span class=nx>GroupName</span><span class=p>,</span> <span class=nx>Version</span><span class=p>:</span> <span class=s>&#34;v1alpha1&#34;</span><span class=p>}</span>
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>SchemeGroupVersion</span> <span class=p>=</span> <span class=nx>schema</span><span class=p>.</span><span class=nx>GroupVersion</span><span class=p>{</span><span class=nx>Group</span><span class=p>:</span> <span class=nx>GroupName</span><span class=p>,</span> <span class=nx>Version</span><span class=p>:</span> <span class=s>&#34;v1alpha1&#34;</span><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// Kind takes an unqualified kind and returns back a Group qualified GroupKind
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=nf>Kind</span><span class=p>(</span><span class=nx>kind</span> <span class=kt>string</span><span class=p>)</span> <span class=nx>schema</span><span class=p>.</span><span class=nx>GroupKind</span> <span class=p>{</span>
