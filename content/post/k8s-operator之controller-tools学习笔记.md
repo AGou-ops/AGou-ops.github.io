@@ -412,3 +412,4 @@ deepcopy： {test-crd 3}
 ## 参考链接
 -  [GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries](https://github.com/kubernetes-sigs/controller-tools)
 - [protect kubernetes community owned API groups in CRDs by deads2k · Pull Request #1111 · kubernetes/enhancements · GitHub](https://github.com/kubernetes/enhancements/pull/1111)
+- [Kubernetes operator（六）CRD控制器 开发实战篇\_crd开发实战-CSDN博客](https://blog.csdn.net/a1369760658/article/details/135976981)
