@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "myblog.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app: {{ template "myblog.name" . }}
+    chart: {{ template "myblog.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: {{ template "myblog.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "myblog.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: git-sync
+          image: "{{ .Values.gitSync.image.repository }}:{{ .Values.gitSync.image.tag }}"
+          imagePullPolicy: "{{ .Values.gitSync.image.pullPolicy }}"
+          env:
+            {{- range $key, $value := .Values.gitSync.env }}
+            - name: "{{ $key }}"
+              value: "{{ $value }}"
+            {{- end }}
+          volumeMounts:
+            - name: website-sources
+              mountPath: "{{ .Values.gitSync.env.GIT_SYNC_DEST }}"
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.containerPort }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          volumeMounts:
+            - name: website-sources
+              mountPath: /usr/share/nginx/html
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+      volumes:
+        - name: website-sources
+          persistentVolumeClaim:
+            claimName: {{ template "myblog.fullname" . }}-pvc
