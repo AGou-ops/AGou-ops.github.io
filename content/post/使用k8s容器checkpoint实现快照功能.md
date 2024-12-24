@@ -4,8 +4,8 @@ date: 2024-11-07T09:57:55+08:00
 lastmod: 2024-11-07T09:57:55+08:00
 draft: false
 description: ""
-tags: 
-categories: 
+tags: ["k8s","containerd"]
+categories: ["k8s", "CRI"]
 keywords: 
 author: AGou-ops
 toc: true

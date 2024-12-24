@@ -4,8 +4,8 @@ date: 2024-10-18T09:12:26+08:00
 lastmod: 2024-10-18T09:12:26+08:00
 draft: false
 description: ""
-tags: 
-categories: 
+tags: ["k8s","Tailscale"]
+categories: ["k8s", "Tailscale", "VPN"]
 keywords: 
 author: AGou-ops
 toc: true
