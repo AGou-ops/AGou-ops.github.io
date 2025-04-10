@@ -1,13 +1,13 @@
 <!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Debian12二进制安装k8s v1.25.12 - AGou's Blog</title>
 <meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content="width"><meta name=HandheldFriendly content="true"><meta name=applicable-device content="pc,mobile"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=mobile-web-app-capable content="yes"><meta name=author content="AGou-ops"><meta name=description content="篇幅过长，为了更好的阅读体验可以前往我的文档-k8s Debian12 二进制安装 或者我的备用博客地址 .
 一、预先准备 1.1 服务器角色 环境信息：
-k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件列表 master 172.19.82.157 kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd node01 172.19.82.158 kubelet、kube-proxy、containerd、etcd node02 172.19.82.159 kubelet、kube-proxy、containerd、etcd "><meta name=keywords content="AGou,AGou-ops,阿狗,阿狗博客,阿狗的博客,AGou blog"><meta name=baidu-site-verification content="eS8otJ2dE7My4oKT"><meta name=generator content="Hugo 0.130.0"><link rel=canonical href=https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/><link rel=icon href=https://cdn.agou-ops.cn/BaseIMG/logo.png><link rel=stylesheet href=/sass/jane.min.673ab11f24bb14d40cb25177692d7f4d0ff33d2dc69cf8384c82475568406168.css integrity media=screen crossorigin=anonymous><link rel=stylesheet href=/css/layer.css><link rel=stylesheet href=https://agou-ops.cn/code_expander.js><meta property="og:url" content="https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/"><meta property="og:site_name" content="AGou's Blog"><meta property="og:title" content="Debian12二进制安装k8s v1.25.12"><meta property="og:description" content="篇幅过长，为了更好的阅读体验可以前往我的文档-k8s Debian12 二进制安装 或者我的备用博客地址 .
+k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件列表 master 172.19.82.157 kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd node01 172.19.82.158 kubelet、kube-proxy、containerd、etcd node02 172.19.82.159 kubelet、kube-proxy、containerd、etcd "><meta name=keywords content="AGou,AGou-ops,阿狗,阿狗博客,阿狗的博客,AGou blog"><meta name=baidu-site-verification content="eS8otJ2dE7My4oKT"><meta name=generator content="Hugo 0.145.0"><link rel=canonical href=https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/><link rel=icon href=https://cdn.agou-ops.cn/BaseIMG/logo.png><link rel=stylesheet href=/sass/jane.min.673ab11f24bb14d40cb25177692d7f4d0ff33d2dc69cf8384c82475568406168.css integrity media=screen crossorigin=anonymous><link rel=stylesheet href=/css/layer.css><link rel=stylesheet href=https://agou-ops.cn/code_expander.js><meta property="og:url" content="https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/"><meta property="og:site_name" content="AGou's Blog"><meta property="og:title" content="Debian12二进制安装k8s v1.25.12"><meta property="og:description" content="篇幅过长，为了更好的阅读体验可以前往我的文档-k8s Debian12 二进制安装 或者我的备用博客地址 .
 一、预先准备 1.1 服务器角色 环境信息：
-k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件列表 master 172.19.82.157 kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd node01 172.19.82.158 kubelet、kube-proxy、containerd、etcd node02 172.19.82.159 kubelet、kube-proxy、containerd、etcd "><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-08-27T10:33:38+08:00"><meta property="article:modified_time" content="2023-08-27T10:33:38+08:00"><meta property="article:tag" content="K8s"><meta property="article:tag" content="Kubernetes"><meta property="article:tag" content="二进制安装"><meta itemprop=name content="Debian12二进制安装k8s v1.25.12"><meta itemprop=description content="篇幅过长，为了更好的阅读体验可以前往我的文档-k8s Debian12 二进制安装 或者我的备用博客地址 .
+k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件列表 master 172.19.82.157 kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd node01 172.19.82.158 kubelet、kube-proxy、containerd、etcd node02 172.19.82.159 kubelet、kube-proxy、containerd、etcd"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-08-27T10:33:38+08:00"><meta property="article:modified_time" content="2023-08-27T10:33:38+08:00"><meta property="article:tag" content="K8s"><meta property="article:tag" content="Kubernetes"><meta property="article:tag" content="二进制安装"><meta itemprop=name content="Debian12二进制安装k8s v1.25.12"><meta itemprop=description content="篇幅过长，为了更好的阅读体验可以前往我的文档-k8s Debian12 二进制安装 或者我的备用博客地址 .
 一、预先准备 1.1 服务器角色 环境信息：
-k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件列表 master 172.19.82.157 kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd node01 172.19.82.158 kubelet、kube-proxy、containerd、etcd node02 172.19.82.159 kubelet、kube-proxy、containerd、etcd "><meta itemprop=datePublished content="2023-08-27T10:33:38+08:00"><meta itemprop=dateModified content="2023-08-27T10:33:38+08:00"><meta itemprop=wordCount content="11816"><meta itemprop=keywords content="K8s,Kubernetes,二进制安装"><meta name=twitter:card content="summary"><meta name=twitter:title content="Debian12二进制安装k8s v1.25.12"><meta name=twitter:description content="篇幅过长，为了更好的阅读体验可以前往我的文档-k8s Debian12 二进制安装 或者我的备用博客地址 .
+k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件列表 master 172.19.82.157 kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd node01 172.19.82.158 kubelet、kube-proxy、containerd、etcd node02 172.19.82.159 kubelet、kube-proxy、containerd、etcd"><meta itemprop=datePublished content="2023-08-27T10:33:38+08:00"><meta itemprop=dateModified content="2023-08-27T10:33:38+08:00"><meta itemprop=wordCount content="11816"><meta itemprop=keywords content="K8s,Kubernetes,二进制安装"><meta name=twitter:card content="summary"><meta name=twitter:title content="Debian12二进制安装k8s v1.25.12"><meta name=twitter:description content="篇幅过长，为了更好的阅读体验可以前往我的文档-k8s Debian12 二进制安装 或者我的备用博客地址 .
 一、预先准备 1.1 服务器角色 环境信息：
-k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件列表 master 172.19.82.157 kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd node01 172.19.82.158 kubelet、kube-proxy、containerd、etcd node02 172.19.82.159 kubelet、kube-proxy、containerd、etcd "><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script async src=/js/gtags.js></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-2DZCW6NJZF")</script><link rel=stylesheet href=/css/docsearch.min.css><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "d58077e07d54401e854cb5319c0f3a62"}'></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>AGou's Blog</a></div><div class=mobile-navbar-icon><span></span>
+k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件列表 master 172.19.82.157 kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd node01 172.19.82.158 kubelet、kube-proxy、containerd、etcd node02 172.19.82.159 kubelet、kube-proxy、containerd、etcd"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script async src=/js/gtags.js></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-2DZCW6NJZF")</script><link rel=stylesheet href=/css/docsearch.min.css><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "d58077e07d54401e854cb5319c0f3a62"}'></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>AGou's Blog</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
 <span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/>主页</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/post/>归档</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/tags/>标签</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/aboutme/>关于</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://agou-ops.cn/anime/>💞Anime</a></li><li class=mobile-menu-item><a class=menu-item-link href=https://docs.agou-ops.cn rel=noopener target=_blank>myDocs
 <i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6 21.568 21.632 54.144 54.208 54.144 54.208C534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92.0.0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"/><path d="M841.152 457.152c-30.528.0-54.784 24.512-54.784 54.656V786.56H237.696V237.696h206.016c6.656.0 10.752.0 13.248.0 30.72.0 55.04-24.512 55.04-54.848C512 152.32 487.36 128 456.96 128H183.04C153.216 128 128 152.576 128 182.848c0 3.136.256 6.272.768 9.28C128.256 195.136 128 198.272 128 201.408v639.488c0 .064.0.192.0.256.0.128.0.192.0.32.0 30.528 24.512 54.784 54.784 54.784H829.76c6.592.0 9.728.0 11.712.0 28.736.0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344v-20.352V561.408v-49.28C896 481.792 871.424 457.152 841.152 457.152z"/></svg></i></a></li><input size=15 maxlength=15 type=search class=docsearch placeholder="Search Here..."></ul></nav><link rel=stylesheet href=/css/photoswipe.min.css crossorigin=anonymous><link rel=stylesheet href=/css/default-skin.min.css crossorigin=anonymous><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
@@ -224,7 +224,7 @@ k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件�
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>        listen-on-v6 <span class=o>{</span> any<span class=p>;</span> <span class=o>}</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=o>}</span><span class=p>;</span>
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230822111122.png>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230822111122.png alt=image.png>
 配置解析域以及模板文件：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -337,7 +337,7 @@ k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件�
 </span></span><span class=line><span class=cl>172.19.82.157
 </span></span><span class=line><span class=cl>172.19.82.158
 </span></span><span class=line><span class=cl>172.19.82.159
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230822114543.png></p><h3 id=14-可选安装supervisor>1.4 （可选）安装supervisor</h3><p>安装supervisor简单实现服务“高可用”.
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230822114543.png alt=image.png></p><h3 id=14-可选安装supervisor>1.4 （可选）安装supervisor</h3><p>安装supervisor简单实现服务“高可用”.
 ℹ非必须，使用systemd来管理也可以.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -365,7 +365,7 @@ k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件�
 </span></span><span class=line><span class=cl><span class=c1># 重载并启动服务，设置为开机自启动</span>
 </span></span><span class=line><span class=cl>systemctl daemon-reload
 </span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> containerd --now
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230822131441.png></p><h4 id=212-步骤二安装runc>2.1.2 步骤二安装runC</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230822131441.png alt=image.png></p><h4 id=212-步骤二安装runc>2.1.2 步骤二安装runC</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl> wget https://github.com/opencontainers/runc/releases/download/v1.1.9/runc.amd64
 </span></span><span class=line><span class=cl>install -m <span class=m>755</span> runc.amd64 /usr/local/sbin/runc
@@ -379,18 +379,18 @@ k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件�
 </span><span class=lnt>2
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 生成默认的配置文件</span>
 </span></span><span class=line><span class=cl>containerd config default <span class=p>|</span> tee /etc/containerd/config.toml
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230822132245.png>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230822132245.png alt=image.png>
 大概第125行，修改 <code>SystemdCgroup</code> 为<code>true</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>vim /etc/containerd/config.toml
 </span></span><span class=line><span class=cl><span class=c1># 修改默认的pause容器镜像地址为阿里云国内源</span>
 </span></span><span class=line><span class=cl><span class=nv>sandbox_image</span> <span class=o>=</span> <span class=s2>&#34;registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.9&#34;</span>
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230822132616.png>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230822132616.png alt=image.png>
 大概第61行。
 修改完保存之后，重启<code>systemctl restart containerd</code>.
 检查运行状态：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230822132807.png></p><h4 id=215-安装crictl客户端工具>2.1.5 安装crictl客户端工具</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<img src=https://cdn.agou-ops.cn/others/20230822132807.png alt=image.png></p><h4 id=215-安装crictl客户端工具>2.1.5 安装crictl客户端工具</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -409,7 +409,7 @@ k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件�
 </span></span></span><span class=line><span class=cl><span class=s>debug: false
 </span></span></span><span class=line><span class=cl><span class=s>EOF</span>
 </span></span></code></pre></td></tr></table></div></div><p>检查是否安装成功<code>crictl ps</code>
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230822133349.png></p><h3 id=22-安装harbor私有仓>2.2 安装harbor私有仓</h3><p>harbor建议部署在其他主机上，比如说主控机，与k8s集群分割开来，这个随便，看你自己。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<img src=https://cdn.agou-ops.cn/others/20230822133349.png alt=image.png></p><h3 id=22-安装harbor私有仓>2.2 安装harbor私有仓</h3><p>harbor建议部署在其他主机上，比如说主控机，与k8s集群分割开来，这个随便，看你自己。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -432,7 +432,7 @@ k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件�
 </span></span><span class=line><span class=cl>install -m <span class=m>755</span> cfssljson_1.6.4_linux_amd64 /usr/local/bin/cfssl-json
 </span></span><span class=line><span class=cl>install -m <span class=m>755</span> cfssl-certinfo_1.6.4_linux_amd64 /usr/local/bin/cfssl-certinfo
 </span></span></code></pre></td></tr></table></div></div><p>检查安装：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230822134549.png></p><h3 id=32-初始化及说明>3.2 初始化及说明</h3><p>创建k8s集群及etcd所需要的证书目录：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<img src=https://cdn.agou-ops.cn/others/20230822134549.png alt=image.png></p><h3 id=32-初始化及说明>3.2 初始化及说明</h3><p>创建k8s集群及etcd所需要的证书目录：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 下面一个命令三个主机都执行一下。</span>
 </span></span><span class=line><span class=cl>mkdir -pv /etc/kubernetes/TLS/<span class=o>{</span>etcd,k8s<span class=o>}</span>
@@ -455,7 +455,7 @@ k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件�
 </span></span><span class=line><span class=cl>ln -sv /usr/local/etcd-v3.4.27/etcd /usr/local/bin
 </span></span><span class=line><span class=cl>ln -sv /usr/local/etcd-v3.4.27/etcdctl /usr/local/bin
 </span></span></code></pre></td></tr></table></div></div><p>检查etcd安装结果：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230822141125.png></p><h4 id=412-为etcd制作证书>4.1.2 为etcd制作证书</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<img src=https://cdn.agou-ops.cn/others/20230822141125.png alt=image.png></p><h4 id=412-为etcd制作证书>4.1.2 为etcd制作证书</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -594,14 +594,14 @@ k8s版本：v1.25.12 Debian12(bookworm)：内核6.1.0-9-amd64 角色 IP 组件�
 </span></span><span class=line><span class=cl><span class=c1># 使用上面的自签CA签发etcd证书</span>
 </span></span><span class=line><span class=cl>cfssl gencert -ca<span class=o>=</span>ca.pem -ca-key<span class=o>=</span>ca-key.pem -config<span class=o>=</span>ca-config.json -profile<span class=o>=</span>etcd etcd-server-csr.json <span class=p>|</span> cfssl-json -bare etcd-server
 </span></span></code></pre></td></tr></table></div></div><p>配置文件字段解释：</p><blockquote><ul><li>CN：Common Name，浏览器使用该字段验证网址是否合法，一般写域名，非常重要</li><li>ST：State，省</li><li>L：Locality，地区</li><li>O：Organization Name，组织名称</li><li>OU：Organization Unit Name，组织单位名称</li></ul></blockquote><p>检查CA生成结果：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230823104905.png></p><pre><code>ca-config.json解析：
+<img src=https://cdn.agou-ops.cn/others/20230823104905.png alt=image.png></p><pre><code>ca-config.json解析：
 </code></pre><blockquote><p>expiry：有效期为200年
 profiles-server：启动server的时候需要配置证书
 profiles-client：client去连接server的时候需要证书
 profiles-peer：双向证书，服务端找客户端需要证书，客户端找服务端需要证书
 etcd-peer-csr解析：</p><p>hosts：etcd有可能部署到哪些组件的IP都要填进来
 cfssl gencert：生成证书
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230823105545.png></p></blockquote><h4 id=413-配置及启动etcd集群>4.1.3 配置及启动etcd集群</h4><p>复制证书文件：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<img src=https://cdn.agou-ops.cn/others/20230823105545.png alt=image.png></p></blockquote><h4 id=413-配置及启动etcd集群>4.1.3 配置及启动etcd集群</h4><p>复制证书文件：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -657,7 +657,7 @@ cfssl gencert：生成证书
 </span></span></span><span class=line><span class=cl><span class=se></span>  --peer-trusted-ca-file<span class=o>=</span>/etc/kubernetes/TLS/etcd/ca.pem <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  --snapshot-count<span class=o>=</span><span class=m>10000</span> <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  --trusted-ca-file<span class=o>=</span>/etc/kubernetes/TLS/etcd/ca.pem
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230823111335.png>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230823111335.png alt=image.png>
 修改脚本及目录权限：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -711,12 +711,12 @@ cfssl gencert：生成证书
 </span><span class=lnt>2
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>supervisorctl update
 </span></span><span class=line><span class=cl>supervisorctl status
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230822151410.png>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230822151410.png alt=image.png>
 使用以下命令可以查看集群状态（leader是谁？）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>etcdctl -w table --cacert<span class=o>=</span>/etc/kubernetes/TLS/etcd/ca.pem --cert<span class=o>=</span>/etc/kubernetes/TLS/etcd/etcd-server.pem --key<span class=o>=</span>/etc/kubernetes/TLS/etcd/etcd-server-key.pem --endpoints https://172.19.82.157:2379 endpoint status --cluster
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230823111655.png></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230823111655.png alt=image.png></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>etcdctl -w table --cacert<span class=o>=</span>/etc/kubernetes/TLS/etcd/ca.pem --cert<span class=o>=</span>/etc/kubernetes/TLS/etcd/etcd-server.pem --key<span class=o>=</span>/etc/kubernetes/TLS/etcd/etcd-server-key.pem --endpoints https://172.19.82.157:2379 member list
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230823111723.png></p><h3 id=42-部署api-server>4.2 部署API server</h3><p>API server我就不做集群了（单节点），方法其实和etcd大差不差.</p><h4 id=421-使用cfssl生成证书>4.2.1 使用cfssl生成证书</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230823111723.png alt=image.png></p><h3 id=42-部署api-server>4.2 部署API server</h3><p>API server我就不做集群了（单节点），方法其实和etcd大差不差.</p><h4 id=421-使用cfssl生成证书>4.2.1 使用cfssl生成证书</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
@@ -942,7 +942,7 @@ cfssl gencert：生成证书
 </span></span></span><span class=line><span class=cl><span class=se></span>-ca-key<span class=o>=</span>front-proxy-ca-key.pem  <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>-config<span class=o>=</span>../ca-config.json   <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>-profile<span class=o>=</span>kubernetes front-proxy-client-csr.json <span class=p>|</span> cfssl-json -bare front-proxy-client
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230823114325.png></p><h4 id=422-部署api-server>4.2.2 部署api-server</h4><p>仓库地址：<a href=https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.25.md#v12512>https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.25.md#v12512</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230823114325.png alt=image.png></p><h4 id=422-部署api-server>4.2.2 部署api-server</h4><p>仓库地址：<a href=https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.25.md#v12512>https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.25.md#v12512</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -1092,7 +1092,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl>ss -tnulp  <span class=p>|</span> grep <span class=m>6443</span>
 </span></span><span class=line><span class=cl><span class=c1># output</span>
 </span></span><span class=line><span class=cl>tcp   LISTEN <span class=m>0</span>      <span class=m>16384</span>                                *:6443             *:*    users:<span class=o>((</span><span class=s2>&#34;kube-apiserver&#34;</span>,pid<span class=o>=</span>5989,fd<span class=o>=</span>7<span class=o>))</span>
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230822170053.png></p><h3 id=43-部署controller-manager>4.3 部署controller-manager</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230822170053.png alt=image.png></p><h3 id=43-部署controller-manager>4.3 部署controller-manager</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -1262,7 +1262,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl><span class=nv>stdout_logfile_backups</span><span class=o>=</span><span class=m>4</span>                                                          <span class=p>;</span> <span class=c1># of stdout logfile backups (default 10)</span>
 </span></span><span class=line><span class=cl><span class=nv>stdout_capture_maxbytes</span><span class=o>=</span>1MB                                                       <span class=p>;</span> number of bytes in <span class=s1>&#39;capturemode&#39;</span> <span class=o>(</span>default 0<span class=o>)</span>
 </span></span><span class=line><span class=cl><span class=nv>stdout_events_enabled</span><span class=o>=</span><span class=nb>false</span>                                                       <span class=p>;</span> emit events on stdout writes <span class=o>(</span>default <span class=nb>false</span><span class=o>)</span>
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230823134408.png></p><h3 id=44-部署kube-scheduler>4.4 部署kube-scheduler</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230823134408.png alt=image.png></p><h3 id=44-部署kube-scheduler>4.4 部署kube-scheduler</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -1502,7 +1502,7 @@ cfssl gencert：生成证书
 </span></span></span><span class=line><span class=cl><span class=se></span>--kubeconfig<span class=o>=</span>/root/.kube/config
 </span></span><span class=line><span class=cl><span class=c1># 指定默认的集群</span>
 </span></span><span class=line><span class=cl>kubectl config use-context default --kubeconfig<span class=o>=</span>/root/.kube/config
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230823163202.png></p><h3 id=46-部署node相关组件kube-proxykubelet>4.6 部署node相关组件kube-proxy、kubelet</h3><h4 id=461-bootstrap自动认证kubelet>4.6.1 bootstrap自动认证kubelet</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230823163202.png alt=image.png></p><h3 id=46-部署node相关组件kube-proxykubelet>4.6 部署node相关组件kube-proxy、kubelet</h3><h4 id=461-bootstrap自动认证kubelet>4.6.1 bootstrap自动认证kubelet</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
@@ -1982,7 +1982,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl><span class=nv>stdout_events_enabled</span><span class=o>=</span><span class=nb>false</span>                                              <span class=p>;</span> emit events on stdout writes <span class=o>(</span>default <span class=nb>false</span><span class=o>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>supervisorctl update
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230824111121.png></p><h4 id=463-将master节点作为node加入到集群内部>4.6.3 将master节点作为node加入到集群内部</h4><p><strong>⚠ 注意：这个步骤如果做了bootstrap kubelet，则不需要手动授权，可直接忽略改步骤。</strong></p><blockquote><p>以下来源于网络：
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230824111121.png alt=image.png></p><h4 id=463-将master节点作为node加入到集群内部>4.6.3 将master节点作为node加入到集群内部</h4><p><strong>⚠ 注意：这个步骤如果做了bootstrap kubelet，则不需要手动授权，可直接忽略改步骤。</strong></p><blockquote><p>以下来源于网络：
 当kubelet组件启动成功后，就会想apiserver发送一个请求加入集群的信息，只有当master节点授权同意后，才可以正常加入，虽然是master节点部署的node组件，> 但是也会发生一个加入集群的信息，需要master同意。</p><p>当kubelet启动之后，首先会在证书目录生成一个kubelet-client.key.tmp这个文件，当使用kubectl certificate approve命令授权成功node的请求之后，kubele> t-client.key.tmp小时，随之会生成一个kubelet-client-current.pem的证书文件，用于与apiserver建立连接，此时再使用kubectl get > node就会看到节点信息了。</p><p>扩展：如果后期想要修改node的名称，那么就把生成的kubelet证书文件全部删除，然后使用kubectl delete > node删除该节点，在修改kubelet配置文件中该节点的名称，然后使用kubectl delete > csr删除授权信息，再重启kubelet生成新的授权信息，然后授权通过即可看到新的名字的node节点。</p><p>只有当授权通过后，kubelet生成了证书文件，kubelet的端口才会被启动</p><p>注意：当kubelet的授权被master请求通后，kube-proxy启动成功后，节点才会正真的加入集群，即使kubectl get > node看到的节点是Ready，该节点也是不可用的，必须当kube-proxy启动完毕后，这个节点才算正真的启动完毕.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -2006,7 +2006,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl><span class=c1># output</span>
 </span></span><span class=line><span class=cl>certificatesigningrequest.certificates.k8s.io/node-csr-VVgl1LpQ91JlbJLifEJIy_0KlbQ1mih6GPaGfaykQ-I approved
 </span></span></code></pre></td></tr></table></div></div><p>节点加入结果<code>kubectl get nodes</code>：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230824113851.png></p><h4 id=463-部署kube-proxy>4.6.3 部署kube-proxy</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+<img src=https://cdn.agou-ops.cn/others/20230824113851.png alt=image.png></p><h4 id=463-部署kube-proxy>4.6.3 部署kube-proxy</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
@@ -2256,7 +2256,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl><span class=nv>stdout_events_enabled</span><span class=o>=</span><span class=nb>false</span>                                              <span class=p>;</span> emit events on stdout writes <span class=o>(</span>default <span class=nb>false</span><span class=o>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>supervisorctl update
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230824115519.png></p><h4 id=464-授权apiserver访问kubelet>4.6.4 授权apiserver访问kubelet</h4><p>如果不做该授权的话，会导致kubectl无法获取到集群的一些信息，比如logs.
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230824115519.png alt=image.png></p><h4 id=464-授权apiserver访问kubelet>4.6.4 授权apiserver访问kubelet</h4><p>如果不做该授权的话，会导致kubectl无法获取到集群的一些信息，比如logs.
 创建一个RBAC资源使得apiserver能够访问kubelet：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -2397,7 +2397,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl>...
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>systemctl restart containerd
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230824134826.png></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230824134826.png alt=image.png></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -2430,10 +2430,10 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>kubectl apply -f kube-flannel.yml
 </span></span></code></pre></td></tr></table></div></div><p>检查flannel运行状态<code>kubectl get po -n kube-flannel</code>
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230825141026.png></p><h3 id=47-检查master节点部署结果>4.7 检查master节点部署结果</h3><h4 id=471-检查服务运行状态>4.7.1 检查服务运行状态</h4><ul><li>服务运行状态（<code>supervisorctl status</code>）：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230825141505.png></li><li>组件状态（<code>kubectl get cs</code>）：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230825141536.png></li><li>master节点状态(<code>kubectl get node -owide</code>)
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230825141605.png>
+<img src=https://cdn.agou-ops.cn/others/20230825141026.png alt=image.png></p><h3 id=47-检查master节点部署结果>4.7 检查master节点部署结果</h3><h4 id=471-检查服务运行状态>4.7.1 检查服务运行状态</h4><ul><li>服务运行状态（<code>supervisorctl status</code>）：
+<img src=https://cdn.agou-ops.cn/others/20230825141505.png alt=image.png></li><li>组件状态（<code>kubectl get cs</code>）：
+<img src=https://cdn.agou-ops.cn/others/20230825141536.png alt=image.png></li><li>master节点状态(<code>kubectl get node -owide</code>)
+<img src=https://cdn.agou-ops.cn/others/20230825141605.png alt=image.png>
 如果以上有报错，就回头检查或者重新部署一下有问题的服务即可。</li></ul><h4 id=472-附文件列表及简介>4.7.2 附：文件列表及简介</h4><ul><li>证书及配置文件一览：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -2673,7 +2673,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl>  <span class=c1># 修改id，方便区分，这里不知为何下面命令不能用。。（手动改一下吧</span>
 </span></span><span class=line><span class=cl>  <span class=c1># ssh $i &#34;id=`ip a show dev eth0 | grep -w inet | awk &#39;{print $2}&#39; | sed -e &#39;s/.*\.\([0-9]\+\)\/.*/\1/&#39;` ; sed -i &#34;s/157/$id/&#34; /etc/supervisor/conf.d/kubelet.conf&#34;</span>
 </span></span><span class=line><span class=cl><span class=k>done</span>
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230825150503.png>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230825150503.png alt=image.png>
 改完之后在node01和node02分别执行：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -2745,8 +2745,8 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl>sed -i <span class=s2>&#34;s/172.19.82.157/</span><span class=nv>$IP</span><span class=s2>/&#34;</span> /etc/kubernetes/config/kube-proxy-conf.yml
 </span></span><span class=line><span class=cl>supervisor update
 </span></span></code></pre></td></tr></table></div></div><h3 id=53-检查node节点部署结果>5.3 检查node节点部署结果</h3><h4 id=531-检查服务运行状态>5.3.1 检查服务运行状态</h4><ul><li>supervisor服务运行状态（<code>sueprvisorctl status</code>）：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230825154847.png></li><li>网络组件以及节点状态：(<code>kubectl get node -owide/kubectl get po -A -owide</code>)：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230825155014.png></li></ul><h4 id=532-附文件列表及简介>5.3.2 附：文件列表及简介</h4><p>以node01节点为例，其他node节点都一样。</p><ul><li>证书及配置文件一览：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<img src=https://cdn.agou-ops.cn/others/20230825154847.png alt=image.png></li><li>网络组件以及节点状态：(<code>kubectl get node -owide/kubectl get po -A -owide</code>)：
+<img src=https://cdn.agou-ops.cn/others/20230825155014.png alt=image.png></li></ul><h4 id=532-附文件列表及简介>5.3.2 附：文件列表及简介</h4><p>以node01节点为例，其他node节点都一样。</p><ul><li>证书及配置文件一览：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -2889,7 +2889,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl><span class=c1># 修改完成之后</span>
 </span></span><span class=line><span class=cl>kubectl apply -f coredns.yaml
 </span></span></code></pre></td></tr></table></div></div><p>检查coredns运行状态：
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230825162329.png></p><h4 id=测试coredns>测试coredns</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<img src=https://cdn.agou-ops.cn/others/20230825162329.png alt=image.png></p><h4 id=测试coredns>测试coredns</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -2991,7 +2991,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># 修改dashboard的Services类型为nodeport，方便访问</span>
 </span></span><span class=line><span class=cl>kubectl --namespace kubernetes-dashboard patch svc kubernetes-dashboard -p <span class=s1>&#39;{&#34;spec&#34;: {&#34;type&#34;: &#34;NodePort&#34;}}&#39;</span>
-</span></span></code></pre></td></tr></table></div></div><p><img alt=image.png src=https://cdn.agou-ops.cn/others/20230825180332.png>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://cdn.agou-ops.cn/others/20230825180332.png alt=image.png>
 安装完成之后，使用一下命令获取自动分配的nodeport：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -3001,7 +3001,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl>NAME                   TYPE       CLUSTER-IP      EXTERNAL-IP   PORT<span class=o>(</span>S<span class=o>)</span>         AGE     SELECTOR
 </span></span><span class=line><span class=cl>kubernetes-dashboard   NodePort   10.99.165.217   &lt;none&gt;        443:36046/TCP   3m54s   k8s-app<span class=o>=</span>kubernetes-dashboard
 </span></span></code></pre></td></tr></table></div></div><p>访问任一节点的IP加上面的nodeport即可，比如：<a href=https://172.19.82.157:36046/#/login>https://172.19.82.157:36046/#/login</a>
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230827094647.png>
+<img src=https://cdn.agou-ops.cn/others/20230827094647.png alt=image.png>
 创建sa使用token登录dashboard：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -3101,7 +3101,7 @@ cfssl gencert：生成证书
 </span></span><span class=line><span class=cl>namespace:  <span class=m>20</span> bytes
 </span></span><span class=line><span class=cl>token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IlhYRkQ2bmRNc0s2WktiWHYxT044M1ZfWTQ2UWRxZk81U3Q4TFJnRFo2QncifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkYXNoYm9hcmQtYWRtaW4tc2VjcmV0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImRhc2hib2FyZC1hZG1pbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjgwYmYyODRlLTA2ZTctNGVhNC1iNzQ3LTBhMmU3N2YwZWQxZiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDpkYXNoYm9hcmQtYWRtaW4ifQ.RN82A652pjg5PSoIfVCrzj6b6irTQAaHP4Sr-ROf2LCA3A-GttYaH3Tq0pNQx3x2lfhEK2wqWjmKUtcP7yCfoemkXNdAHV_XOnM1qJ86crv-DHkbaqc8JikwyPOucwex8pZ-EeblDpNUyD-QKbImWRmE3XF09g3tBgRrqANFBKbJd82ABKg_BZyQV1iLEz0wN1Int3uk4f8nm19_YoPfjJPE1UcmKcI0m44aqqANSYNU4e6gej4d-YkBHvaIUZ0-9j9r7t_dKS1qVQiqcAwxdFlt0Tjxbi2KurOIAtazQriHaSbe7VhDJa_v-WYfzcZuHgoWpAELyAR9rbcyScgMbw
 </span></span></code></pre></td></tr></table></div></div><p>使用上面输出的token即可登录dashboard.
-<img alt=image.png src=https://cdn.agou-ops.cn/others/20230827100314.png></p><h4 id=632-rancher>6.3.2 rancher</h4><p>略，参考：<a href=https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#install-the-rancher-helm-chart>使用helm快速安装rancher</a></p><h2 id=七未完待续>七、未完待续</h2><p>To Be Continued&mldr;</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<img src=https://cdn.agou-ops.cn/others/20230827100314.png alt=image.png></p><h4 id=632-rancher>6.3.2 rancher</h4><p>略，参考：<a href=https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#install-the-rancher-helm-chart>使用helm快速安装rancher</a></p><h2 id=七未完待续>七、未完待续</h2><p>To Be Continued&mldr;</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
 <span class=item-content>AGou-ops</span></p><p class=copyright-item><span class=item-title>LastMod</span>
 <span class=item-content>2023-08-27</span></p><p class=copyright-item><span class=item-title>License</span>
 <span class=item-content><a href=http://www.wtfpl.net/about/ rel=noopener target=_blank>WTFPL v2</a></span></p></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>

@@ -1,33 +1,145 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's Blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's Blog</description><generator>Hugo</generator><language>en</language><managingEditor>suofeiyaxx@gmail.com (AGou-ops)</managingEditor><webMaster>suofeiyaxx@gmail.com (AGou-ops)</webMaster><copyright>WTFPLv2</copyright><lastBuildDate>Wed, 09 Apr 2025 11:14:30 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>博客启用免费DeepSeek R1</title><link>https://agou-ops.cn/post/%E5%8D%9A%E5%AE%A2%E5%90%AF%E7%94%A8%E5%85%8D%E8%B4%B9deepseek-r1/</link><pubDate>Fri, 21 Feb 2025 16:34:22 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E5%8D%9A%E5%AE%A2%E5%90%AF%E7%94%A8%E5%85%8D%E8%B4%B9deepseek-r1/</guid><description>&lt;p>&lt;strong>100w token，用完即停，可点击网页右下角或者该帖子进行使用.😊&lt;/strong>&lt;/p></description></item><item><title>解决VPS频繁Google人机验证（IP被ban）</title><link>https://agou-ops.cn/post/%E8%A7%A3%E5%86%B3vps%E9%A2%91%E7%B9%81google%E4%BA%BA%E6%9C%BA%E9%AA%8C%E8%AF%81ip%E8%A2%AB%E5%A2%99/</link><pubDate>Thu, 02 Dec 2021 08:50:05 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E8%A7%A3%E5%86%B3vps%E9%A2%91%E7%B9%81google%E4%BA%BA%E6%9C%BA%E9%AA%8C%E8%AF%81ip%E8%A2%AB%E5%A2%99/</guid><description>&lt;p>前两天入手了&lt;code>RackNerd&lt;/code>的一台VPS，选的区域是&lt;code>华盛顿西雅图&lt;/code>，搭建好magic上网之后，访问Google老是跳人机验证，非常频繁，用起来特别烦人（问tg群里大哥说好像除了&lt;code>洛杉矶&lt;/code>区域外基本都跳Google人机验证），都有种想换搜索引擎的冲动。但是本着要解决问题和爱折腾的态度，还是尝试解决一下吧。&lt;/p>
-&lt;p>&lt;img alt="robot" src="https://cdn.agou-ops.cn/blog-images/%E4%B8%8B%E8%BD%BD.png">&lt;/p>
-&lt;p>&amp;#x26a0;&amp;#xfe0f; 以下部分内容来源于网络，仅做个人备份学习使用。&lt;/p></description></item><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;!DOCTYPE html> 岂能尽如人意，但求无愧我心。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hover here to show all your network information. All your network information is shown below: 本站地址：https://agou-ops.cn 备用地址：https://x.</description></item><item><title>K8s中使用Cloudflare Tunnel对外暴露服务</title><link>https://agou-ops.cn/post/k8s%E4%B8%AD%E4%BD%BF%E7%94%A8cloudflare-tunnel%E5%AF%B9%E5%A4%96%E6%9A%B4%E9%9C%B2%E6%9C%8D%E5%8A%A1/</link><pubDate>Tue, 07 Jan 2025 15:36:55 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s%E4%B8%AD%E4%BD%BF%E7%94%A8cloudflare-tunnel%E5%AF%B9%E5%A4%96%E6%9A%B4%E9%9C%B2%E6%9C%8D%E5%8A%A1/</guid><description>&lt;p>&lt;img alt="How an HTTP request reaches a private application connected with Cloudflare Tunnel" src="https://cdn.agou-ops.cn/blog-images/handshake.eh3a-Ml1_ZvgY0m.webp">&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AGou's Blog</title><link>https://agou-ops.cn/</link><description>Recent content on AGou's Blog</description><generator>Hugo</generator><language>en</language><managingEditor>suofeiyaxx@gmail.com (AGou-ops)</managingEditor><webMaster>suofeiyaxx@gmail.com (AGou-ops)</webMaster><copyright>WTFPLv2</copyright><lastBuildDate>Thu, 10 Apr 2025 10:53:58 +0800</lastBuildDate><atom:link href="https://agou-ops.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>博客启用免费DeepSeek R1</title><link>https://agou-ops.cn/post/%E5%8D%9A%E5%AE%A2%E5%90%AF%E7%94%A8%E5%85%8D%E8%B4%B9deepseek-r1/</link><pubDate>Fri, 21 Feb 2025 16:34:22 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E5%8D%9A%E5%AE%A2%E5%90%AF%E7%94%A8%E5%85%8D%E8%B4%B9deepseek-r1/</guid><description>&lt;p>&lt;strong>100w token，用完即停，可点击网页右下角或者该帖子进行使用.😊&lt;/strong>&lt;/p></description></item><item><title>解决VPS频繁Google人机验证（IP被ban）</title><link>https://agou-ops.cn/post/%E8%A7%A3%E5%86%B3vps%E9%A2%91%E7%B9%81google%E4%BA%BA%E6%9C%BA%E9%AA%8C%E8%AF%81ip%E8%A2%AB%E5%A2%99/</link><pubDate>Thu, 02 Dec 2021 08:50:05 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E8%A7%A3%E5%86%B3vps%E9%A2%91%E7%B9%81google%E4%BA%BA%E6%9C%BA%E9%AA%8C%E8%AF%81ip%E8%A2%AB%E5%A2%99/</guid><description>&lt;p>前两天入手了&lt;code>RackNerd&lt;/code>的一台VPS，选的区域是&lt;code>华盛顿西雅图&lt;/code>，搭建好magic上网之后，访问Google老是跳人机验证，非常频繁，用起来特别烦人（问tg群里大哥说好像除了&lt;code>洛杉矶&lt;/code>区域外基本都跳Google人机验证），都有种想换搜索引擎的冲动。但是本着要解决问题和爱折腾的态度，还是尝试解决一下吧。&lt;/p>
+&lt;p>&lt;img src="https://cdn.agou-ops.cn/blog-images/%E4%B8%8B%E8%BD%BD.png" alt="robot">&lt;/p>
+&lt;p>&amp;#x26a0;&amp;#xfe0f; 以下部分内容来源于网络，仅做个人备份学习使用。&lt;/p></description></item><item><title>关于</title><link>https://agou-ops.cn/aboutme/</link><pubDate>Mon, 16 Apr 2018 14:01:47 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/aboutme/</guid><description>&lt;!DOCTYPE html>
+
+&lt;html lang="en">
+
+&lt;head>
+ &lt;meta charset="UTF-8">
+ &lt;style>
+ .panel {
+ margin: 0 auto;
+ height: 90px;
+ width: auto;
+ position: relative;
+ -webkit-perspective: 600px;
+ -moz-perspective: 600px;
+ }
+
+ .panel .front,
+ .panel .back {
+ text-align: center;
+ }
+
+ .panel .front {
+ height: inherit;
+ position: absolute;
+ top: 0;
+ z-index: 900;
+ text-align: center;
+ -webkit-transform: rotateX(0deg) rotateY(0deg);
+ -moz-transform: rotateX(0deg) rotateY(0deg);
+ -webkit-transform-style: preserve-3d;
+ -moz-transform-style: preserve-3d;
+ -webkit-backface-visibility: hidden;
+ -moz-backface-visibility: hidden;
+ -webkit-transition: all .4s ease-in-out;
+ -moz-transition: all .4s ease-in-out;
+ -ms-transition: all .4s ease-in-out;
+ -o-transition: all .4s ease-in-out;
+ transition: all .4s ease-in-out;
+ }
+
+ .panel .back {
+ height: inherit;
+ position: absolute;
+ top: 0;
+ z-index: 1000;
+ -webkit-transform: rotateY(-180deg);
+ -moz-transform: rotateY(-180deg);
+ -webkit-transform-style: preserve-3d;
+ -moz-transform-style: preserve-3d;
+ -webkit-backface-visibility: hidden;
+ -moz-backface-visibility: hidden;
+ -webkit-transition: all .4s ease-in-out;
+ -moz-transition: all .4s ease-in-out;
+ -ms-transition: all .4s ease-in-out;
+ -o-transition: all .4s ease-in-out;
+ transition: all .4s ease-in-out;
+ }
+
+ .panel.flip .front {
+ z-index: 900;
+ -webkit-transform: rotateY(180deg);
+ -moz-transform: rotateY(180deg);
+ }
+
+ .panel.flip .back {
+ z-index: 1000;
+ -webkit-transform: rotateX(0deg) rotateY(0deg);
+ -moz-transform: rotateX(0deg) rotateY(0deg);
+ }
+
+ .box1 {
+ background-color: #c05b4d;
+ color: #ffffff;
+ width: max-content;
+ 
+ font-weight: bolder;
+ 
+ height: auto;
+ margin: 0 auto;
+ padding: 5px;
+ border-radius: 10px;
+ display: inline-block;
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+ }
+
+ .box2 {
+ background-color: #000000;
+ color: #00FF00;
+ font-weight: bolder;
+ border-style: dashed;
+ border-color: #00FF00;
+ 
+ width: auto;
+ height: auto;
+ margin: 0 auto;
+ 
+ padding: 1px;
+ border-radius: 10px;
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+ }
+ &lt;/style>
+
+
+
+
+&lt;/head>
+
+&lt;body>
+ 
+
+
+
+ &lt;div class="wrapper">
+ &lt;div class="col_third">
+ &lt;div class="hover panel">
+ &lt;div class="front">
+ &lt;div class="box1">
+ &lt;p>岂能尽如人意，但求无愧我心。&lt;/p></description></item><item><title>K8s中使用Cloudflare Tunnel对外暴露服务</title><link>https://agou-ops.cn/post/k8s%E4%B8%AD%E4%BD%BF%E7%94%A8cloudflare-tunnel%E5%AF%B9%E5%A4%96%E6%9A%B4%E9%9C%B2%E6%9C%8D%E5%8A%A1/</link><pubDate>Tue, 07 Jan 2025 15:36:55 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s%E4%B8%AD%E4%BD%BF%E7%94%A8cloudflare-tunnel%E5%AF%B9%E5%A4%96%E6%9A%B4%E9%9C%B2%E6%9C%8D%E5%8A%A1/</guid><description>&lt;p>&lt;img src="https://cdn.agou-ops.cn/blog-images/handshake.eh3a-Ml1_ZvgY0m.webp" alt="How an HTTP request reaches a private application connected with Cloudflare Tunnel">&lt;/p>
 &lt;blockquote>
-&lt;p>Cloudflared 在您的资源和 Cloudflare 的全球网络之间建立出站连接（隧道）。隧道是将流量路由到 DNS 记录的持久对象。在同一个隧道中，您可以根据需要运行任意数量的“cloudflared”进程（连接器）。这些进程将建立与 Cloudflare 的连接并将流量发送到最近的 Cloudflare 数据中心。 &amp;ndash; 官方介绍（翻译）&lt;/p>
-&lt;/blockquote></description></item><item><title>使用capsule管理k8s多租户（tenants）</title><link>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8capsule%E7%AE%A1%E7%90%86k8s%E5%A4%9A%E7%A7%9F%E6%88%B7tenants/</link><pubDate>Tue, 24 Dec 2024 14:49:39 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8capsule%E7%AE%A1%E7%90%86k8s%E5%A4%9A%E7%A7%9F%E6%88%B7tenants/</guid><description>&lt;p>&lt;img alt="capsule-operator" src="https://cdn.agou-ops.cn/blog-images/capsule-operator.d853076.ce76636fce3e3130134a6f768700f6f7.svg">&lt;/p>
+&lt;p>Cloudflared 在您的资源和 Cloudflare 的全球网络之间建立出站连接（隧道）。隧道是将流量路由到 DNS 记录的持久对象。在同一个隧道中，您可以根据需要运行任意数量的“cloudflared”进程（连接器）。这些进程将建立与 Cloudflare 的连接并将流量发送到最近的 Cloudflare 数据中心。 &amp;ndash; 官方介绍（翻译）&lt;/p>&lt;/blockquote></description></item><item><title>使用capsule管理k8s多租户（tenants）</title><link>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8capsule%E7%AE%A1%E7%90%86k8s%E5%A4%9A%E7%A7%9F%E6%88%B7tenants/</link><pubDate>Tue, 24 Dec 2024 14:49:39 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8capsule%E7%AE%A1%E7%90%86k8s%E5%A4%9A%E7%A7%9F%E6%88%B7tenants/</guid><description>&lt;p>&lt;img src="https://cdn.agou-ops.cn/blog-images/capsule-operator.d853076.ce76636fce3e3130134a6f768700f6f7.svg" alt="capsule-operator">&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Capsule&lt;/strong> implements a multi-tenant and policy-based environment in your Kubernetes cluster. It is designed as a micro-services-based ecosystem with the minimalist approach, leveraging only on upstream Kubernetes.&lt;/p>
-&lt;p>官方文档地址：&lt;a href="https://capsule.clastix.io/">https://capsule.clastix.io/&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>使用k8s CRI的checkpoint实现容器快照功能</title><link>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8k8s%E5%AE%B9%E5%99%A8checkpoint%E5%AE%9E%E7%8E%B0%E5%BF%AB%E7%85%A7%E5%8A%9F%E8%83%BD/</link><pubDate>Thu, 07 Nov 2024 09:57:55 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8k8s%E5%AE%B9%E5%99%A8checkpoint%E5%AE%9E%E7%8E%B0%E5%BF%AB%E7%85%A7%E5%8A%9F%E8%83%BD/</guid><description>&lt;blockquote>
-&lt;p>Kubernetes v1.25 引入了&lt;a href="https://kubernetes.io/docs/reference/node/kubelet-checkpoint-api/">Container Checkpointing API 作为 alpha 功能&lt;/a>，并&lt;a href="https://kubernetes.io/docs/reference/node/kubelet-checkpoint-api/">在 Kubernetes v1.30 中达到了 beta 版&lt;/a>。这提供了一种备份和恢复 Pod 中运行的容器而无需停止它们的方法。此功能主要针对安全和取证分析，但任何 Kubernetes 用户都可以利用一般备份和恢复功能。&lt;/p>
-&lt;/blockquote>
+&lt;p>官方文档地址：&lt;a href="https://capsule.clastix.io/">https://capsule.clastix.io/&lt;/a>&lt;/p>&lt;/blockquote></description></item><item><title>使用k8s CRI的checkpoint实现容器快照功能</title><link>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8k8s%E5%AE%B9%E5%99%A8checkpoint%E5%AE%9E%E7%8E%B0%E5%BF%AB%E7%85%A7%E5%8A%9F%E8%83%BD/</link><pubDate>Thu, 07 Nov 2024 09:57:55 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8k8s%E5%AE%B9%E5%99%A8checkpoint%E5%AE%9E%E7%8E%B0%E5%BF%AB%E7%85%A7%E5%8A%9F%E8%83%BD/</guid><description>&lt;blockquote>
+&lt;p>Kubernetes v1.25 引入了&lt;a href="https://kubernetes.io/docs/reference/node/kubelet-checkpoint-api/">Container Checkpointing API 作为 alpha 功能&lt;/a>，并&lt;a href="https://kubernetes.io/docs/reference/node/kubelet-checkpoint-api/">在 Kubernetes v1.30 中达到了 beta 版&lt;/a>。这提供了一种备份和恢复 Pod 中运行的容器而无需停止它们的方法。此功能主要针对安全和取证分析，但任何 Kubernetes 用户都可以利用一般备份和恢复功能。&lt;/p>&lt;/blockquote>
 &lt;p>&lt;code>checkpointing&lt;/code>是一种确保应用程序可以从故障中恢复并维持其状态的技术。它捕获正在运行的进程的状态，包括其内存、文件描述符和其他元数据。此信息存储为检查点，稍后可用于从同一时间点恢复进程，从而实现从故障或主机之间迁移的无缝恢复，&lt;strong>通俗来说就是容器快照功能&lt;/strong>。&lt;/p></description></item><item><title>K8s多集群管理 - Liqo篇</title><link>https://agou-ops.cn/post/k8s%E5%A4%9A%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86---liqo%E7%AF%87/</link><pubDate>Fri, 01 Nov 2024 10:26:47 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s%E5%A4%9A%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86---liqo%E7%AF%87/</guid><description>&lt;blockquote>
 &lt;p>Liqo 是一个多集群管理平台，可以实现跨 Kubernetes 集群的动态资源调度。
-Liqo 允许在远程集群上无缝运行 Pod，而无需对 Kubernetes 和应用程序进行任何修改。有了 Liqo，就可以将 Kubernetes 集群的控制平面扩展到集群的边界，将整个远程集群映射成一个虚拟本地节点，从而可以实现原生的多集群。&lt;/p>
-&lt;/blockquote></description></item><item><title>使用Tailsclae VPN访问k8s集群服务（via K8s Operator）</title><link>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8tailsclae-vpn%E8%AE%BF%E9%97%AEk8s%E9%9B%86%E7%BE%A4%E6%9C%8D%E5%8A%A1via-k8s-operator/</link><pubDate>Fri, 18 Oct 2024 09:12:26 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8tailsclae-vpn%E8%AE%BF%E9%97%AEk8s%E9%9B%86%E7%BE%A4%E6%9C%8D%E5%8A%A1via-k8s-operator/</guid><description>&lt;blockquote>
+Liqo 允许在远程集群上无缝运行 Pod，而无需对 Kubernetes 和应用程序进行任何修改。有了 Liqo，就可以将 Kubernetes 集群的控制平面扩展到集群的边界，将整个远程集群映射成一个虚拟本地节点，从而可以实现原生的多集群。&lt;/p>&lt;/blockquote></description></item><item><title>使用Tailsclae VPN访问k8s集群服务（via K8s Operator）</title><link>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8tailsclae-vpn%E8%AE%BF%E9%97%AEk8s%E9%9B%86%E7%BE%A4%E6%9C%8D%E5%8A%A1via-k8s-operator/</link><pubDate>Fri, 18 Oct 2024 09:12:26 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E4%BD%BF%E7%94%A8tailsclae-vpn%E8%AE%BF%E9%97%AEk8s%E9%9B%86%E7%BE%A4%E6%9C%8D%E5%8A%A1via-k8s-operator/</guid><description>&lt;blockquote>
 &lt;p>&lt;a href="https://tailscale.com/kb/1236/kubernetes-operator">Tailscale Kubernetes operator&lt;/a>&lt;/p>
 &lt;ul>
 &lt;li>将 Kubernetes 集群中的&lt;a href="https://kubernetes.io/docs/concepts/services-networking/service">服务&lt;/a>公开到 Tailscale 网络（称为 tailnet）&lt;/li>
 &lt;li>通过 API 服务器代理安全连接到&lt;a href="https://kubernetes.io/docs/concepts/overview/components/#kube-apiserver">Kubernetes 控制平面 (kube-apiserver)&lt;/a> ，无论是否进行身份验证&lt;/li>
 &lt;li>从 Kubernetes 集群到Egress上的外部服务的出口&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;p>Kubernetes Operator 目前&lt;a href="https://tailscale.com/kb/1167/release-stages#beta">处于测试阶段&lt;/a>。&lt;/p></description></item><item><title>K8s Operator之controller Tools学习笔记</title><link>https://agou-ops.cn/post/k8s-operator%E4%B9%8Bcontroller-tools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 12 Sep 2024 16:07:54 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s-operator%E4%B9%8Bcontroller-tools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>&lt;blockquote>
 &lt;p>controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。&lt;/p>
-&lt;p>仓库地址：&lt;a href="https://github.com/kubernetes-sigs/controller-tools">GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>K8s中使用traefik（基础）</title><link>https://agou-ops.cn/post/k8s%E4%B8%AD%E4%BD%BF%E7%94%A8traefik/</link><pubDate>Thu, 21 Sep 2023 14:30:17 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s%E4%B8%AD%E4%BD%BF%E7%94%A8traefik/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+&lt;p>仓库地址：&lt;a href="https://github.com/kubernetes-sigs/controller-tools">GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries&lt;/a>&lt;/p>&lt;/blockquote></description></item><item><title>K8s中使用traefik（基础）</title><link>https://agou-ops.cn/post/k8s%E4%B8%AD%E4%BD%BF%E7%94%A8traefik/</link><pubDate>Thu, 21 Sep 2023 14:30:17 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s%E4%B8%AD%E4%BD%BF%E7%94%A8traefik/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
 &lt;blockquote>
-&lt;p>Traefik是一个为了让部署微服务更加便捷而诞生的现代HTTP反向代理、负载均衡工具。它支持多种后台 (Docker, Swarm, Kubernetes, Marathon, Mesos, Consul, Etcd, Zookeeper, BoltDB, Rest API, file…) 来自动化、动态的应用它的配置文件设置。&lt;/p>
-&lt;/blockquote>
+&lt;p>Traefik是一个为了让部署微服务更加便捷而诞生的现代HTTP反向代理、负载均衡工具。它支持多种后台 (Docker, Swarm, Kubernetes, Marathon, Mesos, Consul, Etcd, Zookeeper, BoltDB, Rest API, file…) 来自动化、动态的应用它的配置文件设置。&lt;/p>&lt;/blockquote>
 &lt;p>核心概念：
 当启动Traefik时，需要定义&lt;code>entrypoints&lt;/code>，然后通过entrypoints的路由来分析传入的请求，来查看他们是否是一组规则匹配，如果匹配，则路由可能将请求通过一系列的转换过来在发送到服务上去。&lt;/p>
 &lt;ul>
@@ -38,8 +150,7 @@ Liqo 允许在远程集群上无缝运行 Pod，而无需对 Kubernetes 和应�
 &lt;li>&lt;code>Middlewares&lt;/code>中间件，用来修改请求或者根据请求来做出判断，中间件被附件到路由上，是一种在请求发送到服务之前调整请求的一种方法&lt;/li>
 &lt;/ul></description></item><item><title>使用cert-manager颁发自签证书</title><link>https://agou-ops.cn/post/cert-manager%E9%A2%81%E5%8F%91%E8%87%AA%E7%AD%BE%E8%AF%81%E4%B9%A6/</link><pubDate>Tue, 19 Sep 2023 14:50:30 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/cert-manager%E9%A2%81%E5%8F%91%E8%87%AA%E7%AD%BE%E8%AF%81%E4%B9%A6/</guid><description>&lt;h2 id="cert-manager简介">cert-manager简介&lt;/h2>
 &lt;blockquote>
-&lt;p>cert-manager 是一个云原生证书管理开源项目，用于在 Kubernetes 集群中自动管理和颁发来自各种颁发源的 TLS 证书，它可以从各种受支持的来源颁发证书，包括 &lt;a href="https://letsencrypt.org/">Let’s Encrypt&lt;/a>、&lt;a href="https://www.vaultproject.io/">HashiCorp Vault&lt;/a>和&lt;a href="https://www.venafi.com/">Venafi&lt;/a>以及私有 PKI，它将确保证书定期有效和更新，并在到期前的适当时间尝试更新证书。&lt;/p>
-&lt;/blockquote>
+&lt;p>cert-manager 是一个云原生证书管理开源项目，用于在 Kubernetes 集群中自动管理和颁发来自各种颁发源的 TLS 证书，它可以从各种受支持的来源颁发证书，包括 &lt;a href="https://letsencrypt.org/">Let’s Encrypt&lt;/a>、&lt;a href="https://www.vaultproject.io/">HashiCorp Vault&lt;/a>和&lt;a href="https://www.venafi.com/">Venafi&lt;/a>以及私有 PKI，它将确保证书定期有效和更新，并在到期前的适当时间尝试更新证书。&lt;/p>&lt;/blockquote>
 &lt;h2 id="k8s集群中安装cert-manager">k8s集群中安装cert-manager&lt;/h2>
 &lt;p>参考：&lt;a href="https://cert-manager.io/docs/installation/">https://cert-manager.io/docs/installation/&lt;/a>&lt;/p>
 &lt;p>推荐使用helm chart进行安装：&lt;/p>
@@ -77,8 +188,7 @@ Liqo 允许在远程集群上无缝运行 Pod，而无需对 Kubernetes 和应�
 &lt;li>cluster (集群)&lt;/li>
 &lt;li>namespace (命名空间)&lt;/li>
 &lt;/ol>
-&lt;p>同时，Apollo基于开源模式开发，开源地址：https://github.com/ctripcorp/apollo&lt;/p>
-&lt;/blockquote></description></item><item><title>Debian12二进制安装k8s v1.25.12</title><link>https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</link><pubDate>Sun, 27 Aug 2023 10:33:38 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</guid><description>&lt;p>篇幅过长，为了更好的阅读体验可以前往&lt;a href="https://docs.agou-ops.cn/docs/CloudNative/k8s/Installation/k8s%20Debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85">我的文档-k8s Debian12 二进制安装&lt;/a> 或者我的&lt;a href="https://agou-ops.cn/myBlog-2/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">备用博客地址&lt;/a> .&lt;/p>
+&lt;p>同时，Apollo基于开源模式开发，开源地址：https://github.com/ctripcorp/apollo&lt;/p>&lt;/blockquote></description></item><item><title>Debian12二进制安装k8s v1.25.12</title><link>https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</link><pubDate>Sun, 27 Aug 2023 10:33:38 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</guid><description>&lt;p>篇幅过长，为了更好的阅读体验可以前往&lt;a href="https://docs.agou-ops.cn/docs/CloudNative/k8s/Installation/k8s%20Debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85">我的文档-k8s Debian12 二进制安装&lt;/a> 或者我的&lt;a href="https://agou-ops.cn/myBlog-2/post/k8s-debian12%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">备用博客地址&lt;/a> .&lt;/p>
 &lt;h2 id="一预先准备">一、预先准备&lt;/h2>
 &lt;h3 id="11-服务器角色">1.1 服务器角色&lt;/h3>
 &lt;p>环境信息：&lt;/p>
@@ -87,30 +197,30 @@ Liqo 允许在远程集群上无缝运行 Pod，而无需对 Kubernetes 和应�
 &lt;li>Debian12(bookworm)：内核6.1.0-9-amd64&lt;/li>
 &lt;/ul>
 &lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>角色&lt;/th>
-&lt;th>IP&lt;/th>
-&lt;th>组件列表&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>master&lt;/td>
-&lt;td>172.19.82.157&lt;/td>
-&lt;td>kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>node01&lt;/td>
-&lt;td>172.19.82.158&lt;/td>
-&lt;td>kubelet、kube-proxy、containerd、etcd&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>node02&lt;/td>
-&lt;td>172.19.82.159&lt;/td>
-&lt;td>kubelet、kube-proxy、containerd、etcd&lt;/td>
-&lt;/tr>
-&lt;/tbody>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>角色&lt;/th>
+ &lt;th>IP&lt;/th>
+ &lt;th>组件列表&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>master&lt;/td>
+ &lt;td>172.19.82.157&lt;/td>
+ &lt;td>kube-apiserver、kube-controller-manage、kube-scheduler、kubelet、kube-proxy、etcd、containerd&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>node01&lt;/td>
+ &lt;td>172.19.82.158&lt;/td>
+ &lt;td>kubelet、kube-proxy、containerd、etcd&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>node02&lt;/td>
+ &lt;td>172.19.82.159&lt;/td>
+ &lt;td>kubelet、kube-proxy、containerd、etcd&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
 &lt;/table></description></item><item><title>Containerd＋Harbor私有仓（https）</title><link>https://agou-ops.cn/post/containerdharbor%E7%A7%81%E6%9C%89%E4%BB%93https/</link><pubDate>Sat, 17 Jun 2023 08:31:02 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/containerdharbor%E7%A7%81%E6%9C%89%E4%BB%93https/</guid><description>&lt;p>看似简单，其实中间有很多坑，有时候一个小小的错误就会导致一连串的问题，故在此记录一下。&lt;/p>
 &lt;h2 id="预先准备">预先准备&lt;/h2>
 &lt;h3 id="配置harbor-https">配置Harbor https&lt;/h3>
@@ -226,7 +336,7 @@ Liqo 允许在远程集群上无缝运行 Pod，而无需对 Kubernetes 和应�
 &lt;/div>
 &lt;/div></description></item><item><title>PVE制作镜像模板</title><link>https://agou-ops.cn/post/pve%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E6%A8%A1%E6%9D%BF/</link><pubDate>Wed, 10 May 2023 17:21:40 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/pve%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E6%A8%A1%E6%9D%BF/</guid><description>&lt;h2 id="创建虚拟机">创建虚拟机&lt;/h2>
 &lt;p>创建虚拟机，ID和名称按照自己的喜好随便取：&lt;/p>
-&lt;p>&lt;img alt="image-20230425100830230" src="https://cdn.agou-ops.cn/others/image-20230425100830230.png">&lt;/p>
+&lt;p>&lt;img src="https://cdn.agou-ops.cn/others/image-20230425100830230.png" alt="image-20230425100830230">&lt;/p>
 &lt;p>需要注意的是，在选择&lt;code>操作系统&lt;/code>这一步中，不要选择任何介质，如下图所示：&lt;/p></description></item><item><title>MacOS偏门解决vim/Neovim光标跳转（j/k键）卡顿的问题。【使用karabiner】</title><link>https://agou-ops.cn/post/macos-%E7%BB%88%E7%AB%AF%E4%B8%8B%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8%E9%97%AE%E9%A2%98/</link><pubDate>Fri, 05 Aug 2022 17:02:21 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/macos-%E7%BB%88%E7%AB%AF%E4%B8%8B%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8%E9%97%AE%E9%A2%98/</guid><description>&lt;p>问题详情参考：&lt;a href="https://blog.deskangel.com/2021/04/03/vim-j-k-speed-issue/">https://blog.deskangel.com/2021/04/03/vim-j-k-speed-issue/&lt;/a>&lt;/p>
 &lt;p>在iterm2中强制让英文输入法切换为内置的&lt;code>ABC输入法&lt;/code>而不使用搜狗或者其他输入法的英文状态.&lt;/p>
 &lt;p>在使用iterm2的时候，将&lt;code>左shift&lt;/code>键重新映射为&lt;code>command+space&lt;/code>键（在系统快捷键中设置切换输入法的快捷键，这里你可以自定义）。
@@ -243,8 +353,8 @@ Liqo 允许在远程集群上无缝运行 Pod，而无需对 Kubernetes 和应�
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">karabiner://karabiner/assets/complex_modifications/import?url&lt;span class="o">=&lt;/span>https://gist.githubusercontent.com/AGou-ops/cb8659d99ff47f32eeb14a81ad47a2a9/raw/85b9ecce462330c57de0930d9495d257ed903ac1/iterm2_key.json
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>NGINX LOGS &amp; GEO MAP(Grafana)详细部署</title><link>https://agou-ops.cn/post/nginx-logs--geo-mapgrafana%E8%AF%A6%E7%BB%86%E9%83%A8%E7%BD%B2/</link><pubDate>Sun, 24 Apr 2022 10:57:38 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/nginx-logs--geo-mapgrafana%E8%AF%A6%E7%BB%86%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>&lt;img alt="image-20220424105947609" src="https://cdn.agou-ops.cn/others/image-20220424105947609.png">&lt;/p>
+&lt;/div></description></item><item><title>NGINX LOGS &amp; GEO MAP(Grafana)详细部署</title><link>https://agou-ops.cn/post/nginx-logs--geo-mapgrafana%E8%AF%A6%E7%BB%86%E9%83%A8%E7%BD%B2/</link><pubDate>Sun, 24 Apr 2022 10:57:38 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/nginx-logs--geo-mapgrafana%E8%AF%A6%E7%BB%86%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>&lt;img src="https://cdn.agou-ops.cn/others/image-20220424105947609.png" alt="image-20220424105947609">&lt;/p>
 &lt;p>以上是&lt;code>Grafana Template&lt;/code>的页面截图，🔗 &lt;a href="https://grafana.com/grafana/dashboards/12268">https://grafana.com/grafana/dashboards/12268&lt;/a>&lt;/p></description></item><item><title>Windows服务检测与重启（Golang）</title><link>https://agou-ops.cn/post/windows%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%87%8D%E5%90%AFgolang/</link><pubDate>Wed, 06 Apr 2022 11:29:42 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/windows%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%87%8D%E5%90%AFgolang/</guid><description>&lt;h2 id="检测和处理逻辑">检测和处理逻辑&lt;/h2>
-&lt;p>&lt;img alt="image-20220406085729985" src="https://cdn.agou-ops.cn/others/image-20220406085729985.png">&lt;/p></description></item><item><title>网站简单自动部署（git hook）</title><link>https://agou-ops.cn/post/%E7%BD%91%E7%AB%99%E7%AE%80%E5%8D%95%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2git-hook/</link><pubDate>Wed, 06 Apr 2022 11:29:12 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E7%BD%91%E7%AB%99%E7%AE%80%E5%8D%95%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2git-hook/</guid><description>&lt;h2 id="大致流程">大致流程&lt;/h2>
-&lt;p>&lt;img alt="autodeploy001" src="https://cdn.agou-ops.cn/others/autodeploy001.png">&lt;/p>
+&lt;p>&lt;img src="https://cdn.agou-ops.cn/others/image-20220406085729985.png" alt="image-20220406085729985">&lt;/p></description></item><item><title>网站简单自动部署（git hook）</title><link>https://agou-ops.cn/post/%E7%BD%91%E7%AB%99%E7%AE%80%E5%8D%95%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2git-hook/</link><pubDate>Wed, 06 Apr 2022 11:29:12 +0800</pubDate><author>suofeiyaxx@gmail.com (AGou-ops)</author><guid>https://agou-ops.cn/post/%E7%BD%91%E7%AB%99%E7%AE%80%E5%8D%95%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2git-hook/</guid><description>&lt;h2 id="大致流程">大致流程&lt;/h2>
+&lt;p>&lt;img src="https://cdn.agou-ops.cn/others/autodeploy001.png" alt="autodeploy001">&lt;/p>
 &lt;p>从gitee私有仓库拉取代码，通过本地jenkins将代码push到指定的git服务器（通过ssh），最后rsync同步到指定的网站目录当中。&lt;/p></description></item></channel></rss>
