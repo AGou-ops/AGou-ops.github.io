@@ -9,7 +9,7 @@ pagination.pagerSize = 10
 rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = "WTFPLv2"            # default: author.name ↓        # 默认为下面配置的author.name ↓
-languageCode = "en-us"
+locale = "en-us"
 enableGitInfo = true      # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
 # uglyURLs = true         # more info: https://gohugo.io/content-management/urls/#ugly-urls
 
@@ -33,7 +33,7 @@ unsafe= true
 # language support # en / zh-cn / other... translations present in i18n/
 defaultContentLanguage = "en"           # Default language to use
 [languages.en]
-  languageCode = "en"
+  locale = "en"
 
 [sitemap]                 # essential                     # 必需
   changefreq = "weekly"

@@ -16,10 +16,10 @@
       <i class="iconfont">
         {{ partial "svg/waixingren.svg" }}
       </i>
-    </span> {{- if or .Site.Copyright .Site.Author.name -}}
+    </span> {{- if or .Site.Copyright (or .Site.Params.author.name .Site.Params.author) -}}
     <span class="author">
         {{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}
-        {{ else }}{{ .Site.Author.name | safeHTML }}
+        {{ else }}{{ (or .Site.Params.author.name .Site.Params.author) | safeHTML }}
         {{ end }}
       </span> {{- end -}}
     </span>
