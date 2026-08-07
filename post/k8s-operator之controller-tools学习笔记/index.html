@@ -1,7 +1,6 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>K8s Operator之controller Tools学习笔记 - AGou's Blog</title>
-<meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content="width"><meta name=HandheldFriendly content="true"><meta name=applicable-device content="pc,mobile"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=mobile-web-app-capable content="yes"><meta name=author content="AGou-ops"><meta name=description content=" controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>K8s Operator之controller Tools学习笔记 - AGou's Blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content="width"><meta name=HandheldFriendly content="true"><meta name=applicable-device content="pc,mobile"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=mobile-web-app-capable content="yes"><meta name=author content="AGou-ops"><meta name=description content=" controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
 仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries
-"><meta name=keywords content="AGou,AGou-ops,阿狗,阿狗博客,阿狗的博客,AGou blog"><meta name=baidu-site-verification content="eS8otJ2dE7My4oKT"><meta name=generator content="Hugo 0.145.0"><link rel=canonical href=https://agou-ops.cn/post/k8s-operator%E4%B9%8Bcontroller-tools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/><link rel=icon href=https://cdn.agou-ops.cn/BaseIMG/logo.png><link rel=stylesheet href=/sass/jane.min.673ab11f24bb14d40cb25177692d7f4d0ff33d2dc69cf8384c82475568406168.css integrity media=screen crossorigin=anonymous><link rel=stylesheet href=/css/layer.css><link rel=stylesheet href=https://agou-ops.cn/code_expander.js><meta property="og:url" content="https://agou-ops.cn/post/k8s-operator%E4%B9%8Bcontroller-tools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="AGou's Blog"><meta property="og:title" content="K8s Operator之controller Tools学习笔记"><meta property="og:description" content="controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
+"><meta name=keywords content="AGou,AGou-ops,阿狗,阿狗博客,阿狗的博客,AGou blog"><meta name=baidu-site-verification content="eS8otJ2dE7My4oKT"><meta name=generator content="Hugo 0.164.0"><link rel=canonical href=https://agou-ops.cn/post/k8s-operator%E4%B9%8Bcontroller-tools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/><link rel=icon href=https://cdn.agou-ops.cn/BaseIMG/logo.png><link rel=stylesheet href=/sass/jane.min.4ec1ff7d2267f77335411dfcd2a48a36648d7bc71c4f23f9a5bfb9f6b8d87e78.css integrity media=screen crossorigin=anonymous><link rel=stylesheet href=/css/layer.css><link rel=stylesheet href=https://agou-ops.cn/code_expander.js><meta property="og:url" content="https://agou-ops.cn/post/k8s-operator%E4%B9%8Bcontroller-tools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="AGou's Blog"><meta property="og:title" content="K8s Operator之controller Tools学习笔记"><meta property="og:description" content="controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
 仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2024-09-12T16:07:54+08:00"><meta property="article:modified_time" content="2024-09-12T16:07:54+08:00"><meta property="article:tag" content="K8s"><meta property="article:tag" content="Controller-Tools"><meta property="article:tag" content="Operator"><meta itemprop=name content="K8s Operator之controller Tools学习笔记"><meta itemprop=description content="controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
 仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries"><meta itemprop=datePublished content="2024-09-12T16:07:54+08:00"><meta itemprop=dateModified content="2024-09-12T16:07:54+08:00"><meta itemprop=wordCount content="2600"><meta itemprop=keywords content="K8s,Controller-Tools,Operator"><meta name=twitter:card content="summary"><meta name=twitter:title content="K8s Operator之controller Tools学习笔记"><meta name=twitter:description content="controller-tools是一个由 Kubernetes 社区维护的项目，用于简化 Kubernetes 控制器的开发。其中提供了一组工具来生成和更新 Kubernetes API 对象的代码，以及构建自定义控制器所需的代码框架。
 仓库地址：GitHub - kubernetes-sigs/controller-tools: Tools to use with the controller-runtime libraries"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script async src=/js/gtags.js></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-2DZCW6NJZF")</script><link rel=stylesheet href=/css/docsearch.min.css><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "d58077e07d54401e854cb5319c0f3a62"}'></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>AGou's Blog</a></div><div class=mobile-navbar-icon><span></span>
@@ -75,52 +74,52 @@
 </span><span class=lnt>33
 </span><span class=lnt>34
 </span><span class=lnt>35
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span><span class=o>-</span><span class=nx>scaffold</span> <span class=o>--</span><span class=nx>kind</span><span class=p>=</span><span class=nx>Application</span> <span class=p>&gt;</span> <span class=nx>pkg</span><span class=o>/</span><span class=nx>apis</span><span class=o>/</span><span class=nx>appcontroller</span><span class=o>/</span><span class=nx>v1alpha1</span><span class=o>/</span><span class=nx>types</span><span class=p>.</span><span class=k>go</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nx>cat</span> <span class=nx>pkg</span><span class=o>/</span><span class=nx>apis</span><span class=o>/</span><span class=nx>appcontroller</span><span class=o>/</span><span class=nx>v1alpha1</span><span class=o>/</span><span class=nx>types</span><span class=p>.</span><span class=k>go</span>
-</span></span><span class=line><span class=cl><span class=err>#</span> <span class=nx>输出内容如下</span><span class=err>：</span>
-</span></span><span class=line><span class=cl><span class=c1>// ApplicationSpec defines the desired state of Application</span>
-</span></span><span class=line><span class=cl><span class=kd>type</span> <span class=nx>ApplicationSpec</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=c1>// INSERT ADDITIONAL SPEC FIELDS -- desired state of cluster</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// ApplicationStatus defines the observed state of Application.</span>
-</span></span><span class=line><span class=cl><span class=c1>// It should always be reconstructable from the state of the cluster and/or outside world.</span>
-</span></span><span class=line><span class=cl><span class=kd>type</span> <span class=nx>ApplicationStatus</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=c1>// INSERT ADDITIONAL STATUS FIELDS -- observed state of cluster</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// Application is the Schema for the applications API</span>
-</span></span><span class=line><span class=cl><span class=c1>// +k8s:openapi-gen=true</span>
-</span></span><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Application</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=nx>metav1</span><span class=p>.</span><span class=nx>TypeMeta</span>   <span class=s>`json:&#34;,inline&#34;`</span>
-</span></span><span class=line><span class=cl>        <span class=nx>metav1</span><span class=p>.</span><span class=nx>ObjectMeta</span> <span class=s>`json:&#34;metadata,omitempty&#34;`</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        <span class=nx>Spec</span>   <span class=nx>ApplicationSpec</span>   <span class=s>`json:&#34;spec,omitempty&#34;`</span>
-</span></span><span class=line><span class=cl>        <span class=nx>Status</span> <span class=nx>ApplicationStatus</span> <span class=s>`json:&#34;status,omitempty&#34;`</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// ApplicationList contains a list of Application</span>
-</span></span><span class=line><span class=cl><span class=kd>type</span> <span class=nx>ApplicationList</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=nx>metav1</span><span class=p>.</span><span class=nx>TypeMeta</span> <span class=s>`json:&#34;,inline&#34;`</span>
-</span></span><span class=line><span class=cl>        <span class=nx>metav1</span><span class=p>.</span><span class=nx>ListMeta</span> <span class=s>`json:&#34;metadata,omitempty&#34;`</span>
-</span></span><span class=line><span class=cl>        <span class=nx>Items</span>           <span class=p>[]</span><span class=nx>Application</span> <span class=s>`json:&#34;items&#34;`</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>可以发现生成之后的代码，是没有包名和引用依赖包的，所以需要手动在文件头添加一下，编辑<code>pkg/apis/appcontroller/v1alpha1/types.go</code>文件：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span><span class=o>-</span><span class=nx>scaffold</span><span class=w> </span><span class=o>--</span><span class=nx>kind</span><span class=p>=</span><span class=nx>Application</span><span class=w> </span><span class=p>&gt;</span><span class=w> </span><span class=nx>pkg</span><span class=o>/</span><span class=nx>apis</span><span class=o>/</span><span class=nx>appcontroller</span><span class=o>/</span><span class=nx>v1alpha1</span><span class=o>/</span><span class=nx>types</span><span class=p>.</span><span class=k>go</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nx>cat</span><span class=w> </span><span class=nx>pkg</span><span class=o>/</span><span class=nx>apis</span><span class=o>/</span><span class=nx>appcontroller</span><span class=o>/</span><span class=nx>v1alpha1</span><span class=o>/</span><span class=nx>types</span><span class=p>.</span><span class=k>go</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=err>#</span><span class=w> </span><span class=nx>输出内容如下</span><span class=err>：</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// ApplicationSpec defines the desired state of Application</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>type</span><span class=w> </span><span class=nx>ApplicationSpec</span><span class=w> </span><span class=kd>struct</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// INSERT ADDITIONAL SPEC FIELDS -- desired state of cluster</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// ApplicationStatus defines the observed state of Application.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// It should always be reconstructable from the state of the cluster and/or outside world.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>type</span><span class=w> </span><span class=nx>ApplicationStatus</span><span class=w> </span><span class=kd>struct</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// INSERT ADDITIONAL STATUS FIELDS -- observed state of cluster</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// Application is the Schema for the applications API</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// +k8s:openapi-gen=true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>type</span><span class=w> </span><span class=nx>Application</span><span class=w> </span><span class=kd>struct</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nx>metav1</span><span class=p>.</span><span class=nx>TypeMeta</span><span class=w>   </span><span class=s>`json:&#34;,inline&#34;`</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nx>metav1</span><span class=p>.</span><span class=nx>ObjectMeta</span><span class=w> </span><span class=s>`json:&#34;metadata,omitempty&#34;`</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nx>Spec</span><span class=w>   </span><span class=nx>ApplicationSpec</span><span class=w>   </span><span class=s>`json:&#34;spec,omitempty&#34;`</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nx>Status</span><span class=w> </span><span class=nx>ApplicationStatus</span><span class=w> </span><span class=s>`json:&#34;status,omitempty&#34;`</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// ApplicationList contains a list of Application</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>type</span><span class=w> </span><span class=nx>ApplicationList</span><span class=w> </span><span class=kd>struct</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nx>metav1</span><span class=p>.</span><span class=nx>TypeMeta</span><span class=w> </span><span class=s>`json:&#34;,inline&#34;`</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nx>metav1</span><span class=p>.</span><span class=nx>ListMeta</span><span class=w> </span><span class=s>`json:&#34;metadata,omitempty&#34;`</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nx>Items</span><span class=w>           </span><span class=p>[]</span><span class=nx>Application</span><span class=w> </span><span class=s>`json:&#34;items&#34;`</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>可以发现生成之后的代码，是没有包名和引用依赖包的，所以需要手动在文件头添加一下，编辑<code>pkg/apis/appcontroller/v1alpha1/types.go</code>文件：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>v1alpha1</span> 
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nx>metav1</span> <span class=s>&#34;k8s.io/apimachinery/pkg/apis/meta/v1&#34;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>...</span> <span class=nx>后面省略</span><span class=err>。。。</span>
-</span></span></code></pre></td></tr></table></div></div><p>导入完成之后运行<code>go mod tidy</code>获取一下依赖。
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span><span class=w> </span><span class=nx>v1alpha1</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nx>metav1</span><span class=w> </span><span class=s>&#34;k8s.io/apimachinery/pkg/apis/meta/v1&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=o>...</span><span class=w> </span><span class=nx>后面省略</span><span class=err>。。。</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>导入完成之后运行<code>go mod tidy</code>获取一下依赖。
 3. 使用controller-gen生成deepcopy和crd文件
 在此之前，首先在<code>pkg/apis/appcontroller/v1alpha1</code> 下创建一个 <code>doc.go</code> 文件，并使用注释标记<code>groupName</code>，不然生成crd的时候文件名会变成下划线，空的.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -253,14 +252,14 @@
 </span><span class=lnt>51
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=l>cat config/crd/appcontroller.k8s.io_applications.yaml</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>apiVersion</span><span class=p>:</span><span class=w> </span><span class=l>apiextensions.k8s.io/v1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>kind</span><span class=p>:</span><span class=w> </span><span class=l>CustomResourceDefinition</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>metadata</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>apiVersion</span><span class=p>:</span><span class=w> </span><span class=l>apiextensions.k8s.io/v1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>kind</span><span class=p>:</span><span class=w> </span><span class=l>CustomResourceDefinition</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>metadata</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>annotations</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>controller-gen.kubebuilder.io/version</span><span class=p>:</span><span class=w> </span><span class=l>(devel)</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>applications.appcontroller.k8s.io</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>spec</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>spec</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>group</span><span class=p>:</span><span class=w> </span><span class=l>appcontroller.k8s.io</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>names</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>kind</span><span class=p>:</span><span class=w> </span><span class=l>Application</span><span class=w>
@@ -342,8 +341,8 @@
 </span><span class=lnt>18
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=l>controller-gen crd paths=./... output:crd:dir=config/crd</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 再次查看crd文件内容，可以发现spec里面已经有上面代码中指定的字段了</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>...</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c># 再次查看crd文件内容，可以发现spec里面已经有上面代码中指定的字段了</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nn>...</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>spec</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=l>ApplicationSpec defines the desired state of Application</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>properties</span><span class=p>:</span><span class=w>
@@ -357,7 +356,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>name</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>replicas</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>object</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>...</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nn>...</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><ol start=4><li>注册<code>crd</code>资源
 编辑<code>pkg/apis/appcontroller/v1alpha1/register.go</code>文件，添加以下代码来注册<code>client</code>：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -398,46 +397,46 @@
 </span><span class=lnt>37
 </span><span class=lnt>38
 </span><span class=lnt>39
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>v1alpha1</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=nx>metav1</span> <span class=s>&#34;k8s.io/apimachinery/pkg/apis/meta/v1&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;k8s.io/apimachinery/pkg/runtime&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;k8s.io/apimachinery/pkg/runtime/schema&#34;</span>
-</span></span><span class=line><span class=cl><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kd>const</span> <span class=nx>GroupName</span> <span class=p>=</span> <span class=s>&#34;appcontroller.k8s.io&#34;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// SchemeGroupVersion is group version used to register these objects</span>
-</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>SchemeGroupVersion</span> <span class=p>=</span> <span class=nx>schema</span><span class=p>.</span><span class=nx>GroupVersion</span><span class=p>{</span><span class=nx>Group</span><span class=p>:</span> <span class=nx>GroupName</span><span class=p>,</span> <span class=nx>Version</span><span class=p>:</span> <span class=s>&#34;v1alpha1&#34;</span><span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// Kind takes an unqualified kind and returns back a Group qualified GroupKind</span>
-</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>Kind</span><span class=p>(</span><span class=nx>kind</span> <span class=kt>string</span><span class=p>)</span> <span class=nx>schema</span><span class=p>.</span><span class=nx>GroupKind</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nx>SchemeGroupVersion</span><span class=p>.</span><span class=nf>WithKind</span><span class=p>(</span><span class=nx>kind</span><span class=p>).</span><span class=nf>GroupKind</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// Resource takes an unqualified resource and returns a Group qualified GroupResource</span>
-</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>Resource</span><span class=p>(</span><span class=nx>resource</span> <span class=kt>string</span><span class=p>)</span> <span class=nx>schema</span><span class=p>.</span><span class=nx>GroupResource</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nx>SchemeGroupVersion</span><span class=p>.</span><span class=nf>WithResource</span><span class=p>(</span><span class=nx>resource</span><span class=p>).</span><span class=nf>GroupResource</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// SchemeBuilder initializes a scheme builder</span>
-</span></span><span class=line><span class=cl>	<span class=nx>SchemeBuilder</span> <span class=p>=</span> <span class=nx>runtime</span><span class=p>.</span><span class=nf>NewSchemeBuilder</span><span class=p>(</span><span class=nx>addKnownTypes</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// AddToScheme is a global function that registers this API group &amp; version to a scheme</span>
-</span></span><span class=line><span class=cl>	<span class=nx>AddToScheme</span> <span class=p>=</span> <span class=nx>SchemeBuilder</span><span class=p>.</span><span class=nx>AddToScheme</span>
-</span></span><span class=line><span class=cl><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// Adds the list of known types to Scheme.</span>
-</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>addKnownTypes</span><span class=p>(</span><span class=nx>scheme</span> <span class=o>*</span><span class=nx>runtime</span><span class=p>.</span><span class=nx>Scheme</span><span class=p>)</span> <span class=kt>error</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>scheme</span><span class=p>.</span><span class=nf>AddKnownTypes</span><span class=p>(</span><span class=nx>SchemeGroupVersion</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>		<span class=o>&amp;</span><span class=nx>Application</span><span class=p>{},</span>
-</span></span><span class=line><span class=cl>		<span class=o>&amp;</span><span class=nx>ApplicationList</span><span class=p>{},</span>
-</span></span><span class=line><span class=cl>	<span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>metav1</span><span class=p>.</span><span class=nf>AddToGroupVersion</span><span class=p>(</span><span class=nx>scheme</span><span class=p>,</span> <span class=nx>SchemeGroupVersion</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=kc>nil</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><ol start=5><li>应用<code>crd</code>文件</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span><span class=w> </span><span class=nx>v1alpha1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>metav1</span><span class=w> </span><span class=s>&#34;k8s.io/apimachinery/pkg/apis/meta/v1&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;k8s.io/apimachinery/pkg/runtime&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;k8s.io/apimachinery/pkg/runtime/schema&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>const</span><span class=w> </span><span class=nx>GroupName</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>&#34;appcontroller.k8s.io&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// SchemeGroupVersion is group version used to register these objects</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>var</span><span class=w> </span><span class=nx>SchemeGroupVersion</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>schema</span><span class=p>.</span><span class=nx>GroupVersion</span><span class=p>{</span><span class=nx>Group</span><span class=p>:</span><span class=w> </span><span class=nx>GroupName</span><span class=p>,</span><span class=w> </span><span class=nx>Version</span><span class=p>:</span><span class=w> </span><span class=s>&#34;v1alpha1&#34;</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// Kind takes an unqualified kind and returns back a Group qualified GroupKind</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>func</span><span class=w> </span><span class=nf>Kind</span><span class=p>(</span><span class=nx>kind</span><span class=w> </span><span class=kt>string</span><span class=p>)</span><span class=w> </span><span class=nx>schema</span><span class=p>.</span><span class=nx>GroupKind</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=k>return</span><span class=w> </span><span class=nx>SchemeGroupVersion</span><span class=p>.</span><span class=nf>WithKind</span><span class=p>(</span><span class=nx>kind</span><span class=p>).</span><span class=nf>GroupKind</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// Resource takes an unqualified resource and returns a Group qualified GroupResource</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>func</span><span class=w> </span><span class=nf>Resource</span><span class=p>(</span><span class=nx>resource</span><span class=w> </span><span class=kt>string</span><span class=p>)</span><span class=w> </span><span class=nx>schema</span><span class=p>.</span><span class=nx>GroupResource</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=k>return</span><span class=w> </span><span class=nx>SchemeGroupVersion</span><span class=p>.</span><span class=nf>WithResource</span><span class=p>(</span><span class=nx>resource</span><span class=p>).</span><span class=nf>GroupResource</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>var</span><span class=w> </span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=c1>// SchemeBuilder initializes a scheme builder</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>SchemeBuilder</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>runtime</span><span class=p>.</span><span class=nf>NewSchemeBuilder</span><span class=p>(</span><span class=nx>addKnownTypes</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=c1>// AddToScheme is a global function that registers this API group &amp; version to a scheme</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>AddToScheme</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>SchemeBuilder</span><span class=p>.</span><span class=nx>AddToScheme</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// Adds the list of known types to Scheme.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>func</span><span class=w> </span><span class=nf>addKnownTypes</span><span class=p>(</span><span class=nx>scheme</span><span class=w> </span><span class=o>*</span><span class=nx>runtime</span><span class=p>.</span><span class=nx>Scheme</span><span class=p>)</span><span class=w> </span><span class=kt>error</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>scheme</span><span class=p>.</span><span class=nf>AddKnownTypes</span><span class=p>(</span><span class=nx>SchemeGroupVersion</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=o>&amp;</span><span class=nx>Application</span><span class=p>{},</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=o>&amp;</span><span class=nx>ApplicationList</span><span class=p>{},</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>metav1</span><span class=p>.</span><span class=nf>AddToGroupVersion</span><span class=p>(</span><span class=nx>scheme</span><span class=p>,</span><span class=w> </span><span class=nx>SchemeGroupVersion</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=k>return</span><span class=w> </span><span class=kc>nil</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=5><li>应用<code>crd</code>文件</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -563,51 +562,51 @@
 </span><span class=lnt>42
 </span><span class=lnt>43
 </span><span class=lnt>44
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;context&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;controller-tools-study/pkg/apis/appcontroller/v1alpha1&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;fmt&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;log&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;strings&#34;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;k8s.io/client-go/kubernetes/scheme&#34;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;k8s.io/client-go/rest&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;k8s.io/client-go/tools/clientcmd&#34;</span>
-</span></span><span class=line><span class=cl><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>config</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>clientcmd</span><span class=p>.</span><span class=nf>BuildConfigFromFlags</span><span class=p>(</span><span class=s>&#34;&#34;</span><span class=p>,</span> <span class=nx>clientcmd</span><span class=p>.</span><span class=nx>RecommendedHomeFile</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>log</span><span class=p>.</span><span class=nf>Fatalln</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>config</span><span class=p>.</span><span class=nx>APIPath</span> <span class=p>=</span> <span class=s>&#34;/apis/&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=nx>config</span><span class=p>.</span><span class=nx>GroupVersion</span> <span class=p>=</span> <span class=o>&amp;</span><span class=nx>v1alpha1</span><span class=p>.</span><span class=nx>SchemeGroupVersion</span>
-</span></span><span class=line><span class=cl>	<span class=nx>config</span><span class=p>.</span><span class=nx>NegotiatedSerializer</span> <span class=p>=</span> <span class=nx>scheme</span><span class=p>.</span><span class=nx>Codecs</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>client</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>rest</span><span class=p>.</span><span class=nf>RESTClientFor</span><span class=p>(</span><span class=nx>config</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>log</span><span class=p>.</span><span class=nf>Fatalln</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>app</span> <span class=o>:=</span> <span class=nx>v1alpha1</span><span class=p>.</span><span class=nx>Application</span><span class=p>{}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>err</span> <span class=p>=</span> <span class=nx>client</span><span class=p>.</span><span class=nf>Get</span><span class=p>().</span><span class=nf>Namespace</span><span class=p>(</span><span class=s>&#34;default&#34;</span><span class=p>).</span><span class=nf>Resource</span><span class=p>(</span><span class=s>&#34;applications&#34;</span><span class=p>).</span><span class=nf>Name</span><span class=p>(</span><span class=s>&#34;test-crd&#34;</span><span class=p>).</span><span class=nf>Do</span><span class=p>(</span><span class=nx>context</span><span class=p>.</span><span class=nf>TODO</span><span class=p>()).</span><span class=nf>Into</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>app</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>log</span><span class=p>.</span><span class=nf>Fatalln</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 测试深拷贝</span>
-</span></span><span class=line><span class=cl>	<span class=nx>newObj</span> <span class=o>:=</span> <span class=nx>app</span><span class=p>.</span><span class=nf>DeepCopy</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>	<span class=nx>newObj</span><span class=p>.</span><span class=nx>Spec</span><span class=p>.</span><span class=nx>Name</span> <span class=p>=</span> <span class=s>&#34;test-crd&#34;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;ori：&#34;</span><span class=p>,</span> <span class=nx>app</span><span class=p>.</span><span class=nx>Spec</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>strings</span><span class=p>.</span><span class=nf>Repeat</span><span class=p>(</span><span class=s>&#34;=&#34;</span><span class=p>,</span> <span class=mi>50</span><span class=p>))</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;deepcopy：&#34;</span><span class=p>,</span> <span class=nx>newObj</span><span class=p>.</span><span class=nx>Spec</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>运行：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span><span class=w> </span><span class=nx>main</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;context&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;controller-tools-study/pkg/apis/appcontroller/v1alpha1&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;fmt&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;log&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;strings&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;k8s.io/client-go/kubernetes/scheme&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;k8s.io/client-go/rest&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=s>&#34;k8s.io/client-go/tools/clientcmd&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>func</span><span class=w> </span><span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>config</span><span class=p>,</span><span class=w> </span><span class=nx>err</span><span class=w> </span><span class=o>:=</span><span class=w> </span><span class=nx>clientcmd</span><span class=p>.</span><span class=nf>BuildConfigFromFlags</span><span class=p>(</span><span class=s>&#34;&#34;</span><span class=p>,</span><span class=w> </span><span class=nx>clientcmd</span><span class=p>.</span><span class=nx>RecommendedHomeFile</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=k>if</span><span class=w> </span><span class=nx>err</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=kc>nil</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=nx>log</span><span class=p>.</span><span class=nf>Fatalln</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>config</span><span class=p>.</span><span class=nx>APIPath</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>&#34;/apis/&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>config</span><span class=p>.</span><span class=nx>GroupVersion</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=o>&amp;</span><span class=nx>v1alpha1</span><span class=p>.</span><span class=nx>SchemeGroupVersion</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>config</span><span class=p>.</span><span class=nx>NegotiatedSerializer</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>scheme</span><span class=p>.</span><span class=nx>Codecs</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>client</span><span class=p>,</span><span class=w> </span><span class=nx>err</span><span class=w> </span><span class=o>:=</span><span class=w> </span><span class=nx>rest</span><span class=p>.</span><span class=nf>RESTClientFor</span><span class=p>(</span><span class=nx>config</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=k>if</span><span class=w> </span><span class=nx>err</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=kc>nil</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=nx>log</span><span class=p>.</span><span class=nf>Fatalln</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>app</span><span class=w> </span><span class=o>:=</span><span class=w> </span><span class=nx>v1alpha1</span><span class=p>.</span><span class=nx>Application</span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>err</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>client</span><span class=p>.</span><span class=nf>Get</span><span class=p>().</span><span class=nf>Namespace</span><span class=p>(</span><span class=s>&#34;default&#34;</span><span class=p>).</span><span class=nf>Resource</span><span class=p>(</span><span class=s>&#34;applications&#34;</span><span class=p>).</span><span class=nf>Name</span><span class=p>(</span><span class=s>&#34;test-crd&#34;</span><span class=p>).</span><span class=nf>Do</span><span class=p>(</span><span class=nx>context</span><span class=p>.</span><span class=nf>TODO</span><span class=p>()).</span><span class=nf>Into</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>app</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=k>if</span><span class=w> </span><span class=nx>err</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=kc>nil</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=nx>log</span><span class=p>.</span><span class=nf>Fatalln</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=c1>// 测试深拷贝</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>newObj</span><span class=w> </span><span class=o>:=</span><span class=w> </span><span class=nx>app</span><span class=p>.</span><span class=nf>DeepCopy</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>newObj</span><span class=p>.</span><span class=nx>Spec</span><span class=p>.</span><span class=nx>Name</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>&#34;test-crd&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;ori：&#34;</span><span class=p>,</span><span class=w> </span><span class=nx>app</span><span class=p>.</span><span class=nx>Spec</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>strings</span><span class=p>.</span><span class=nf>Repeat</span><span class=p>(</span><span class=s>&#34;=&#34;</span><span class=p>,</span><span class=w> </span><span class=mi>50</span><span class=p>))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;deepcopy：&#34;</span><span class=p>,</span><span class=w> </span><span class=nx>newObj</span><span class=p>.</span><span class=nx>Spec</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>运行：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -638,7 +637,7 @@
 </a><a href=https://github.com/AGou-ops rel="me noopener" class=iconfont title=github target=_blank><svg class="icon" style="" viewBox="0 0 1024 1024" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36"><path d="M512 12.672c-282.88.0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667.0-12.16-.426667-44.373333-.64-87.04C242.005334 929.664 211.968 830.08 211.968 830.08 188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333.0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333.0.0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667.0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72.0 68.522667-.64 123.562667-.64 140.202666.0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"/></svg>
 </a><a href=https://agou-ops.cn/index.xml rel="noopener alternate" type=application/rss+xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 01140.501333 140.586667A140.928 140.928.0 01140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667v-199.04c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=copyright-year>&copy;
 2018 -
-2025
+2026
 <span class=heart><i class=iconfont><svg role="img" viewBox="0 0 24 24" width="16" height="16"><title>Alienware</title><path d="M20.382 9.4054c-.0649-.6486-.1297-1.3622-.2595-2.0108-.1297-.6487-.2594-1.2973-.5189-1.946-.1297-.3243-.2595-.6486-.3892-.908-.1297-.3244-.3243-.5838-.454-.9082-.1946-.2594-.3892-.5838-.5838-.8432-.1946-.2595-.454-.519-.7135-.7135-.454-.3892-.973-.7784-1.5568-1.1027-.5838-.3244-1.2324-.5838-1.881-.7135C13.3765.0649 12.7278.0 12.0143.0s-1.3621.0649-2.0108.2595C9.355.3892 8.7712.6486 8.1874.973c-.6487.3243-1.1676.7135-1.6865 1.1675-.2595.1946-.454.454-.7135.7136l-.5838.7783c-.1297.3244-.3243.5838-.454.9081l-.3892.973c-.1946.6487-.3892 1.2973-.519 1.946-.1297.6486-.1946 1.2973-.2594 2.0108-.0649.7135.0 1.2973.0 1.946.0.6486.0648 1.2972.1946 2.0107l.1946.973c.0648.3243.1946.6486.3243.973.454 1.2324 1.1676 2.4 1.881 3.5027.3893.5838.7785 1.1027 1.1676 1.6216.3892.519.7784 1.1027 1.2325 1.5568.1946.2594.454.454.7135.7135.2594.1946.519.3892.8432.5837.2595.1946.5838.3244.9081.4541.1298.0649.3244.1297.4541.1297.1946.0.3243.0649.519.0649.1945.0.3242.0.5188-.0649.1946.0.3244-.0648.454-.1297.3244-.1297.6487-.2595.9082-.454.2595-.1946.5838-.3892.8432-.5838.2595-.1946.519-.454.7136-.7135.454-.519.8432-1.0379 1.2324-1.5568.3892-.519.7784-1.1027 1.1676-1.6216.7135-1.1027 1.427-2.2703 1.881-3.5027.1298-.3244.2595-.6487.3244-.973.0648-.3243.1946-.6486.1946-.973.1297-.6486.1945-1.2973.1945-2.0108.0-.6486.0-1.3621-.0648-2.0108zM4.8144 12.0649s3.6973.8432 6.0973 5.8378c-.0649.0-6.4216-.1297-6.0973-5.8378zm8.3676 5.8378c2.3351-4.9946 6.0973-5.8378 6.0973-5.8378.3243 5.708-6.0973 5.8378-6.0973 5.8378z"/></svg>
 </i></span><span class=author>WTFPLv2
 </span></span><span class=power-by><a title="Host on GitHub & AliOSS"><img alt="Ecologi (Carbon Offset)" src=/image/host.svg></a>
