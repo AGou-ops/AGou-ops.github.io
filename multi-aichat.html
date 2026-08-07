@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Multi AI Chat Extension</title>
-    <link rel="icon" href="https://agou-images.oss-cn-qingdao.aliyuncs.com/icons/multi-aichat.png" type="image/png" />
-    <link rel="apple-touch-icon" href="https://agou-images.oss-cn-qingdao.aliyuncs.com/icons/multi-aichat.png" />
 
     <!-- PWA Manifest (数据内嵌，支持 Chrome 识别并安装为 PWA APP) -->
     <link
@@ -16,9 +14,7 @@
       const EXT_ID = "daeejbkgpkoagacncliemiienmlnclmj";
       const TARGET_URL = `chrome-extension://${EXT_ID}/chatbrawl.html`;
 
-      // ⏱️ 跳转延迟配置（单位：毫秒 ms）
-      // 设置为 5000 即表示等待 5 秒后跳转；设为 0 则表示立即无缝跳转
-      const REDIRECT_DELAY_MS = 10000;
+      const REDIRECT_DELAY_MS = 0;
 
       function doDirectRedirect() {
         if (window.chrome && chrome.runtime && chrome.runtime.sendMessage) {
@@ -36,7 +32,6 @@
         }
       }
 
-      // 延迟控制逻辑：<= 0 立即跳转，> 0 延时触发
       if (REDIRECT_DELAY_MS <= 0) {
         doDirectRedirect();
       } else {
