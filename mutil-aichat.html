@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ChatBrawl</title>
+
+    <!-- PWA Manifest (数据内嵌，支持 Chrome 识别并安装为 PWA APP) -->
+    <link
+      rel="manifest"
+      href="data:application/manifest+json;base64,eyJuYW1lIjoiQ2hhdEJyYXdsIEFwcCIsInNob3J0X25hbWUiOiJDaGF0QnJhd2wiLCJzdGFydF91cmwiOiIuLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiMwZjE3MmEiLCJ0aGVtZV9jb2xvciI6IiM2MzY2ZjEiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWmd4NGBXeHVjejBpYUhSMGNEb3ZMM3d6TXk1dmNtY3ZNakF3TUM5allXeHNjeTBpVm1sOGRDQTBNEEFnTVRBd01DSTJNVElpSUh2NGNtVmpkRngwYVdSb1BTSWdOVEV5SUhobFpXZG9kRDBpTlRFeUlIQnliM1IxYm1ScFpHNWZkSGx3ZGlJMFpqRWlJSEFpSjEwOWFHNWxiaUk3SUhkpGRHaDBQU0l4TnpJd0lpaDFjSElnTVRjM0xqRWlJSEp2ZFdSa2ZHRnVJRDBpTVRBd0lpMXlhWFJvZEhzaUlEZ3dJRHB0YVc1aGFXMTBaVDBpTkRJaUlpQm1hV3xsY1hkcGRIUWlJemFpSWlCa2FYTndiR0Y1SWpwaVkyOXVkRzFpWVdSa0lpd2lhVzVoYldWemFYcGxJa2x1Z1NCdVlXMXpJZ289Iiwic2l6ZXMiOiIxOTJ4MTkyIDUxMng1MTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCIsInB1cnBvc2UiOiJhbnkgbWFza2FibGUifV19"
+    />
+
+    <script>
+      const EXT_ID = "daeejbkgpkoagacncliemiienmlnclmj";
+      const TARGET_URL = `chrome-extension://${EXT_ID}/chatbrawl.html`;
+
+      // ⏱️ 跳转延迟配置（单位：毫秒 ms）
+      // 设置为 5000 即表示等待 5 秒后跳转；设为 0 则表示立即无缝跳转
+      const REDIRECT_DELAY_MS = 10000;
+
+      function doDirectRedirect() {
+        if (window.chrome && chrome.runtime && chrome.runtime.sendMessage) {
+          chrome.runtime.sendMessage(
+            EXT_ID,
+            { action: "redirectSelf" },
+            (res) => {
+              if (chrome.runtime.lastError || !res || !res.ok) {
+                location.replace(TARGET_URL);
+              }
+            },
+          );
+        } else {
+          location.replace(TARGET_URL);
+        }
+      }
+
+      // 延迟控制逻辑：<= 0 立即跳转，> 0 延时触发
+      if (REDIRECT_DELAY_MS <= 0) {
+        doDirectRedirect();
+      } else {
+        setTimeout(doDirectRedirect, REDIRECT_DELAY_MS);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
