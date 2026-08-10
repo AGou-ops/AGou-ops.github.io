@@ -23,7 +23,7 @@
       const EXT_ID = "daeejbkgpkoagacncliemiienmlnclmj";
       const TARGET_URL = `chrome-extension://${EXT_ID}/chatbrawl.html`;
 
-      const REDIRECT_DELAY_MS = 10000;
+      const REDIRECT_DELAY_MS = 0;
 
       function doDirectRedirect() {
         if (window.chrome && chrome.runtime && chrome.runtime.sendMessage) {
